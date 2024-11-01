@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ability_trigger",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ability_trigger",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

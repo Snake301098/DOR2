@@ -1,0 +1,12 @@
+slotid=noone;                                   //ID ñëîòà, êîòîðîìó ïðèíàäëåæèò äðîèä.
+speedn=0;                                       //Äîïîëíèòåëüíàÿ ñêîðîñòü äëÿ ïåðåäíèõ äðîèäîâ.
+owner:=noone;
+next_x:=0;
+next_y:=0;
+destroyed=0;
+pos:=0;
+depth=-1;
+image_speed=0;
+sprite_index=empty_spr;
+alarm[0]=1;
+alarm[2]=1;

@@ -1,0 +1,142 @@
+5.2 by Rider735
+Changes:
+-Customizable hotkeys (BETA). (Changeable in HUDconfig.ini)
+-AI uses instashields. (toggleable in configDO.ini)
+-AI uses EMP's. (toggleable in configDO.ini)
+-AI can now use RSB. (toggleable in configDO.ini)
+-Jackpot arena.
+-Reworked credit/ep/honor rewards.
+-UCB-100 ammunition can now [B]ONLY[/B] be obtained trough galaxy gates.
+-PVP kills now grant more exp/honor.
+-All sprites have been reduced in size to match darkorbit.
+-Reworked sprite loading for aliens.
+-Rankpoints required for each rank have been reduced.
+-Clicking galaxy gates now requires 100 uridium, instead of credits.
+-EMP/ISH/RSB for AI is no longer defined trough "ship level", but instead it's based on a random number.
+-Lowered the cooldowns of emp/ish for both AI and player by 10 seconds.
+-Increased cooldown on RSB for AI by a random number. (This is to prevent AI from basically using "auto changer")
+-Uridium can also be obtained by killing aliens.
+-JPA will reward the player with 1 million uridium.
+-Fixed a bug where some text would show up as "0".
+-Fixed a bug where botters would run before you even hit them.
+-Fixed a bug where autosave wouldn't work.
+-Fixed a bug where the AI would shoot beyond their range.
+-Fixed a bug where the AI would just fly in circles and not shoot you.
+-All lasers on ship are now properly alligned.
+-Solace will now have the green health icon.
+
+
+5.1.1 Patch 1
+-Fixed the bug with GG builder. (Text was in wrong place on higher resolution)
+-Fixed protegit bug, they can be locked and fired upon now.
+-Fixed some resolution bugs.
+-Fixed a bug where AI could hit 2million+.
+-Fixed a bug where you could shoot rsb+x4 at exactly the same time.
+-Fixed a bug where minimap would show old map images.
+
+5.1.1
+New user/ship HUD
+Removed minimap HUD
+Added a new resolution
+Minor changes to increase speed.(Going to do a full overhaul in 5.1.2)
+Added new map backgrounds (x-1 and pvp maps)
+Fixed some bugs with extra hp/shield/damage calculations
+Fixed a bug with switching between old/new lasers
+More minor bugfixes.
+
+5.1
+New features:
+- Hate how your enemy outruns you? Not anymore! Update will include fully working DCR250 rockets!
+- Want to see how your rankpoints have been calculated? Want to see how many kills you've made? Next update will include a way of finding out
+- Options menu
+-Custom changeable damage. This was done due to some people wanting high damage, and others wanted lower damage. It can be changed from the options menu.
+- New minimap image for enemy's. (similar to x-1 enemy's on DO.)
+- Added a few more icons to HUD
+-Replaced the new alien sprites, with older sprites to reduce lag.
+-Level cap has been raised to 30
+-Toggleable old/new lasers
+-New splash screen
+-4-4 map
+-4-5 map
+-Upper maps (x-5,x-6,x-7,x-8)
+-Cubikons
+-Ships now give more dmg/shield/hp depending on your design.
+-Ships will no longer have extra slots for lasers/shields
+-Drone formations will have bonuses(e.g. Heart formation = extra hp/shield )
+-Drone designs will also give bonuses(e.g. Hercules = extra hp/shield, havoc=extra damage)
+-Added proper graphics for recharging
+-Botters; (Some AI now have botting behaviors, e.g. not shooting at other ships, running to gate when attacked)
+-Cloaking now works like in DO (Ship will be transparent, instead of invisible)
+-Galaxy gates Alpha, Beta, Gamma and Delta
+-Galaxy gate builder
+-New minimap image for enemy's. (similar to x-1 enemy's on DO.)
+-Added a few more icons to HUD
+-REP robot now has proper behavior
+
+Bug-fixes:
+-Fixed a bug where drones would rotate around your ship if you had somebody locked.
+-Fixed a bug where you couldn't buy vengeance designs anymore if you had the revenge design.
+-Fixed a bug where you would also shoot X4 ammo when shooting RSB.
+-Bugfix; Hate how AI can shoot you from half-way across the map? Not anymore! AI can't shoot anymore if you're out of range.
+-Bugfix; Experience weights to heavy in current rankpoint calculation, will be lowered.
+-Fixed a bug where you would have a large range then the AI.
+-Fixed a bug where NPC's would sometimes be invisible.
+-Fixed a recharge bug
+-Fixed a countdown bug in GG's
+-Fixed a bug where sometimes you wouldn't see the locking circle on your target
+-Fixed a bug where the AI wouldn't use all ships
+-Non-aggressive aliens will now behave as such. (They won't shoot you anymore, unless fired upon)
+-Fixed a memory leak caused by galaxy gate portals (You could end up having ~500 portals on same map.-Caused game to crash)
+-Fixed a bug where NPC's would sometimes be invisible.
+-Fixed a bug where you would have a larger range then the AI
+
+5.0
+Added:
+SAB-50
+RSB-75
+EMP
+ISH
+More designs
+Improved shop
+More cheatcodes
+Energy transfer
+Tweaked damage
+Apis
+Zeus
+droneformations
+havoc
+hercules
+Levels
+Experience points
+Honor
+Ranks based on EP+Honor+Ship kills
+
+
+4.4 by rider735
+-Ranks! and fixed bug of drones directions!
+
+4.3 by Hugo95=)
+-NEW Darkorbit 3D graphic!
+-in this versione there are only goliath, with different characteristics!
+-new drone formation
+-map ???(4-4)
+-CLOAK(invisible): button 0
+-Money Hack: button M
+
+4.2 by Manulaiko:
+-Added new graphics
+-New hotkeys
+-Added cheats (find them ^^)
+
+4.1 by Hugo95=):
+-Cubikon invasion pvp!
+
+
+4.0 by Hugo95=):
+New graphic.
+havoc, hercules, LF-4, new design, and RSB-75...
+Damage over 100'000 when you are Full of LF-4.
+-=[ Sibelon ]=- and -=[ Devolarium ]=- give more UCB-100(x4).
+max number of drones for enemy = 10.
+value of HP, SHD, and DMG, changed for all ships.
+changed the prices of the items.

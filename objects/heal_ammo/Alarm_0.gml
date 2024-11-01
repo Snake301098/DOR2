@@ -1,0 +1,1 @@
+if image_index <10 then {image_index+=1; alarm[0]=6;} else instance_destroy();

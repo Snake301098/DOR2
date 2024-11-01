@@ -1,0 +1,1 @@
+owner.droid[pos,0]=noone;

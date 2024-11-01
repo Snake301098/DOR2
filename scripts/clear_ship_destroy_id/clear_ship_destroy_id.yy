@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"clear_ship_destroy_id",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"clear_ship_destroy_id",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

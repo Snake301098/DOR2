@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"show_HUD_message",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"show_HUD_message",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

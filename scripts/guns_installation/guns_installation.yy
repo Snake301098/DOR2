@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"guns_installation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"guns_installation",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

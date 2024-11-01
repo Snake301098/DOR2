@@ -1,0 +1,23 @@
+{
+  "$GMPath":"",
+  "%Name":"walk_1",
+  "closed":false,
+  "kind":1,
+  "name":"walk_1",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":-222.16667,"y":77.00003,},
+    {"speed":100.0,"x":-174.16667,"y":-166.99995,},
+    {"speed":100.0,"x":32.5,"y":-228.33328,},
+    {"speed":100.0,"x":79.16666,"y":-25.666626,},
+    {"speed":100.0,"x":304.49997,"y":63.666718,},
+    {"speed":100.0,"x":299.16666,"y":233.00006,},
+    {"speed":100.0,"x":499.16666,"y":-18.99997,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

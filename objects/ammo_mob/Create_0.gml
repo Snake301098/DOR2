@@ -1,0 +1,36 @@
+owner=noone;                      //"Õîçÿèí" ñíàðÿäà.
+damage=10;
+damage_x=1;                        //Óðîí.
+target:=noone;                    //Öåëü ïàòðîíà.
+alarm[0]=room_speed*1.2;
+alarm[1]=8;
+alarm[2]=13;
+speedrocket=8; //3
+speedmultiplier=1;
+anglemultiplier=0.996;
+targetx:=mouse_x;
+targetedship=0;
+target=0;
+ownership=0;
+drawDamage=true;
+level=0;
+critical_hit = false;
+guns=0;
+targety:=mouse_y;
+final_targetx=0;
+final_targety=0;
+xowner:=gamer.x;
+image_speed=0;
+yowner:=gamer.y;
+restoredHP=0;
+sprite_index=rocket_2_spr;
+alarm[3]=15;
+if distance_to_object(gamer) < 600 then audio_play_sound(rocket_sound,1,false);
+
+targetedship=0;
+//ammoangle=irandom_range(-150,150);
+ammoangle=irandom_range(-90,90);
+//decrease_angle_factor=0.9999;
+decrease_angle_factor=0.93;
+if instance_exists(gamer.target) then targetedship:=gamer.target;
+alarm[4] = 1;//Determine targetx/y for ship

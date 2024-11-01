@@ -1,0 +1,14 @@
+x=0;
+y=0;
+owner=0;
+targetx=1;
+targety=1;
+direction=0;
+speedrocket=3;
+alarm[0]=1;
+alarm[1]=30;
+alarm[2]=60;
+damage=120000
+corporation=0;
+dist1=50; //if closer than dist1, the damage is max
+dist2=350; //if after dist2, damage is 0. And between it's linear decrease

@@ -1,0 +1,20 @@
+//x=0;
+//y=0;
+xdec=0;
+ydec=0;
+ydec2 = 0;
+movement = "";
+
+step=1;
+xview0 = x - gamer.x;
+yview0 = y - gamer.y;
+image_speed=0;
+object_name="";
+object_type="";
+object_qty=1;
+storage_full=0;
+sprite_index=empty_spr;
+alarm[0]=1;
+alarm[1]=1;
+alarm[2]=irandom_range(30,50);
+alarm[3]=irandom_range(70,110);

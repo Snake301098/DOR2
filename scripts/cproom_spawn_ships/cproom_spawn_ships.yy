@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cproom_spawn_ships",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cproom_spawn_ships",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

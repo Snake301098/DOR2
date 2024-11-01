@@ -1,0 +1,24 @@
+{
+  "$GMPath":"",
+  "%Name":"large_fight_1",
+  "closed":true,
+  "kind":1,
+  "name":"large_fight_1",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":447.22455,"y":-598.6774,},
+    {"speed":100.0,"x":245.63242,"y":-49.73677,},
+    {"speed":100.0,"x":-343.346,"y":-677.0926,},
+    {"speed":100.0,"x":-800.87634,"y":-28.78401,},
+    {"speed":100.0,"x":-187.1699,"y":140.36693,},
+    {"speed":100.0,"x":-413.12164,"y":600.2416,},
+    {"speed":100.0,"x":290.0436,"y":496.5495,},
+    {"speed":100.0,"x":-299.20184,"y":-236.94492,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

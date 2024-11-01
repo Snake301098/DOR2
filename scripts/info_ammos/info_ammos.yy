@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"info_ammos",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"info_ammos",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

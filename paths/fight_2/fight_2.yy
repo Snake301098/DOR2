@@ -1,0 +1,23 @@
+{
+  "$GMPath":"",
+  "%Name":"fight_2",
+  "closed":true,
+  "kind":1,
+  "name":"fight_2",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":36.375298,"y":124.51276,},
+    {"speed":100.0,"x":63.160316,"y":-10.109949,},
+    {"speed":100.0,"x":-275.3913,"y":-63.734356,},
+    {"speed":100.0,"x":134.13998,"y":-157.57555,},
+    {"speed":100.0,"x":-105.440605,"y":45.222324,},
+    {"speed":100.0,"x":-110.96882,"y":-63.39522,},
+    {"speed":100.0,"x":262.4037,"y":25.603344,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

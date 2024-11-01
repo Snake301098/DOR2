@@ -1,0 +1,95 @@
+- fix le lock reste jusqu'à la dernière ammoship
+- give stats for health and dmg for ships
+- gunsinstallation (!!!!!)
+- compute dmg and health hits for mobs (!!!!!)
+- target looking
+- add other maps
+- add other mobs
+- mob radar base
+- finir le mapping des keys pour gamer
+- shield effect when hit
+- ammo mob (?)
+- ships power and types
+- bonus box espace
+- tp map (!!!!!) (randomize x and y, sound?)
+- add sounds (ship moving, ammos, keys pressed, repbot, outofroom radiation)
+- when loading game, check in which room is player and put him at nearest teleport or base of his x y
+- critical hits for guns
+- damage calculation by range
+- gamer got killed (wave) + ship killed reward
+- HUD cproom
+
+CP OUTPOST
+- interface when outpost to send ores
+- timer (?) for sending ores
+- add in hangar for ores of cargo and ores of storage
+- dynamic storage of ores
+- save things save_game
+
+- Optimize folders files of the game (in DOC vs appdata)
+
+- tab with showing all NPCs and show what ores can get from it with loot rates
+- citadel aegis design depending on company
+- ISH warrep eleech etc
+- le petit jet de gaz derriere le ship quand on avance (+ sound)
+- stars effect?
+- check no drone version
+
+- coups critiques
+- dmg avec la distance etc
+
+- backup dans un autre folder toutes les 10mn pour save en backup
+- escape button
+- bien save quand on quitte
+- buttons interface du début (+ screens background loading et menu)
+- hud (level health bar + rank health bar)
+- when buy do a check for level unlocked if can buy or not
+
+
+- protegit cubikon
+- special box
+- hangar
+- shop
+- pilot tree (?, a voir si j'en fais un)
+- gg click
+- GG
+- medailles
+- stats (dmg infligés etc)
+- pet
+
+
+
+
+
+
+https://yal.cc/tools/gm/gmsprview/
+https://www.darkorbit.com/spacemap/xml/resources.xml
+
+
+
+DONE:
+- fix rotation of ship drones of gamer when attacking
+- limit of map (on room the ligne a afficher)
+- repbot
+- decaler vers le bas la sprite de minimap (décalage du milieu)
+- out of room radiations
+- HUD name of gamer / drones for ship + healthbar
+- damage drawer
+- add cloak gamer
+- faire GUI HUD des HP etc
+- change hit calculation not with maxDamage but with damage for each rocket (+ create a ammoship for close range) (+ trajectoire rockets when too close from ship behavior)
+- gun installation for canons and launchers
+- repbot not working
+- popctrl alarm not working or on room start
+- explosion quand rocket touche ship/mob
+- text (les textes stored in the file, fix the issue)
+- bases
+- faire un check de tout voir si y a pas des trucs qui sont en commentaires avant mais qui devraient plus être maintenant
+- petits check si depths layers logiques
+- hangar only on when at base (+cant move)
+- popctrl spawning ships and mobs
+- popctrl du cp room
+- healing ammo
+- ROCKET BOMB NUKE
+- laser pour courte distance
+- refaire le file de save.txt

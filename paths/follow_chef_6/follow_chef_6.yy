@@ -1,0 +1,24 @@
+{
+  "$GMPath":"",
+  "%Name":"follow_chef_6",
+  "closed":false,
+  "kind":1,
+  "name":"follow_chef_6",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":794.81226,"y":-271.75787,},
+    {"speed":100.0,"x":706.1022,"y":-159.03879,},
+    {"speed":100.0,"x":594.47046,"y":-105.31184,},
+    {"speed":100.0,"x":466.11246,"y":-42.541935,},
+    {"speed":100.0,"x":455.42322,"y":19.957573,},
+    {"speed":100.0,"x":347.76764,"y":119.6352,},
+    {"speed":100.0,"x":171.21045,"y":190.59422,},
+    {"speed":100.0,"x":85.35919,"y":263.99384,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}
