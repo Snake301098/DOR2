@@ -5,3 +5,5 @@ target:=noone;                    //Öåëü ïàòðîíà.
 alarm[0]=60;
 image_speed=0
 drawDamage = true
+sprite_index=new_laser_spr
+image_alpha=0;

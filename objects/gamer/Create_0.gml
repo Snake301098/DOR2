@@ -13,6 +13,8 @@ KeyActionCURKEY=0;
 target_looking_rocket_far_alpha=0;
 target_looking_rocket_alpha=0;
 followHP=0;
+followShield=0;
+gunsC1=0;
 moveship=true; //used for way (if touch a ship then target, then dont move ship)
 mouse_debug=0;
 can_use_nuke_k1=true;
@@ -73,7 +75,7 @@ own_health_bilo=0;
 damageToDraw=0;
 hasStartedAlarm8=false;
 
-SHIPNAME=lightning_spr;
+SHIPNAME=spectrum_spr;
 
 //window_set_size(1920,1080);
 

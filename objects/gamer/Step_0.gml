@@ -125,7 +125,7 @@ var ii;
     //if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
         //{   
             restore:=0;
-            if guns<1 then 
+            if gamer.gunsC1<1 then 
                 {
 					show_message("No canons installed"); exit;
                 }
@@ -240,3 +240,4 @@ if own_health <= 0
 
 
 followHP = lerp(followHP, own_health, 0.02) //hit health bar point effect
+followShield = lerp(followShield, own_shield, 0.02) //hit health bar point effect

@@ -420,16 +420,28 @@ else
 
 //Ïîëîñêà çäîðîâüÿ.
         draw_set_alpha(0.9);
-        if corporation = gamer.corporation then
-        {
-            draw_healthbar(x-55,round(y)+80,round(x+55),round(y+95),followHP/health_def*100, c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.6); //c_lime
-			draw_healthbar(x-55,round(y)+80,round(x+55),round(y+95),own_health/health_def*100, c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.6); //c_lime
-        }
+/*//        if corporation = gamer.corporation then
+  //      {
+            //draw_healthbar(x-55,round(y)+80,round(x+55),round(y+95),followHP/health_def*100, c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.6); //c_lime
+			//draw_healthbar(x-55,round(y)+80,round(x+55),round(y+95),own_health/health_def*100, c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.6); //c_lime
+			draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
+			draw_healthbar(x-55,y-105,x+55,y-100,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9);} //+41+25
+
+		}
         else
         {
             draw_healthbar(x-55,round(y)+80,round(x+55),round(y+95),followHP/health_def*100, c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.6);
             draw_healthbar(x-55,round(y)+80,round(x+55),round(y+95),own_health/health_def*100, c_black,c_red,c_red,0,0,0);draw_set_alpha(0.6);
         }
+*/		
+		//HEALTH
+		draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9); //+41+25
+		draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9); //+41+25
+
+		//SHIELD
+		if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,followShield/shield_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
+		if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,own_shield/shield_def*100,c_black,c_aqua,c_aqua,0,0,0);draw_set_alpha(0.9);} //+41+25
+
         
 
     if id=gamer.target

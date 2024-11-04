@@ -6,10 +6,42 @@ function info_weapons(_weapon,_info,_level="")
 		
 	switch _weapon
 	{
+		
+		
 		/************************************************
 		                WEAPONS
 		*************************************************/
 		#region
+		
+		case "LF-4":
+			if _info = "damage" then return 200;
+			break;
+			
+			
+		case "LF-3":
+			if _info = "damage" then return 175;
+			break;
+			
+			
+		case "MP-1":
+			if _info = "damage" then return 130;
+			break;
+			
+		
+		case "BO-2":
+			if _info = "shield" then return 10000;
+			break;
+		
+		
+		case "BO-1":
+			if _info = "shield" then return 8000;
+			break;
+			
+			
+		case "BO-0":
+			if _info = "shield" then return 6000;
+			break;
+		
 		
 		//LF3
 		case "LF-3_1":

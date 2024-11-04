@@ -16,5 +16,7 @@ function clear_ship_destroy_id(_id)
 	with (warrep) {if owner=myid then instance_destroy();}
 	with (cooldowns_ctrl) {if owner=myid then instance_destroy();}
 	with (nuke) {if owner=myid then instance_destroy();}
-	with (ship) {if chef=myid then chef=0;}
+	with(mob){if target=myid then {target=noone;attacking=false;}}
+	with (ship) {if chef=myid then chef=0; if target=myid then {target=noone;attacking=false;}}
+	with(gamer){if target=myid then {target=noone;attacking=false}}
 }

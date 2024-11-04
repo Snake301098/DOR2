@@ -73,14 +73,20 @@ function load_game()
 	gamer.Ship = ini_read_string(_hangar_string,"ship","nostromo");
 	global.ship_level = ini_read_real(_hangar_string,"ship_level",1);
 	//Gun
-	for(i = 1; i<=5; i+=1){
-	    gamer.Gun[i] = ini_read_string(_hangar_string,"gun"+string(i),"");
-		if gamer.Gun[i] !="noone" and gamer.Gun[i] !="" then gamer.guns+=1;
+	for(i = 1; i<=15; i+=1){
+	    gamer.GunC1[i] = ini_read_string(_hangar_string,"gun"+string(i)+"C1","");
+		if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then gamer.guns+=1;
 	}
-	//Laser
+	
+		//Laser
 	for(i = 1; i<=5; i+=1){
-	    gamer.Laser[i] = ini_read_string(_hangar_string,"laser"+string(i),"");
 		if gamer.Laser[i] !="noone" and gamer.Laser[i] !="" then gamer.lasers+=1;
+	}
+	
+	//Shield
+	for(i = 1; i<=5; i+=1){
+	    gamer.EngineC1[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C1","");
+		if gamer.EngineC1[i] !="noone" and gamer.EngineC1[i] !="" then gamer.lasers+=1;
 	}
 	//Inventory
 	for(i = 1; i<=60; i+=1){

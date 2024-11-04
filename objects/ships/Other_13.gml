@@ -12,6 +12,30 @@ var lasers_list = [];
 if Shiptype = "citadel" then guns_list = ["HST-2_1","HST-2_2","HST-2_3","HST-2_4","HST-2_5"] else guns_list = ["HST-1_1","HST-1_2","HST-1_3","HST-1_4","HST-1_5"];
 if Shiptype = "vengeance" then lasers_list = ["LF-4_1","LF-4_2","LF-4_3","LF-4_4","LF-4_5"] else lasers_list = ["LF-3_1","LF-3_2","LF-3_3","LF-3_4","LF-3_5"];
 
+if Ship = "bigboy" then {gun_slots = 6; shield_slots=5}
+if Ship = "leonov" then {gun_slots = 8; shield_slots=7}
+if Ship = "nostromo" then {gun_slots = 5; shield_slots=4}
+if Shiptype = "vengeance" then {gun_slots = 10; shield_slots=12}
+if Shiptype = "goliath" then {gun_slots = 15; shield_slots=15}
+if Ship = "aegis" then {gun_slots = 8; shield_slots=12}
+if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
+if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
+
+GunC1[0] = gun_slots;
+for (i:=1; i<=GunC1[0]; i++) GunC1[i]="noone"
+
+EngineC1[0] = shield_slots;
+for (i:=1; i<=EngineC1[0]; i++) EngineC1[i]="noone"
+
+
+var lf4_nbr = 0;
+var lf3_nbr = 0;
+var mp1_nbr = 0;
+
+var bo2_nbr = 0;
+var bo1_nbr = 0;
+var bo0_nbr = 0;
+
 
 //POWER 5 ----------------------------------
 if Power = 5
@@ -30,6 +54,12 @@ if Power = 5
 	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
 	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
 	droneformation=choose(1,2,3)//1=default, 2=heart
+	
+	lf4_nbr = round(choose(70,75,80,85,90)/100*GunC1[0])
+	lf3_nbr = GunC1[0]-lf4_nbr
+	
+	bo2_nbr = round(choose(70,75,80,85,90)/100*EngineC1[0])
+	bo1_nbr = EngineC1[0] - bo2_nbr
 	
 	//GUNS
 	guns = choose(4,4,5,5,5,5); //number of guns
@@ -68,6 +98,13 @@ if Power = 4
 	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
 	droneformation=choose(1,2,3)//1=default, 2=heart
 	
+	
+	lf4_nbr = round(choose(45,50,55,60,65,70,75)/100*GunC1[0])
+	lf3_nbr = GunC1[0]-lf4_nbr
+	
+	bo2_nbr = round(choose(45,50,55,60,65,70,75)/100*EngineC1[0])
+	bo1_nbr = EngineC1[0] - bo2_nbr
+	
 	//GUNS
 	guns = choose(3,3,4,4,4,5); //number of guns
 	for (i:=1; i<=guns; i+=1;) {Gun[i]=choose(guns_list[1],guns_list[2],guns_list[3],guns_list[3],guns_list[4]);} 
@@ -103,6 +140,16 @@ if Power = 3
 	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
 	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
 	droneformation=choose(1,2,3)//1=default, 2=heart
+
+	
+	lf4_nbr = round(choose(10,15,20,25)/100*GunC1[0])
+	mp1_nbr = round(choose(0,5,10,15)/100*GunC1[0])
+	lf3_nbr = GunC1[0]-lf4_nbr-mp1_nbr
+	
+	bo2_nbr = round(choose(10,15,20,25)/100*EngineC1[0])
+	bo0_nbr = round(choose(0,5,10,15)/100*EngineC1[0])
+	bo1_nbr = EngineC1[0] - bo2_nbr - bo0_nbr
+	
 	
 	//GUNS
 	guns = choose(2,3,3,3,4,4); //number of guns
@@ -137,6 +184,13 @@ if Power = 2
 	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
 	droneformation=choose(1,2,3)//1=default, 2=heart
 	
+	
+	mp1_nbr = round(choose(15,20,25,30,35,40,45)/100*GunC1[0])
+	lf3_nbr = GunC1[0] - mp1_nbr
+	
+	bo0_nbr = round(choose(15,20,25,30,35,40,45)/100*EngineC1[0])
+	bo1_nbr = EngineC1[0] - bo0_nbr
+	
 	//GUNS
 	guns = choose(1,2,2,3,3,3); //number of guns
 	for (i:=1; i<=guns; i+=1;) {Gun[i]=choose(guns_list[0],guns_list[1],guns_list[1],guns_list[2],guns_list[2]);} 
@@ -170,6 +224,15 @@ if Power = 1
 	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
 	droneformation=choose(1,2,3)//1=default, 2=heart
 	
+	
+	mp1_nbr = round(choose(30,35,40,45,50)/100*GunC1[0])
+	lf3_nbr = round(choose(15,20)/100*EngineC1[0])
+	
+	bo0_nbr = round(choose(30,35,40,45,50)/100*EngineC1[0])
+	bo1_nbr = round(choose(15,20)/100*EngineC1[0])
+	
+	
+	
 	//GUNS
 	guns = choose(1,1,2,2,2,3); //number of guns
 	for (i:=1; i<=guns; i+=1;) {Gun[i]=choose(guns_list[0],guns_list[0],guns_list[1],guns_list[1],guns_list[1]);} 
@@ -182,6 +245,14 @@ if Power = 1
 	pilotsheet_ship_hull_i=choose(0,0,0,0,0,1,1,1);
 	if(pilotsheet_ship_hull_i=2) then pilotsheet_ship_hull_ii=choose(0,0,0,0,0,1,1,1,1,1,2,2,2,3,3);
 }
+
+for (i:=1; i<=mp1_nbr; i+=1;) {array_push(GunC1,"MP-1");}
+for (i:=1; i<=lf3_nbr; i+=1;) {array_push(GunC1,"LF-3");}
+for (i:=1; i<=lf4_nbr; i+=1;) {array_push(GunC1,"LF-4");}
+
+for (i:=1; i<=bo0_nbr; i+=1;) {array_push(EngineC1,"BO-0");}
+for (i:=1; i<=bo1_nbr; i+=1;) {array_push(EngineC1,"BO-1");}
+for (i:=1; i<=bo2_nbr; i+=1;) {array_push(EngineC1,"BO-2");}
     	
 event_user(0);
 	

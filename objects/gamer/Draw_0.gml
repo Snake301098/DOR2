@@ -16,8 +16,13 @@ if(attacking == false and attacking_laser=false) {
     image_index = round(set_angle(image_index*(360/32),directions,dirspeed)/(360/32));
 }
 draw_sprite_ext(SHIPNAME,image_index,x,y,global.scale,global.scale,0,c_white,alpha) 
-draw_sprite_ext(target_looking_rocket_spr,0,x,y,1.4,1,directions,c_white,target_looking_rocket_alpha) 
-draw_sprite_ext(target_looking_rocket_far_spr,0,x,y,2.3,1.5,directions,c_white,target_looking_rocket_far_alpha) 
 
-if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y+105,x+55,y+90,followHP/health_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
-if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y+105,x+55,y+90,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9);} //+41+25
+//HEALTH
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9);} //+41+25
+
+//SHIELD
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,followShield/shield_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,own_shield/shield_def*100,c_black,c_aqua,c_aqua,0,0,0);draw_set_alpha(0.9);} //+41+25
+
+

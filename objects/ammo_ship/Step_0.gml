@@ -4,7 +4,7 @@ if instance_exists(target) then
     direction=point_direction(x,y,target.x,target.y);
     }
 else instance_destroy();
-
+image_alpha=1;
 sprite_index = new_laser_spr
 
 

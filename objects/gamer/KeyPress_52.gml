@@ -2,5 +2,12 @@
 
 if target != noone
 {
-	attacking = true
+	if attacking = false
+	{
+		attacking = true
+	}
+	else
+	{
+		attacking = false
+	}
 }

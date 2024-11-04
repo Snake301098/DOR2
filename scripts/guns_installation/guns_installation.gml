@@ -27,32 +27,36 @@ function guns_installation(_id){
 		                WEAPONS
 		*************************************************/
 		#region
-		for (i=1; i<=5; i+=1)
+		for (i=1; i<=GunC1[0]; i+=1)
 		{
-			if Gun[i] != "" and Gun[i] != "noone"
+			if GunC1[i] != "" and GunC1[i] != "noone"
 			{
-				var _damage = info_weapons(Gun[i],"damage");
-				var _level = info_weapons(Gun[i],"level");
-				MaxDamageGun+=_damage; guns+=1; GunDmg[i]=_damage; GunLvl[i]=_level;
-			}
-			
-			if Laser[i] != "" and Laser[i] != "noone"
-			{
-				_damage = info_weapons(Laser[i],"damage");
-				_level = info_weapons(Laser[i],"level");
-				MaxDamageLaser+=_damage; lasers+=1; LaserDmg[i]=_damage; LaserLvl[i]=_level;
+				var _damage = info_weapons(GunC1[i],"damage");
+				MaxDamageGunC1+=_damage; gunsC1+=1; GunDmgC1[i]=_damage;
 			}
 		}
 		
-		gunlvlmin=min(GunLvl[1],GunLvl[2],GunLvl[3],GunLvl[4],GunLvl[5]);
-		laserlvlmin=min(LaserLvl[1],LaserLvl[2],LaserLvl[3],LaserLvl[4],LaserLvl[5]);
+		#endregion
+
+		/************************************************
+		                SHIELDS
+		*************************************************/
+		#region
+		for (i=1; i<=EngineC1[0]; i+=1)
+		{
+			if EngineC1[i] != "" and EngineC1[i] != "noone"
+			{
+				var _shield = info_weapons(EngineC1[i],"shield");
+				shield_def+=_shield; 
+			}
+		}
 		
 		#endregion
 
 		//SHIELD
 		shieldAbsorb = 0.8;
 		shieldPen = 0.1
-		own_shield = 200000;
+		own_shield = shield_def;
 
 		/************************************************
 		                DRONES
