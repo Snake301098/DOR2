@@ -72,6 +72,9 @@ function load_game()
 	_hangar_string = "Hangar" + string(global.hangar);
 	gamer.Ship = ini_read_string(_hangar_string,"ship","nostromo");
 	global.ship_level = ini_read_real(_hangar_string,"ship_level",1);
+
+
+
 	//Gun
 	for(i = 1; i<=15; i+=1){
 	    gamer.GunC1[i] = ini_read_string(_hangar_string,"gun"+string(i)+"C1","");

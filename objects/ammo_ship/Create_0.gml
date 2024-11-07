@@ -5,5 +5,7 @@ target:=noone;                    //Öåëü ïàòðîíà.
 alarm[0]=60;
 image_speed=0
 drawDamage = true
-sprite_index=new_laser_spr
 image_alpha=0;
+
+if object_index=x4_ammo then sprite_index = new_fat_laser_spr
+if object_index=rsb then sprite_index = rsb_spr

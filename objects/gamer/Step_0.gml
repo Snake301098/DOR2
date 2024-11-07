@@ -3,16 +3,16 @@
 #region
 //if firing < 15 firing += 0.75;
 //Let's make this shit toggelable :D
-/*
+
 if global.firingspeed=1 then{
 if firing < 15 firing += 0.75/2;}
 if global.firingspeed=2 then{
 if firing < 15 firing += 1;}
 if global.firingspeed=3 then{
 if firing < 15 firing+= 3;}
-*/
 
-if firing < 15 firing += 0.5;
+
+if firing < 15 firing += 0.5/2/1.5;
 if firing > 15 firing=15
 #endregion
 

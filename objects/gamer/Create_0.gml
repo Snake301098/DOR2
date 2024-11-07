@@ -22,6 +22,7 @@ can_use_warrep=true;
 can_use_dmg_boost=true;
 dmg_boost_activated=false;
 critical_hit = false;
+shield_def = 0
 alpha=1;
 using_premium_lasers=false;
 destroyed=0;
@@ -190,3 +191,21 @@ can_use_ability_2 = true;
 
 is_using_ability_1 = false;
 is_using_ability_2 = false;
+
+	
+if Ship = "bigboy" then {gun_slots = 6; shield_slots=5}
+if Ship = "leonov" then {gun_slots = 8; shield_slots=7}
+if Ship = "nostromo" then {gun_slots = 5; shield_slots=4}
+if Shiptype = "vengeance" then {gun_slots = 10; shield_slots=12}
+if Shiptype = "goliath" then {gun_slots = 15; shield_slots=15}
+if Ship = "aegis" then {gun_slots = 8; shield_slots=12}
+if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
+if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
+
+GunC1[0] = gun_slots
+EngineC1[0] = shield_slots
+MaxDamageGunC1=0
+guns_installation(gamer);
+count=0
+hasused=0
+rsb_rate=0

@@ -5,7 +5,6 @@ if instance_exists(target) then
     }
 else instance_destroy();
 image_alpha=1;
-sprite_index = new_laser_spr
 
 
 /*
@@ -27,7 +26,8 @@ sprite_index=global.x3lasersFAT}
 else{
 sprite_index=global.x3lasers}}
 
-else if object_index=x4ammo then{
+else */
+/*{
 if owner.fatlasers=1 then{
 sprite_index=global.x4lasersFAT}
 else{

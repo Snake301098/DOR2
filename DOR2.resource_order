@@ -1,4 +1,8 @@
 {
   "FolderOrderSettings":[],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"rsb","order":1,"path":"objects/rsb/rsb.yy",},
+    {"name":"x4_ammo","order":2,"path":"objects/x4_ammo/x4_ammo.yy",},
+    {"name":"rsb_spr","order":1,"path":"sprites/rsb_spr/rsb_spr.yy",},
+  ],
 }

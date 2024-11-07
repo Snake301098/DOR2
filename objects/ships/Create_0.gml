@@ -14,6 +14,9 @@ ownership=0;
 targetedship=0;
 cloaked = 0;
 dmg_boost_activated = false;
+count=3;
+hasused=0;
+canusersb = 1;
 
 Power=6;
 gotKilledBy = 0;
