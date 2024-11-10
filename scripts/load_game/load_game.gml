@@ -76,20 +76,22 @@ function load_game()
 
 
 	//Gun
-	for(i = 1; i<=15; i+=1){
+	for(i = 1; i<=15; i+=1)
+	{
 	    gamer.GunC1[i] = ini_read_string(_hangar_string,"gun"+string(i)+"C1","");
-		if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then gamer.guns+=1;
+		if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then gamer.GunC1[0]+=1;
+	    gamer.GunC2[i] = ini_read_string(_hangar_string,"gun"+string(i)+"C2","");
+		if gamer.GunC2[i] !="noone" and gamer.GunC2[i] !="" then gamer.GunC2[0]+=1;
 	}
 	
-		//Laser
-	for(i = 1; i<=5; i+=1){
-		if gamer.Laser[i] !="noone" and gamer.Laser[i] !="" then gamer.lasers+=1;
-	}
 	
 	//Shield
-	for(i = 1; i<=5; i+=1){
+	for(i = 1; i<=15; i+=1)
+	{
 	    gamer.EngineC1[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C1","");
-		if gamer.EngineC1[i] !="noone" and gamer.EngineC1[i] !="" then gamer.lasers+=1;
+		if gamer.EngineC1[i] !="noone" and gamer.EngineC1[i] !="" then gamer.EngineC1[0]+=1;
+	    gamer.EngineC2[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C2","");
+		if gamer.EngineC2[i] !="noone" and gamer.EngineC2[i] !="" then gamer.EngineC2[0]+=1;
 	}
 	//Inventory
 	for(i = 1; i<=60; i+=1){

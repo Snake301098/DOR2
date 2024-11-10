@@ -2,19 +2,13 @@ image_speed=0;
 image_index=1;
 x=6200;
 y=0;
-config="Config 1";
+config=1;
 nickname = "gamer";
 //event_inherited(); 
 attacking=false; //rocket launcher
-attacking_laser=false; //laser canon
-dirspeed=12;
-directions=0;
 KeyActionCURKEY=0;
-target_looking_rocket_far_alpha=0;
-target_looking_rocket_alpha=0;
 followHP=0;
 followShield=0;
-gunsC1=0;
 moveship=true; //used for way (if touch a ship then target, then dont move ship)
 mouse_debug=0;
 can_use_nuke_k1=true;
@@ -40,11 +34,7 @@ global.droneformation=1
 radarrange=800*0.6/1.5;                     //Äàëüíîñòü "âèäèìîñòè" ðàäàðà, âñòðîåííîãî â ìèíèêàðòó.
 range=650;
 stoped=false;                       //Ñòàòóñ ñòûêîâêè.
-alarm[0]=15*2;                        //Çàïóñê òàéìåðà ïðîâåðêè íàõîæäåíèÿ â ÁÇ, êîë-âà õèïîâ è îòîáðàæåíèÿ óðîíà.
-action[0]:="gamer";                 //Äëÿ ñîâìåñòèìîñòè.
-designs[0]=1; 
-designs[1]=true; 
-designs[2]=false;                   //Ìàññèâ, îòâå÷àþùèé çà äèçàéíû. [0] - óñòàíîâëåííûé äèçàéí, [i] - åñòü ëè ó èãðîêà i-ûé äèçàéí.
+alarm[0]=15*2;                      //Ìàññèâ, îòâå÷àþùèé çà äèçàéíû. [0] - óñòàíîâëåííûé äèçàéí, [i] - åñòü ëè ó èãðîêà i-ûé äèçàéí.
 destroy:=false;
 protocol:="";                       //Èñïîëüçóåòñÿ äëÿ çàïèñè ïðîòîêîëà.
 HUD_message:=""                     //HUD ñîîáùåíèÿ. Èñïîëüçóþòñÿ äëÿ îòîáðàæåíèÿ ñðî÷íîé èíôîðìàöèè.
@@ -120,6 +110,7 @@ ini_close();*/
 //load_npc_sprites();
 alarm[1]=1*2;
 alarm[10]=1*2;
+dirspeed=10
 
 /*
 //Âûáîð êîðïîðàöèè.
@@ -139,6 +130,7 @@ for (i:=1; i<=10; i+=1) {
 droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
 /* Ñâåäåíèÿ î äðîèäàõ. [i,0] - id i-ãî ñëîòà äðîèäîâ. [i,1] - êàêîé äðîèä ïîä íîìåðîì i. [i,1+j] - ÷åì çàíÿò j-é ñëîò äðîèäà ïîä íîìåðîì i. */
 
+/*
 Gun[0]:=5;
 for (i:=1; i<=5; i+=1) Gun[i]="noone"
 
@@ -166,6 +158,26 @@ for (i:=1; i<=Inventory[0]; i+=1) Inventory[i]="noone"
 /* Ñâåäåíèÿ î ñëîòàõ èíâåíòàðÿ. Inventory[i]= êàêèì îáîðóäîâàíèåì çàíÿò i-é ñëîò èíâåíòàðÿ*/
 
 
+/*	
+if Ship = "bigboy" then {gun_slots = 6; shield_slots=5}
+if Ship = "leonov" then {gun_slots = 8; shield_slots=7}
+if Ship = "nostromo" then {gun_slots = 5; shield_slots=4}
+if Shiptype = "vengeance" then {gun_slots = 10; shield_slots=12}
+if Shiptype = "goliath" then {gun_slots = 15; shield_slots=15}
+if Ship = "aegis" then {gun_slots = 8; shield_slots=12}
+if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
+if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
+*/
+
+Gun=array_create(15)
+GunC1=array_create(15)
+GunC2=array_create(15)
+Engine=array_create(15)
+EngineC1=array_create(15)
+EngineC2=array_create(15)
+
+
+
 visible=true;
 load_game();
 guns_installation(gamer);
@@ -174,6 +186,7 @@ health_restore=health_def;
 own_health=health_def;
 event_user(0);
 event_user(15);
+action[0] = "gamer"
 
 instance_create_depth(0,0,0,oCamera);
 var _cooldown = instance_create_depth(0,0,0,cooldowns_ctrl);
@@ -192,19 +205,7 @@ can_use_ability_2 = true;
 is_using_ability_1 = false;
 is_using_ability_2 = false;
 
-	
-if Ship = "bigboy" then {gun_slots = 6; shield_slots=5}
-if Ship = "leonov" then {gun_slots = 8; shield_slots=7}
-if Ship = "nostromo" then {gun_slots = 5; shield_slots=4}
-if Shiptype = "vengeance" then {gun_slots = 10; shield_slots=12}
-if Shiptype = "goliath" then {gun_slots = 15; shield_slots=15}
-if Ship = "aegis" then {gun_slots = 8; shield_slots=12}
-if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
-if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
 
-GunC1[0] = gun_slots
-EngineC1[0] = shield_slots
-MaxDamageGunC1=0
 guns_installation(gamer);
 count=0
 hasused=0

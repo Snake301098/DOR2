@@ -18,8 +18,10 @@ function guns_installation(_id){
 		health_def:=info_shiptypes(Shiptype,"health");
 		//Gun[0]:=info(Ship,"gun_slots");
 		//GunDmg[0]:=info(Ship,"gun_slots");
-		Generator[0]:=info_shiptypes(Shiptype,"generator_slots");
-		Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
+		//Generator[0]:=info_shiptypes(Shiptype,"generator_slots");
+		Generator[0]=15
+		Engine[0]=15
+		//Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
 		#endregion
 		
 
@@ -27,12 +29,23 @@ function guns_installation(_id){
 		                WEAPONS
 		*************************************************/
 		#region
-		for (i=1; i<=GunC1[0]; i+=1)
+		if config=1
 		{
-			if GunC1[i] != "" and GunC1[i] != "noone"
+			Gun = GunC1
+			Engine = EngineC1
+		}
+		else
+		{
+			Gun = GunC2
+			Engine = EngineC2
+		}
+		
+		for (i=1; i<=Gun[0]; i+=1)
+		{
+			if Gun[i] != "" and Gun[i] != "noone"
 			{
-				var _damage = info_weapons(GunC1[i],"damage");
-				MaxDamageGunC1+=_damage; gunsC1+=1; GunDmgC1[i]=_damage;
+				var _damage = info_weapons(Gun[i],"damage");
+				MaxDamageGun+=_damage; guns+=1; GunDmg[i]=_damage;
 			}
 		}
 		
@@ -42,11 +55,11 @@ function guns_installation(_id){
 		                SHIELDS
 		*************************************************/
 		#region
-		for (i=1; i<=EngineC1[0]; i+=1)
+		for (i=1; i<=Engine[0]; i+=1)
 		{
-			if EngineC1[i] != "" and EngineC1[i] != "noone"
+			if Engine[i] != "" and Engine[i] != "noone"
 			{
-				var _shield = info_weapons(EngineC1[i],"shield");
+				var _shield = info_weapons(Engine[i],"shield");
 				shield_def+=_shield; 
 			}
 		}

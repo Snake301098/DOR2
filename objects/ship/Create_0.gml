@@ -123,6 +123,31 @@ isbotter=0;
 
 if isInvader = 1 then isbotter=0;
 
+gun_slots=0
+shield_slots=0
+
+/*
+if Ship = "bigboy" then {gun_slots = 6; shield_slots=5}
+if Ship = "leonov" then {gun_slots = 8; shield_slots=7}
+if Ship = "nostromo" then {gun_slots = 5; shield_slots=4}
+if Shiptype = "vengeance" then {gun_slots = 10; shield_slots=12}
+if Shiptype = "goliath" then {gun_slots = 15; shield_slots=15}
+if Ship = "aegis" then {gun_slots = 8; shield_slots=12}
+if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
+if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
+
+*/
+
+config = 1
+
+Gun=array_create(15)
+GunC1=array_create(15)
+GunC2=array_create(15)
+Engine=array_create(15)
+EngineC1=array_create(15)
+EngineC2=array_create(15)
+
+
 event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.
 event_user(3);
 guns_installation(id);

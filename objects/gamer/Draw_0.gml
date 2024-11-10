@@ -7,7 +7,7 @@ if(global.cloaked == 1){
 if destroyed=1 then alpha=0;
 SHIPXX=view_xview+640*global.xwidthscale; SHIPYY=view_yview+360*global.yheightscale
 //Let"s do the actual drawing now...
-if(attacking == false and attacking_laser=false) {
+if(attacking == false) {
     directions=direction;
     image_index = round(set_angle(image_index*(360/32),directions,dirspeed)/(360/32));
 }else{ 

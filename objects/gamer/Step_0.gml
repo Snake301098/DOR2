@@ -109,7 +109,7 @@ if destroyed=1 or instance_exists(window_background)
 #region
 //Ïðîâåðêà ðàññòîÿíèÿ äî îáúåêòà â ëîêå è îòêðûòèå ñòðåëüáû ïî âîçìîæíîñòè.
 var ii;
-    if attacking=true and attacking_laser=false and stoped=false then 
+    if attacking=true and stoped=false then 
     {
     if firing = shoot_delay then firing = 0;
     //if not instance_exists(target) {target = noone;attacking=false;} 
@@ -125,7 +125,7 @@ var ii;
     //if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
         //{   
             restore:=0;
-            if gamer.gunsC1<1 then 
+            if gamer.Gun[0]<1 then 
                 {
 					show_message("No canons installed"); exit;
                 }
@@ -148,7 +148,7 @@ var ii;
 #region
 //Ïðîâåðêà ðàññòîÿíèÿ äî îáúåêòà â ëîêå è îòêðûòèå ñòðåëüáû ïî âîçìîæíîñòè.
 var ii;
-    if attacking_laser=true and attacking=false and stoped=false then 
+    if attacking=false and stoped=false then 
     {
     if firing = shoot_delay then firing = 0;
     //if not instance_exists(target) {target = noone;attacking=false;} 
@@ -164,7 +164,7 @@ var ii;
     //if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
         //{   
             restore:=0;
-            if lasers<1 then 
+            if gamer.Gun[0]<1 then 
                 {
                 show_message("No guns installed"); exit;
                 }
@@ -185,7 +185,7 @@ var ii;
 
 //FIXES
 #region
-if mouse_check_button(mb_left)=true and mouse_check_button(mb_right)=true then {attacking=false; attacking_laser=false;}
+if mouse_check_button(mb_left)=true and mouse_check_button(mb_right)=true then {attacking=false;}
 if damageToDraw>0 and hasStartedAlarm8=false then {hasStartedAlarm8=true; alarm[8] = 6;}
 if visible=false then visible=true
 //Autolock fix

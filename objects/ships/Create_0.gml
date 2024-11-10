@@ -40,7 +40,7 @@ pilotsheet_ship_hull_ii=0
 
 //own_shield_c1=shield_def;
 //own_shield_c2=shield_def;
-config="Config 1";
+config=1;
 critical_hit = false;
 
 //own_shield=shield_def;              //Íàïîëíåíèå ïåðåìåííîé, îòâå÷àþùåé çà ñèþìèíóòíîå êîë-âî ùèòà.
@@ -87,10 +87,6 @@ for (i:=1; i<=12; i+=1) {
 droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
 /* Ñâåäåíèÿ î äðîèäàõ. [i,0] - id i-ãî ñëîòà äðîèäîâ. [i,1] - êàêîé äðîèä ïîä íîìåðîì i. [i,1+j] - ÷åì çàíÿò j-é ñëîò äðîèäà ïîä íîìåðîì i. */
 
-Gun[0]:=5;
-for (i:=1; i<=5; i+=1) Gun[i]="noone"
-/* Ñâåäåíèÿ î ñëîòàõ ïóøåê íà êîðàáëå. Gun[i]= êàêîé ïóøêîé çàíÿò i-é ñëîò äëÿ ïóøåê íà êîðàáëå */
-
 Laser[0]:=5;
 for (i:=1; i<=5; i+=1) Laser[i]="noone"
 /* Ñâåäåíèÿ î ñëîòàõ ïóøåê íà êîðàáëå. Gun[i]= êàêîé ïóøêîé çàíÿò i-é ñëîò äëÿ ïóøåê íà êîðàáëå */
@@ -114,10 +110,6 @@ for (i:=1; i<=5; i+=1) LaserDmg[i]=0;
 Generator[0]:=9;
 for (i:=1; i<=30; i+=1) Generator[i]="noone"
 /* Ñâåäåíèÿ î ñëîòàõ ãåíåðàòîðîâ íà êîðàáëå. Generator[i]= êàêèì ãåíåðàòîðîì çàíÿò i-é ñëîò äëÿ ãåíåðàòîðîâ íà êîðàáëå */
-
-Engine[0]:=10;
-for (i:=1; i<=30; i+=1) Engine[i]="noone"
-/* Ñâåäåíèÿ î ñëîòàõ äâèãàòåëåé íà êîðàáëå. Generator[i]= êàêèì äâèãàòåëåì çàíÿò i-é ñëîò äëÿ äâèãàòåëåé íà êîðàáëå */
 
 Inventory[0]:=72;
 for (i:=1; i<=Inventory[0]; i+=1) Inventory[i]="noone"
