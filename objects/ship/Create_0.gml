@@ -17,6 +17,7 @@ isStopped=0; //ship movement IA when just not moving
 isAttacked=0; //if another ship is attacking id
 isAttacking=0; //if is attacking another ship
 can_use_nuke_k1=true;
+ammo_selected=x4_ammo;
 
 money=0;                                //Íàãðàäà çà êîðàáëü ââèäå äåíåã.
 runing=false;                           //Îïðåäåëÿåò, ïûòàåòñÿ ëè êîðàáëü ñáåæàòü.
@@ -60,6 +61,7 @@ actionclock = 200;
 emp=0;
 giveadmin=0;
 rings=0;
+MaxDamage=0;
 droneformation=1;
 corporation=0;
 cpclock=100; //clock for alarm for control point not going out of the objective
@@ -140,12 +142,12 @@ if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
 
 config = 1
 
-Gun=array_create(15)
-GunC1=array_create(15)
-GunC2=array_create(15)
-Engine=array_create(15)
-EngineC1=array_create(15)
-EngineC2=array_create(15)
+Gun=[]
+GunC1=[]
+GunC2=[]
+Engine=[]
+EngineC1=[]
+EngineC2=[]
 
 
 event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.

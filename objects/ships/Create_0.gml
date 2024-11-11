@@ -13,6 +13,7 @@ restore=false;                      //Ñòàòóñ ïîêîÿ (íå â áîþ).
 ownership=0;
 targetedship=0;
 cloaked = 0;
+ammo_selected = x1_ammo
 dmg_boost_activated = false;
 count=3;
 hasused=0;

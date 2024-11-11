@@ -4,7 +4,7 @@ x=6200;
 y=0;
 config=1;
 nickname = "gamer";
-//event_inherited(); 
+event_inherited(); 
 attacking=false; //rocket launcher
 KeyActionCURKEY=0;
 followHP=0;
@@ -16,10 +16,12 @@ can_use_warrep=true;
 can_use_dmg_boost=true;
 dmg_boost_activated=false;
 critical_hit = false;
+just_hit_rsb = 0; //if we click on x4 after rsb it won't stop attacking (remembers we were using rsb)
 shield_def = 0
 alpha=1;
 using_premium_lasers=false;
 destroyed=0;
+MaxDamage=0;
 emp=0;
 ish=0;
 dronesNbr=0;

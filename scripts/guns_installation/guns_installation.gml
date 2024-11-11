@@ -19,8 +19,11 @@ function guns_installation(_id){
 		//Gun[0]:=info(Ship,"gun_slots");
 		//GunDmg[0]:=info(Ship,"gun_slots");
 		//Generator[0]:=info_shiptypes(Shiptype,"generator_slots");
-		Generator[0]=15
-		Engine[0]=15
+		if id = gamer.id
+		{
+			Generator[0]=15
+			Engine[0]=15
+		}
 		//Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
 		#endregion
 		
@@ -45,7 +48,7 @@ function guns_installation(_id){
 			if Gun[i] != "" and Gun[i] != "noone"
 			{
 				var _damage = info_weapons(Gun[i],"damage");
-				MaxDamageGun+=_damage; guns+=1; GunDmg[i]=_damage;
+				MaxDamage+=_damage; guns+=1; GunDmg[i]=_damage;
 			}
 		}
 		

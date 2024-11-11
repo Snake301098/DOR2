@@ -13,7 +13,7 @@ if firing < 15 firing+= 3;}
 
 
 if firing < 15 firing += 0.5/2/1.5;
-if firing > 15 firing=15
+if firing >= 15 firing=15
 #endregion
 
 
@@ -22,7 +22,7 @@ if firing > 15 firing=15
 var ii;
 if attacking=true then 
 {
-	if firing = 0
+	if firing = 15
 	{
 		if not instance_exists(target)
 		{
@@ -34,6 +34,7 @@ if attacking=true then
 	        if target.v_zone_bz=true then 
 			{
 				show_HUD_message(text.target_in_security);
+				attacking=false;
 			}
 			else
 			{
@@ -41,6 +42,7 @@ if attacking=true then
 				if corporation=target.corporation then            
 				{
 					show_HUD_message(text.target_is_ally)
+					attacking=false;
 				}
 				else
 				{
@@ -62,6 +64,7 @@ if attacking=true then
 				}
 			}
 		}
+		firing = 0;
 	}
 }
 #endregion
@@ -105,82 +108,6 @@ if destroyed=1 or instance_exists(window_background)
 #endregion
 
 
-//ATTACKING LAUNCHER ---------------------------------
-#region
-//Ïðîâåðêà ðàññòîÿíèÿ äî îáúåêòà â ëîêå è îòêðûòèå ñòðåëüáû ïî âîçìîæíîñòè.
-var ii;
-    if attacking=true and stoped=false then 
-    {
-    if firing = shoot_delay then firing = 0;
-    //if not instance_exists(target) {target = noone;attacking=false;} 
-        //else 
-        if firing = 0 then
-        {   
-            //if target.v_zone_bz=true then {show_message("NDZ"); exit }
-            //firing = 1;
-    //if ammo[ammo[0,0],0] / global.code1<guns  {show_message("No ammo"); }           
-            //else
-    //if corporation!=target.corporation then            
-    //{
-    //if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
-        //{   
-            restore:=0;
-            if gamer.Gun[0]<1 then 
-                {
-					show_message("No canons installed"); exit;
-                }
-            //if !(debug_mode and global.unlimited_ammo)
-                //ammo[ammo[0,0],0]-=guns*global.code1;
-				critical_hit = choose(false,false,false,false,true);
-            event_user(1); //HERREEEE
-        //}
-            //else
-            //{show_HUD_message(text.target_lenght_out); break;}
-    //}
-    //else {show_HUD_message(text.target_is_ally);target=noone;}
-        }
-    }
-
-#endregion
-
-
-//ATTACKING LASER ---------------------------------
-#region
-//Ïðîâåðêà ðàññòîÿíèÿ äî îáúåêòà â ëîêå è îòêðûòèå ñòðåëüáû ïî âîçìîæíîñòè.
-var ii;
-    if attacking=false and stoped=false then 
-    {
-    if firing = shoot_delay then firing = 0;
-    //if not instance_exists(target) {target = noone;attacking=false;} 
-        //else 
-        if firing = 0 then
-        {   
-            //if target.v_zone_bz=true then {show_message("NDZ"); exit }
-            //firing = 1;
-    //if ammo[ammo[0,0],0] / global.code1<guns  {show_message("No ammo"); }           
-            //else
-    //if corporation!=target.corporation then            
-    //{
-    //if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
-        //{   
-            restore:=0;
-            if gamer.Gun[0]<1 then 
-                {
-                show_message("No guns installed"); exit;
-                }
-            //if !(debug_mode and global.unlimited_ammo)
-                //ammo[ammo[0,0],0]-=guns*global.code1;
-				critical_hit = choose(false,false,false,false,true);
-            event_user(5); //HERREEEE
-        //}
-            //else
-            //{show_HUD_message(text.target_lenght_out); break;}
-    //}
-    //else {show_HUD_message(text.target_is_ally);target=noone;}
-        }
-    }
-
-#endregion
 
 
 //FIXES

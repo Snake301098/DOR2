@@ -55,5 +55,6 @@ if global.attacking_type = 1 then
 	{
 	//gamer.target=noone;
 		moveship=false;
+		attacking=false;
 	}
 }

@@ -3,21 +3,28 @@
 if count <= 1 then firing=14
 var vengx,vengy,goliex,goliey,uses;
 
+attacking = true
 
 uses=5
 if hasused=0 then
 {
+	with(target) a:=distance_to_object(gamer);
+	if ((distance_to_object(gamer)<500) or (a<400) or (object_index=gamer)) then 
 	{
-		{
-			hasused=1     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-		    var ii = instance_create_depth(x+lengthdir_x(94,image_angle),y+lengthdir_y(94,image_angle),0,rsb);
-		    var a =instance_create_depth(ii.x,ii.y,0,blust); a.owner:=id; with(a) event_user(0);
-		    ii.speed = ((global.laser_speed)/2);
-		    ii.target:=target; ii.owner:=id;
-		    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);
-			alarm[10] = 120;
-		}
+	    if (point_distance(x,y,gamer.x,gamer.y) <= 500)
+	    {
+			a:=audio_play_sound(rsb_sound,1,false);
+	    }
 	}
+		
+	hasused=1     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
+	var ii = instance_create_depth(x+lengthdir_x(94,image_angle),y+lengthdir_y(94,image_angle),0,rsb);
+	var a =instance_create_depth(ii.x,ii.y,0,blust); a.owner:=id; with(a) event_user(0);
+	ii.speed = ((global.laser_speed)/2);
+	ii.target:=target; ii.owner:=id;
+	ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);
+	alarm[10] = 120;
+
 }
 
 

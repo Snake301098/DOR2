@@ -4,7 +4,7 @@ var a,ii,i;
 var xdec = 0;
 var ydec = 0;
 if id = gamer.id then {xdec=-50;ydec=-3}
-MaxDamage = 15000
+//MaxDamage = 15000
 
 //Îòêëþ÷åíèå ÁÇ
 v_zone_bz:=false;
@@ -22,7 +22,7 @@ if instance_exists(target)
 	//SAB AMMO.
 	if id=1 //ammo[0,0]=5 then
 	{
-	    ii = instance_create_depth(gamer.target.x+xdec,gamer.target.y+ydec,0,x4_ammo);
+	    ii = instance_create_depth(gamer.target.x+xdec,gamer.target.y+ydec,0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=gamer; ii.owner:=id; ii.myOwner=id;
@@ -33,7 +33,7 @@ if instance_exists(target)
 		if Ship = "phoenix" or Ship = "spearhead"
 		{
 			ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-		    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+		    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 		    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 		    ii.speed = global.laser_speed;
 		    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -59,30 +59,30 @@ if instance_exists(target)
 			
 			var blust_xdec = 20;
 			
-		    laser_1 = instance_create_depth(x+xdec+lengthdir_x(dec1a,image_angle+dec1b),y+ydec+lengthdir_y(dec1a,image_angle+dec1b),0,x4_ammo);
+		    laser_1 = instance_create_depth(x+xdec+lengthdir_x(dec1a,image_angle+dec1b),y+ydec+lengthdir_y(dec1a,image_angle+dec1b),0,ammo_selected);
 		    blust_1=instance_create_depth(laser_1.x+blust_xdec,laser_1.y,0,blust); blust_1.owner:=id; with(blust_1) event_user(0);
 		    laser_1.speed = global.laser_speed;
 		    laser_1.target:=target; laser_1.owner:=id; laser_1.myOwner=id;
 		    laser_1.damage = MaxDamage; laser_1.drawDamage=true; with(laser_1) event_user(0);
 			
-		    laser_2 = instance_create_depth(x+xdec+lengthdir_x(dec2a,image_angle+dec2b),y+ydec+lengthdir_y(dec2a,image_angle+dec2b),0,x4_ammo);
+		    laser_2 = instance_create_depth(x+xdec+lengthdir_x(dec2a,image_angle+dec2b),y+ydec+lengthdir_y(dec2a,image_angle+dec2b),0,ammo_selected);
 		    blust_2=instance_create_depth(laser_2.x+blust_xdec,laser_2.y,0,blust); blust_2.owner:=id; with(blust_2) event_user(0);
 		    laser_2.speed = global.laser_speed;
 		    laser_2.target:=target; laser_2.owner:=id; laser_2.myOwner=id;
 		    laser_2.damage:=0; laser_2.drawDamage=false;; with(laser_2) event_user(0);
 			
-		    laser_3 = instance_create_depth(x+xdec+lengthdir_x(dec3a,image_angle+dec3b),y+ydec+lengthdir_y(dec3a,image_angle+dec3b),0,x4_ammo);
+		    laser_3 = instance_create_depth(x+xdec+lengthdir_x(dec3a,image_angle+dec3b),y+ydec+lengthdir_y(dec3a,image_angle+dec3b),0,ammo_selected);
 		    blust_3=instance_create_depth(laser_3.x+blust_xdec,laser_3.y,0,blust); blust_3.owner:=id; with(blust_3) event_user(0); 
 		    laser_3.speed = global.laser_speed;
 		    laser_3.target:=target; laser_3.owner:=id; laser_3.myOwner=id;
 		    laser_3.damage:=0; laser_3.drawDamage=false;; with(laser_3) event_user(0);
 			
-		    laser_4 = instance_create_depth(x+xdec+lengthdir_x(dec4a,image_angle+dec4b),y+ydec+lengthdir_y(dec4a,image_angle+dec4b),0,x4_ammo);
+		    laser_4 = instance_create_depth(x+xdec+lengthdir_x(dec4a,image_angle+dec4b),y+ydec+lengthdir_y(dec4a,image_angle+dec4b),0,ammo_selected);
 		    blust_4=instance_create_depth(laser_4.x+blust_xdec,laser_4.y,0,blust); blust_4.owner:=id; with(blust_4) event_user(0);
 		    laser_4.speed = global.laser_speed;
 		    laser_4.target:=target; laser_4.owner:=id; laser_4.myOwner=id;
 			
-		    laser_5 = instance_create_depth(x+xdec+lengthdir_x(dec5a,image_angle+dec5b),y+ydec+lengthdir_y(dec5a,image_angle+dec5b),0,x4_ammo);
+		    laser_5 = instance_create_depth(x+xdec+lengthdir_x(dec5a,image_angle+dec5b),y+ydec+lengthdir_y(dec5a,image_angle+dec5b),0,ammo_selected);
 		    blust_5=instance_create_depth(laser_5.x+blust_xdec,laser_5.y,0,blust); blust_5.owner:=id; with(blust_5) event_user(0); 
 		    laser_5.speed = global.laser_speed;
 		    laser_5.target:=target; laser_5.owner:=id; laser_5.myOwner=id;
@@ -96,32 +96,32 @@ if instance_exists(target)
 	//Nostromo
 	case "nostromo": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(73,image_angle),y+ydec+lengthdir_y(73,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(73,image_angle),y+ydec+lengthdir_y(73,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle+13.5),y+ydec+lengthdir_y(51.42,image_angle+13.5),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle+13.5),y+ydec+lengthdir_y(51.42,image_angle+13.5),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle-13.5),y+ydec+lengthdir_y(51.42,image_angle-13.5),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle-13.5),y+ydec+lengthdir_y(51.42,image_angle-13.5),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle+13.81),y+ydec+lengthdir_y(37.16,image_angle+13.81),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle+13.81),y+ydec+lengthdir_y(37.16,image_angle+13.81),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle-13.81),y+ydec+lengthdir_y(37.16,image_angle-13.81),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle-13.81),y+ydec+lengthdir_y(37.16,image_angle-13.81),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -129,32 +129,32 @@ if instance_exists(target)
 	//Leonov
 	case "leonov": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(73,image_angle),y+ydec+lengthdir_y(73,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(73,image_angle),y+ydec+lengthdir_y(73,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle+13.5),y+ydec+lengthdir_y(51.42,image_angle+13.5),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle+13.5),y+ydec+lengthdir_y(51.42,image_angle+13.5),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle-13.5),y+ydec+lengthdir_y(51.42,image_angle-13.5),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.42,image_angle-13.5),y+ydec+lengthdir_y(51.42,image_angle-13.5),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle+13.81),y+ydec+lengthdir_y(37.16,image_angle+13.81),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle+13.81),y+ydec+lengthdir_y(37.16,image_angle+13.81),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle-13.81),y+ydec+lengthdir_y(37.16,image_angle-13.81),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(37.16,image_angle-13.81),y+ydec+lengthdir_y(37.16,image_angle-13.81),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -162,37 +162,37 @@ if instance_exists(target)
 	//Phoenix
 	case "phoenix": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "admin": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(angel) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(angel) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(angel) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //By manulaiko
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(angel) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //By Manulaiko
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(angel) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -200,32 +200,32 @@ if instance_exists(target)
 	//Vengeance
 	case "vengeance": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -233,32 +233,32 @@ if instance_exists(target)
 	//Avenger
 	case "avenger": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -266,32 +266,32 @@ if instance_exists(target)
 	//Revenge
 	case "revenge": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -299,32 +299,32 @@ if instance_exists(target)
 	//lightning
 	case "lightning": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -332,32 +332,32 @@ if instance_exists(target)
 	//Goliath
 	case "goliath": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -365,32 +365,32 @@ if instance_exists(target)
 	//Bastion
 	case "bastion": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -398,32 +398,32 @@ if instance_exists(target)
 	//Enforcer
 	case "enforcer": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -431,32 +431,32 @@ if instance_exists(target)
 	//Venom
 	case "venom": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -464,32 +464,32 @@ if instance_exists(target)
 	//Diminisher
 	case "diminisher": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -497,32 +497,32 @@ if instance_exists(target)
 	//Solace
 	case "solace": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -530,32 +530,32 @@ if instance_exists(target)
 	//Sentinel
 	case "sentinel": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -563,32 +563,32 @@ if instance_exists(target)
 	//Spectrum
 	case "spectrum": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -596,71 +596,71 @@ if instance_exists(target)
     
 	case "citadel": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);} break;}
 	case "aegis": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);} break;}
 	case "spearhead": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -668,130 +668,130 @@ if instance_exists(target)
 	//To make alien-cheat work w/ lasers
 	case "streunerG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "boss_streunerG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "lordakiaG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;} 
 	case "boss_lordakiaG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "mordonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "boss_mordonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;} 
 	case "saimonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "boss_saimonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "protegitG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "cubikonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "devolariumG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "boss_devolariumG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "sibelonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}
 	case "boss_sibelonG": {
 	    ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,x4_ammo);
+	    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0); break;}      
 	case "kringspiermusketier": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -801,32 +801,32 @@ if instance_exists(target)
 	//Adept
 	case "adept": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -834,32 +834,32 @@ if instance_exists(target)
 	//Corsair
 	case "corsair": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(94,image_angle),y+ydec+lengthdir_y(94,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle+18),y+ydec+lengthdir_y(51.55,image_angle+18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(51.55,image_angle-18),y+ydec+lengthdir_y(51,image_angle-18),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle+81.70),y+ydec+lengthdir_y(48.50,image_angle+81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(48.50,image_angle-81.70),y+ydec+lengthdir_y(48.50,image_angle-81.70),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -868,32 +868,32 @@ if instance_exists(target)
 	//kick
 	case "kick": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -901,32 +901,32 @@ if instance_exists(target)
 	//referee
 	case "referee": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -934,32 +934,32 @@ if instance_exists(target)
 	//goal
 	case "goal": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -967,32 +967,32 @@ if instance_exists(target)
 	//centaur
 	case "centaur": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -1000,32 +1000,32 @@ if instance_exists(target)
 	//saturn
 	case "saturn": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -1033,32 +1033,32 @@ if instance_exists(target)
 	//exalted
 	case "exalted": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -1066,32 +1066,32 @@ if instance_exists(target)
 	//veteran
 	case "veteran": {
 	if GunSprite[1]!=2 and GunSprite[1]!=4 then {     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(30,image_angle),y+ydec+lengthdir_y(27,image_angle),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);}
 	if GunSprite[1]>=2 then {   //Âûñòðåë 2-ìÿ ëàçåðàìè ñ ïåðåäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(68.10,image_angle+29.54),y+ydec+lengthdir_y(68.10,image_angle+29.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    if (GunSprite[1]=2) or (GunSprite[1]=4) then ii.damage = MaxDamage else ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(70.71,image_angle-28.74),y+ydec+lengthdir_y(70.71,image_angle-28.74),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage:=0; ii.drawDamage=false;; with(ii) event_user(0);}
 	if GunSprite[1]>=4 then {    //Âûñòðåë 2-ìÿ ëàçåðàìè ñ çàäíèõ êðàåâ êîðàáëÿ.
 	    //Ñîçäàíèå ïåðâîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(34.48,image_angle+119.54),y+ydec+lengthdir_y(34.48,image_angle+119.54),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    //Ñîçäàíèå âòîðîãî ëàçåðà.
-	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,x4_ammo);
+	    ii = instance_create_depth(x+xdec+lengthdir_x(32.65,image_angle-117.35),y+ydec+lengthdir_y(32.65,image_angle-117.35),0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0); 
 	    ii.speed = global.laser_speed;
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -1106,7 +1106,7 @@ if instance_exists(target)
 	    if droid[i,0]!=noone then
 	    if (droid[i,2] = "MP-1" or droid[i,3] = "MP-1")
 	      or (droid[i,2] = "LF-1" or droid[i,3] = "LF-1") then
-	        {ii = instance_create_depth(droid[i,0].x+xdec,droid[i,0].y+ydec,0,x4_ammo);
+	        {ii = instance_create_depth(droid[i,0].x+xdec,droid[i,0].y+ydec,0,ammo_selected);
 	        a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner=droid[i,0]; with(a) {with(a) event_user(0);}
 	        ii.speed = global.laser_speed;
 	        ii.target:=target; ii.owner:=id; ii.myOwner=id;
@@ -1115,7 +1115,7 @@ if instance_exists(target)
 	    }}
 	}
 	else {//Ñîçäàíèå îäíîãî ëàçåðà (ýêîíîìíûé ðåæèì (ïîâûøàåò ïðîèçâîäèòåëüíîñòü)).
-	    ii = instance_create_depth(x+xdec,y+ydec,0,x4_ammo);
+	    ii = instance_create_depth(x+xdec,y+ydec,0,ammo_selected);
 	    ii.speed = global.laser_speed;
 	    ii.direction = point_direction(x+xdec,y+ydec,target.x+xdec,target.y);
 	    ii.target:=target; ii.owner:=id; ii.myOwner=id;

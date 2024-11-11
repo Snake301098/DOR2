@@ -4,7 +4,4 @@ image_yscale = 1.1;//global.scale;
 
 //draw_text_ol(view_xview+640*global.xwidthscale,view_yview+471*global.yheightscale,global.DisplayNickname,global.HUD_color,c_black);
 
-if object_index=x4_ammo then draw_sprite_ext(sprite_index,4,round(x),round(y),image_xscale,image_yscale,direction,c_white,image_alpha)
-	
-if object_index=rsb then draw_sprite_ext(sprite_index,1,round(x),round(y),image_xscale,image_yscale,direction,c_white,image_alpha)
-	
+draw_sprite_ext(sprite_index,image_index,round(x),round(y),image_xscale,image_yscale,direction,c_white,image_alpha)

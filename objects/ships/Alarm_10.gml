@@ -1,5 +1,5 @@
 /// @description RSB reset
-count = 3
+count = 2
 hasused = 0
 canusersb = 1
 
