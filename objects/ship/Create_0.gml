@@ -173,4 +173,3 @@ alarm[2]=irandom_range(10,120);
 alarm[3]=irandom_range(10,120);
 alarm[6]=irandom_range(10,120);
 alarm[9] = irandom_range(10,120);
-alarm[11]=irandom_range(10,120);

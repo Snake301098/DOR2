@@ -227,14 +227,47 @@ if(cansmb && hassmb){
         MyCooldown.alarm[9]=20*room_speed*2.5;
     } 
 }
-
+*/
 //Check if in range for rsb
-if distance_to_object(target) <= range and canusersb=1 and hasemp=1 then{
-event_user(15)
-}//Not within range for emp/ish :(
+//if distance_to_object(target) <= range and canusersb=1 //and hasemp=1 then
+//{
+//	event_user(15)
+//}
+
+var _canusersb=0;
+
+just_hit_rsb=1
+
+var me = id;
+if canusersb=1 and instance_exists(target)
+{
+	canusersb=0 
+	if target.v_zone_bz=true then 
+	{
+		attacking=false;
+	}
+	else
+	{
+	//if ammo[ammo[0,0],0] / global.code1<guns  {show_HUD_message(text.no_ammo); break;}           
+		if corporation=target.corporation then            
+		{
+			attacking=false;
+		}
+		else
+		{
+			if distance_to_object(target) <= range
+			{
+				alarm[11]=1;
+				canusersb=0;
+			}
+		}
+	}
+}
+
+/*//Not within range for emp/ish :(
 }else {exit;}
 //Wrong target
-} else {exit;}*/
+} else {exit;}
 //Not attacking
 /*} }else {exit;}
 }*/

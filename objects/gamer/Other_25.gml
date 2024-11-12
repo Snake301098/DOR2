@@ -79,7 +79,7 @@ if KeyActionCURKEY = 16 then
 //Repair
 if KeyActionCURKEY = 17 then
 {
-	if (instance_exists(repbot)=false and own_health!=health_def and attacking=false and attacking_laser=false) then {rep=instance_create_depth(x,y,-5,repbot); rep.owner=gamer.id;}
+	if (instance_exists(repbot)=false and own_health!=health_def and attacking=false) then {rep=instance_create_depth(x,y,-5,repbot); rep.owner=gamer.id;}
 }
 //DroneFormationDefault
 if KeyActionCURKEY = 18 then
