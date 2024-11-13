@@ -1,6 +1,5 @@
 delay = room_speed / 2
 owner=noone;
-ability_number=-1;
 sprite_index=warrep_spr;
 healthRegen=10000;
 image_speed=1// /15;

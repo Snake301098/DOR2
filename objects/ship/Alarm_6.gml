@@ -20,6 +20,9 @@ if action[0] != "running" //it was if is not invader before
 			{
 				path_end();
 				action[0] = "running"
+				var nearest_portal = instance_nearest(x,y, teleport);
+				running_x = (nearest_portal.x - x)*1000000 + x
+				running_y = (nearest_portal.y - y)*1000000 + y
 				break;
 			}
 			

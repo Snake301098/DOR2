@@ -13,4 +13,4 @@ else
 	draw_damage(owner.id,"+" + damage_syntax(healthRegen),c_lime);
 //}
 
-alarm[0]=delay;
+alarm[1]=delay;

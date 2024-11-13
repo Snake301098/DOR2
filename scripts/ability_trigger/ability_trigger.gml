@@ -1,14 +1,13 @@
 /// @description
-function ability_trigger(owner,ability,ability_number)
+function ability_trigger(owner,ability)
 {
 	//WARREP ----------------------------------------------
 	if ability = "warrep"
 	{
-		if ability_number = 1 and owner.can_use_ability_1 = true or ability_number = 2 and owner.can_use_ability_2 = true or ability_number = 1 and owner.can_use_ability_1 = true
+		if owner.can_use_warrep = true
 		{
 				var _warrep = instance_create_depth(0,0,0,warrep);
 				_warrep.owner = owner.id;
-				_warrep.ability_number = ability_number;
 		}
 		else
 		{
@@ -16,6 +15,7 @@ function ability_trigger(owner,ability,ability_number)
 		}
 	}
 	
+	/*
 	//DMG BOOST ----------------------------------------------
 	if ability = "dmg_boost"
 	{
@@ -31,4 +31,5 @@ function ability_trigger(owner,ability,ability_number)
 			if owner = gamer.id then show_HUD_message("Damage boost still recharging")
 		}
 	}
+	*/
 }

@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"ability_trigger",
+  "%Name":"select_ammo",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ability_trigger",
+  "name":"select_ammo",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

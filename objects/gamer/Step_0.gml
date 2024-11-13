@@ -46,8 +46,7 @@ if attacking=true then
 				}
 				else
 				{
-					var range = 500;
-					if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
+					if point_distance(x,y,target.x,target.y) <= global.range+target.sprite_width*0.75 then
 					{   
 						restore:=false;
 						//if GunSprite[1]<1 then 
@@ -160,6 +159,8 @@ if attacking=true and global.cloaked=1 then {global.cloaked=0}
 //DEAD RESPAWN
 if own_health <= 0
 {   
+	target = noone;
+	attacking = false;
 	//Remove gamer from targets
 	with(ship){if instance_exists(target){if target = gamer.id then target = noone}}
 	if !instance_exists(respawn) then instance_create_depth(0,0,0,respawn);

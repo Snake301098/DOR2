@@ -195,6 +195,7 @@
     {"id":{"name":"info","path":"scripts/info/info.yy",},},
     {"id":{"name":"load_game","path":"scripts/load_game/load_game.yy",},},
     {"id":{"name":"LoadFMOD","path":"scripts/LoadFMOD/LoadFMOD.yy",},},
+    {"id":{"name":"select_ammo","path":"scripts/select_ammo/select_ammo.yy",},},
     {"id":{"name":"select_target_mob","path":"scripts/select_target_mob/select_target_mob.yy",},},
     {"id":{"name":"select_target","path":"scripts/select_target/select_target.yy",},},
     {"id":{"name":"set_angle","path":"scripts/set_angle/set_angle.yy",},},

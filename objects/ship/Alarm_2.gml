@@ -17,8 +17,7 @@ if instance_exists(target) then
 		}
 		else
 		{
-			var range = 500;
-			if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
+			if point_distance(x,y,target.x,target.y) <= global.range+target.sprite_width*0.75 then
 			{   
 				restore:=false;
 				//if GunSprite[1]<1 then 
@@ -32,7 +31,7 @@ if instance_exists(target) then
 	}
 }
 
-alarm[2]=11*2*2;
+alarm[2]=11*2*1.5;
 
 /*
 if instance_exists(target)

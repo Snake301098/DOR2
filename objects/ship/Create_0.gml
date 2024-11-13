@@ -164,6 +164,10 @@ ability_1 = "a"
 ability_2 = "a"
 can_use_ability_1 = true;
 can_use_ability_2 = true;
+can_use_warrep = true;
+
+running_x=0; //memorize where to run, so once reached the portal it continues going straight after it instead
+running_y=0; // of going back to the portal and being stuck
 
 
 visible=true;

@@ -137,7 +137,7 @@ if damageToDraw>0 and hasStartedAlarm8=false then {hasStartedAlarm8=true; alarm[
 
 if instance_exists(target) and waiting_cp_spawn = 0 then 
 {  
-	if distance_to_object(target) > irandom_range(0.7*range+sprite_width,range+sprite_width) then 
+	if distance_to_object(target) > irandom_range(0.7*global.range+sprite_width,global.range+sprite_width) then 
 	{
         with (way) {if owner=other.id then instance_destroy()};
         with(instance_create_depth(target.x,target.y,0,way)) {owner=other.id;}
@@ -236,12 +236,10 @@ if(cansmb && hassmb){
 
 var _canusersb=0;
 
-just_hit_rsb=1
 
 var me = id;
 if canusersb=1 and instance_exists(target)
 {
-	canusersb=0 
 	if target.v_zone_bz=true then 
 	{
 		attacking=false;
@@ -255,7 +253,7 @@ if canusersb=1 and instance_exists(target)
 		}
 		else
 		{
-			if distance_to_object(target) <= range
+			if distance_to_object(target) <= global.range
 			{
 				alarm[11]=1;
 				canusersb=0;
@@ -346,11 +344,7 @@ followHP = lerp(followHP, own_health, 0.02) //hit health bar point effect
 if action[0] = "running"
 {
 	path_end();
-	var nearest_portal = instance_nearest(x,y, teleport);
-	if  instance_exists(nearest_portal)
-	{
-		move_towards_point(nearest_portal.x,nearest_portal.y,ship_speed)
-	}
+	move_towards_point(running_x,running_y,ship_speed)
 }
 
 if Ship = "aegis" then action[0]="healer"
