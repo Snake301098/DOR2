@@ -169,3 +169,5 @@ if own_health <= 0
 
 followHP = lerp(followHP, own_health, 0.02) //hit health bar point effect
 followShield = lerp(followShield, own_shield, 0.02) //hit health bar point effect
+
+event_inherited()

@@ -44,7 +44,7 @@ if(droid[9,1]!="noone" and droid[9,1]!=""){droid[9,1] = "apis"}
 if(droid[10,1]!="noone" and droid[10,1]!=""){droid[10,1] = "zeus"}
 
 
-/*
+
 for (i=1; i<=10; i+=1)
     {
     //if instance_exists(droid[i,0]) then with(droid[i,0]) instance_destroy();

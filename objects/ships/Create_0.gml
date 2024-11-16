@@ -37,7 +37,7 @@ isFollower = choose(0,0,1,1,1); //for alarm 1 ship movement AI logic
 pilotsheet_ship_hull_i=0
 pilotsheet_ship_hull_ii=0
 
-
+follow_angle = 0; //follow angle for drones
 
 //own_shield_c1=shield_def;
 //own_shield_c2=shield_def;
