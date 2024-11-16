@@ -348,7 +348,6 @@ if action[0] = "running"
 }
 
 if Ship = "aegis" then action[0]="healer"
-if alarm[2]<0 then alarm[2]=11*2*2
 /*
 //if too far from target
 if instance_exists(target) then 

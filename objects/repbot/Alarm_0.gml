@@ -5,6 +5,7 @@ else {instance_destroy();}
 if owner=gamer.id then
 {
 	draw_damage(gamer.id,"+" + damage_syntax(healthRegen),c_lime);
+	with(gamer){alarm[2]=1;}
 }
 
 alarm[0]=2*room_speed;

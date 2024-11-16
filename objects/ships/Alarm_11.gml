@@ -1,15 +1,17 @@
 /// @description RSB
-/// @description RSB
+
+
 if count <= 1 then firing=14
 var vengx,vengy,goliex,goliey,uses;
 
-attacking = true
+//attacking = true
 
 if instance_exists(target)
 {
 	uses=5
 	if hasused=0 then
 	{
+		
 		with(target) a:=distance_to_object(gamer);
 		if ((distance_to_object(gamer)<500) or (a<400) or (object_index=gamer)) then 
 		{
@@ -20,6 +22,7 @@ if instance_exists(target)
 		}
 		
 		hasused=1     //Âûñòðåë ëàçåðîì èç ñåðåäèíû êîðàáëÿ.
+		
 		var ii = instance_create_depth(x+lengthdir_x(94,image_angle),y+lengthdir_y(94,image_angle),0,rsb);
 		var a =instance_create_depth(ii.x,ii.y,0,blust); a.owner:=id; with(a) event_user(0);
 		ii.speed = ((global.laser_speed)/2);

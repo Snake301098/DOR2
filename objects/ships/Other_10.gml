@@ -53,6 +53,8 @@ for (i=1; i<=10; i+=1)
 	        droid[i,0]=instance_create_depth(x,y,-1,droid_obj);
 	        droid[i,0].pos:=i;
 	        droid[i,0].owner=id;
+	        droid[i,0].x=id.x;
+	        droid[i,0].y=id.y;
 			if id=gamer.id then {droid[i,0].x=1920/2; droid[i,0].y=1080/2;}
         }
     }

@@ -55,3 +55,6 @@ if owner=gamer.id then depth=-1 else depth=1;
         break;
         }            
     }
+	
+x = owner.x
+y = owner.y

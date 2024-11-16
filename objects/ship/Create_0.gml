@@ -148,7 +148,8 @@ GunC2=[]
 Engine=[]
 EngineC1=[]
 EngineC2=[]
-
+own_shieldC1=0
+own_shieldC2=0
 
 event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.
 event_user(3);
@@ -175,5 +176,6 @@ alarm[0]=irandom_range(10,120);
 alarm[1]=irandom_range(10,120);
 alarm[2]=irandom_range(10,120);
 alarm[3]=irandom_range(10,120);
+alarm[4]=irandom_range(10,120);
 alarm[6]=irandom_range(10,120);
 alarm[9] = irandom_range(10,120);

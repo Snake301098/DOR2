@@ -13,11 +13,11 @@ if instance_exists(target) then
 		if corporation=target.corporation then            
 		{
 			attacking=false;
-		target=noone;
+			target=noone;
 		}
 		else
 		{
-			if point_distance(x,y,target.x,target.y) <= global.range+target.sprite_width*0.75 then
+			if point_distance(x,y,target.x,target.y) <= 500//global.range then
 			{   
 				restore:=false;
 				//if GunSprite[1]<1 then 

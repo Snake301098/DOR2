@@ -37,6 +37,7 @@ radarrange=800*0.6/1.5;                     //Äàëüíîñòü "âèäèìîñ
 range=650;
 stoped=false;                       //Ñòàòóñ ñòûêîâêè.
 alarm[0]=15*2;                      //Ìàññèâ, îòâå÷àþùèé çà äèçàéíû. [0] - óñòàíîâëåííûé äèçàéí, [i] - åñòü ëè ó èãðîêà i-ûé äèçàéí.
+alarm[2] = 60;
 destroy:=false;
 protocol:="";                       //Èñïîëüçóåòñÿ äëÿ çàïèñè ïðîòîêîëà.
 HUD_message:=""                     //HUD ñîîáùåíèÿ. Èñïîëüçóþòñÿ äëÿ îòîáðàæåíèÿ ñðî÷íîé èíôîðìàöèè.
@@ -177,7 +178,8 @@ GunC2=array_create(15)
 Engine=array_create(15)
 EngineC1=array_create(15)
 EngineC2=array_create(15)
-
+own_shieldC1=0
+own_shieldC2=0
 
 
 visible=true;

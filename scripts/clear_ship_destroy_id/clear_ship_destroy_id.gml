@@ -14,6 +14,7 @@ function clear_ship_destroy_id(_id)
 	with (droid_obj) {if (owner=myid) then instance_destroy();}
 	with (way) {if owner=myid then instance_destroy();}
 	with (warrep) {if owner=myid then instance_destroy();}
+	with (shield_restore_ctrl) {if owner=myid then instance_destroy();}
 	with (cooldowns_ctrl) {if owner=myid then instance_destroy();}
 	with (nuke) {if owner=myid then instance_destroy();}
 	with(mob){if target=myid then {target=noone;attacking=false;}}

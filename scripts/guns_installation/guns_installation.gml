@@ -58,6 +58,9 @@ function guns_installation(_id){
 		                SHIELDS
 		*************************************************/
 		#region
+		//CONFIG 2
+		Engine = EngineC2
+		shield_def = 0
 		for (i=1; i<=Engine[0]; i+=1)
 		{
 			if Engine[i] != "" and Engine[i] != "noone"
@@ -66,6 +69,25 @@ function guns_installation(_id){
 				shield_def+=_shield; 
 			}
 		}
+		shield_defC2 = shield_def
+		own_shieldC2 = shield_defC2
+		
+		//CONFIG 1
+		Engine = EngineC1
+		shield_def = 0
+		for (i=1; i<=Engine[0]; i+=1)
+		{
+			if Engine[i] != "" and Engine[i] != "noone"
+			{
+				var _shield = info_weapons(Engine[i],"shield");
+				shield_def+=_shield; 
+			}
+		}
+		shield_defC1 = shield_def
+		own_shieldC1 = shield_defC1
+		
+		shield_def = shield_defC1
+		own_shield = own_shieldC1
 		
 		#endregion
 

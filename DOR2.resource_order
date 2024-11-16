@@ -2,10 +2,12 @@
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"rsb","order":1,"path":"objects/rsb/rsb.yy",},
+    {"name":"shield_restore_ctrl","order":6,"path":"objects/shield_restore_ctrl/shield_restore_ctrl.yy",},
     {"name":"x1_ammo","order":3,"path":"objects/x1_ammo/x1_ammo.yy",},
     {"name":"x2_ammo","order":4,"path":"objects/x2_ammo/x2_ammo.yy",},
     {"name":"x3_ammo","order":5,"path":"objects/x3_ammo/x3_ammo.yy",},
     {"name":"x4_ammo","order":2,"path":"objects/x4_ammo/x4_ammo.yy",},
+    {"name":"change_config","order":2,"path":"scripts/change_config/change_config.yy",},
     {"name":"select_ammo","order":1,"path":"scripts/select_ammo/select_ammo.yy",},
     {"name":"rsb_sound","order":1,"path":"sounds/rsb_sound/rsb_sound.yy",},
     {"name":"rsb_spr","order":1,"path":"sprites/rsb_spr/rsb_spr.yy",},

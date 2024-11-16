@@ -218,6 +218,9 @@ for (i:=1; i<=bo0_nbr; i+=1;) {array_push(EngineC1,"BO-0");}
 for (i:=1; i<=bo1_nbr; i+=1;) {array_push(EngineC1,"BO-1");}
 for (i:=1; i<=bo2_nbr; i+=1;) {array_push(EngineC1,"BO-2");}
     	
+GunC2 = GunC1
+EngineC2 = EngineC1
+		
 event_user(0);
 	
 guns_installation(id);	

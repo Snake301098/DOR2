@@ -45,7 +45,9 @@ draw_text(100,360,"Nuke K1 qty: " + string(global.nuke_k1));
 //HP etc
 draw_set_valign(fa_middle);
 draw_sprite_ext(userhud_spr,0,330,30,1.2,1.2,0,c_white,0.8)
-draw_text_ext(+395,76,string(gamer.own_health),-1,string_width*0.7);   
+draw_text_ext(+395,76,string(gamer.own_health),-1,string_width*0.7); 
+draw_text_ext(+395,117,string(gamer.own_shield),-1,string_width*0.7);  
+draw_text_ext(+395,135,string(gamer.config),-1,string_width*0.7);    
 //draw_text_ext(+80,97,string(global.level),-1,string_width*0.7);
 //draw_text_ext(+90,117,string(strHO),-1,string_width*0.7);
 //draw_text_ext(+220,97,string(strURI),-1,string_width*0.7);
