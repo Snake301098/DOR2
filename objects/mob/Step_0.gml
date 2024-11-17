@@ -26,9 +26,11 @@ if instance_exists(target) then
 }
 
 
-
+if
 followHP = lerp(followHP, own_health, 0.02) //hit health bar point effect
+followShield = lerp(followShield, own_shield, 0.02) //hit shield bar point effect
 
+if own_shield < 0 then own_shield = 0
 
 /*
 

@@ -29,20 +29,30 @@ function guns_installation(_id){
 		
 
 		/************************************************
-		                WEAPONS
+		                CONFIGS
 		*************************************************/
 		#region
-		if config=1
+		//CONFIG 2
+		Engine = EngineC2
+		Gun = GunC2
+		droid = droidC2
+		shield_def = 0
+		MaxDamage = 0
+		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
+		
+		//ENGINES
+		for (i=1; i<=Engine[0]; i+=1)
 		{
-			Gun = GunC1
-			Engine = EngineC1
-		}
-		else
-		{
-			Gun = GunC2
-			Engine = EngineC2
+			if Engine[i] != "" and Engine[i] != "noone"
+			{
+				var _type = info_weapons(Engine[i],"type");
+				var _quantity = info_weapons(Engine[i],"quantity");
+				if _type = "shield" then shield_def+=_quantity; 
+				if _type = "generator" then ship_speed+=_quantity;
+			}
 		}
 		
+		//GUNS
 		for (i=1; i<=Gun[0]; i+=1)
 		{
 			if Gun[i] != "" and Gun[i] != "noone"
@@ -52,42 +62,111 @@ function guns_installation(_id){
 			}
 		}
 		
-		#endregion
-
-		/************************************************
-		                SHIELDS
-		*************************************************/
-		#region
-		//CONFIG 2
-		Engine = EngineC2
-		shield_def = 0
-		for (i=1; i<=Engine[0]; i+=1)
+		//DRONES
+		for (i:=1; i<=10; i+=1)
 		{
-			if Engine[i] != "" and Engine[i] != "noone"
-			{
-				var _shield = info_weapons(Engine[i],"shield");
-				shield_def+=_shield; 
-			}
-		}
+			//Type and design
+		    if droid[i,1]="noone" or droid[i,1]="" then break;
+		    if droid[i,1]="flax" then Flax_numb+=1
+		    else if droid[i,1]="apis" then Apis_numb+=1
+		    else if droid[i,1]="zeus" then Zeus_numb+=1;
+		    else Iris_numb+=1;
+			//Slot 1
+		    switch info_weapons(droid[i,2],"type")
+		    {
+		        case "gun": MaxDamage+=info_weapons(droid[i,2],"damage"); guns+=1; break;
+		        case "shield": shield_def+=info_weapons(droid[i,2],"quantity"); break;
+		    }
+			//Slot 2
+		    switch info_weapons(droid[i,3],"type")
+		    {
+		        case "gun": MaxDamage+=info_weapons(droid[i,3],"damage"); guns+=1; break;
+		        case "shield": shield_def+=info_weapons(droid[i,3],"quantity"); break;
+		    }
+		} 
+		
 		shield_defC2 = shield_def
 		own_shieldC2 = shield_defC2
+		ship_speedC2 = ship_speed/(450/(5)) // factor to adapt speed in game
+		MaxDamageC2 = MaxDamage
 		
 		//CONFIG 1
 		Engine = EngineC1
+		Gun = GunC1
+		droid = droidC1
 		shield_def = 0
+		MaxDamage = 0
+		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
+		//ENGINES
 		for (i=1; i<=Engine[0]; i+=1)
 		{
 			if Engine[i] != "" and Engine[i] != "noone"
 			{
-				var _shield = info_weapons(Engine[i],"shield");
-				shield_def+=_shield; 
+				var _type = info_weapons(Engine[i],"type");
+				var _quantity = info_weapons(Engine[i],"quantity");
+				if _type = "shield" then shield_def+=_quantity; 
+				if _type = "generator" then ship_speed+=_quantity;
 			}
 		}
+		
+		//GUNS
+		for (i=1; i<=Gun[0]; i+=1)
+		{
+			if Gun[i] != "" and Gun[i] != "noone"
+			{
+				var _damage = info_weapons(Gun[i],"damage");
+				MaxDamage+=_damage; guns+=1; GunDmg[i]=_damage;
+			}
+		}
+		
+		//DRONES
+		for (i:=1; i<=10; i+=1)
+		{
+			//Type and design
+		    if droid[i,1]="noone" or droid[i,1]="" then break;
+		    if droid[i,1]="flax" then Flax_numb+=1
+		    else if droid[i,1]="apis" then Apis_numb+=1
+		    else if droid[i,1]="zeus" then Zeus_numb+=1;
+		    else Iris_numb+=1;
+			//Slot 1
+		    switch info_weapons(droid[i,2],"type")
+		    {
+		        case "gun": MaxDamage+=info_weapons(droid[i,2],"damage"); guns+=1; break;
+		        case "shield": shield_def+=info_weapons(droid[i,2],"quantity"); break;
+		    }
+			//Slot 2
+		    switch info_weapons(droid[i,3],"type")
+		    {
+		        case "gun": MaxDamage+=info_weapons(droid[i,3],"damage"); guns+=1; break;
+		        case "shield": shield_def+=info_weapons(droid[i,3],"quantity"); break;
+		    }
+		} 
+		
 		shield_defC1 = shield_def
 		own_shieldC1 = shield_defC1
+		ship_speedC1 = ship_speed/(450/(5)) // factor to adapt speed in game
+		MaxDamageC1 = MaxDamage
 		
-		shield_def = shield_defC1
-		own_shield = own_shieldC1
+		if config = 1
+		{
+			shield_def = shield_defC1
+			own_shield = own_shieldC1
+			ship_speed = ship_speedC1
+			MaxDamage = MaxDamageC1
+			Engine = EngineC1
+			droid = droidC1
+			Gun = GunC1
+		}
+		else
+		{
+			shield_def = shield_defC2
+			own_shield = own_shieldC2
+			ship_speed = ship_speedC2
+			MaxDamage = MaxDamageC2
+			Engine = EngineC2
+			droid = droidC2
+			Gun = GunC2
+		}
 		
 		#endregion
 
@@ -101,6 +180,7 @@ function guns_installation(_id){
 		*************************************************/
 		#region
 		//DRONES
+		/*
 		for (i:=1; i<=10; i+=1)
 		    {
 		    if droid[i,1]="noone" or droid[i,1]="" then break;
@@ -109,7 +189,7 @@ function guns_installation(_id){
 		    else if droid[i,1]="zeus" then Zeus_numb+=1;
 		    else Iris_numb+=1;
 	
-			/*
+			
 		    switch info(droid[i,2],"type")
 		        {
 		        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
@@ -119,8 +199,8 @@ function guns_installation(_id){
 		        {
 		        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
 		        case "engine": shield_def+=info(droid[i,3],"power"); break;
-		        }*/
-		} 
+		        }
+		} */
     
 		//Check drones
 		herculesCount = 0;
@@ -181,16 +261,17 @@ function guns_installation(_id){
 		*************************************************/
 		#region
 		//SPEED	
-		ship_speed = 5*0.7 //round(ship_speed*2); //because 60fps instead of 30fps now
+		//ship_speed = 5*0.7 //round(ship_speed*2); //because 60fps instead of 30fps now
 
+/*
 		//CARGO
 		if id=gamer.id then
 		{
 			var cargo_lvl;
 			if global.cargo_level>0 then cargo_lvl=global.cargo_level else cargo_lvl=1;
-			var cargo_base = info_shiptypes(gamer.Shiptype, "cargo");
+			//var cargo_base = info_shiptypes(gamer.Shiptype, "cargo");
 			var cargo_supp = info_upgrades("cargo", cargo_lvl, "amount");
-			global.cargo_max = cargo_base + cargo_supp;
+			//global.cargo_max = cargo_base + cargo_supp;
 		}
 		
 		//STORAGE
@@ -200,7 +281,7 @@ function guns_installation(_id){
 			if global.storage_level>0 then storage_lvl=global.storage_level else storage_lvl=1;
 			global.storage_max = 100 + info_upgrades("storage", storage_lvl, "amount");
 		}
-
+*/
 		//SPRITES
 		switch Ship
 		    {

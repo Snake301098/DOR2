@@ -16,7 +16,7 @@ function info_ships(_ship,_info,lvl=0)
 		    switch _info 
 		        {
 				case "ship_class": return "other"; break;
-		        case "speed": return 8; break;
+		        case "speed": return 220; break;
 		        case "gun_slots": return 3; break;
 		        case "generator_slots": return 5; break;
 		        case "engine_slots": return 7; break;
@@ -30,7 +30,7 @@ function info_ships(_ship,_info,lvl=0)
 		    switch _info 
 		        {
 				case "ship_class": return "other"; break;
-		        case "speed": return 4; break;
+		        case "speed": return 220; break;
 		        case "gun_slots": return 5; break;
 		        case "generator_slots": return 7; break;
 		        case "engine_slots": return 8; break;
@@ -47,7 +47,7 @@ function info_ships(_ship,_info,lvl=0)
 		    switch _info 
 		        {
 				case "ship_class": return "other"; break;
-		        case "speed": return 3; break;
+		        case "speed": return 280; break;
 		        case "gun_slots": return 14; break;
 		        case "generator_slots": return 8; break;
 		        case "engine_slots": return 13; break;
@@ -61,7 +61,7 @@ function info_ships(_ship,_info,lvl=0)
 		    switch _info 
 		        {
 				case "ship_class": return "other"; break;
-		        case "speed": return 3; break;
+		        case "speed": return 200; break;
 		        case "gun_slots": return 10; break;
 		        case "generator_slots": return 10; break;
 		        case "engine_slots": return 8; break;
@@ -76,7 +76,7 @@ function info_ships(_ship,_info,lvl=0)
 		    switch _info 
 		        {
 				case "ship_class": return "vengeance"; break;
-		        case "speed": return 10; break;
+		        case "speed": return 380; break;
 		        case "gun_slots": return 15; break;
 		        case "generator_slots": return 10; break;
 		        case "engine_slots": return 15; break;

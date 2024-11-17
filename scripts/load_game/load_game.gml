@@ -85,7 +85,7 @@ function load_game()
 	}
 	
 	
-	//Shield
+	//Engine
 	for(i = 1; i<=15; i+=1)
 	{
 	    gamer.EngineC1[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C1","");
@@ -99,11 +99,18 @@ function load_game()
 	}
 	//Drones
 	for(i = 1; i<=10; i+=1){
-	    gamer.droid[i,1] = ini_read_string("Drones","drone"+string(i),"");
-	    gamer.droid[i,2] = ini_read_string("Drones","slot"+string(i)+"_1","");
-	    gamer.droid[i,3] = ini_read_string("Drones","slot"+string(i)+"_2","");
-	    gamer.droid[i,4] = ini_read_string("Drones","design"+string(i),"");
-		if gamer.droid[i,1] != "" and gamer.droid[i,1] != "noone" then gamer.dronesNbr+=1;
+		//Config 1
+	    gamer.droidC1[i,1] = ini_read_string("Drones","drone"+string(i),"");
+	    gamer.droidC1[i,2] = ini_read_string("Drones","slot"+string(i)+"_1_C1","");
+	    gamer.droidC1[i,3] = ini_read_string("Drones","slot"+string(i)+"_2_C1","");
+	    gamer.droidC1[i,4] = ini_read_string("Drones","design"+string(i),"");
+		if gamer.droidC1[i,1] != "" and gamer.droidC1[i,1] != "noone" then gamer.dronesNbr+=1;
+		//Config 2
+	    gamer.droidC2[i,1] = ini_read_string("Drones","drone"+string(i),"");
+	    gamer.droidC2[i,2] = ini_read_string("Drones","slot"+string(i)+"_1_C2","");
+	    gamer.droidC2[i,3] = ini_read_string("Drones","slot"+string(i)+"_2_C2","");
+	    gamer.droidC2[i,4] = ini_read_string("Drones","design"+string(i),"");
+		if gamer.droidC2[i,1] != "" and gamer.droidC2[i,1] != "noone" then gamer.dronesNbr+=1;
 	}
 
 

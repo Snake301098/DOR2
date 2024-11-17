@@ -47,8 +47,6 @@ if Power = 5
 	//DRONES
 	iris_numb = irandom_range(7,10);
 	flax_numb = 10 - iris_numb;
-	for (i=1;i<=min(flax_numb,10);i++){droid[i,1]:="flax";}
-	for (i=flax_numb+1; i<=min(flax_numb+iris_numb,10);i++){if (i>=0) droid[i,1]:="iris";}	
 	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
 	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
 	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
@@ -82,8 +80,6 @@ if Power = 4
 	//DRONES
 	iris_numb = irandom_range(7,10);
 	flax_numb = 10 - iris_numb;
-	for (i=1;i<=min(flax_numb,10);i++){droid[i,1]:="flax";}
-	for (i=flax_numb+1; i<=min(flax_numb+iris_numb,10);i++){if (i>=0) droid[i,1]:="iris";}	
 	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
 	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
 	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
@@ -117,9 +113,7 @@ if Power = 3
 
 	//DRONES
 	iris_numb = irandom_range(7,10);
-	flax_numb = 10 - iris_numb;
-	for (i=1;i<=min(flax_numb,10);i++){droid[i,1]:="flax";}
-	for (i=flax_numb+1; i<=min(flax_numb+iris_numb,10);i++){if (i>=0) droid[i,1]:="iris";}	
+	flax_numb = 10 - iris_numb;	
 	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
 	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
 	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
@@ -154,8 +148,6 @@ if Power = 2
 	//DRONES
 	iris_numb = irandom_range(7,10);
 	flax_numb = 10 - iris_numb;
-	for (i=1;i<=min(flax_numb,10);i++){droid[i,1]:="flax";}
-	for (i=flax_numb+1; i<=min(flax_numb+iris_numb,10);i++){if (i>=0) droid[i,1]:="iris";}	
 	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
 	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
 	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
@@ -217,9 +209,14 @@ for (i:=1; i<=lf4_nbr; i+=1;) {array_push(GunC1,"LF-4");}
 for (i:=1; i<=bo0_nbr; i+=1;) {array_push(EngineC1,"BO-0");}
 for (i:=1; i<=bo1_nbr; i+=1;) {array_push(EngineC1,"BO-1");}
 for (i:=1; i<=bo2_nbr; i+=1;) {array_push(EngineC1,"BO-2");}
+
+for (i:=1; i<=flax_numb; i+=1;) {droid[i,1]="flax"}
+for (i=1+flax_numb;i<=flax_numb+iris_numb;i++){droid[i,1]:="iris";}
     	
 GunC2 = GunC1
 EngineC2 = EngineC1
+droidC2 = droid
+droidC1 = droid
 		
 event_user(0);
 	

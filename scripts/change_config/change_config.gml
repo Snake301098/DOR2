@@ -12,6 +12,7 @@ function change_config(_id)
 			own_shield = own_shieldC2
 			shield_def = shield_defC2
 			followShield = own_shieldC2
+			ship_speed = ship_speedC2
 		}
 		else 
 		{
@@ -22,6 +23,7 @@ function change_config(_id)
 			own_shield = own_shieldC1
 			shield_def = shield_defC1
 			followShield = own_shieldC1
+			ship_speed = ship_speedC1
 		}
 	}
 	

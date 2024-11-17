@@ -150,6 +150,15 @@ EngineC1=[]
 EngineC2=[]
 own_shieldC1=0
 own_shieldC2=0
+ship_speedC1=0
+ship_speedC2=0
+MaxDamage=0
+MaxDamageC1=0
+MaxDamageC2=0
+droid=array_create(11);
+for (i:=1; i<=10; i+=1) {droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
+droidC1=droid;
+droidC2=droid;
 
 event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.
 event_user(3);

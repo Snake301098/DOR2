@@ -13,7 +13,7 @@ restore=false;                      //Ñòàòóñ ïîêîÿ (íå â áîþ).
 ownership=0;
 targetedship=0;
 cloaked = 0;
-ammo_selected = x1_ammo
+//ammo_selected = x1_ammo
 dmg_boost_activated = false;
 count=3;
 hasused=0;
@@ -84,14 +84,14 @@ ammo[5,0]=5*global.code1; ammo[5,1]=sub_ammo; ammo[5,2]=global.sub_ammo_sound;
 rocket_ammo[0,0]:=1; rocket_ammo[1,0]:=10*global.code1; rocket_ammo[1,1]:=rocket_spr;
 rocket_ammo[1,2]:=global.rocket_s; rocket_ammo[1,3]:=100;
 */
-for (i:=1; i<=12; i+=1) {
-droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
+//for (i:=1; i<=12; i+=1) {
+//droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
 /* Ñâåäåíèÿ î äðîèäàõ. [i,0] - id i-ãî ñëîòà äðîèäîâ. [i,1] - êàêîé äðîèä ïîä íîìåðîì i. [i,1+j] - ÷åì çàíÿò j-é ñëîò äðîèäà ïîä íîìåðîì i. */
-
+/*
 Laser[0]:=5;
 for (i:=1; i<=5; i+=1) Laser[i]="noone"
 /* Ñâåäåíèÿ î ñëîòàõ ïóøåê íà êîðàáëå. Gun[i]= êàêîé ïóøêîé çàíÿò i-é ñëîò äëÿ ïóøåê íà êîðàáëå */
-
+/*
 GunDmg[0]:=5;
 for (i:=1; i<=5; i+=1) GunDmg[i]=0;
 //Storing the dmg for each gun

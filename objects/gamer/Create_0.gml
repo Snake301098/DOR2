@@ -129,8 +129,6 @@ if ActivityCtrl.corpor_set=true then
     }
 */
 
-for (i:=1; i<=10; i+=1) {
-droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
 /* Ñâåäåíèÿ î äðîèäàõ. [i,0] - id i-ãî ñëîòà äðîèäîâ. [i,1] - êàêîé äðîèä ïîä íîìåðîì i. [i,1+j] - ÷åì çàíÿò j-é ñëîò äðîèäà ïîä íîìåðîì i. */
 
 /*
@@ -180,6 +178,17 @@ EngineC1=array_create(15)
 EngineC2=array_create(15)
 own_shieldC1=0
 own_shieldC2=0
+ship_speedC1=0
+ship_speedC2=0
+MaxDamage=0
+MaxDamageC1=0
+MaxDamageC2=0
+droid=array_create(11);
+for (i:=1; i<=10; i+=1) {droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
+droidC1=array_create(11);
+for (i:=1; i<=10; i+=1) {droidC1[i,0]=noone; droidC1[i,1]:="noone"; droidC1[i,2]:="noone"; droidC1[i,3]:="noone"; droidC1[i,4]:="noone";}
+droidC2=array_create(11);
+for (i:=1; i<=10; i+=1) {droidC2[i,0]=noone; droidC2[i,1]:="noone"; droidC2[i,2]:="noone"; droidC2[i,3]:="noone"; droidC2[i,4]:="noone";}
 
 
 visible=true;

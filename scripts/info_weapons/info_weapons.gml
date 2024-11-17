@@ -14,32 +14,56 @@ function info_weapons(_weapon,_info,_level="")
 		#region
 		
 		case "LF-4":
+			if _info = "type" then return "gun";
 			if _info = "damage" then return 200;
 			break;
 			
 			
 		case "LF-3":
+			if _info = "type" then return "gun";
 			if _info = "damage" then return 175;
 			break;
 			
 			
 		case "MP-1":
+			if _info = "type" then return "gun";
 			if _info = "damage" then return 130;
 			break;
 			
 		
 		case "BO-2":
-			if _info = "shield" then return 10000;
+			if _info = "type" then return "shield";
+			if _info = "quantity" then return 10000;
 			break;
 		
 		
 		case "BO-1":
-			if _info = "shield" then return 8000;
+			if _info = "type" then return "shield";
+			if _info = "quantity" then return 8000;
 			break;
 			
 			
 		case "BO-0":
-			if _info = "shield" then return 6000;
+			if _info = "type" then return "shield";
+			if _info = "quantity" then return 6000;
+			break;
+			
+			
+		case "SPD-3":
+			if _info = "type" then return "generator";
+			if _info = "quantity" then return 10;
+			break;
+		
+		
+		case "SPD-2":
+			if _info = "type" then return "generator";
+			if _info = "quantity" then return 7;
+			break;
+			
+			
+		case "SPD-1":
+			if _info = "type" then return "generator";
+			if _info = "quantity" then return 5;
 			break;
 		
 		
