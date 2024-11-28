@@ -18,6 +18,7 @@ dmg_boost_activated = false;
 count=3;
 hasused=0;
 canusersb = 1;
+can_change_config = true;
 
 Power=6;
 gotKilledBy = 0;

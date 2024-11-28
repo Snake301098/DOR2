@@ -3,10 +3,10 @@ var _canusersb=0;
 
 just_hit_rsb=1
 
-with(object_get_parent(gamer))
-{
+//with(object_get_parent(gamer))
+//{
 	_canusersb = canusersb
-}
+//}
 
 
 if not instance_exists(target)

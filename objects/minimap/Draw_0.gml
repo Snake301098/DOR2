@@ -25,7 +25,7 @@ with (gamer) {
 //Ïîëîñêà çäîðîâüÿ è ùèòà. 
 //Îòîáðàæåíèå íèêà.
 draw_set_halign(fa_center);
-draw_set_alpha(10);
+draw_set_alpha(1);
 draw_set_font(nicktext);
 draw_set_color(global.HUD_color);
 rpf=global.rpfactor;

@@ -1,5 +1,5 @@
 {
-    for (i:=1; i<=12; i+=1)
+    for (i:=1; i<=10; i+=1)
         {
         instance_activate_object(droid[i,0]);
         with(droid[i,0])

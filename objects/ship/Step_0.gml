@@ -340,6 +340,7 @@ if own_health <= 0
 if own_health > health_def then own_health = health_def;
 
 followHP = lerp(followHP, own_health, 0.02) //hit health bar point effect
+followShield = lerp(followShield, own_shield, 0.02) //hit health bar point effect
 
 if action[0] = "running"
 {

@@ -9,4 +9,6 @@ if can_use_warrep = 1 // or ability_2 = "warrep"
 	}
 }
 
+if can_change_config = true and own_shield < shield_def * random_range(0,0.2) then change_config(id);
+
 alarm[9] = irandom_range(40,120);

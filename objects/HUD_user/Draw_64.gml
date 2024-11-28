@@ -1,10 +1,10 @@
 //Getting some data
 //EP
-strEP = dotString(round(global.experience));
+var strEP = dotString(round(global.experience));
 //Honor
-strHO = dotString(round(global.honor));
+var strHO = dotString(round(global.honor));
 //Credits
-strCR = dotString(round(global.credit));
+var strCR = dotString(round(global.credit));
 //Uridium
 //strURI = dotString(round(global.uridium));
     
@@ -24,30 +24,41 @@ draw_set_alpha(1)
 draw_set_alpha(1);
 draw_set_color(c_white);
 
+//Draw top icons
+draw_sprite_ext(hud_user_square_spr,0,10,10,1,1,0,c_white,1); 
+draw_sprite_ext(hud_ship_square_spr,0,50,10,1,1,0,c_white,1); 
+draw_sprite_ext(hud_fake2_spr,0,10,10,1,1,0,c_white,1); 
+draw_sprite_ext(hud_map_spr,0,205,10,1,1,0,c_white,1); 
+
+//Draw Ammo HUD
+var _start = 1920/2-sprite_get_width(hud_ammo2_spr)/2
+draw_sprite_ext(shiphud_spr,0,_start,920,1,1,0,c_white,1); //ammo
+draw_sprite_ext(hud_rsb_spr,0,_start + sprite_get_width(shiphud_spr),920,1,1,0,c_white,1); //ammo
+draw_sprite_ext(hud_dcr_spr,0,_start + sprite_get_width(shiphud_spr)+39*1,920,1,1,0,c_white,1); //ammo
+draw_sprite_ext(hud_emp_spr,0,_start + sprite_get_width(shiphud_spr)+39*2,920,1,1,0,c_white,1); //ammo
+draw_sprite_ext(hud_ish_spr,0,_start + sprite_get_width(shiphud_spr)+39*3,920,1,1,0,c_white,1); //ammo
+draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)+39*4,920,1,1,0,c_white,1); //ammo
+draw_sprite_ext(hud_ammo2_spr,0,_start,880,1,1,0,c_white,1); //ammo
 
 //Draw the HUD
 draw_set_valign(fa_middle);
-draw_sprite_ext(userhud_spr,0,30,30,1.2,1.2,0,c_white,0.8)
-draw_text_ext(+95,76,string(strEP),-1,string_width*0.7);   
-draw_text_ext(+80,97,string(global.level),-1,string_width*0.7);
-draw_text_ext(+90,117,string(strHO),-1,string_width*0.7);
-draw_text_ext(+220,97,string(strURI),-1,string_width*0.7);
-draw_text_ext(+220,76,string(strCR),-1,string_width*0.7); 
-draw_text_ext(+90,135,string(global.ggenergy),-1,string_width*0.7);
+draw_sprite_ext(userhud_spr,0,25,60,1.2,1.2,0,c_white,0.8)
+draw_text_ext(+95,76+31,string(strEP),-1,string_width*0.7);   
+draw_text_ext(+80,97+31,string(global.level),-1,string_width*0.7);
+draw_text_ext(+90,117+31,string(strHO),-1,string_width*0.7);
+draw_text_ext(+220,97+31,string(dotString(round(strURI))),-1,string_width*0.7);
+draw_text_ext(+220,76+31,string(strCR),-1,string_width*0.7); 
+draw_text_ext(+90,117+31,string(dotString(round(global.ggenergy))),-1,string_width*0.7);
 //draw_text_ext(+220,145,string(global.boxkey),-1,string_width*0.7);    
 draw_text_ext(+220,135,string(global.resetcpclock),-1,string_width*0.7); 
 if global.cproom = noone then draw_text_ext(+220,117,"CP Offline",-1,string_width*0.7) else draw_text_ext(+220,117,string(info_map(global.cproom,"name")),-1,string_width*0.7);
-draw_text(100,300,"LF+ status: " + string(gamer.using_premium_lasers));
-draw_text(100,320,"LF+ qty: " + string(global.premium_lasers));
-draw_text(100,340,"Nuke K1 status: " + string(gamer.can_use_nuke_k1));
-draw_text(100,360,"Nuke K1 qty: " + string(global.nuke_k1));
 
 //HP etc
 draw_set_valign(fa_middle);
-draw_sprite_ext(userhud_spr,0,330,30,1.2,1.2,0,c_white,0.8)
-draw_text_ext(+395,76,string(gamer.own_health),-1,string_width*0.7); 
-draw_text_ext(+395,117,string(gamer.own_shield),-1,string_width*0.7);  
-draw_text_ext(+395,135,string(gamer.config),-1,string_width*0.7);    
+draw_sprite_ext(hud_ammo_spr,0,330,60,1.2,1.2,0,c_white,0.8)
+draw_text_ext(+395,76+31,string(dotString(round(gamer.own_health))),-1,string_width*0.7); 
+draw_text_ext(+395,97+31,string(dotString(round(gamer.own_shield))),-1,string_width*0.7);  
+draw_text_ext(+395,117+31,string(gamer.config),-1,string_width*0.7);    
 //draw_text_ext(+80,97,string(global.level),-1,string_width*0.7);
 //draw_text_ext(+90,117,string(strHO),-1,string_width*0.7);
 //draw_text_ext(+220,97,string(strURI),-1,string_width*0.7);
