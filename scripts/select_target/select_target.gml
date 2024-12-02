@@ -38,7 +38,7 @@ function select_target(id)
 					if instance_exists(target) and _ship.Shiptype != "aegis" then {array_push(potential_targets, _ship.target);array_push(potential_targets, _ship.target);}; //add twice so more chance to coordinate focus
 				}
 			}
-			if _ship.corporation != id.corporation and _ship.cloaked = 0 then 
+			if _ship.corporation != id.corporation and _ship.cloaked = 0 and _ship.is_using_emp = false then 
 			{
 				array_push(potential_targets, _ship);
 				if _ship.Shiptype = "aegis" then array_push(potential_targets, _ship); //focus more the healers

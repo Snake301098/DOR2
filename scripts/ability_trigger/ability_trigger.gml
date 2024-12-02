@@ -15,6 +15,47 @@ function ability_trigger(owner,ability)
 		}
 	}
 	
+	//EMP ----------------------------------------------
+	if ability = "EMP"
+	{
+		if owner.can_use_emp = true
+		{
+				var _emp = instance_create_depth(0,0,0,emp);
+				_emp.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("EMP still recharging")
+		}
+	}
+	
+	//ISH ----------------------------------------------
+	if ability = "ISH"
+	{
+		if owner.can_use_ish = true
+		{
+				var _ish = instance_create_depth(0,0,0,ish);
+				_ish.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("ISH still recharging")
+		}
+	}
+	
+	//shieldbackup ----------------------------------------------
+	if ability = "shieldbackup"
+	{
+		if owner.can_use_shieldbackup = true
+		{
+				var _shieldbackup = instance_create_depth(0,0,0,shieldbackup);
+				_shieldbackup.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("Shield backup still recharging")
+		}
+	}
 	/*
 	//DMG BOOST ----------------------------------------------
 	if ability = "dmg_boost"

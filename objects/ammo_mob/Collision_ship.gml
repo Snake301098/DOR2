@@ -1,7 +1,7 @@
 var a,b,c,healthAbsord,shieldAbsorb,shieldPen,healthAbsorb;
 if owner.target=other.id then
     {
-        if other.ish=1 then {a=0} else
+        if other.is_using_ish=1 then {a=0} else
         {
             //Hit calculation etc
                 if (irandom_range(0,100) < 80){

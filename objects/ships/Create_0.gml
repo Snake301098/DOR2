@@ -30,7 +30,7 @@ MaxDamageGun=10;
 MaxDamageLaser=10;
 gunlvlmin=0;
 laserlvlmin=0;
-emp=0;
+is_using_emp=0;
 passive=false;
 isFollower = choose(0,0,1,1,1); //for alarm 1 ship movement AI logic
 

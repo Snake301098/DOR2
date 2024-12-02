@@ -1,2 +1,2 @@
-/// @description Ability 2 reset
-owner.can_use_ability_2 = true;
+/// @description EMP
+owner.can_use_emp = true;

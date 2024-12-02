@@ -44,7 +44,7 @@ if global.attacking_type = 1 then
 
 	if instance_exists(a)
 	{
-		if point_distance(mouse_x,mouse_y,a.x,a.y) < a.sprite_width*global.aim_assist and a.emp = 0
+		if point_distance(mouse_x,mouse_y,a.x,a.y) < a.sprite_width*global.aim_assist and a.is_using_emp = false
 		{
 			gamer.target = a;
 			targetfound = 1;

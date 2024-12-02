@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"select_target",
+  "%Name":"deal_damage",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"select_target",
+  "name":"deal_damage",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

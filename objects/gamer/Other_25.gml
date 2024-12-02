@@ -30,7 +30,7 @@ if KeyActionCURKEY = 9 then
 {OwnerID=id; if global.shieldbackupcount >= 1 then{ if canuseshieldbackup=1 then{ {a=instance_create(x,y,shieldbackup)} with (a) {owner=OwnerID} global.shieldbackupcount -= 1 canuseshieldbackup=0; gamercooldowns.alarm[10]=1; } else {show_HUD_message(string(text.shieldbackuprecharging))} } else {show_HUD_message(string(text.noshieldbackups))}}
 //EMP
 if KeyActionCURKEY = 10 then
-{OwnerID=id; if global.empcount >= 1 then{ if canuseemp=1 then{ {a=instance_create(x,y,emp_obj)} with (a) {owner=OwnerID} emp=1 global.empcount -= 1 alarm[8]=1.5*room_speed canuseemp=0; gamercooldowns.alarm[5]=1; } else {show_HUD_message(string(text.emprecharging))} } else {show_HUD_message(string(text.noemps))}}
+{OwnerID=id; if global.empcount >= 1 then{ if canuseemp=1 then{ {a=instance_create(x,y,emp_obj)} with (a) {owner=OwnerID} is_using_emp=true global.empcount -= 1 alarm[8]=1.5*room_speed canuseemp=0; gamercooldowns.alarm[5]=1; } else {show_HUD_message(string(text.emprecharging))} } else {show_HUD_message(string(text.noemps))}}
 //AdminMode
 if KeyActionCURKEY = 11 then
 {if admincheat=1 then{if global.isadmin=0 then {SHPRTN=Ship; global.isadmin=1; Ship = "admin"; event_user(0); guns_installation(gamer); show_protocol_message(string(text.adminon)){}}else if global.isadmin=1 then {global.isadmin=0Ship = SHPRTN;alarm[1]=10*2;show_protocol_message(string(text.adminoff))event_user(0);gamer.MaxDamage=dmgrtn{}}}else if admincheat=0 then{show_HUD_message(string(text.adminmodeisdisabled))}}
@@ -95,7 +95,7 @@ if KeyActionCURKEY = 21 then
 {cheatcode=get_string(string(text.entercheat),"") ENTRY="CHEAT" alarm[9]=1;}
 //InstaShield
 if KeyActionCURKEY = 22 then
-{OwnerID=id; if global.ishcount >=1 then{ if canuseish=1 then{ with (instance_create(x,y,ish_obj)) {owner=OwnerID} global.ishcount-=1 ish=1 alarm[7]=2*room_speed canuseish=0 gamercooldowns.alarm[6]=1;}else{{show_HUD_message("ISH is recharging!"); show_protocol_message(string(text.ishrecharging))}}}else{{show_HUD_message("You have no mines!"); show_protocol_message(string(text.noishs))}}}
+{OwnerID=id; if global.ishcount >=1 then{ if canuseish=1 then{ with (instance_create(x,y,ish_obj)) {owner=OwnerID} global.ishcount-=1 is_using_ish=1 alarm[7]=2*room_speed canuseish=0 gamercooldowns.alarm[6]=1;}else{{show_HUD_message("ISH is recharging!"); show_protocol_message(string(text.ishrecharging))}}}else{{show_HUD_message("You have no mines!"); show_protocol_message(string(text.noishs))}}}
 //DCR250
 if KeyActionCURKEY = 23 then
 {ENTRY="DCR" alarm[9]=1;}
