@@ -2,7 +2,7 @@
 wCam = lerp(global.camera_width, wCam, 0.8)
 hCam = lerp(global.camera_height, hCam, 0.8)
 
-if global.camera_width != wCam or global.camera_height != hCam then camera_set_view_size(view_camera[0], wCam, hCam);
+if global.camera_width != wCam or global.camera_height != hCam then camera_set_view_size(view_camera[0], 1920*1, 1080*1); //camera_set_view_size(view_camera[0], wCam, hCam);
 
 
 var xdec = (window_mouse_get_x()-window_get_width()/2)/2
@@ -26,4 +26,4 @@ var newY = lerp(curY, yCam, 0.3);
 */
 
 
-camera_set_view_pos(view_camera[0], gamer.x - wCam/2, gamer.y - hCam/2)
+camera_set_view_pos(view_camera[0], gamer.x - 1920/2, gamer.y - 1080/2) //wCam/2, gamer.y - hCam/2)

@@ -1,4 +1,4 @@
-function info(item,_info,lvl="")
+function info(item,_info,lvl=1)
 {
 
 	var goliath_health = 156000;
@@ -27,18 +27,107 @@ function info(item,_info,lvl="")
 		        case "ish": return 500; break;   
 		        }
 		    break;
+			
+		case "x1":
+		    switch _info
+		    {
+		        case "cost_qty": return 1; 
+		        case "cost_type": return "credit"; 
+		    }
+		    break;
+			
+		case "x2":
+		    switch _info
+		    {
+		        case "cost_qty": return 2; 
+		        case "cost_type": return "credit"; 
+		    }
+		    break;
+			
+		case "x3":
+		    switch _info
+		    {
+		        case "cost_qty": return 1; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
+			
+		case "x4":
+		    switch _info
+		    {
+		        case "cost_qty": return 5; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
+			
+		case "x5":
+		    switch _info
+		    {
+		        case "cost_qty": return 5; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
+			
+		case "x6":
+		    switch _info
+		    {
+		        case "cost_qty": return 2; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
 	
 		case "shieldbackup":
-		    if _info="cost" then return 500;
+		    switch _info
+		    {
+		        case "cost_qty": return 500; 
+		        case "cost_type": return "uridium"; 
+		    }
 		    break;
     
 		case "warrep":
-		    if _info="cost" then return 500;
-		    break;   
+		    switch _info
+		    {
+		        case "cost_qty": return 500; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
 	
 		//---------------- Boosters --------------------
 		case "boosters": return 15000;    
 
+		#endregion
+		
+		/************************************************
+		                GUNS
+		*************************************************/
+		#region
+		case "LF-3":
+			switch _info
+			{
+			    case "type": return "Gun";
+		        case "cost_qty": return 10000; 
+		        case "cost_type": return "uridium"; 
+			}
+			break;
+			
+		case "LF-4":
+			switch _info
+			{
+			    case "type": return "Gun";
+		        case "cost_qty": return 15000; 
+		        case "cost_type": return "uridium"; 
+			}
+			break;
+		
+		case "MP-1":
+			switch _info
+			{
+			    case "type": return "Gun";
+		        case "cost_qty": return 1000; 
+		        case "cost_type": return "uridium"; 
+			}
+			break;
+			
 		#endregion
 
 		/************************************************

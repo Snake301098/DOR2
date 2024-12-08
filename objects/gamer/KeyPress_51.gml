@@ -1,3 +1,3 @@
-/// @description Ability 1
+/// @description ISH
 
 ability_trigger(id,"ISH");

@@ -397,7 +397,8 @@ else if rings=4 then
 
 image_xscale = global.scale;
 image_yscale = global.scale;
-draw_sprite_ext(sprite_index,image_index,round(x),round(y),image_xscale,image_yscale,0,c_white,1);
+//draw_sprite_ext(sprite_index,image_index,round(x),round(y),image_xscale,image_yscale,0,c_white,1);
+draw_sprite_ext(sprite_index,image_index,round(x),round(y),1,1,0,c_white,1);
        
 //NOAR DRONE STUFF
 form=id.droneformation

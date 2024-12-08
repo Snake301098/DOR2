@@ -1,4 +1,4 @@
-//CHANGE TABS
+/// @description CHANGE TABS
 
 instance_destroy(button_side);
 instance_destroy(inv_cell);
@@ -25,35 +25,35 @@ switch active_tab
 		btn_side_end=750;
 		totalheight = btn_side_end - btn_side_start;
 	
-		side_btn_0 = instance_create_depth(0,0,depth-1,button_side)
+		var side_btn_0 = instance_create_depth(0,0,depth-1,button_side)
 		side_btn_0.x = buttons_x;
 		side_btn_0.y = btn_side_start + totalheight / (number_btn-1) * 0;
 		side_btn_0.button_sprite=button_side_spr;
 		side_btn_0.button_text="OVERVIEW"
 		side_btn_0.image_index=2;
 	
-		side_btn_1 = instance_create_depth(0,0,depth-1,button_side)
+		var side_btn_1 = instance_create_depth(0,0,depth-1,button_side)
 		side_btn_1.x = buttons_x;
 		side_btn_1.y = btn_side_start + totalheight / (number_btn-1) * 1;
 		side_btn_1.button_sprite=button_side_spr;
 		side_btn_1.button_text="SHIP"
 		side_btn_1.image_index=2;
 	
-		side_btn_2 = instance_create_depth(0,0,depth-1,button_side)
+		var side_btn_2 = instance_create_depth(0,0,depth-1,button_side)
 		side_btn_2.x = buttons_x;
 		side_btn_2.y = btn_side_start + totalheight / (number_btn-1) * 2;
 		side_btn_2.button_sprite=button_side_spr;
 		side_btn_2.button_text="DRONES"
 		side_btn_2.image_index=2;
 	
-		side_btn_3 = instance_create_depth(0,0,depth-1,button_side)
+		var side_btn_3 = instance_create_depth(0,0,depth-1,button_side)
 		side_btn_3.x = buttons_x;
 		side_btn_3.y = btn_side_start + totalheight / (number_btn-1) * 3;
 		side_btn_3.button_sprite=button_side_spr;
 		side_btn_3.button_text="PET"
 		side_btn_3.image_index=2;
 	
-		side_btn_4 = instance_create_depth(0,0,depth-1,button_side)
+		var side_btn_4 = instance_create_depth(0,0,depth-1,button_side)
 		side_btn_4.x = buttons_x;
 		side_btn_4.y = btn_side_start + totalheight / (number_btn-1) * 4;
 		side_btn_4.button_sprite=button_side_spr;
@@ -68,55 +68,55 @@ switch active_tab
 			case "SHIP":
 			{
 				side_btn_1.image_index=1;
-				//LASERS
-				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
-	
-				cells_start_x = 820;
-				cells_start_y = 320;
-				spacing_x = 70;
-				spacing_y = 70;
-				rows = 1;
-				columns = 5;
-	
-				for (j=1; j<=rows; j+=1)
-				{
-					for (i=1; i<=columns; i+=1)
-					{
-						cell=instance_create_depth(0, 0, depth-1, inv_cell);
-						cell.x=cells_start_x+(i-1)*spacing_x
-						cell.y=cells_start_y+(j-1)*spacing_y
-						cell.position = i + (j-1) * columns;
-						cell.category="ship_lasers";
-						cell.sprite_index=inv_cell_spr;
-			
-						if gamer.Laser[cell.position] != noone and gamer.Laser[cell.position] != "" then cell.content= gamer.Laser[cell.position] else cell.content = noone;
-					}
-				}
-	
-	
+
 				//GUNS
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
 	
-				cells_start_x = 830;
-				cells_start_y = 670;
-				spacing_x = 60;
-				spacing_y = 60;
-				rows = 1;
-				columns = 5;
+				cells_start_x = 800;
+				cells_start_y = 420;
+				spacing_x = 50;
+				spacing_y = 50;
+				var cells = gamer.Gun[0];
+				columns = 8;
+				rows = cells div columns;
 	
-				for (j=1; j<=rows; j+=1)
+				for (i=1; i<=cells; i+=1)
 				{
-					for (i=1; i<=columns; i+=1)
-					{
-						cell=instance_create_depth(0, 0, depth-1, inv_cell);
-						cell.x=cells_start_x+(i-1)*spacing_x
-						cell.y=cells_start_y+(j-1)*spacing_y
-						cell.position = i + (j-1) * columns;
-						cell.category="ship_guns";
-						cell.sprite_index=inv_cell_spr;
+					var _row = i div (columns + 1)
+					var _column = i - (_row * columns) - 1
+					cell=instance_create_depth(0, 0, depth-1, inv_cell);
+					cell.x=cells_start_x+(_column)*spacing_x
+					cell.y=cells_start_y+(_row)*spacing_y
+					cell.position = i;
+					cell.category="ship_guns";
+					cell.sprite_index=inv_cell_spr;
 			
-						if gamer.Gun[cell.position] != noone and gamer.Gun[cell.position] != "" then cell.content= gamer.Gun[cell.position] else cell.content = noone;
-					}
+					if gamer.Gun[cell.position] != noone and gamer.Gun[cell.position] != "" then cell.content= gamer.Gun[cell.position] else cell.content = noone;
+				}
+	
+				//ENGINES
+				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
+	
+				cells_start_x = 800;
+				cells_start_y = 620;
+				spacing_x = 50;
+				spacing_y = 50;
+				var cells = gamer.Engine[0];
+				columns = 8;
+				rows = cells div columns;
+	
+				for (i=1; i<=cells; i+=1)
+				{
+					var _row = i div (columns + 1)
+					var _column = i - (_row * columns) - 1
+					cell=instance_create_depth(0, 0, depth-1, inv_cell);
+					cell.x=cells_start_x+(_column)*spacing_x
+					cell.y=cells_start_y+(_row)*spacing_y
+					cell.position = i;
+					cell.category="ship_engines";
+					cell.sprite_index=inv_cell_spr;
+			
+					if gamer.Engine[cell.position] != noone and gamer.Engine[cell.position] != "" then cell.content= gamer.Engine[cell.position] else cell.content = noone;
 				}
 	
 	
@@ -529,14 +529,14 @@ switch active_tab
 				//SHIPS TO BUY
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, weapons_list;
 				
-				weapons_list=["LF-4_1", "HST-1_1"];
+				weapons_list=["MP-1", "LF-3", "LF-4", "SPD-3", "BO-1", "BO-2"];
 	
 				cells_start_x = 640;
 				cells_start_y = 390;
 				spacing_x = 110;
 				spacing_y = 110;
-				rows = 1;
-				columns = 2;
+				rows = 3;
+				columns = 3;
 	
 				for (j=1; j<=rows; j+=1)
 				{
@@ -558,11 +558,11 @@ switch active_tab
 				}
 				
 				//QUANTITY BUTTON (no qty when buying ships)
-			/*	btn_qty=instance_create_depth(0,0,depth-1,button_qty);
+				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
 				btn_qty.x=1340;
 				btn_qty.y=650;
 				btn_qty.shop_section="shop";
-				btn_qty.image_index=button_qty_spr;*/
+				btn_qty.image_index=button_qty_spr;
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
@@ -616,11 +616,11 @@ switch active_tab
 				}
 				
 				//QUANTITY BUTTON (no qty when buying ships)
-			/*	btn_qty=instance_create_depth(0,0,depth-1,button_qty);
+				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
 				btn_qty.x=1340;
 				btn_qty.y=650;
 				btn_qty.shop_section="shop";
-				btn_qty.image_index=button_qty_spr;*/
+				btn_qty.image_index=button_qty_spr;
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)

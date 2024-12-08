@@ -1,1 +1,3 @@
 https://yal.cc/tools/gm/gmsprview/
+https://www.darkorbit.com/spacemap/graphics/expansions/ship65/Emax.swf
+https://www.darkorbit.com/spacemap/xml/resources.xml

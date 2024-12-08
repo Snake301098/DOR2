@@ -54,7 +54,7 @@ function hangar_equip(){
 				{
 					case "Gun":
 					{
-						for (var pos=1; pos<=5; pos+=1)
+						for (var pos=1; pos<=15; pos+=1)
 						{
 							if gamer.Gun[pos] = "" or gamer.Gun[pos]= "noone" then 
 							{

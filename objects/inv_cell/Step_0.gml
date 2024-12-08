@@ -19,12 +19,16 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 
 switch content
 {
-	case "LF-4_1": {sprite_index=inv_items_spr; image_index=3; level_index_spr=0; break;}
+	case "SPD-3": {sprite_index=inv_items_spr; image_index=1; level_index_spr=0; break;}
+	case "BO-0": {sprite_index=inv_items_spr; image_index=6; level_index_spr=0; break;}
+	case "BO-1": {sprite_index=inv_items_spr; image_index=6; level_index_spr=0; break;}
+	case "BO-2": {sprite_index=inv_items_spr; image_index=2; level_index_spr=0; break;}
+	case "LF-4": {sprite_index=inv_items_spr; image_index=3; level_index_spr=0; break;}
 	case "LF-4_2": {sprite_index=inv_items_spr; image_index=3; level_index_spr=1; break;}
 	case "LF-4_3": {sprite_index=inv_items_spr; image_index=3; level_index_spr=2; break;}
 	case "LF-4_4": {sprite_index=inv_items_spr; image_index=3; level_index_spr=3; break;}
 	case "LF-4_5": {sprite_index=inv_items_spr; image_index=3; level_index_spr=4; break;}
-	case "LF-3_1": {sprite_index=inv_items_spr; image_index=0; level_index_spr=0; break;}
+	case "LF-3": {sprite_index=inv_items_spr; image_index=0; level_index_spr=0; break;}
 	case "LF-3_2": {sprite_index=inv_items_spr; image_index=0; level_index_spr=1; break;}
 	case "LF-3_3": {sprite_index=inv_items_spr; image_index=0; level_index_spr=2; break;}
 	case "LF-3_4": {sprite_index=inv_items_spr; image_index=0; level_index_spr=3; break;}

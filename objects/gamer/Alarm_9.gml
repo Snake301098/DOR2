@@ -1,6 +1,15 @@
 if ENTRY="DOCK" then
 {
-	if instance_exists(window_background)=false then {instance_destroy(jumpmap); instance_destroy(window_ores); instance_create_depth(0,0,-500,window_background)} else  instance_destroy(window_background)
+	if instance_exists(window_background)=false then 
+	{
+		instance_destroy(jumpmap); 
+		instance_destroy(window_ores); 
+		instance_create_depth(0,0,-500,window_background)
+	} 
+	else  
+	{
+		instance_destroy(window_background)
+	}
 }
 else if ENTRY="JUMP" then{
 var tp, tpg, idd;

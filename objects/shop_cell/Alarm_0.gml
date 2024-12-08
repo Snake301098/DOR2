@@ -4,23 +4,23 @@ price = info(content, "cost");
 switch content
     {
     case "RepCard": {image_index=1; break;}
-	case "LF-4_1": {image_index=19; break;}
+	case "LF-4": {image_index=19; break;}
 	case "HST-1_1": {image_index=85; break;}
-    case "x1_ammo": {image_index=2; break;}
-    case "x2_ammo": {image_index=3; break;}
-    case "x3_ammo": {image_index=4; break;}
-    case "x4_ammo": {image_index=79; break;}
-    case "GEN-7900": {image_index=5; break;}
-    case "SGEN-B01": {image_index=6; break;}
+    case "x1": {image_index=2; break;}
+    case "x2": {image_index=3; break;}
+    case "x3": {image_index=4; break;}
+    case "x4": {image_index=79; break;}
+    case "SPD-3": {image_index=5; break;}
+    case "B0-1": {image_index=29; break;}
     case "goliath_white": {image_index=23; type:="design"; spec_index:=1; break;}
     case "goliath_red": {image_index=21; type:="design"; spec_index:=2; break;}
-    case "goliath_yellow": {image_index=8; type:="design"; spec_index:=3; break;}
+    case "BO-2": {image_index=6; type:="design"; spec_index:=3; break;}
     case "goliath_blue": {image_index=7; type:="design"; spec_index:=4; break;}
     case "goliath_green": {image_index=22; type:="design"; spec_index:=5; break;}    
-    case "MP-1": {image_index=9; break;}
-    case "sub_ammo": {image_index=27; break;}
-    case "rsb75": {image_index=11; break;}    
-    case "LF-1": {image_index=19; break;}
+    case "MP-1": {image_index=26; break;}
+    case "x5": {image_index=27; break;}
+    case "x6": {image_index=11; break;}    
+    case "LF-3": {image_index=9; break;}
     case "R-310": {image_index=20; break;}
     case "flax": {image_index=40; break;}
     case "iris": {image_index=42; break;} 

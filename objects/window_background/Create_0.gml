@@ -10,12 +10,8 @@ page=1;
 //SHOP PARAMETERS
 item_selected=""; //for buying or upgrading stuff, we store the item there
 buy_qty=1; //same for qty buy
-cost1_amount=0;
-cost2_amount=0;
-cost3_amount=0;
-cost1_type=0;
-cost2_type=0;
-cost3_type=0;
+cost_qty=0;
+cost_type="";
 
 
 //UPGRADES PARAMETERS

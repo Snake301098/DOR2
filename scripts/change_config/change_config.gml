@@ -15,6 +15,8 @@ function change_config(_id)
 				shield_def = shield_defC2
 				followShield = own_shieldC2
 				ship_speed = ship_speedC2
+				droid = droidC2
+				MaxDamage = MaxDamageC2
 			}
 			else 
 			{
@@ -26,9 +28,12 @@ function change_config(_id)
 				shield_def = shield_defC1
 				followShield = own_shieldC1
 				ship_speed = ship_speedC1
+				droid = droidC1
+				MaxDamage = MaxDamageC1
 			}
 		}
 	
+	/*
 		for (i=1; i<=Gun[0]; i+=1)
 		{
 			if Gun[i] != "" and Gun[i] != "noone"
@@ -37,7 +42,7 @@ function change_config(_id)
 				MaxDamage+=_damage; guns+=1; GunDmg[i]=_damage;
 			}
 		}
-		
+		*/
 		_id.can_change_config = false;
 		var myID = _id;
 		with(cooldowns_ctrl)
