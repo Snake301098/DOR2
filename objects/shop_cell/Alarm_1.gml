@@ -1,17 +1,9 @@
-/// @description name text init
+/// @description cost label
 
-if category = "ships"
-{
-	name=content;
-}
-	   
-if category = "weapons"
-{
-	theContent = info_weapons(theContent,"weapon_name")
-}
-	   
-if category = "ammos"
-{
-	theContent = info_ammos(theContent,"ammo_name")
-}
-	   
+var _costt = "";
+cost_type = info(content,"cost_type")
+cost_qty = info(content,"cost_qty")
+if cost_type = "credit" then _costt = "C"
+if cost_type = "uridium" then _costt = "U"
+
+cost_label = dotString(cost_qty) + " " + _costt

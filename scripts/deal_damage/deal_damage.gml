@@ -1,20 +1,48 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function deal_damage(_attacker,_victim,_ammo,_bar,_damage,_side,_color=c_white,_comment="")
+function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_comment="")
 {
-	//SIDE: "+" is getting more HP or more shield, "-" is loosing HP or shield
+	//Set color
+	if _victim = gamer.id then _color = c_purple else _color = c_red
 	
-	a=instance_create_depth(round(0),round(0),-5500,damage_drawer)
-	a.idship=_victim;
-	a.t=_damage; //dmg
-	a.color_1=_color;
+	if is_numeric(_damage)
+	{	
+		var _shield_absorb = _victim.shieldAbsorb;
 	
-	if _side = "-"
+		if _victim.own_shield <= _damage * _shield_absorb
+		{
+			_victim.own_health -= _damage - _victim.own_shield
+			_victim.own_shield = 0
+		}
+		else
+		{
+			_victim.own_health -= _damage * (1 - _shield_absorb)
+			_victim.own_shield -= _damage * _shield_absorb
+		}
+	}
+	
+	if _victim = gamer.id then with(gamer){alarm[2] = 3*60} else with(_victim){alarm[4]=3*60}
+	with(shield_restore_ctrl){if owner=_victim then instance_destroy();}
+	with(repbot){if owner=_victim then instance_destroy();}
+
+	if instance_exists(gamer.target)
 	{
-		if _victim = gamer.id then with(gamer){alarm[2] = 3*60} else with(_victim){alarm[4]=3*60}
-		with(shield_restore_ctrl){if owner=_victim then instance_destroy();}
-		with(repbot){if owner=_victim then instance_destroy();}
+		if (_victim = gamer.id or _victim = gamer.target) and (_draw = true) then _draw = true else _draw = false
+	}
+	else
+	{
+		if _victim = gamer.id and _draw = true then _draw = true else _draw = false
+	}
+
+	if _draw = true
+	{
+		a=instance_create_depth(round(0),round(0),-5500,damage_drawer)
+		a.idship=_victim;
+		a.t=_damage; //dmg
+		a.color_1=_color;
 	}
 }
+
+
 
 

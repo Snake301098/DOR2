@@ -1,16 +1,17 @@
-
+var _radarrange = gamer.radarrange;
+if room = GGA or room = GGB or room = GGD or room = GGY then _radarrange = 1000000000
 //MINIMAP HUD
 #region
 draw_set_alpha(1);
-draw_sprite_stretched(mimage,0,x+20,y+50,170*1,142*0.8)
+draw_sprite_stretched(mimage,0,x+20,y+50,170*1*1.4/1.2,142*0.8*1.4/1.2)
 draw_set_alpha(1);
-draw_sprite_ext(minimaphud_spr,0,x,y,1.2,1.2,0,c_white,1)
+draw_sprite_ext(minimaphud_spr,0,x,y,1.4,1.4,0,c_white,1)
 draw_set_alpha(1);
 
 decx=32;
 decy=60;
-var xmultiplier:=room_width  / 128 /1.2
-var ymultiplier:=room_height / 80 /1.2
+var xmultiplier:=room_width  / 128 /1.4
+var ymultiplier:=room_height / 80 /1.4
 
 	
     if gamer.x<room_width and gamer.x>0 and gamer.y<room_height and gamer.y>0 then
@@ -20,8 +21,8 @@ var ymultiplier:=room_height / 80 /1.2
             draw_text(20,1,y+decy)
             draw_set_alpha(1);
             event_user(0);
-            draw_line_color(round(x+gamer.x / xmultiplier)+decx,round(y+80*1.2)+decy,round(x+gamer.x / xmultiplier)+decx,round(y)+decy,c_gray,c_gray);
-            draw_line_color(round(x+128*1.2)+decx,round(y+gamer.y / ymultiplier)+decy,round(x)+decx,round(y+gamer.y / ymultiplier)+decy,c_gray,c_gray);
+            draw_line_color(round(x+gamer.x / xmultiplier)+decx,round(y+80*1.4)+decy,round(x+gamer.x / xmultiplier)+decx,round(y)+decy,c_gray,c_gray);
+            draw_line_color(round(x+128*1.4)+decx,round(y+gamer.y / ymultiplier)+decy,round(x)+decx,round(y+gamer.y / ymultiplier)+decy,c_gray,c_gray);
         }
 
 
@@ -32,10 +33,10 @@ var ymultiplier:=room_height / 80 /1.2
     with (controlpoint)
     {
     draw_sprite(mm_base_icon_spr,0,round(minimap.x+x / xmultiplier)+decx,round(minimap.y+y / ymultiplier)+decy);}
-    with (mob) if distance_to_object(gamer)<=gamer.radarrange or id=gamer.target then
+    with (mob) if distance_to_object(gamer)<=_radarrange or id=gamer.target then
         {draw_set_color(make_color_rgb(253,0,0));
         draw_point(round(minimap.x+x / xmultiplier)+decx,round(minimap.y+y / ymultiplier)+decy);}
-    with (ship) if distance_to_object(gamer)<=gamer.radarrange or id=gamer.target or gamer.id=target then
+    with (ship) if distance_to_object(gamer)<=_radarrange or id=gamer.target or gamer.id=target then
         if visible=true then
         {if corporation=gamer.corporation then {draw_set_color(make_color_rgb(88,169,253)); isfriendly=1}
         else {draw_set_color(make_color_rgb(253,0,0)); isfriendly=0}
@@ -194,14 +195,18 @@ with (gamer) {
     draw_set_valign(fa_bottom);
     draw_set_halign(fa_center);
     
-    if(gamer.protocol != "") {
+    if(gamer.protocol != "") 
+	{
+		draw_set_color(c_white)
         draw_text(1250,min(view_hport[0] div 4,40+string_height(gamer.protocol)),gamer.protocol);
     }    
     //draw_set_valign(fa_top);
     draw_set_font(HUD_mes_font);
     //draw_set_halign(fa_center);
     //   
-    if(gamer.HUD_message != "") {
+    if(gamer.HUD_message != "") 
+	{
+		draw_set_color(c_white)
 		draw_set_alpha(HUD_message_alpha); 
         draw_text_ol(view_wport[0] div 2,view_hport[0] div 4,gamer.HUD_message,make_color_rgb(225,0,0),c_black);
 		draw_set_alpha(1)

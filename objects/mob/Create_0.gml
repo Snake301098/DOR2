@@ -32,6 +32,8 @@ sprite_index=empty_spr;
 target=noone;
 is_using_emp=false;
 HONORPOINTS:=0;
+CREDITS=0;
+URIDIUM=0;
 _run_to_x = irandom_range(100, room_width-100);
 _run_to_y = irandom_range(100, room_height-100);
 

@@ -10,14 +10,15 @@ function load_game()
 	global.corporation = ini_read_real("Player","company",0);
 	global.credit = ini_read_real("Player","credit",0);
 	global.ggenergy = ini_read_real("Player","ggenergy",0);
-	global.boxkey = ini_read_real("Player","boxkey",0);
+	global.chest_green_key = ini_read_real("Player","chest_green_key",0);
+	global.chest_gold_key = ini_read_real("Player","chest_gold_key",0);
 	global.experience = ini_read_real("Player","experience",0);
 	global.level = ini_read_real("Player","level",1);
 	global.honor = ini_read_real("Player","honor",0);
 	global.rankpoints = ini_read_real("Player","rankpoints",0);
 	global.rpfactor = 1;
-	//global.uridium = ini_read_real("Player","credit",0)
-	//global.logfile = ini_read_real("Player","logfile",0);
+	global.uridium = ini_read_real("Player","uridium",0)
+	global.logfile = ini_read_real("Player","logfile",0);
 
 
 	//STATE
@@ -66,6 +67,18 @@ function load_game()
 	ISH=5*/
 	global.premium_lasers = ini_read_real("Ammo", "premium_lasers", 1);
 	global.nuke_k1 = ini_read_real("Ammo", "nuke_k1", 1);
+	global.x1 = ini_read_real("Ammo", "x1", 1);
+	global.x2 = ini_read_real("Ammo", "x2", 1);
+	global.x3 = ini_read_real("Ammo", "x3", 1);
+	global.x4 = ini_read_real("Ammo", "x4", 1);
+	global.x5 = ini_read_real("Ammo", "x5", 1);
+	global.x6 = ini_read_real("Ammo", "x6", 1);
+	global.emp = ini_read_real("Ammo", "emp", 1);
+	global.ish = ini_read_real("Ammo", "ish", 1);
+	global.smb = ini_read_real("Ammo", "smb", 1);
+	global.shieldbackup = ini_read_real("Ammo", "shieldbackup", 1);
+	global.warrep = ini_read_real("Ammo", "warrep", 1);
+	global.dcr = ini_read_real("Ammo", "dcr", 1);
 	
 	
 	//HANGAR + DRONES
@@ -94,9 +107,12 @@ function load_game()
 		if gamer.EngineC2[i] !="noone" and gamer.EngineC2[i] !="" then gamer.EngineC2[0]+=1;
 	}
 	//Inventory
-	for(i = 1; i<=60; i+=1){
-	    gamer.Inventory[i] = ini_read_string("Inventory",string(i),"");
+	for(i = 1; i<=99; i+=1)
+	{
+	    gamer.InventoryC1[i] = ini_read_string("InventoryC1",string(i),"");
+	    gamer.InventoryC2[i] = ini_read_string("InventoryC2",string(i),"");
 	}
+	
 	//Drones
 	for(i = 1; i<=10; i+=1){
 		//Config 1
@@ -140,6 +156,27 @@ function load_game()
 	global.deltacompleted = ini_read_real("delta","completed",0)  
 	global.deltalife = ini_read_real("delta","life",0) 
 
+	//SKILLTREE
+	gamer.ship_hull_i = ini_read_real("Skilltree","ship_hull_i",0)
+	gamer.ship_hull_ii = ini_read_real("Skilltree","ship_hull_ii",0)
+	gamer.shield_engineering = ini_read_real("Skilltree","shield_engineering",0)
+	gamer.engineering = ini_read_real("Skilltree","engineering",0)
+	gamer.bounty_hunter_i = ini_read_real("Skilltree","bounty_hunter_i",0)
+	gamer.bounty_hunter_ii = ini_read_real("Skilltree","bounty_hunter_ii",0)
+	gamer.alien_hunter = ini_read_real("Skilltree","alien_hunter",0)
+	gamer.greed = ini_read_real("Skilltree","greed",0)
+	gamer.luck_i = ini_read_real("Skilltree","luck_i",0)
+	gamer.luck_ii = ini_read_real("Skilltree","luck_ii",0)
+	gamer.cruelty_i = ini_read_real("Skilltree","cruelty_i",0)
+	gamer.cruelty_ii = ini_read_real("Skilltree","cruelty_ii",0)
+	gamer.evasive_i = ini_read_real("Skilltree","evasive_i",0)
+	gamer.evasive_ii = ini_read_real("Skilltree","evasive_ii",0)
+	gamer.electro_optics = ini_read_real("Skilltree","electro_optics",0)
+	gamer.shield_mechanics = ini_read_real("Skilltree","shield_mechanics",0)
+	gamer.smb_upgrade = ini_read_real("Skilltree","smb_upgrade",0)
+	gamer.ish_upgrade = ini_read_real("Skilltree","ish_upgrade",0)
+	gamer.shieldbackup_upgrade = ini_read_real("Skilltree","shieldbackup_upgrade",0)
+	gamer.warrep_upgrade = ini_read_real("Skilltree","warrep_upgrade",0)
 	
 	//MEDAILS
 	global.medails_defender = ini_read_real("Medails","defender",0)

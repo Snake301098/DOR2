@@ -67,27 +67,63 @@ else
 				if show_question("Are you sure you want to buy this weapons?") then
 				{
 					var _content = selected_id.content;
-					var _name = info_weapons(_content,"weapon_name")
+					var _name = _content
 	
-					if global.ores_qty[cost1_type] < cost1_amount or global.ores_qty[cost2_type] < cost2_amount or global.ores_qty[cost3_type] < cost3_amount
+					if cost_type = "credit"
 					{
-						show_message("Resources not sufficient");
-						exit;
-					}
-	
-					//CAN UPGRADE HERE
-					global.ores_qty[cost1_type] -= cost1_amount;
-					global.ores_qty[cost2_type] -= cost2_amount;
-					global.ores_qty[cost3_type] -= cost3_amount;
-					
-					for (var pos=1; pos<=100; pos+=1)
-					{
-						if gamer.Inventory[pos] = "" or gamer.Inventory[pos]= "noone" then 
+						if global.credit < cost_qty*buy_qty
 						{
-							gamer.Inventory[pos]=selected_id.content; 
-							break;
+							show_message("Not enough credits");
+							exit;
+						}
+						else
+						{
+							global.credit-=cost_qty*buy_qty
 						}
 					}
+					
+					if cost_type = "uridium" 
+					{
+						if global.uridium < cost_qty*buy_qty
+						{
+							show_message("Not enough uridium");
+							exit;
+						}
+						else
+						{
+							global.uridium-=cost_qty*buy_qty
+						}
+					}
+					
+					for(var i=1; i<=buy_qty;i++)
+					{
+						for (var pos=1; pos<=100; pos+=1)
+						{
+							if gamer.Inventory[pos] = "" or gamer.Inventory[pos]= "noone" then 
+							{
+								gamer.Inventory[pos]=_content; 
+								break;
+							}
+						}
+					}
+					
+					gamer.can_change_config = true
+					change_config(gamer.id)
+					
+					for(var i=1; i<=buy_qty;i++)
+					{
+						for (var pos=1; pos<=100; pos+=1)
+						{
+							if gamer.Inventory[pos] = "" or gamer.Inventory[pos]= "noone" then 
+							{
+								gamer.Inventory[pos]=_content; 
+								break;
+							}
+						}
+					}
+					
+					gamer.can_change_config = true
+					change_config(gamer.id)
 					
 					show_message(_name + " was bought sucessfully!");
 				}
@@ -114,20 +150,42 @@ else
 				if show_question("Are you sure you want to buy this item?") then
 				{
 					var _content = selected_id.content;
-					var _name = info_ammos(_content,"ammo_name")
+					var _name =_content
 	
-					if global.ores_qty[cost1_type] < cost1_amount * buy_qty or global.ores_qty[cost2_type] < cost2_amount * buy_qty or global.ores_qty[cost3_type] < cost3_amount * buy_qty
+					if cost_type = "credit"
 					{
-						show_message("Resources not sufficient");
-						exit;
+						if global.credit < cost_qty*buy_qty
+						{
+							show_message("Not enough credits");
+							exit;
+						}
+						else
+						{
+							global.credit-=cost_qty*buy_qty
+						}
 					}
-	
-					//CAN UPGRADE HERE
-					global.ores_qty[cost1_type] -= cost1_amount * buy_qty;
-					global.ores_qty[cost2_type] -= cost2_amount * buy_qty;
-					global.ores_qty[cost3_type] -= cost3_amount * buy_qty;
 					
-					if _content = "premium_lasers" then global.premium_lasers += buy_qty * info_ammos(_content, "base_quantity")
+					if cost_type = "uridium" 
+					{
+						if global.uridium < cost_qty*buy_qty
+						{
+							show_message("Not enough uridium");
+							exit;
+						}
+						else
+						{
+							global.uridium-=cost_qty*buy_qty
+						}
+					}
+					
+					if _content = "x1" then global.x1+=buy_qty
+					else if _content = "x2" then global.x2+=buy_qty
+					else if _content = "x3" then global.x3+=buy_qty
+					else if _content = "x4" then global.x4+=buy_qty
+					else if _content = "x5" then global.x5+=buy_qty
+					else if _content = "x6" then global.x6+=buy_qty
+					else if _content = "emp" then global.emp+=buy_qty
+					else if _content = "ish" then global.ish+=buy_qty
 					
 					show_message(_name + " was bought sucessfully!");
 				}

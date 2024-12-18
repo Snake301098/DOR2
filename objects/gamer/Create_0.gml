@@ -36,7 +36,7 @@ map_open=false;
 target=noone;
 global.cloaked=0;
 global.droneformation=1
-radarrange=800*0.6/1.5;                     //Äàëüíîñòü "âèäèìîñòè" ðàäàðà, âñòðîåííîãî â ìèíèêàðòó.
+radarrange=1300;                     //Äàëüíîñòü "âèäèìîñòè" ðàäàðà, âñòðîåííîãî â ìèíèêàðòó.
 range=650;
 stoped=false;                       //Ñòàòóñ ñòûêîâêè.
 alarm[0]=15*2;                      //Ìàññèâ, îòâå÷àþùèé çà äèçàéíû. [0] - óñòàíîâëåííûé äèçàéí, [i] - åñòü ëè ó èãðîêà i-ûé äèçàéí.
@@ -57,6 +57,8 @@ canuseish=1;
 canusewarrep=1;
 canuseshieldbackup=1;
 guns=0;
+gunsC1=0;
+gunsC2=0;
 lasers=0;
 gunlvlmin=0;
 laserlvlmin=0;
@@ -76,38 +78,28 @@ SHIPNAME=spectrum_spr;
 
 //window_set_size(1920,1080);
 
-/*
+
 //----- Pilotsheet -----
-ini_open("savegame.sav")
-pilotsheet_ship_hull_i = ini_read_real("pilotsheet","ship_hull_i",0)
-pilotsheet_ship_hull_ii = ini_read_real("pilotsheet","ship_hull_ii",0)
-pilotsheet_ship_engineering = ini_read_real("pilotsheet","ship_engineering",0)
-pilotsheet_shield_engineering = ini_read_real("pilotsheet","shield_engineering",0)
-pilotsheet_bounty_hunter_i = ini_read_real("pilotsheet","bounty_hunter_i",0)
-pilotsheet_bounty_hunter_ii = ini_read_real("pilotsheet","bounty_hunter_ii",0)
-pilotsheet_engineering = ini_read_real("pilotsheet","engineering",0)
-pilotsheet_shield_mechanics = ini_read_real("pilotsheet","shield_mechanics",0)
-pilotsheet_alien_hunter = ini_read_real("pilotsheet","alien_hunter",0)
-pilotsheet_greed = ini_read_real("pilotsheet","greed",0)
-pilotsheet_luck_i = ini_read_real("pilotsheet","luck_i",0)
-pilotsheet_luck_ii = ini_read_real("pilotsheet","luck_ii",0)
-pilotsheet_cruelty_i = ini_read_real("pilotsheet","cruelty_i",0)
-pilotsheet_cruelty_ii = ini_read_real("pilotsheet","cruelty_ii",0)
-pilotsheet_evasive_i = ini_read_real("pilotsheet","evasive_i",0)
-pilotsheet_evasive_ii = ini_read_real("pilotsheet","evasive_ii",0)
-pilotsheet_electro_optics = ini_read_real("pilotsheet","electro_optics",0)
-pilotsheet_smb_upgrade = ini_read_real("pilotsheet","smb_upgrade",0)
-pilotsheet_ish_upgrade = ini_read_real("pilotsheet","ish_upgrade",0)
-pilotsheet_shield_backup_upgrade = ini_read_real("pilotsheet","shield_backup_upgrade",0)
-pilotsheet_warrep_upgrade = ini_read_real("pilotsheet","warrep_upgrade",0)
-//Boosters
-booster_damage_regular = ini_read_real("boosters","dmg_reg",0)
-booster_damage_extend = ini_read_real("boosters","dmg_ext",0)
-booster_hp_regular = ini_read_real("boosters","hp_reg",0)
-booster_hp_extend = ini_read_real("boosters","hp_ext",0)
-booster_shield_regular = ini_read_real("boosters","shd_reg",0)
-booster_shield_extend = ini_read_real("boosters","shd_ext",0)
-ini_close();*/
+gamer.ship_hull_i = 0
+gamer.ship_hull_ii = 0
+gamer.shield_engineering = 0 
+gamer.engineering = 0
+gamer.bounty_hunter_i = 0 
+gamer.bounty_hunter_ii = 0
+gamer.alien_hunter = 0
+gamer.greed = 0
+gamer.luck_i = 0
+gamer.luck_ii = 0
+gamer.cruelty_i = 0 
+gamer.cruelty_ii = 0
+gamer.evasive_i = 0
+gamer.evasive_ii = 0
+gamer.electro_optics = 0 
+gamer.shield_mechanics = 0
+gamer.smb_upgrade = 0
+gamer.ish_upgrade = 0
+gamer.shieldbackup_upgrade = 0
+gamer.warrep_upgrade = 0 
 
 //Ñîçäàíèå êîíòðîëëåðîâ.
 //instance_create(0,0,particles_ctrl);
@@ -186,6 +178,12 @@ ship_speedC2=0
 MaxDamage=0
 MaxDamageC1=0
 MaxDamageC2=0
+shieldAbsorb=0
+shieldAbsorbC1=0
+shieldAbsorbC2=0
+Inventory=0
+InventoryC1=0
+InventoryC2=0
 droid=array_create(11);
 for (i:=1; i<=10; i+=1) {droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
 droidC1=array_create(11);

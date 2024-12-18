@@ -11,4 +11,5 @@ with(cooldowns_ctrl)
 	}	
 }
 
+if owner = gamer.id then global.emp--
 instance_destroy();

@@ -8,5 +8,9 @@ aze.Ship="solace";
 aze.Shiptype="goliath";
 
 
-global.camera_width = 1920;
-global.camera_height = 1080;
+var _box = instance_create_depth(gamer.x, gamer.y + 50,0,chest)
+_box.type = "green"
+
+
+var _box2 = instance_create_depth(gamer.x, gamer.y - 50,0,chest)
+_box2.type = "gold"

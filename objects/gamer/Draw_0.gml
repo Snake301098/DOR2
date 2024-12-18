@@ -19,11 +19,11 @@ if(attacking == false) {
 draw_sprite_ext(SHIPNAME,image_index,x,y,1,1,0,c_white,alpha) 
 
 //HEALTH
-if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
 if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9);} //+41+25
 
 //SHIELD
-if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,followShield/shield_def*100,c_black,c_orange,c_orange,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,followShield/shield_def*100,c_black,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
 if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,own_shield/shield_def*100,c_black,c_aqua,c_aqua,0,0,0);draw_set_alpha(0.9);} //+41+25
 
 

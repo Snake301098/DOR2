@@ -155,6 +155,9 @@ ship_speedC2=0
 MaxDamage=0
 MaxDamageC1=0
 MaxDamageC2=0
+shieldAbsorb=0
+shieldAbsorbC1=0
+shieldAbsorbC2=0
 droid=array_create(11);
 for (i:=1; i<=10; i+=1) {droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
 droidC1=droid;

@@ -6,8 +6,8 @@ function ability_trigger(owner,ability)
 	{
 		if owner.can_use_warrep = true
 		{
-				var _warrep = instance_create_depth(0,0,0,warrep);
-				_warrep.owner = owner.id;
+			var _warrep = instance_create_depth(0,0,0,warrep);
+			_warrep.owner = owner.id;
 		}
 		else
 		{
@@ -20,8 +20,8 @@ function ability_trigger(owner,ability)
 	{
 		if owner.can_use_emp = true
 		{
-				var _emp = instance_create_depth(0,0,0,emp);
-				_emp.owner = owner.id;
+			var _emp = instance_create_depth(0,0,0,emp);
+			_emp.owner = owner.id;
 		}
 		else
 		{
@@ -34,8 +34,8 @@ function ability_trigger(owner,ability)
 	{
 		if owner.can_use_ish = true
 		{
-				var _ish = instance_create_depth(0,0,0,ish);
-				_ish.owner = owner.id;
+			var _ish = instance_create_depth(0,0,0,ish);
+			_ish.owner = owner.id;
 		}
 		else
 		{
@@ -48,8 +48,8 @@ function ability_trigger(owner,ability)
 	{
 		if owner.can_use_shieldbackup = true
 		{
-				var _shieldbackup = instance_create_depth(0,0,0,shieldbackup);
-				_shieldbackup.owner = owner.id;
+			var _shieldbackup = instance_create_depth(0,0,0,shieldbackup);
+			_shieldbackup.owner = owner.id;
 		}
 		else
 		{

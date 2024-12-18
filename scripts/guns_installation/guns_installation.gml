@@ -38,6 +38,7 @@ function guns_installation(_id){
 		droid = droidC2
 		shield_def = 0
 		MaxDamage = 0
+		if id = gamer.id then guns = 0
 		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
 		
 		//ENGINES
@@ -45,9 +46,13 @@ function guns_installation(_id){
 		{
 			if Engine[i] != "" and Engine[i] != "noone"
 			{
-				var _type = info_weapons(Engine[i],"type");
-				var _quantity = info_weapons(Engine[i],"quantity");
-				if _type = "shield" then shield_def+=_quantity; 
+				var _type = info(Engine[i],"type");
+				var _quantity = info(Engine[i],"quantity");
+				if _type = "shield" then 
+				{
+					var _absorb = info(Engine[i],"absorb")
+					shield_def+=_quantity; shieldAbsorbC2 += _quantity * _absorb
+				}
 				if _type = "generator" then ship_speed+=_quantity;
 			}
 		}
@@ -57,7 +62,7 @@ function guns_installation(_id){
 		{
 			if Gun[i] != "" and Gun[i] != "noone"
 			{
-				var _damage = info_weapons(Gun[i],"damage");
+				var _damage = info(Gun[i],"damage");
 				MaxDamage+=_damage; guns+=1; GunDmg[i]=_damage;
 			}
 		}
@@ -72,23 +77,37 @@ function guns_installation(_id){
 		    else if droid[i,1]="zeus" then Zeus_numb+=1;
 		    else Iris_numb+=1;
 			//Slot 1
-		    switch info_weapons(droid[i,2],"type")
+		    switch info(droid[i,2],"type")
 		    {
-		        case "gun": MaxDamage+=info_weapons(droid[i,2],"damage"); guns+=1; break;
-		        case "shield": shield_def+=info_weapons(droid[i,2],"quantity"); break;
+		        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
+		        case "shield": 
+				{
+					var _absorb = info(droid[i,2],"absorb")
+					shield_def+=info(droid[i,2],"quantity"); 
+					shieldAbsorbC2 += _quantity * _absorb 
+					break;
+				}
 		    }
 			//Slot 2
-		    switch info_weapons(droid[i,3],"type")
+		    switch info(droid[i,3],"type")
 		    {
-		        case "gun": MaxDamage+=info_weapons(droid[i,3],"damage"); guns+=1; break;
-		        case "shield": shield_def+=info_weapons(droid[i,3],"quantity"); break;
+		        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
+		        case "shield": 
+				{
+					var _absorb = info(droid[i,3],"absorb")
+					shield_def+=info(droid[i,3],"quantity"); 
+					shieldAbsorbC2 += _quantity * _absorb 
+					break;
+				}
 		    }
 		} 
 		
 		shield_defC2 = shield_def
 		own_shieldC2 = shield_defC2
+		shieldAbsorbC2 = shieldAbsorbC2 / shield_defC2
 		ship_speedC2 = ship_speed/(450/(5)) // factor to adapt speed in game
 		MaxDamageC2 = MaxDamage
+		if id = gamer.id then gunsC2 = guns
 		
 		//CONFIG 1
 		Engine = EngineC1
@@ -96,15 +115,19 @@ function guns_installation(_id){
 		droid = droidC1
 		shield_def = 0
 		MaxDamage = 0
+		if id = gamer.id then guns = 0
 		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
 		//ENGINES
 		for (i=1; i<=Engine[0]; i+=1)
 		{
 			if Engine[i] != "" and Engine[i] != "noone"
 			{
-				var _type = info_weapons(Engine[i],"type");
-				var _quantity = info_weapons(Engine[i],"quantity");
-				if _type = "shield" then shield_def+=_quantity; 
+				var _type = info(Engine[i],"type");
+				var _quantity = info(Engine[i],"quantity");
+				if _type = "shield" then 
+				{
+					_absorb = info(Engine[i],"absorb")
+					shield_def+=_quantity; shieldAbsorbC1 += _quantity * _absorb}
 				if _type = "generator" then ship_speed+=_quantity;
 			}
 		}
@@ -114,7 +137,7 @@ function guns_installation(_id){
 		{
 			if Gun[i] != "" and Gun[i] != "noone"
 			{
-				var _damage = info_weapons(Gun[i],"damage");
+				var _damage = info(Gun[i],"damage");
 				MaxDamage+=_damage; guns+=1; GunDmg[i]=_damage;
 			}
 		}
@@ -129,23 +152,37 @@ function guns_installation(_id){
 		    else if droid[i,1]="zeus" then Zeus_numb+=1;
 		    else Iris_numb+=1;
 			//Slot 1
-		    switch info_weapons(droid[i,2],"type")
+		    switch info(droid[i,2],"type")
 		    {
-		        case "gun": MaxDamage+=info_weapons(droid[i,2],"damage"); guns+=1; break;
-		        case "shield": shield_def+=info_weapons(droid[i,2],"quantity"); break;
+		        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
+		        case "shield": 
+				{
+					var _absorb = info(droid[i,2],"absorb")
+					shield_def+=info(droid[i,2],"quantity"); 
+					shieldAbsorbC1 += _quantity * _absorb 
+					break;
+				}
 		    }
 			//Slot 2
-		    switch info_weapons(droid[i,3],"type")
+		    switch info(droid[i,3],"type")
 		    {
-		        case "gun": MaxDamage+=info_weapons(droid[i,3],"damage"); guns+=1; break;
-		        case "shield": shield_def+=info_weapons(droid[i,3],"quantity"); break;
+		        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
+		        case "shield": 
+				{
+					var _absorb = info(droid[i,3],"absorb")
+					shield_def+=info(droid[i,3],"quantity"); 
+					shieldAbsorbC1 += _quantity * _absorb 
+					break;
+				}
 		    }
 		} 
 		
 		shield_defC1 = shield_def
 		own_shieldC1 = shield_defC1
+		shieldAbsorbC1 = shieldAbsorbC1 / shield_defC1
 		ship_speedC1 = ship_speed/(450/(5)) // factor to adapt speed in game
 		MaxDamageC1 = MaxDamage
+		if id = gamer.id then gunsC1 = guns
 		
 		if config = 1
 		{
@@ -156,6 +193,8 @@ function guns_installation(_id){
 			Engine = EngineC1
 			droid = droidC1
 			Gun = GunC1
+			shieldAbsorb = shieldAbsorbC1
+			if id = gamer.id then {guns = gunsC1; gamer.Inventory = gamer.InventoryC1}
 		}
 		else
 		{
@@ -166,13 +205,15 @@ function guns_installation(_id){
 			Engine = EngineC2
 			droid = droidC2
 			Gun = GunC2
+			shieldAbsorb = shieldAbsorbC2
+			if id = gamer.id then {guns = gunsC2; gamer.Inventory = gamer.InventoryC2}
 		}
 		
 		#endregion
 
 		//SHIELD
 		shieldAbsorb = 0.8;
-		shieldPen = 0.1
+		//shieldPen = 0.1
 		own_shield = shield_def;
 
 		/************************************************

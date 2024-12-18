@@ -1,6 +1,6 @@
 ///@description portals
 var scale;
-scale = 1.5/0.6;
+scale = 16000/8000;
 
 var gg_room_width = 2080;
 var gg_room_height = 1300;

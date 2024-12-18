@@ -31,14 +31,30 @@ draw_sprite_ext(hud_fake2_spr,0,10,10,1,1,0,c_white,1);
 draw_sprite_ext(hud_map_spr,0,205,10,1,1,0,c_white,1); 
 
 //Draw Ammo HUD
-var _start = 1920/2-sprite_get_width(hud_ammo2_spr)/2
-draw_sprite_ext(shiphud_spr,0,_start,920,1,1,0,c_white,1); //ammo
-draw_sprite_ext(hud_rsb_spr,0,_start + sprite_get_width(shiphud_spr),920,1,1,0,c_white,1); //ammo
-draw_sprite_ext(hud_dcr_spr,0,_start + sprite_get_width(shiphud_spr)+39*1,920,1,1,0,c_white,1); //ammo
-draw_sprite_ext(hud_emp_spr,0,_start + sprite_get_width(shiphud_spr)+39*2,920,1,1,0,c_white,1); //ammo
-draw_sprite_ext(hud_ish_spr,0,_start + sprite_get_width(shiphud_spr)+39*3,920,1,1,0,c_white,1); //ammo
-draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)+39*4,920,1,1,0,c_white,1); //ammo
-draw_sprite_ext(hud_ammo2_spr,0,_start,880,1,1,0,c_white,1); //ammo
+var _ratio = 1.2;
+var _start = 1920/2-sprite_get_width(hud_ammo2_spr)/2*_ratio
+draw_sprite_ext(shiphud_spr,0,_start,920,_ratio,_ratio,0,c_white,1); //ammo
+draw_sprite_ext(hud_rsb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
+draw_sprite_ext(hud_dcr_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*1*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
+draw_sprite_ext(hud_emp_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*2*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
+draw_sprite_ext(hud_ish_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*3*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
+draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*4*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
+draw_sprite_ext(hud_ammo2_spr,0,_start,870,_ratio,_ratio,0,c_white,1); //ammo
+
+//Draw ammo text
+draw_set_halign(fa_left);
+draw_text(_start,960,dotString(global.x1,true))
+draw_text(_start+39*1*_ratio,960,dotString(global.x2,true))
+draw_text(_start+39*2*_ratio,960,dotString(global.x3,true))
+draw_text(_start+39*3*_ratio,960,dotString(global.x4,true))
+draw_text(_start+39*4*_ratio,960,dotString(global.x5,true))
+draw_text(_start+39*5*_ratio,960,dotString(global.x6,true))
+draw_text(_start+39*6*_ratio,960,dotString(global.dcr,true))
+draw_text(_start+39*7*_ratio,960,dotString(global.emp,true))
+draw_text(_start+39*8*_ratio,960,dotString(global.ish,true))
+draw_text(_start+39*9*_ratio,960,dotString(global.smb,true))
+draw_text(_start+39*0*_ratio,910,dotString(global.shieldbackup,true))
+draw_text(_start+39*1*_ratio,910,dotString(global.warrep,true))
 
 //Draw the HUD
 draw_set_valign(fa_middle);
@@ -65,6 +81,10 @@ draw_text_ext(+395,117+31,string(gamer.config),-1,string_width*0.7);
 //draw_text_ext(+220,76,string(strCR),-1,string_width*0.7); 
 //draw_text_ext(+90,135,string(global.ggenergy),-1,string_width*0.7);
 
+//PET
+draw_sprite_ext(pet_hud_spr,0,xx_pet,yy_pet,1,1,0,c_white,1)
+draw_sprite_ext(pet_kamikaze_spr,0,xx_pet+33,yy_pet+183,0.55,0.55,0,c_white,1)
+if kamikaze_selected then draw_sprite_ext(pet_selected_spr,0,xx_pet+33,yy_pet+183,0.55,0.55,0,c_white,1)
 
 //Draw CP HUD
 if room=global.cproom

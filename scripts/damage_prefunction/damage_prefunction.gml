@@ -1,3 +1,5 @@
+//OUTDATED
+
 function damage_prefunction(_attacker,_damage,_distance,_type)
 {
 	if (irandom_range(0,100) < 80)

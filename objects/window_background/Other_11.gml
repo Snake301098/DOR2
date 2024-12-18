@@ -6,6 +6,7 @@ instance_destroy(button_action);
 instance_destroy(shop_cell);
 instance_destroy(button_left_right);
 instance_destroy(button_qty);
+instance_destroy(skilltree_cell);
 
 //show_message(active_tab)
 switch active_tab
@@ -19,7 +20,7 @@ switch active_tab
 		#region
 		var btn_side_start, btn_side_end, number_btn, totalheight, buttons_x;
 	
-		buttons_x=425;
+		buttons_x=400
 		number_btn=5;
 		btn_side_start=320;
 		btn_side_end=750;
@@ -72,10 +73,10 @@ switch active_tab
 				//GUNS
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
 	
-				cells_start_x = 800;
+				cells_start_x = 740;
 				cells_start_y = 420;
-				spacing_x = 50;
-				spacing_y = 50;
+				spacing_x = 53;
+				spacing_y = 53;
 				var cells = gamer.Gun[0];
 				columns = 8;
 				rows = cells div columns;
@@ -97,10 +98,10 @@ switch active_tab
 				//ENGINES
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
 	
-				cells_start_x = 800;
+				cells_start_x = 740;
 				cells_start_y = 620;
-				spacing_x = 50;
-				spacing_y = 50;
+				spacing_x = 53;
+				spacing_y = 53;
 				var cells = gamer.Engine[0];
 				columns = 8;
 				rows = cells div columns;
@@ -121,10 +122,10 @@ switch active_tab
 	
 	
 				//INVENTORY
-				cells_start_x = 1240;
+				cells_start_x = 1260;
 				cells_start_y = 350;
-				spacing_x = 50;
-				spacing_y = 50;
+				spacing_x = 53;
+				spacing_y = 53;
 				rows = 7;
 				columns = 5;
 	
@@ -146,7 +147,7 @@ switch active_tab
 	
 				//SHIP
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 680;
+				change_design_btn.x = 620;
 				change_design_btn.y = 600;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="change_design";
@@ -155,8 +156,8 @@ switch active_tab
 	
 				//EQUIP
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1350;
-				change_design_btn.y = 710;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="equip";
 				change_design_btn.button_text="Equip";
@@ -164,8 +165,8 @@ switch active_tab
 	
 				//SELL
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1350;
-				change_design_btn.y = 780;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 800;
 				change_design_btn.button_sprite=button_action_red_spr;
 				change_design_btn.button_id="sell";
 				change_design_btn.button_text="Sell";
@@ -194,7 +195,7 @@ switch active_tab
 				{
 					for (i=1; i<=columns; i+=1)
 					{
-						position=(j-1)*columns+i+(page-1)*rows*columns;
+						position=(j-1)*columns+i+(page_droid-1)*rows*columns;
 						if position <= 10 then
 						//if position <= array_length(gamer.droid) then
 						{
@@ -292,10 +293,10 @@ switch active_tab
 				}
 				
 				//INVENTORY
-				cells_start_x = 1240;
+				cells_start_x = 1260;
 				cells_start_y = 350;
-				spacing_x = 50;
-				spacing_y = 50;
+				spacing_x = 53;
+				spacing_y = 53;
 				rows = 7;
 				columns = 5;
 	
@@ -317,21 +318,23 @@ switch active_tab
 				
 				//LEFT RIGHT BUTTONS
 				left_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				left_btn.category = "droid"
 				left_btn.x=780;
-				left_btn.y=790;
-				if page=1 then left_btn.image_index=0 else left_btn.image_index=1;
+				left_btn.y=810;
+				if page_droid=1 then left_btn.image_index=0 else left_btn.image_index=1;
 				left_btn.btn_direction="left";
 				
 				right_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				right_btn.category = "droid"
 				right_btn.x=880;
-				right_btn.y=790;
-				if page=2 then right_btn.image_index=0 else right_btn.image_index=1;
+				right_btn.y=810;
+				if page_droid=2 then right_btn.image_index=0 else right_btn.image_index=1;
 				right_btn.btn_direction="right";
 				
 				//EQUIP
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1350;
-				change_design_btn.y = 710;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="equip";
 				change_design_btn.button_text="Equip";
@@ -339,8 +342,8 @@ switch active_tab
 	
 				//SELL
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1350;
-				change_design_btn.y = 780;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 800;
 				change_design_btn.button_sprite=button_action_red_spr;
 				change_design_btn.button_id="sell";
 				change_design_btn.button_text="Sell";
@@ -357,10 +360,10 @@ switch active_tab
 			{
 				side_btn_3.image_index=1;
 				//INVENTORY
-				cells_start_x = 1240;
+				cells_start_x = 1260;
 				cells_start_y = 350;
-				spacing_x = 50;
-				spacing_y = 50;
+				spacing_x = 53;
+				spacing_y = 53;
 				rows = 7;
 				columns = 5;
 	
@@ -382,8 +385,8 @@ switch active_tab
 				
 				//EQUIP
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1350;
-				change_design_btn.y = 710;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="equip";
 				change_design_btn.button_text="Equip";
@@ -391,8 +394,8 @@ switch active_tab
 	
 				//SELL
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1350;
-				change_design_btn.y = 780;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 800;
 				change_design_btn.button_sprite=button_action_red_spr;
 				change_design_btn.button_id="sell";
 				change_design_btn.button_text="Sell";
@@ -417,7 +420,7 @@ switch active_tab
 		#region
 		var btn_side_start, btn_side_end, number_btn, totalheight, buttons_x;
 	
-		buttons_x=425;
+		buttons_x=400;
 		number_btn=5;
 		btn_side_start=320;
 		btn_side_end=750;
@@ -471,20 +474,21 @@ switch active_tab
 				//SHIPS TO BUY
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, ships_list;
 				
-				ships_list=["nostromo", "leonov", "bigboy", "bigboy", "vengeance", "goliath"];
+				ships_list=["nostromo", "leonov", "bigboy", "vengeance", "adept","avenger","lightning","revenge", "corsair", "goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"];
 	
 				cells_start_x = 640;
-				cells_start_y = 390;
-				spacing_x = 110;
-				spacing_y = 110;
+				cells_start_y = 370;
+				spacing_x = 115;
+				spacing_y = 115;
 				rows = 4;
-				columns = 3;
+				columns = 4;
 	
 				for (j=1; j<=rows; j+=1)
 				{
 					for (i=1; i<=columns; i+=1)
 					{
-						position=i + (j-1) * columns;
+						//position=i + (j-1) * columns;
+						position=(j-1)*columns+i+(page_ships-1)*rows*columns;
 						if (position-1)<array_length(ships_list) then
 						{
 							cell=instance_create_depth(0, 0, depth-1, shop_cell);
@@ -508,12 +512,27 @@ switch active_tab
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1340;
-				change_design_btn.y = 720;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
 				change_design_btn.image_index=2;
+				
+				//LEFT RIGHT BUTTONS
+				left_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				left_btn.category = "ships"
+				left_btn.x=780;
+				left_btn.y=810;
+				if page_ships=1 then left_btn.image_index=0 else left_btn.image_index=1;
+				left_btn.btn_direction="left";
+				
+				right_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				right_btn.category = "ships"
+				right_btn.x=880;
+				right_btn.y=810;
+				if page_ships=2 then right_btn.image_index=0 else right_btn.image_index=1;
+				right_btn.btn_direction="right";
 				
 				break;
 			}
@@ -529,12 +548,12 @@ switch active_tab
 				//SHIPS TO BUY
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, weapons_list;
 				
-				weapons_list=["MP-1", "LF-3", "LF-4", "SPD-3", "BO-1", "BO-2"];
+				weapons_list=["MP-1", "LF-3", "SPD-1","SPD-2","SPD-3", "B0-0", "B0-1","B0-2"];
 	
 				cells_start_x = 640;
-				cells_start_y = 390;
-				spacing_x = 110;
-				spacing_y = 110;
+				cells_start_y = 370;
+				spacing_x = 115;
+				spacing_y = 115;
 				rows = 3;
 				columns = 3;
 	
@@ -557,17 +576,18 @@ switch active_tab
 					}
 				}
 				
+				/*
 				//QUANTITY BUTTON (no qty when buying ships)
 				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
 				btn_qty.x=1340;
 				btn_qty.y=650;
 				btn_qty.shop_section="shop";
-				btn_qty.image_index=button_qty_spr;
+				btn_qty.image_index=button_qty_spr;*/
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1340;
-				change_design_btn.y = 720;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
@@ -590,9 +610,9 @@ switch active_tab
 				modules_list=["LF-4_1", "HST-1_1"];
 	
 				cells_start_x = 640;
-				cells_start_y = 390;
-				spacing_x = 110;
-				spacing_y = 110;
+				cells_start_y = 370;
+				spacing_x = 115;
+				spacing_y = 115;
 				rows = 1;
 				columns = 2;
 	
@@ -615,17 +635,18 @@ switch active_tab
 					}
 				}
 				
+				/*
 				//QUANTITY BUTTON (no qty when buying ships)
 				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
 				btn_qty.x=1340;
 				btn_qty.y=650;
 				btn_qty.shop_section="shop";
-				btn_qty.image_index=button_qty_spr;
+				btn_qty.image_index=button_qty_spr;*/
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1340;
-				change_design_btn.y = 720;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
@@ -645,14 +666,14 @@ switch active_tab
 				//SHIPS TO BUY
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, ammos_list;
 				
-				ammos_list=["premium_lasers", "HST-1_1"];
+				ammos_list=["x1","x2","x3","x5","x6","emp","ish","shieldbackup","warrep","smb"];
 	
 				cells_start_x = 640;
-				cells_start_y = 390;
-				spacing_x = 110;
-				spacing_y = 110;
-				rows = 1;
-				columns = 2;
+				cells_start_y = 370;
+				spacing_x = 115;
+				spacing_y = 115;
+				rows = 4;
+				columns = 3;
 	
 				for (j=1; j<=rows; j+=1)
 				{
@@ -673,17 +694,18 @@ switch active_tab
 					}
 				}
 				
+				/*
 				//QUANTITY BUTTON (no qty when buying ships)
 				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
 				btn_qty.x=1340;
 				btn_qty.y=650;
 				btn_qty.shop_section="shop";
-				btn_qty.image_index=button_qty_spr;
+				btn_qty.image_index=button_qty_spr;*/
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1340;
-				change_design_btn.y = 720;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
@@ -798,8 +820,8 @@ switch active_tab
 				
 				//BUY BUTTON
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1340;
-				change_design_btn.y = 720;
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
 				change_design_btn.button_sprite=button_action_spr;
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
@@ -819,8 +841,8 @@ switch active_tab
 				//INVENTORY
 				cells_start_x = 620;
 				cells_start_y = 390;
-				spacing_x = 50;
-				spacing_y = 50;
+				spacing_x = 53;
+				spacing_y = 53;
 				rows = 7;
 				columns = 5;
 	
@@ -901,6 +923,55 @@ switch active_tab
 		}
 		break;
 	}
+	#endregion
+	
+	//SKILLTREE
+	#region
+	case "SKILLTREE":
+	{
+				
+		//SHIPS TO BUY
+		var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, icons_list;
+				
+		icons_list=["ship_hull_i", "ship_hull_ii", "shield_engineering", "engineering", "bounty_hunter_i","bounty_hunter_ii","alien_hunter","greed","luck_i","luck_ii","cruelty_i","cruelty_ii","evasive_i","evasive_ii","electro_optics","shield_mechanics","smb_upgrade","ish_upgrade","shieldbackup_upgrade","warrep_upgrade"];
+	
+		cells_start_x = 640;
+		cells_start_y = 390;
+		spacing_x = 110;
+		spacing_y = 110;
+		rows = 4;
+		columns = 4;
+	
+		for (j=1; j<=rows; j+=1)
+		{
+			for (i=1; i<=columns; i+=1)
+			{
+				position=i + (j-1) * columns;
+				if (position-1)<array_length(icons_list) then
+				{
+					cell=instance_create_depth(0, 0, depth-1, skilltree_cell);
+					cell.x=cells_start_x+(i-1)*spacing_x
+					cell.y=cells_start_y+(j-1)*spacing_y
+					cell.position = position;
+					cell.content=icons_list[position-1];
+					cell.clickable=true;
+				}
+			}
+		}
+				
+				
+		//BUY BUTTON
+		change_design_btn = instance_create_depth(0,0,depth-1,button_action)
+		change_design_btn.x = 1300;
+		change_design_btn.y = 720;
+		change_design_btn.button_sprite=button_action_spr;
+		change_design_btn.button_id="gg_buy";
+		change_design_btn.button_text="USE ENERGY";
+		change_design_btn.image_index=2;
+			
+		break;	
+	}
+	
 	#endregion
 	
 	//GG

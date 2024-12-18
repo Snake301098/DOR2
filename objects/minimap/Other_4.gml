@@ -19,8 +19,8 @@ if room=lv3_8 then mimage=35;
 //EIC
 if room=lv2_1 then mimage=lv2_1_bg;
 if room=lv2_2 then mimage=lv2_2_bg;
-if room=lv2_3 then mimage=7;
-if room=lv2_4 then mimage=8;
+if room=lv2_3 then mimage=lv2_3_bg;
+if room=lv2_4 then mimage=lv2_4_bg;
 if room=lv2_5 then mimage=28;
 if room=lv2_6 then mimage=29;
 if room=lv2_7 then mimage=30;

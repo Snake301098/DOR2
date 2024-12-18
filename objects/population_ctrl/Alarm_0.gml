@@ -1,82 +1,149 @@
-///@description spawn ships normal room
+///@description SPAWN MOBS
 
 var a,b,xx,yy,ship_numb, numb_waiters, numb_corp, numb_travelers,numb_bonus_grubers,numb_hunters_mob;
 //Îáíóëåíèå ïåðåìåííûõ.
 numb_waiters:=0; numb_corp[0]:=0; numb_corp[1]:=0; numb_corp[2]:=0; numb_travelers:=0;
 numb_bonus_grubers:=0; numb_hunters_mob:=0;
 
-var own_ships = 0;
-var ennemy_ships = 0;
-var own_ships_obj = 15;
+
 
 //Variables
 var smallAlien, largeAlien, uberMap, bonusbox_limit, bossNormal, bossPVP, uberPVP
-if (room=global.cproom)
-{
- smallAlien = 4;
- largeAlien = 2;
- bossNormal = 1;
- uberMap=0;
- bonusbox_limit=2;
-}
-else{
- smallAlien = 15;
- largeAlien = 10;
- bossNormal = 4;
- uberMap = 1;   
- bonusbox_limit=30; 
-}
+smallAlien = 22;
+largeAlien = 10;
+bossNormal = 4;
+uberMap = 1;   
+bonusbox_limit=40; 
 
 
-//if instance_exists(gamercooldowns) = false then {instance_create_depth(x,y,gamercooldowns)}
-//Ïîäñ÷åò êîë-âà êîðàáëåé ñ ðàçíûìè õàðàêòåðèñòèêàìè.
-with (ships) 
+//X-1       
+if (room=lv1_1 or room=lv2_1 or room=lv3_1)   then 
 {
-    if corporation = info_map(room,"owners") then own_ships++ else ennemy_ships++;
-}
-             
-if (room=lv1_1 or room=lv2_1 or room=lv3_1 or room=lv3_2)   then 
-{
-	//MOBS
     if instance_number(streuner)<smallAlien/2 then
 	{
-        while instance_number(streuner)<smallAlien
-        {
-			spawn_mob(streuner);
-		}
-	}
-    
-	if own_ships < own_ships_obj then
-	{
-		var to_spawn_nbr = irandom_range(0,own_ships_obj-own_ships);
-		if own_ships = 0 then to_spawn_nbr = irandom_range(own_ships_obj-5,own_ships_obj);
-		
-		for(i=1; i<=to_spawn_nbr; i+=1)
-		{
-			var xx = irandom_range(100,room_width-100);
-			var yy = irandom_range(100,room_height-100);
-			spawn_ship(xx,yy,info_map(room,"owners"),"farming",0)
-		}
-	}
-	
-	if ennemy_ships <= 1 then
-	{
-		var spawn_ennemy_prob = irandom(100);
-		var spawn_enemy_nbr = 0;
-		if spawn_ennemy_prob >= 75 then spawn_enemy_nbr++;
-		if spawn_ennemy_prob >= 90 then spawn_enemy_nbr++;
-		for(var i=0; i<=spawn_enemy_nbr; i+=1)
-		{
-			var xx = irandom_range(100,room_width-100);
-			var yy = irandom_range(100,room_height-100);
-			var ennemy_corp = get_ennemy_corp(info_map(room,"owners"))
-			var _power = choose(3,3,3,3,4,4,4,4,5,5);
-			spawn_ship(xx,yy,ennemy_corp,"battle",1,,_power)
-		}
+		spawn_mob(streuner,,,irandom_range(smallAlien/4,smallAlien/2));
 	}
 }
 
-alarm[0]  = irandom_range(15,45) * room_speed;    
+//X-2
+if (room=lv1_2 or room=lv2_2 or room=lv3_2)   then 
+{
+    if instance_number(streuner)<smallAlien/2 then
+	{
+		spawn_mob(streuner,,,irandom(smallAlien/2));
+	}
+	
+    if instance_number(lordakia)<smallAlien/2 then
+	{
+		spawn_mob(lordakia,,,irandom_range(smallAlien/4,smallAlien/2));
+	}
+}
+
+//X-3
+if (room=lv1_3 or room=lv2_3 or room=lv3_3)   then 
+{
+    if instance_number(lordakia)<smallAlien/2 then
+	{
+		spawn_mob(lordakia,,,irandom(smallAlien/2));
+	}
+	
+    if instance_number(saimon)<smallAlien/2 then
+	{
+		spawn_mob(saimon,,,irandom_range(smallAlien/4,smallAlien/2));
+	}
+	
+    if instance_number(mordon)<smallAlien/2 then
+	{
+		spawn_mob(mordon,,,irandom_range(smallAlien/4,smallAlien/2));
+	}
+	
+    if instance_number(devolarium)<largeAlien/2 then
+	{
+		spawn_mob(devolarium,,,irandom_range(largeAlien/4,largeAlien/2));
+	}
+}
+
+//X-4
+if (room=lv1_4 or room=lv2_4 or room=lv3_4)   then 
+{
+    if instance_number(lordakia)<smallAlien/2 then
+	{
+		spawn_mob(lordakia,,,irandom(smallAlien/2));
+	}
+	
+    if instance_number(saimon)<smallAlien/2 then
+	{
+		spawn_mob(saimon,,,irandom_range(smallAlien/4,smallAlien/2));
+	}
+	
+    if instance_number(mordon)<smallAlien/2 then
+	{
+		spawn_mob(mordon,,,irandom_range(smallAlien/4,smallAlien/2));
+	}
+	
+    if instance_number(sibelon)<largeAlien/2 then
+	{
+		spawn_mob(sibelon,,,irandom_range(largeAlien/4,largeAlien/2));
+	}
+}
+
+//X-5
+if (room=lv1_5 or room=lv2_5 or room=lv3_5)   then 
+{
+    if instance_number(lordakia)<smallAlien/2 then
+	{
+		spawn_mob(lordakia,,,irandom(smallAlien/2));
+	}
+	
+    if instance_number(sibelonit)<smallAlien/2 then
+	{
+		spawn_mob(sibelon,,,irandom_range(smallAlien/4,smallAlien/2));
+	}
+	
+    if instance_number(lordakium)<largeAlien/2 then
+	{
+		spawn_mob(lordakium,,,irandom_range(largeAlien/4,largeAlien/2));
+	}
+}
+
+//X-6
+if (room=lv1_6 or room=lv2_6 or room=lv3_6)   then 
+{
+    if instance_number(kristallin)<smallAlien/2 then
+	{
+		spawn_mob(kristallin,,,irandom(smallAlien/2));
+	}
+	
+    if instance_number(kristallon)<largeAlien/2 then
+	{
+		spawn_mob(kristallon,,,irandom_range(largeAlien/4,largeAlien/2));
+	}
+}
+
+//X-7
+if (room=lv1_7 or room=lv2_7 or room=lv3_7)   then 
+{
+    if instance_number(kristallin)<smallAlien/2 then
+	{
+		spawn_mob(kristallin,,,irandom(smallAlien/2));
+	}
+	
+    if instance_number(kristallon)<largeAlien/2 then
+	{
+		spawn_mob(kristallon,,,irandom_range(largeAlien/4,largeAlien/2));
+	}
+}
+
+//X-8
+if (room=lv1_8 or room=lv2_8 or room=lv3_8)   then 
+{
+    if instance_number(streunerR)<smallAlien/2 then
+	{
+		spawn_mob(streunerR,,,irandom(smallAlien/2));
+	}
+}
+
+alarm[0]  = irandom_range(5,15) * room_speed;    
     /*
 if (room=lv1_2 or room=lv2_2 or room=lv3_2) then
     {

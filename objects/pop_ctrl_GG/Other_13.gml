@@ -1,4 +1,34 @@
 /// @description ALPHA
+
+switch wave
+{
+	case 1:
+	{
+		spawn_mob(streuner,,,5);
+		break;
+	}
+	
+	case 2:
+	{
+		spawn_mob(lordakia,,,5);
+		break;
+	}
+	
+	case 10:
+	{
+		spawn_mob(lordakia,,,5);
+		break;
+	}
+	
+}
+
+
+alarm[0] = 1;
+
+
+
+//OLD DN
+/*
 var gg_room_width = 2080;
 var gg_room_height = 1300;
 

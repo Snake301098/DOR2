@@ -2,5 +2,5 @@
 // You can write your code in this editor
 image_speed=0;
 button_text="test";
-button_sprite="";
+button_sprite=empty_spr;
 event_user(0)

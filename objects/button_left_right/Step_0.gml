@@ -2,8 +2,17 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 {
     if image_index=1 then 
 	{
-		if btn_direction="right" then {with window_background {page+=1; event_user(1);}}
-		if btn_direction="left" then {with window_background {page-=1; event_user(1);}}
+		if category = "ships"
+		{
+			if btn_direction="right" then {with window_background {page_ships+=1; event_user(1);}}
+			if btn_direction="left" then {with window_background {page_ships-=1; event_user(1);}}
+		}
+		
+		if category = "droid"
+		{
+			if btn_direction="right" then {with window_background {page_droid+=1; event_user(1);}}
+			if btn_direction="left" then {with window_background {page_droid-=1; event_user(1);}}
+		}
 	}
 }
 

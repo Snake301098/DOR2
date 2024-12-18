@@ -2,6 +2,7 @@
 if pos=2 or pos=3 or pos=9 or pos=10  then speedn=1;
 if pos=4 or pos=7 or pos=8 then speedn=2;
 if owner=gamer.id then depth=-1 else depth=1;
+if owner=gamer.id then persistent=true;
 
     //New way for drone designs, should be ALOT faster AND shorter
 	show_debug_message(owner)

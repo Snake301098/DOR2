@@ -4,6 +4,21 @@ var a,ii,i;
 var xdec = 0;
 var ydec = 0;
 if id = gamer.id then {xdec=-50;ydec=-3}
+var _ammo_sound = x1_sound
+if ammo_selected = x2_ammo then _ammo_sound = x2_sound
+if ammo_selected = x3_ammo then _ammo_sound = x3_sound
+if ammo_selected = x4_ammo then _ammo_sound = x4_sound
+if ammo_selected = rsb then _ammo_sound = rsb_sound
+
+if id = gamer.id 
+{
+	if ammo_selected = x1_ammo then global.x1 -= gamer.guns
+	if ammo_selected = x2_ammo then global.x2 -= gamer.guns
+	if ammo_selected = x3_ammo then global.x3 -= gamer.guns
+	if ammo_selected = x4_ammo then global.x4 -= gamer.guns
+	if ammo_selected = rsb then global.x6 -= gamer.guns
+}
+
 //MaxDamage = 15000
 
 //Îòêëþ÷åíèå ÁÇ
@@ -15,7 +30,7 @@ if instance_exists(target)
 	if ((distance_to_object(gamer)<500) or (a<400) or (object_index=gamer)) then {
 	    if (point_distance(x+xdec,y+ydec,gamer.x+xdec,gamer.y) <= 500)
 	        {
-				a:=audio_play_sound(x4_sound,1,false);
+				a:=audio_play_sound(_ammo_sound,1,false);
 	        }
 		}
 			
@@ -75,12 +90,12 @@ if instance_exists(target)
 		    blust_3=instance_create_depth(laser_3.x+blust_xdec,laser_3.y,0,blust); blust_3.owner:=id; with(blust_3) event_user(0); 
 		    laser_3.speed = global.laser_speed;
 		    laser_3.target:=target; laser_3.owner:=id; laser_3.myOwner=id;
-		    laser_3.damage:=0; laser_3.drawDamage=false;; with(laser_3) event_user(0);
+		    laser_3.damage:=0; laser_3.drawDamage=false; with(laser_3) event_user(0);
 			
 		    laser_4 = instance_create_depth(x+xdec+lengthdir_x(dec4a,image_angle+dec4b),y+ydec+lengthdir_y(dec4a,image_angle+dec4b),0,ammo_selected);
 		    blust_4=instance_create_depth(laser_4.x+blust_xdec,laser_4.y,0,blust); blust_4.owner:=id; with(blust_4) event_user(0);
 		    laser_4.speed = global.laser_speed;
-		    laser_4.target:=target; laser_4.owner:=id; laser_4.myOwner=id;
+		    laser_4.target:=target; laser_4.owner:=id; laser_4.drawDamage=false; laser_4.myOwner=id;
 			
 		    laser_5 = instance_create_depth(x+xdec+lengthdir_x(dec5a,image_angle+dec5b),y+ydec+lengthdir_y(dec5a,image_angle+dec5b),0,ammo_selected);
 		    blust_5=instance_create_depth(laser_5.x+blust_xdec,laser_5.y,0,blust); blust_5.owner:=id; with(blust_5) event_user(0); 

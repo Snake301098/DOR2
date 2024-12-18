@@ -1,1 +1,1 @@
-if distance_to_object(gamer) < 600 then audio_play_sound(rocket_pulse_sound,1,false);
+if distance_to_object(gamer) < 600 then audio_play_sound(ammo_mob_sound,1,false);

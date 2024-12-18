@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"deal_prefunction",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"deal_prefunction",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

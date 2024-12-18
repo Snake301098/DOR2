@@ -340,25 +340,25 @@ for (i:=1; i<=mp1_nbrC1; i+=1;) {array_push(GunC1,"MP-1");}
 for (i:=1; i<=lf3_nbrC1; i+=1;) {array_push(GunC1,"LF-3");}
 for (i:=1; i<=lf4_nbrC1; i+=1;) {array_push(GunC1,"LF-4");}
 
-for (i:=1; i<=bo0_nbrC1; i+=1;) {array_push(EngineC1,"BO-0");}
-for (i:=1; i<=bo1_nbrC1; i+=1;) {array_push(EngineC1,"BO-1");}
-for (i:=1; i<=bo2_nbrC1; i+=1;) {array_push(EngineC1,"BO-2");}
+for (i:=1; i<=bo0_nbrC1; i+=1;) {array_push(EngineC1,"B0-0");}
+for (i:=1; i<=bo1_nbrC1; i+=1;) {array_push(EngineC1,"B0-1");}
+for (i:=1; i<=bo2_nbrC1; i+=1;) {array_push(EngineC1,"B0-2");}
 
-for (i:=1; i<=spd1_nbrC1; i+=1;) {array_push(EngineC1,"BO-0");}
-for (i:=1; i<=spd2_nbrC1; i+=1;) {array_push(EngineC1,"BO-1");}
-for (i:=1; i<=spd3_nbrC1; i+=1;) {array_push(EngineC1,"BO-2");}
+for (i:=1; i<=spd1_nbrC1; i+=1;) {array_push(EngineC1,"SPD-1");}
+for (i:=1; i<=spd2_nbrC1; i+=1;) {array_push(EngineC1,"SPD-2");}
+for (i:=1; i<=spd3_nbrC1; i+=1;) {array_push(EngineC1,"SPD-3");}
 
 for (i:=1; i<=mp1_nbrC2; i+=1;) {array_push(GunC2,"MP-1");}
 for (i:=1; i<=lf3_nbrC2; i+=1;) {array_push(GunC2,"LF-3");}
 for (i:=1; i<=lf4_nbrC2; i+=1;) {array_push(GunC2,"LF-4");}
 
-for (i:=1; i<=bo0_nbrC2; i+=1;) {array_push(EngineC2,"BO-0");}
-for (i:=1; i<=bo1_nbrC2; i+=1;) {array_push(EngineC2,"BO-1");}
-for (i:=1; i<=bo2_nbrC2; i+=1;) {array_push(EngineC2,"BO-2");}
+for (i:=1; i<=bo0_nbrC2; i+=1;) {array_push(EngineC2,"B0-0");}
+for (i:=1; i<=bo1_nbrC2; i+=1;) {array_push(EngineC2,"B0-1");}
+for (i:=1; i<=bo2_nbrC2; i+=1;) {array_push(EngineC2,"B0-2");}
 
-for (i:=1; i<=spd1_nbrC2; i+=1;) {array_push(EngineC2,"BO-0");}
-for (i:=1; i<=spd2_nbrC2; i+=1;) {array_push(EngineC2,"BO-1");}
-for (i:=1; i<=spd3_nbrC2; i+=1;) {array_push(EngineC2,"BO-2");}
+for (i:=1; i<=spd1_nbrC2; i+=1;) {array_push(EngineC2,"SPD-1");}
+for (i:=1; i<=spd2_nbrC2; i+=1;) {array_push(EngineC2,"SPD-2");}
+for (i:=1; i<=spd3_nbrC2; i+=1;) {array_push(EngineC2,"SPD-3");}
 
 for (i:=1; i<=flax_numb; i+=1;) {droid[i,1]="flax"}
 for (i=1+flax_numb;i<=flax_numb+iris_numb;i++){droid[i,1]:="iris";}

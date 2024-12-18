@@ -10,4 +10,7 @@ with(cooldowns_ctrl)
 	}	
 }
 
+if owner = gamer.id then global.warrep--
 instance_destroy();
+
+

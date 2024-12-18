@@ -10,4 +10,5 @@ with(cooldowns_ctrl)
 	}	
 }
 
+if owner = gamer.id then global.shieldbackup--
 instance_destroy();

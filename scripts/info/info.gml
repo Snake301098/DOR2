@@ -91,6 +91,31 @@ function info(item,_info,lvl=1)
 		        case "cost_type": return "uridium"; 
 		    }
 		    break;
+			
+			
+		case "ish":
+		    switch _info
+		    {
+		        case "cost_qty": return 500; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
+			
+		case "smb":
+		    switch _info
+		    {
+		        case "cost_qty": return 500; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
+			
+		case "emp":
+		    switch _info
+		    {
+		        case "cost_qty": return 500; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break;
 	
 		//---------------- Boosters --------------------
 		case "boosters": return 15000;    
@@ -98,36 +123,224 @@ function info(item,_info,lvl=1)
 		#endregion
 		
 		/************************************************
-		                GUNS
+		                SHIPS
 		*************************************************/
 		#region
-		case "LF-3":
-			switch _info
-			{
-			    case "type": return "Gun";
-		        case "cost_qty": return 10000; 
-		        case "cost_type": return "uridium"; 
-			}
+
+		case "nostromo":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
 			break;
 			
+		case "leonov":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "bigboy":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "vengeance":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "adept":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "avenger":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "lightning":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "revenge":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "corsair":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "goliath":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "bastion":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "enforcer":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "centaur":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "exalted":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "goal":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "kick":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "referee":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "saturn":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "veteran":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "diminisher":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "sentinel":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "solace":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "spectrum":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "venom":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "spearhead":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "aegis":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		case "citadel":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			break;
+			
+		#endregion
+		
+		/************************************************
+		                WEAPONS
+		*************************************************/
+		#region
+		
 		case "LF-4":
-			switch _info
-			{
-			    case "type": return "Gun";
-		        case "cost_qty": return 15000; 
-		        case "cost_type": return "uridium"; 
-			}
+			if _info = "type" then return "gun";
+			if _info = "damage" then return 200;
+			break;
+			
+			
+		case "LF-3":
+			if _info = "type" then return "gun";
+			if _info = "damage" then return 175;
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 10000;
+			break;
+			
+			
+		case "MP-1":
+			if _info = "type" then return "gun";
+			if _info = "damage" then return 125;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 150000;
+			break;
+			
+		
+		case "B0-2":
+			if _info = "type" then return "shield";
+			if _info = "quantity" then return 10000;
+			if _info = "absorb" then return 0.8;
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 10000;
 			break;
 		
-		case "MP-1":
-			switch _info
-			{
-			    case "type": return "Gun";
-		        case "cost_qty": return 1000; 
-		        case "cost_type": return "uridium"; 
-			}
+		
+		case "B0-1":
+			if _info = "type" then return "shield";
+			if _info = "quantity" then return 8000;
+			if _info = "absorb" then return 0.7;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 256000;
 			break;
 			
+			
+		case "B0-0":
+			if _info = "type" then return "shield";
+			if _info = "quantity" then return 6000;
+			if _info = "absorb" then return 0.6;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 50000;
+			break;
+			
+			
+		case "SPD-3":
+			if _info = "type" then return "generator";
+			if _info = "quantity" then return 10;
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 2000;
+			break;
+		
+		
+		case "SPD-2":
+			if _info = "type" then return "generator";
+			if _info = "quantity" then return 7;
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 1000;
+			break;
+			
+			
+		case "SPD-1":
+			if _info = "type" then return "generator";
+			if _info = "quantity" then return 5;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 25000;
+			break;
+		
 		#endregion
 
 		/************************************************
@@ -255,7 +468,7 @@ function info(item,_info,lvl=1)
 		        }  
 		    break;
 		#endregion
-        
+		
 		/************************************************
 		                NICKNAMES
 		*************************************************/

@@ -17,6 +17,8 @@ function change_config(_id)
 				ship_speed = ship_speedC2
 				droid = droidC2
 				MaxDamage = MaxDamageC2
+				shieldAbsorb = shieldAbsorbC2
+				if _id = gamer.id then {guns = gunsC2; gamer.Inventory = gamer.InventoryC2}
 			}
 			else 
 			{
@@ -30,6 +32,8 @@ function change_config(_id)
 				ship_speed = ship_speedC1
 				droid = droidC1
 				MaxDamage = MaxDamageC1
+				shieldAbsorb = shieldAbsorbC1
+				if _id = gamer.id then {guns = gunsC1; gamer.Inventory = gamer.InventoryC1}
 			}
 		}
 	

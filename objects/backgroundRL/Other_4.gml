@@ -4,6 +4,8 @@ ymultiplier:=room_height / back_height;
 
 if room=lv2_1 then mapbackground=lv2_1_bg;
 if room=lv2_2 then mapbackground=lv2_2_bg;
+if room=lv2_3 then mapbackground=lv2_3_bg;
+if room=lv2_4 then mapbackground=lv2_4_bg;
 if room=lv3_1 then mapbackground=lv3_1_bg;
 if room=lv3_2 then mapbackground=lv3_2_bg;
 if room=GGA then mapbackground=GGA_bg;

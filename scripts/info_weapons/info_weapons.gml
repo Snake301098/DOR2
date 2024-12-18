@@ -31,19 +31,19 @@ function info_weapons(_weapon,_info,_level="")
 			break;
 			
 		
-		case "BO-2":
+		case "B0-2":
 			if _info = "type" then return "shield";
 			if _info = "quantity" then return 10000;
 			break;
 		
 		
-		case "BO-1":
+		case "B0-1":
 			if _info = "type" then return "shield";
 			if _info = "quantity" then return 8000;
 			break;
 			
 			
-		case "BO-0":
+		case "B0-0":
 			if _info = "type" then return "shield";
 			if _info = "quantity" then return 6000;
 			break;

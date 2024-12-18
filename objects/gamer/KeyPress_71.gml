@@ -1,4 +1,6 @@
 ///@description NUKE
+
+/*
 if can_use_nuke_k1 = true
 {
 	if global.nuke_k1 > 0

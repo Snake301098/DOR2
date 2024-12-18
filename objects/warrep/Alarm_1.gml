@@ -1,7 +1,7 @@
 /// @description Heal
 if owner.own_health<owner.health_def 
 {
-	owner.own_health+=healthRegen;
+	deal_healing(owner,owner,"warrep",healthRegen,"health")
 }
 else
 {
@@ -10,7 +10,7 @@ else
 
 //if owner=gamer.id then
 //{
-	draw_damage(owner.id,"+" + damage_syntax(healthRegen),c_lime);
+	//draw_damage(owner.id,"+" + damage_syntax(healthRegen),c_lime);
 //}
 
 alarm[1]=delay;

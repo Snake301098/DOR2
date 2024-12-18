@@ -2,7 +2,6 @@ var a,b,c;
 b:=0; c:=0;
 var myid=id;
 
-clear_ship_destroy_id(id)
 
 
 /*if b=true and (target=gamer.id) and (lock_=true) or(object_index=cubikon && gamer.target=id) then
@@ -22,47 +21,44 @@ else
 FINALEP=round(EPPOINTS)
 FINALHONOR=round(HONORPOINTS)
 }*/
-if gotKilledBy=gamer.id then
+if instance_exists(gamer.target)
 {
-    //global.uridium+=URIDIUM;
-    global.credit+=money;
-    show_protocol_message(text_add("You have destroyed a: %1.#You have recieved %2 credits.",name,money));
-        global.alienkills+=1;
-        global.experience+=EPPOINTS;
-        global.honor+=HONORPOINTS;
-        //show_protocol_message(string(text.received) + " " + string(URIDIUM) + " " + "Uridium")
-        show_protocol_message(string(text.received) + " " + string(EPPOINTS) + " " + string("xp"))
-        show_protocol_message(string(text.received) + " " + string(HONORPOINTS) + " " + string("honor"))
-//        if x4 > 0 then
-//        {show_protocol_message("You have recieved" + " " + string(x4) + " " + "x4 ammo!")
-//        gamer.ammo[4,0]+=x4}        
-    //Ãðóçîâàÿ êîðîáêà.
-    if Loot[0,0]>0 then
-        {
-       /* with(instance_create(x+irandom_range(-sprite_width,sprite_width),y+irandom_range(-sprite_height,sprite_height),box))
-            {
-            Loot[0,0]:=other.Loot[0,0];
-            for (b:=1; b<=other.Loot[0,0]; b+=1;)
-                {
-                Loot[b,0]:=other.Loot[b,0];
-                Loot[b,1]:=other.Loot[b,1];
-                }
-            }*/
-        }
-		
-		//LOOT ANIMATION
-		for(var i=0; i<array_length(reward); i++)
-		{
-			drop = instance_create_depth(0,0,-100,dropobject);
-			drop.x = x;
-			drop.y = y;
-			drop.object_name = reward[i,0];
-			drop.object_type = "ores";
-			drop.object_qty = round(reward[i,1]);
-		}
-    }
+	if gamer.target = id
+	{
+	    global.uridium+=URIDIUM;
+	    global.credit+=CREDITS;
+	    show_protocol_message(text_add("You have destroyed a: %1.#You have recieved %2 credits.",name,CREDITS));
+	    global.alienkills+=1;
+	    global.experience+=EPPOINTS;
+	    global.honor+=HONORPOINTS;
+	    show_protocol_message(string(text.received) + " " + string(URIDIUM) + " " + "Uridium")
+	    show_protocol_message(string(text.received) + " " + string(EPPOINTS) + " " + string("xp"))
+	    show_protocol_message(string(text.received) + " " + string(HONORPOINTS) + " " + string("honor"))
+
+		//LOGFILE REWARD based on Box Muller transfor to sort a normal distribution
+		var hp_ref = 400//k
+		var log_avg_ref = 5//logfiles for hpref k hit+shield points
+		var log_std_ref = 2//logfiles for hpref k hit+shield points
+	
+		var i = random(1);
+		var j = random(1);
+	
+		var X = sqrt(-2*ln(i))*cos(2*pi*j)
+	
+		var avg = (health_def + shield_def)/1000 * log_avg_ref / hp_ref
+		var std = avg * log_std_ref / log_avg_ref
+	
+		var alpha = sqrt(avg * log_std_ref / log_avg_ref)/std
+		var beta = (health_def + shield_def)/1000 * log_avg_ref / hp_ref - avg * alpha
+	
+		var logfiles_qty = round(avg + std * X)
+		if logfiles_qty < 0 then logfiles_qty = 0
+	    if logfiles_qty > 0 then show_protocol_message(string(text.received) + " " + string(logfiles_qty) + " " + string("logfiles"))
+	}
+}
 
 
+clear_ship_destroy_id(id)
 
 //Âçðûâ.
 a=instance_create_depth(x,y,-3,bigexpl1);

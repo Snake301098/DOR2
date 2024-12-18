@@ -1,0 +1,14 @@
+byuing="noone"                              //×òî ìîæíî êóïèòü íàæàâ íà ýòó êíîïêó.
+cos_qty=0;                                    //Öåíà.
+buyunits=0;                                 //Êîë-âî âåùåé íà ïîêóïêó.
+type:="noone"                               //Òèï ïðîäàâàåìûõ ïðåäìåòîâ.
+spec_index:=0;                              //Ñïåö. èíäåêñ ïðîä. ïðåäìåòà.
+alarm[0]=1;
+image_speed=0;
+sprite_index=skilltree_icons_spr;
+owning=0;
+content="";
+name="";
+category="";
+clickable=true;
+selected=false;

@@ -1,4 +1,4 @@
-function spawn_ship(xx,yy,corp,_action="farming",_isInvader=0,_shipType="goliath",_power=-1, _waiting_cp_spawn=0)
+function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="goliath",_power=-1, _waiting_cp_spawn=0,nbr=1)
 {
 //arg0: x
 //arg1: y
@@ -7,29 +7,49 @@ function spawn_ship(xx,yy,corp,_action="farming",_isInvader=0,_shipType="goliath
 //arg4: isInvader
 //arg5: Shiptype
 //arg6: Power
-	var _Ship = _shipType;
 
-	if _power = -1  then  _power  =  choose(1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,4,4,4,5,5);
-			
-	if _shipType = "vengeance" then _Ship = choose("vengeance","revenge","avenger","adept","corsair","lightning")
-	if _shipType = "goliath" then _Ship = choose("goliath","enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
-	if _shipType="badships" then _Ship = choose("phoenix","nostromo","bigboy","leonov")
-
-	z=instance_create_depth(xx,yy,0,ship)
-	z.corporation=corp
-	z.action[0]:=_action;
-	z.isInvader=_isInvader;
-	z.alarm[5]=irandom(500); 
-	z.Shiptype=_shipType;
-	z.Ship = _Ship
-	z.Power:=_power;
-	z.waiting_cp_spawn:=_waiting_cp_spawn;
-	with(z)
+	for(var i=0; i<nbr;i++)
 	{
-		event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.
-		event_user(3);
-		guns_installation(id);
-		own_health=health_def;
+		var _Ship = _shipType;
+
+		if _power = -1  then  _power  =  choose(1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,4,4,4,5,5);
+			
+		if _shipType = "vengeance" then _Ship = choose("vengeance","revenge","avenger","adept","corsair","lightning")
+		if _shipType = "goliath" then _Ship = choose("goliath","enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
+		if _shipType="badships" then _Ship = choose("phoenix","nostromo","bigboy","leonov")
+		if xx=-5 and yy=-5 then
+		{
+			var _xx = irandom_range(100,room_width-100);
+			var _yy = irandom_range(100,room_height-100);
+			
+			//mob not suddenly appearing in front of gamer
+			if point_distance(gamer.y,gamer.y,_xx,_yy) < 2000
+			{
+				_xx = room_width - _xx
+				_yy = room_height - _yy
+			}
+		}
+		else
+		{
+			_xx = xx
+			_yy = yy
+		}
+		z=instance_create_depth(_xx,_yy,0,ship)
+		z.corporation=corp
+		z.action[0]:=_action;
+		z.isInvader=_isInvader;
+		z.alarm[5]=irandom(500); 
+		z.Shiptype=_shipType;
+		z.Ship = _Ship
+		z.Power:=_power;
+		z.waiting_cp_spawn:=_waiting_cp_spawn;
+		with(z)
+		{
+			event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.
+			event_user(3);
+			guns_installation(id);
+			own_health=health_def;
+		}
+		show_debug_message(z.nickname + " " + string(z.Power))
 	}
-	show_debug_message(z.nickname + " " + string(z.Power))
 }

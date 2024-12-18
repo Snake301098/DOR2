@@ -1,12 +1,16 @@
-a-=.02;
-yy-=.95;
-scale+=0.006
+_ycoef*=0.92;
+_scalecoef*=0.994;
+_acoef*=0.92;
+a-=.02*(1-_acoef);
+yy-=5*_ycoef;
+scale+=0.026*_scalecoef;
 
 if t = "0" then t = "MISS";
+if is_numeric(t) then t = dotString(t);
 
 if instance_exists(idship) then
 {
-	if idship=gamer.id then x3=round(idship.x-50); else x3=round(idship.x);
+	x3=round(idship.x+5);
 	y3=round(idship.y+yy)
 	if a<=0 instance_destroy();
 } else instance_destroy();

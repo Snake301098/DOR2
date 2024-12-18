@@ -1,3 +1,6 @@
+deal_prefunction(owner,other.id,"laser",damage,damage_x,drawDamage)
+
+/*
 var a,b,c,healthAbsord,shieldAbsorb,shieldPen,healthAbsorb;
 if owner.target=other.id then
     {
@@ -43,7 +46,7 @@ if owner.target=other.id then
                         myOwner.own_shield += a;
                     }
                 }
-            } else{*/
+            } else{
             //Not using SAB
                 if(other.own_shield <= 0){
                     other.own_health-=a;
