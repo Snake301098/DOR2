@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"cargo_box","order":9,"path":"objects/cargo_box/cargo_box.yy",},
     {"name":"chest","order":7,"path":"objects/chest/chest.yy",},
     {"name":"devolarium","order":4,"path":"objects/devolarium/devolarium.yy",},
     {"name":"emp","order":2,"path":"objects/emp/emp.yy",},
@@ -33,6 +34,8 @@
     {"name":"move_sound","order":5,"path":"sounds/move_sound/move_sound.yy",},
     {"name":"repair_sound","order":6,"path":"sounds/repair_sound/repair_sound.yy",},
     {"name":"rsb_sound","order":1,"path":"sounds/rsb_sound/rsb_sound.yy",},
+    {"name":"cargo_box_blue_spr","order":9,"path":"sprites/cargo_box_blue_spr/cargo_box_blue_spr.yy",},
+    {"name":"cargo_box_orange_spr","order":8,"path":"sprites/cargo_box_orange_spr/cargo_box_orange_spr.yy",},
     {"name":"chest_gold_spr","order":7,"path":"sprites/chest_gold_spr/chest_gold_spr.yy",},
     {"name":"chest_green_spr","order":6,"path":"sprites/chest_green_spr/chest_green_spr.yy",},
     {"name":"devolarium_spr","order":3,"path":"sprites/devolarium_spr/devolarium_spr.yy",},
