@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"build_quest_label",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"build_quest_label",
+  "parent":{
+    "name":"quests",
+    "path":"folders/Scripts/quests.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

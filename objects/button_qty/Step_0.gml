@@ -28,7 +28,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		    else
 		        {
 					qty=buff;
-					with(window_ores){transfer_qty[index]=buff;};
+					with(quests_window){transfer_qty[index]=buff;};
 		        }
 			break;
 		}

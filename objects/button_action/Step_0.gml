@@ -7,7 +7,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		case "buy": {event_user(0);break;}
 		case "upgrade": {with(window_background){event_user(5);};break;}
 		case "gg_buy": {with(window_background){event_user(4);};break;}
-		case "transfer_ores": {if !global.transfer_used then {with(window_ores){event_user(2);}} else {show_message("Transfer already done. Wait next round to transfer again");}break;}
+		case "transfer_ores": {if !global.transfer_used then {with(quests_window){event_user(2);}} else {show_message("Transfer already done. Wait next round to transfer again");}break;}
 	}
 } else image_index=2;
 

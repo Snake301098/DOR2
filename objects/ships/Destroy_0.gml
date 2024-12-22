@@ -1,6 +1,34 @@
 var a,b,c, myid;
 b:=0; c:=0;
 
+if instance_exists(gamer.target)
+{
+	if gamer.target = id
+	{
+		//LOGFILE REWARD based on Box Muller transfor to sort a normal distribution
+		var log_avg_ref = 0.25//logfiles for hpref k hit+shield points
+		var log_std_ref = 1//logfiles for hpref k hit+shield points
+	
+		var i = random(1);
+		var j = random(1);
+	
+		var X = sqrt(-2*ln(i))*cos(2*pi*j)
+	
+		var avg = 0.25
+		var std = 1
+	
+		var alpha = sqrt(avg)/std
+		var beta = avg - alpha * avg
+	
+		var logfiles_qty = round(avg + std * X)
+		if logfiles_qty < 0 then logfiles_qty = 0
+	   
+		var _cargobox = instance_create_depth(x,y,0,cargo_box);
+		_cargobox.color = "blue"
+		_cargobox.gg_energy = logfiles_qty
+	}
+}
+
 myid = id; //ID of who get killed
 clear_ship_destroy_id(myid) //remove ship id from targets
 

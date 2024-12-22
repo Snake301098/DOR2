@@ -1,3 +1,16 @@
+if logfile > 0 
+{
+	show_HUD_message(string(logfile) + " logfiles received!")
+	global.logfile += logfile
+}
+
+if gg_energy > 0 
+{
+	show_HUD_message(string(gg_energy) + " GG energies received!")
+	global.ggenergy += gg_energy
+}
+
+instance_destroy()
 
 /*
 var a, ammo_type;

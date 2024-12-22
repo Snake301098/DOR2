@@ -37,8 +37,8 @@ if instance_exists(gamer.target)
 
 		//LOGFILE REWARD based on Box Muller transfor to sort a normal distribution
 		var hp_ref = 400//k
-		var log_avg_ref = 5//logfiles for hpref k hit+shield points
-		var log_std_ref = 2//logfiles for hpref k hit+shield points
+		var log_avg_ref = 5//ggenergy for hpref k hit+shield points
+		var log_std_ref = 2//ggenergy for hpref k hit+shield points
 	
 		var i = random(1);
 		var j = random(1);
@@ -51,12 +51,15 @@ if instance_exists(gamer.target)
 		var alpha = sqrt(avg * log_std_ref / log_avg_ref)/std
 		var beta = (health_def + shield_def)/1000 * log_avg_ref / hp_ref - avg * alpha
 	
-		var logfiles_qty = round(avg + std * X)
-		if logfiles_qty < 0 then logfiles_qty = 0
-	    if logfiles_qty > 0 then show_protocol_message(string(text.received) + " " + string(logfiles_qty) + " " + string("logfiles"))
+		var ggenergy_qty = round(avg + std * X)
+		if ggenergy_qty < 0 then ggenergy_qty = 0
+	  
+		var _cargobox = instance_create_depth(x,y,0,cargo_box);
+		_cargobox.gg_energy = ggenergy_qty
+		
+		check_quests(id,room)
 	}
 }
-
 
 clear_ship_destroy_id(id)
 
@@ -64,8 +67,7 @@ clear_ship_destroy_id(id)
 a=instance_create_depth(x,y,-3,bigexpl1);
 a.image_xscale=expl_scale;
 a.image_yscale=expl_scale;
-if expl_color!=false then
-    a.image_blend=expl_color;
+if expl_color!=false then a.image_blend=expl_color;
 //Óäàðíàÿ âîëíà.
 /*
 a=instance_create(x,y,wave);

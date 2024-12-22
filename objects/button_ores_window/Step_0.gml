@@ -10,7 +10,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		if button_text = "TRANSFER" and (global.cproom != room or cp_firm != gamer.corporation or point_distance(gamer.x,gamer.y,cp_x,cp_y) > global.outpost_transfer_distance) then {show_message("You must be at the Outpost and control it to transfer ores"); exit;};
 		
 		var myText = button_text;
-		with (window_ores) {active_tab= myText; active_side_tab=""; event_user(1);}
+		with (quest_window) {active_tab= myText; active_side_tab=""; event_user(1);}
 		with (button_ores_window) {if button_text != myText then image_index=1 else image_index=0}
 	}
 }

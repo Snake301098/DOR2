@@ -194,6 +194,7 @@ for (i:=1; i<=10; i+=1) {droidC2[i,0]=noone; droidC2[i,1]:="noone"; droidC2[i,2]
 
 visible=true;
 load_game();
+load_quests()
 guns_installation(gamer);
 health_restore=health_def;
 //shield_restore=shield_def;

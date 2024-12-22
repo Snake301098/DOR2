@@ -3,7 +3,7 @@ if ENTRY="DOCK" then
 	if instance_exists(window_background)=false then 
 	{
 		instance_destroy(jumpmap); 
-		instance_destroy(window_ores); 
+		instance_destroy(quests_window); 
 		instance_create_depth(0,0,-500,window_background)
 	} 
 	else  

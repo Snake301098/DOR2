@@ -2,7 +2,7 @@ var idd;
 
 if instance_exists(jumpmap) then with(jumpmap) instance_destroy();
 instance_destroy(window_background);
-instance_destroy(window_ores);
+instance_destroy(quests_window);
 
 /*
 if help_open=1
