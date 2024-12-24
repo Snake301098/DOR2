@@ -36,6 +36,8 @@ function load_quests()
 	if global.quest3_entity = "" or global.quest3_entity = "unnamed" then create_quest(3)
 	
 	build_quest_label(1);
+	build_quest_label(2);
+	build_quest_label(3);
 	
 	ini_close();
 }

@@ -16,6 +16,7 @@ function check_quests(_id, _room)
 	if _entity_killed = kristallin then _entity_killed = "kristallin"
 	if _entity_killed = kristallon then _entity_killed = "kristallon"
 	if _entity_killed = streunerR then _entity_killed = "streunerR"
+	if _entity_killed = ship then _entity_killed = "player"
 	
 	var entity,progress,total,map,reward_qty,reward_type;
 	
@@ -51,7 +52,14 @@ function check_quests(_id, _room)
 			reward_type = global.quest3_reward_type
 		}
 		
-		if _entity_killed = entity
+		//ROOMCHECK
+		var roomcheck = false
+		if map = "all" then roomcheck = true
+		if map = "own" then {if info_map(_room,"owners") = gamer.corporation then roomcheck = true}
+		if map = "ennemy" then {if info_map(_room,"owners") != gamer.corporation then roomcheck = true}
+		if map = "pvp" then {if info_map(_room,"pvp") = true then roomcheck = true}
+		
+		if _entity_killed = entity and roomcheck
 		{
 			 progress++
 			 if progress >= total
@@ -75,9 +83,9 @@ function check_quests(_id, _room)
 			 }
 			 else
 			 {
-				if i = 1 then global.quest1_progress++ 
-				if i = 2 then global.quest2_progress++
-				if i = 3 then global.quest3_progress++
+				if i = 1 then {global.quest1_progress++; build_quest_label(1);}
+				if i = 2 then {global.quest2_progress++; build_quest_label(2);}
+				if i = 3 then {global.quest3_progress++; build_quest_label(3);}
 			 }
 		}
 	}

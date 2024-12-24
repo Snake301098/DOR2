@@ -26,6 +26,8 @@ if instance_exists(gamer.target)
 		var _cargobox = instance_create_depth(x,y,0,cargo_box);
 		_cargobox.color = "blue"
 		_cargobox.gg_energy = logfiles_qty
+		
+		check_quests(id,room);
 	}
 }
 

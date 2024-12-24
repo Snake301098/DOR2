@@ -1,5 +1,5 @@
 event_inherited()                       //Çàïóñê ðîä. ñîáûòèÿ.
-alienname="-=[ Sibelon "
+alienname="-=[ Mordon "
 if room=GGA then {mapname="GG A ]=-"}
 else if room=GGB then {mapname="GG B ]=-"}
 else if room=GGY then {mapname="GG Y ]=-"}

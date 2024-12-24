@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Abilities","order":35,"path":"folders/Objects/Abilities.yy",},
+    {"name":"stats","order":49,"path":"folders/Objects/stats.yy",},
     {"name":"hangar","order":36,"path":"folders/Objects/hangar.yy",},
     {"name":"Mobs","order":37,"path":"folders/Objects/Mobs.yy",},
     {"name":"Ores","order":38,"path":"folders/Objects/Ores.yy",},
@@ -54,6 +55,7 @@
     {"name":"sibelonit","order":5,"path":"objects/sibelonit/sibelonit.yy",},
     {"name":"skilltree_cell","order":1,"path":"objects/skilltree_cell/skilltree_cell.yy",},
     {"name":"start_control","order":29,"path":"objects/start_control/start_control.yy",},
+    {"name":"stats_ships_icon","order":1,"path":"objects/stats_ships_icon/stats_ships_icon.yy",},
     {"name":"streunerR","order":9,"path":"objects/streunerR/streunerR.yy",},
     {"name":"teleport","order":16,"path":"objects/teleport/teleport.yy",},
     {"name":"teleporting","order":22,"path":"objects/teleporting/teleporting.yy",},
@@ -120,6 +122,8 @@
     {"name":"skilltree_icons_spr","order":1,"path":"sprites/skilltree_icons_spr/skilltree_icons_spr.yy",},
     {"name":"smb_spr","order":4,"path":"sprites/smb_spr/smb_spr.yy",},
     {"name":"Sprite152","order":21,"path":"sprites/Sprite152/Sprite152.yy",},
+    {"name":"stat_selected_spr","order":10,"path":"sprites/stat_selected_spr/stat_selected_spr.yy",},
+    {"name":"stats_icons_spr","order":11,"path":"sprites/stats_icons_spr/stats_icons_spr.yy",},
     {"name":"streunerR_spr","order":8,"path":"sprites/streunerR_spr/streunerR_spr.yy",},
     {"name":"userhud_spr","order":4,"path":"sprites/userhud_spr/userhud_spr.yy",},
     {"name":"warrep_icon_spr","order":2,"path":"sprites/warrep_icon_spr/warrep_icon_spr.yy",},

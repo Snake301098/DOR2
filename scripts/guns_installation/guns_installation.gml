@@ -83,6 +83,7 @@ function guns_installation(_id){
 		        case "shield": 
 				{
 					var _absorb = info(droid[i,2],"absorb")
+					var _quantity = info(droid[i,2],"quantity");
 					shield_def+=info(droid[i,2],"quantity"); 
 					shieldAbsorbC2 += _quantity * _absorb 
 					break;
@@ -95,6 +96,7 @@ function guns_installation(_id){
 		        case "shield": 
 				{
 					var _absorb = info(droid[i,3],"absorb")
+					var _quantity = info(droid[i,3],"quantity");
 					shield_def+=info(droid[i,3],"quantity"); 
 					shieldAbsorbC2 += _quantity * _absorb 
 					break;
@@ -158,6 +160,7 @@ function guns_installation(_id){
 		        case "shield": 
 				{
 					var _absorb = info(droid[i,2],"absorb")
+					var _quantity = info(droid[i,2],"quantity");
 					shield_def+=info(droid[i,2],"quantity"); 
 					shieldAbsorbC1 += _quantity * _absorb 
 					break;
@@ -170,6 +173,7 @@ function guns_installation(_id){
 		        case "shield": 
 				{
 					var _absorb = info(droid[i,3],"absorb")
+					var _quantity = info(droid[i,3],"quantity");
 					shield_def+=info(droid[i,3],"quantity"); 
 					shieldAbsorbC1 += _quantity * _absorb 
 					break;
@@ -212,7 +216,6 @@ function guns_installation(_id){
 		#endregion
 
 		//SHIELD
-		shieldAbsorb = 0.8;
 		//shieldPen = 0.1
 		own_shield = shield_def;
 
