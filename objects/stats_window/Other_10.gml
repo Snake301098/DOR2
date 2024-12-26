@@ -69,6 +69,7 @@ hangar_btn_0.y = first_layer_buttons;
 hangar_btn_0.button_sprite=button_default_spr;
 hangar_btn_0.button_text="PROFILE"
 hangar_btn_0.image_index=0
+hangar_btn_0.window="stats"
 
 var hangar_btn_1 = instance_create_depth(0,0,depth-1,button_hangar)
 hangar_btn_1.x = start_length + total_length / (number_btn-1) * 1;
@@ -76,6 +77,7 @@ hangar_btn_1.y = first_layer_buttons;
 hangar_btn_1.button_sprite=button_default_spr;
 hangar_btn_1.button_text="PVP"
 hangar_btn_1.image_index=1
+hangar_btn_1.window="stats"
 
 var hangar_btn_2 = instance_create_depth(0,0,depth-1,button_hangar)
 hangar_btn_2.x = start_length + total_length / (number_btn-1) * 2;
@@ -83,6 +85,7 @@ hangar_btn_2.y = first_layer_buttons;
 hangar_btn_2.button_sprite=button_default_spr;
 hangar_btn_2.button_text="PVE"
 hangar_btn_2.image_index=1
+hangar_btn_2.window="stats"
 
 var hangar_btn_3 = instance_create_depth(0,0,depth-1,button_hangar)
 hangar_btn_3.x = start_length + total_length / (number_btn-1) * 3;
@@ -90,6 +93,7 @@ hangar_btn_3.y = first_layer_buttons;
 hangar_btn_3.button_sprite=button_default_spr;
 hangar_btn_3.button_text="AMMOS"
 hangar_btn_3.image_index=1
+hangar_btn_3.window="stats"
 
 var hangar_btn_4 = instance_create_depth(0,0,depth-1,button_hangar)
 hangar_btn_4.x = start_length + total_length / (number_btn-1) * 4;
@@ -97,6 +101,7 @@ hangar_btn_4.y = first_layer_buttons;
 hangar_btn_4.button_sprite=button_default_spr;
 hangar_btn_4.button_text="GG & TDM"
 hangar_btn_4.image_index=1
+hangar_btn_4.window="stats"
 
 
 

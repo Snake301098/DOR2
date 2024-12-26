@@ -5,6 +5,9 @@ else if room=GGB then {mapname="GG B ]=-"}
 else if room=GGY then {mapname="GG Y ]=-"}
 else if room=GGD then {mapname="GG D ]=-"}
 else {mapname="]=-"}
+
+
+image_speed=0.4
 name=alienname + mapname
 target=noone;
 sprite_index=lordakia_spr

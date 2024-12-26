@@ -1,7 +1,7 @@
 event_inherited();
 
 //Uncomment for 3D aliens
-image_index=image_number*direction/360
+//image_index=image_number*direction/360
 
 if room=GGA or room=GGB or room=GGY or room=GGD then
 {

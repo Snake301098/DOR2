@@ -23,7 +23,7 @@ function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="g
 			var _yy = irandom_range(100,room_height-100);
 			
 			//mob not suddenly appearing in front of gamer
-			if point_distance(gamer.y,gamer.y,_xx,_yy) < 2000
+			if point_distance(gamer.x,gamer.y,_xx,_yy) < 2000
 			{
 				_xx = room_width - _xx
 				_yy = room_height - _yy

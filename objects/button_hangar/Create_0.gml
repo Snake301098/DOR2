@@ -3,4 +3,5 @@
 image_speed=0;
 button_text="test";
 button_sprite=empty_spr;
+window="hangar"
 event_user(0)

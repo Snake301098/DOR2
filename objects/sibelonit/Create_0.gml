@@ -9,6 +9,8 @@ else if room=GGD then {mapname="GG D ]=-"}
 //else if room=GGKA then {mapname="GG K ]=-"}
 //else if room=GGKR then {mapname="GG K ]=-"}
 else {mapname="]=-"}
+
+image_speed=0.4
 name=alienname + mapname
 sprite_index=sibelonit_spr
 health_def=40000;                         //Îïðåäåëåíèå ìàêñèìàëüíîãî çäîðîâüÿ ìîáà.

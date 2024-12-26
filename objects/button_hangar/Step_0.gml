@@ -2,16 +2,25 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 {
     if image_index=1 then 
 	{
-		var myText = button_text;
-		with (window_background) {active_tab= myText; active_side_tab=""; event_user(1);}
-		with (button_hangar) {if button_text != myText then image_index=1 else image_index=0}
-		with(inv_cell){selected=false}
-		with(shop_cell){selected=false}
-		with(window_background)
+		if window = "hangar"
 		{
-			cost1_amount=0;
-			cost2_amount=0;
-			cost3_amount=0;
+			var myText = button_text;
+			with (window_background) {active_tab= myText; active_side_tab=""; event_user(1);}
+			with (button_hangar) {if button_text != myText then image_index=1 else image_index=0}
+			with(inv_cell){selected=false}
+			with(shop_cell){selected=false}
+			with(window_background)
+			{
+				cost1_amount=0;
+				cost2_amount=0;
+				cost3_amount=0;
+			}
+		}
+		else if window = "stats"
+		{
+			var myText = button_text;
+			with (stats_window) {active_tab= myText; active_side_tab=""; event_user(1);}
+			with (button_hangar) {if button_text != myText then image_index=1 else image_index=0}
 		}
 	}
 }

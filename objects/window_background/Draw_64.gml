@@ -151,7 +151,37 @@ switch active_tab
 				{
 					if rewards[i,0]>0 then
 					{
-						draw_text(1300,550-reward_number*30,string(rewards[i,0]) + " of " + rewards[i,1]);
+						//sprite reward
+						var xdec = 0
+						var ydec = 0
+						if reward_number >= 7 then {xdec = 200; ydec = 7*40}
+						var sprt = stats_icons_spr;
+						var img_nbr = 26;
+						var scale = 1;
+						
+						if rewards[i,1]="x1" then {sprt = stats_icons_spr; img_nbr = 25}
+						if rewards[i,1]="x2" then {sprt = stats_icons_spr; img_nbr = 26}
+						if rewards[i,1]="x3" then {sprt = stats_icons_spr; img_nbr = 27}
+						if rewards[i,1]="x4" then {sprt = stats_icons_spr; img_nbr = 30}
+						if rewards[i,1]="x5" then {sprt = stats_icons_spr; img_nbr = 29}
+						if rewards[i,1]="x6" then {sprt = stats_icons_spr; img_nbr = 28}
+						if rewards[i,1]="ish" then {sprt = stats_icons_spr; img_nbr = 93}
+						if rewards[i,1]="smb" then {sprt = stats_icons_spr; img_nbr = 98}
+						if rewards[i,1]="emp" then {sprt = stats_icons_spr; img_nbr = 51}
+						if rewards[i,1]="shieldbackup" then {sprt = stats_icons_spr; img_nbr = 55}
+						if rewards[i,1]="warrep" then {sprt = stats_icons_spr; img_nbr = 56}
+						if (rewards[i,1]="ggpart" or rewards[i,1]="ggpart_dupp") and active_side_tab = "ALPHA" then {sprt = alpha_portal_spr; img_nbr = 0; scale=38/369}
+						if (rewards[i,1]="ggpart" or rewards[i,1]="ggpart_dupp") and active_side_tab = "BETA" then {sprt = beta_portal_spr; img_nbr = 0; scale=38/369}
+						if (rewards[i,1]="ggpart" or rewards[i,1]="ggpart_dupp") and active_side_tab = "GAMMA" then {sprt = gamma_portal_spr; img_nbr = 0; scale=38/369}
+						if (rewards[i,1]="ggpart" or rewards[i,1]="ggpart_dupp") and active_side_tab = "DELTA" then {sprt = delta_portal_spr; img_nbr = 0; scale=38/381}
+
+						draw_sprite_ext(sprt,img_nbr,1200-30+xdec,300+reward_number*40-ydec,scale,scale,0,c_white,1)
+						if rewards[i,1]="ggpart_dupp" then draw_sprite_ext(full_storage_spr,0,1200-30+xdec,300+reward_number*40-ydec,38/50,38/50,0,c_white,1)						
+						
+						//number reward
+						draw_set_font(hangarfont)
+						draw_set_halign(fa_left)
+						draw_text(1200+xdec,300+reward_number*40-ydec,string(rewards[i,0]));
 						reward_number+=1;
 					}
 				}

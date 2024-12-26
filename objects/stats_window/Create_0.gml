@@ -13,6 +13,25 @@ buy_qty=1; //same for qty buy
 cost_qty=0;
 cost_type="";
 
+var file = file_text_open_write("stats2.csv")
+file_text_write_string(file,"oui,non,hey")
+file_text_close(file)
+
+//ORIGINS
+_Profilex = 740;
+_Profiley = 250;
+
+_PVPx = 780;
+_PVPy = 250;
+
+_PVEx = 780;
+_PVEy = 270;
+
+_Ammosx = 780;
+_Ammosy = 270;
+
+_GGx = 780;
+_GGy = 270;
 
 //UPGRADES PARAMETERS
 upgrade_text = "";

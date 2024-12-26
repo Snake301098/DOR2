@@ -18,7 +18,13 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		
 		case "gg":
 		{
-			
+			if buff<1 then exit;
+		    else
+		        {
+					qty=buff;
+					with(window_background){buy_qty=buff;};
+		        }
+			break;
 		}
 		
 		case "ores_transfer":
