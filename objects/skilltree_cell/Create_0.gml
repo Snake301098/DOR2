@@ -12,3 +12,4 @@ name="";
 category="";
 clickable=true;
 selected=false;
+level_max = -1

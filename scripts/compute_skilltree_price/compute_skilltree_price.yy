@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"compute_skilltree_price",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"compute_skilltree_price",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -473,6 +473,151 @@ function info(item,_info,lvl=1)
 		                NICKNAMES
 		*************************************************/
 		#region
+		case "ship_hull_i":
+		    switch _info
+		    {
+		        case "level_max": return 2; break;
+		    }
+		    break;
+			
+		case "ship_hull_ii":
+		    switch _info
+		    {
+		        case "level_max": return 3; break;
+		    }
+		    break;
+			
+		case "shield_engineering":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "engineering":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "bounty_hunter_i":
+		    switch _info
+		    {
+		        case "level_max": return 2; break;
+		    }
+		    break;
+			
+		case "bounty_hunter_ii":
+		    switch _info
+		    {
+		        case "level_max": return 3; break;
+		    }
+		    break;
+			
+		case "alien_hunter":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "greed":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "luck_i":
+		    switch _info
+		    {
+		        case "level_max": return 2; break;
+		    }
+		    break;
+			
+		case "luck_ii":
+		    switch _info
+		    {
+		        case "level_max": return 3; break;
+		    }
+		    break;
+			
+		case "cruelty_i":
+		    switch _info
+		    {
+		        case "level_max": return 2; break;
+		    }
+		    break;
+			
+		case "cruelty_ii":
+		    switch _info
+		    {
+		        case "level_max": return 3; break;
+		    }
+		    break;
+			
+		case "evasive_i":
+		    switch _info
+		    {
+		        case "level_max": return 2; break;
+		    }
+		    break;
+			
+		case "evasive_ii":
+		    switch _info
+		    {
+		        case "level_max": return 3; break;
+		    }
+		    break;
+			
+		case "electro_optics":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "shield_mechanics":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "smb_upgrade":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "ish_upgrade":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "shieldbackup_upgrade":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+			
+		case "warrep_upgrade":
+		    switch _info
+		    {
+		        case "level_max": return 5; break;
+		    }
+		    break;
+		#endregion
+
+		/************************************************
+		                NICKNAMES
+		*************************************************/
+		#region
 		case"give_nick":
 		switch _info
 		{

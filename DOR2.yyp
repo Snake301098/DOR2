@@ -193,6 +193,7 @@
     {"id":{"name":"change_config","path":"scripts/change_config/change_config.yy",},},
     {"id":{"name":"check_quests","path":"scripts/check_quests/check_quests.yy",},},
     {"id":{"name":"clear_ship_destroy_id","path":"scripts/clear_ship_destroy_id/clear_ship_destroy_id.yy",},},
+    {"id":{"name":"compute_skilltree_price","path":"scripts/compute_skilltree_price/compute_skilltree_price.yy",},},
     {"id":{"name":"cproom_spawn_ships","path":"scripts/cproom_spawn_ships/cproom_spawn_ships.yy",},},
     {"id":{"name":"create_quest","path":"scripts/create_quest/create_quest.yy",},},
     {"id":{"name":"damage_function","path":"scripts/damage_function/damage_function.yy",},},

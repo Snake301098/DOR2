@@ -5,7 +5,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
    {
 	   var theContent;
 	   theContent = content;
-	   with (shop_cell) {selected=false;}
+	   with (skilltree_cell) {selected=false;}
 	   selected=true;
 	   var _cost_qty, _cost_type, _cost_lot;
 	   

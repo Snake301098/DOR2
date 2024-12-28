@@ -1,9 +1,6 @@
 /// @description DRAW ABOVE BUTTONS
 var start_length, end_length, total_length, number_btn, first_layer_buttons;
 
-//x=gamer.x
-//y=gamer.y
-
 start_length=470;
 end_length=1440;
 first_layer_buttons=170;

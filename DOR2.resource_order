@@ -76,6 +76,7 @@
     {"name":"x4_ammo","order":40,"path":"objects/x4_ammo/x4_ammo.yy",},
     {"name":"change_config","order":2,"path":"scripts/change_config/change_config.yy",},
     {"name":"check_quests","order":2,"path":"scripts/check_quests/check_quests.yy",},
+    {"name":"compute_skilltree_price","order":10,"path":"scripts/compute_skilltree_price/compute_skilltree_price.yy",},
     {"name":"create_quest","order":3,"path":"scripts/create_quest/create_quest.yy",},
     {"name":"deal_damage","order":5,"path":"scripts/deal_damage/deal_damage.yy",},
     {"name":"deal_healing","order":4,"path":"scripts/deal_healing/deal_healing.yy",},

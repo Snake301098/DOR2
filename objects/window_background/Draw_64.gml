@@ -118,6 +118,12 @@ switch active_tab
 		//LAYERS
 		draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
 		draw_sprite_ext(hangar_bareer_spr,0,1050,550,5.3,1.5,90,c_white,1)
+		
+		draw_set_font(hangarfont);
+		draw_set_halign(fa_center);
+		draw_text(1300,600,"Total points: " + string(skilltree_points));
+		draw_text(1300,640,"Next point cost: " + string(skilltree_cost));
+		draw_text(1300,680,"Logfiles: " + string(global.logfile));
 				
 		break;
 		#endregion

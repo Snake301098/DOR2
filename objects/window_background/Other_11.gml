@@ -929,6 +929,9 @@ switch active_tab
 	#region
 	case "SKILLTREE":
 	{
+		var buff = compute_skilltree_price()
+		skilltree_points = buff[0]			
+		skilltree_cost = buff[1]			
 				
 		//SHIPS TO BUY
 		var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, icons_list;
@@ -965,8 +968,8 @@ switch active_tab
 		change_design_btn.x = 1300;
 		change_design_btn.y = 720;
 		change_design_btn.button_sprite=button_action_spr;
-		change_design_btn.button_id="gg_buy";
-		change_design_btn.button_text="USE ENERGY";
+		change_design_btn.button_id="skilltree";
+		change_design_btn.button_text="BUY";
 		change_design_btn.image_index=2;
 			
 		break;	

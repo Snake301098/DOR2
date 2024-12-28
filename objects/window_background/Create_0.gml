@@ -18,6 +18,9 @@ cost_type="";
 //UPGRADES PARAMETERS
 upgrade_text = "";
 
+//SKILLTREE
+skilltree_points = -1		
+skilltree_cost = -1
 
 //init user events
 event_user(0); //creation in the main tabs
