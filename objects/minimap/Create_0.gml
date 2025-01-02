@@ -12,7 +12,9 @@ isfriendly=0;
 decx=32;
 decy=60;
 HUD_message_alpha=0.8
-x=1920-260;
-y=1080-230;
+x=1920-270;
+y=1080-245;
 middlex=view_wport[0]/2;
 middley=view_hport[0]/2;
+
+alarm[1] = irandom(10*60) * room_speed;

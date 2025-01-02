@@ -25,12 +25,12 @@ if instance_exists(gamer.target)
 {
 	if gamer.target = id
 	{
-	    global.uridium+=URIDIUM;
-	    global.credit+=CREDITS;
+	    global.uridium+=URIDIUM * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03);
+	    global.credit+=CREDITS * (1 + gamer.greed * 0.03);
 	    show_protocol_message(text_add("You have destroyed a: %1.#You have recieved %2 credits.",name,CREDITS));
 	    global.alienkills+=1;
 	    global.experience+=EPPOINTS;
-	    global.honor+=HONORPOINTS;
+	    global.honor+=HONORPOINTS * (1 + gamer.cruelty_i * 0.02 + gamer.cruelty_ii * 0.03);
 	    show_protocol_message(string(text.received) + " " + string(URIDIUM) + " " + "Uridium")
 	    show_protocol_message(string(text.received) + " " + string(EPPOINTS) + " " + string("xp"))
 	    show_protocol_message(string(text.received) + " " + string(HONORPOINTS) + " " + string("honor"))

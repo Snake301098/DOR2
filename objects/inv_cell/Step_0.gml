@@ -13,7 +13,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		{
 			window_background.upgrade_text = "";
 		}
-		
+		if window_background.active_tab="EQUIPMENT" and keyboard_check(vk_lcontrol) then hangar_equip();
 	}
 }
 
@@ -46,7 +46,8 @@ switch content
 	case "HST-2_3": {sprite_index=inv_items_spr; image_index=10; level_index_spr=2; break;}
 	case "HST-2_4": {sprite_index=inv_items_spr; image_index=10; level_index_spr=3; break;}
 	case "HST-2_5": {sprite_index=inv_items_spr; image_index=10; level_index_spr=4; break;}
-	case "HAVOC": {sprite_index=inv_items_spr; image_index=7; break;}
+	case "havoc": {sprite_index=inv_items_spr; image_index=7; break;}
+	case "hercules": {sprite_index=inv_items_spr; image_index=8; break;}
 	default: {sprite_index=inv_cell_spr; image_index=0; break;}
 }
 

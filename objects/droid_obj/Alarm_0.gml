@@ -12,8 +12,8 @@ if owner=gamer.id then persistent=true;
         
             switch(owner.droid[pos,4]){
                 
-                case "HAVOC": {sprite_index:=flax_havoc_spr; break;}
-                case "HERCULES": {sprite_index:=flax_hercules_spr; break;}
+                case "havoc": {sprite_index:=flax_havoc_spr; break;}
+                case "hercules": {sprite_index:=flax_hercules_spr; break;}
                 case "NORMAL": {sprite_index:=flax_spr; break;}
                 default: {sprite_index:=flax_spr; break;}
                 show_error(string(owner.droid[pos,4]),false)
@@ -24,8 +24,8 @@ if owner=gamer.id then persistent=true;
         case "iris":{
             switch(owner.droid[pos,4]){
                 
-                case "HAVOC": {sprite_index:=iris_havoc_spr; break;}
-                case "HERCULES": {sprite_index:=iris_hercules_spr; break;}
+                case "havoc": {sprite_index:=iris_havoc_spr; break;}
+                case "hercules": {sprite_index:=iris_hercules_spr; break;}
                 case "NORMAL": {sprite_index:=iris_spr; break;}
                 default: {sprite_index:=iris_spr; break;}
             }
@@ -36,8 +36,8 @@ if owner=gamer.id then persistent=true;
         
             switch(owner.droid[pos,4]){
                 
-                case "HAVOC": {sprite_index:=iris_havoc_spr; break;}
-                case "HERCULES": {sprite_index:=iris_hercules_spr; break;}
+                case "havoc": {sprite_index:=iris_havoc_spr; break;}
+                case "hercules": {sprite_index:=iris_hercules_spr; break;}
                 case "NORMAL": {sprite_index:=apis_spr; break;}
                 default: {sprite_index:=apis_spr; break;}
             }
@@ -48,8 +48,8 @@ if owner=gamer.id then persistent=true;
         
             switch(owner.droid[pos,4]){
                 
-                case "HAVOC": {sprite_index:=iris_havoc_spr; break;}
-                case "HERCULES": {sprite_index:=iris_hercules_spr; break;}
+                case "havoc": {sprite_index:=iris_havoc_spr; break;}
+                case "hercules": {sprite_index:=iris_hercules_spr; break;}
                 case "NORMAL": {sprite_index:=zeus_spr; break;}
                 default: {sprite_index:=zeus_spr; break;}
             }

@@ -15,4 +15,40 @@ if wave = 11 and started = false then
 	wave = 0
 	//GIVE REWARDS HERE
 	show_protocol_message("GG completed");
+	
+	if room = GGA
+	{
+		global.alphacompleted = 1
+		global.alphalife = 0
+		global.alphaonmap = 0
+		global.alphawave = 0
+		global.alphaparts = 0
+	}
+	
+		if room = GGB
+	{
+		global.betacompleted = 1
+		global.betalife = 0
+		global.betaonmap = 0
+		global.betawave = 0
+		global.betaparts = 0
+	}
+	
+		if room = GGY
+	{
+		global.gammacompleted = 1
+		global.gammalife = 0
+		global.gammaonmap = 0
+		global.gammawave = 0
+		global.gammaparts = 0
+	}
+	
+		if room = GGD
+	{
+		global.deltacompleted = 1
+		global.deltalife = 0
+		global.deltaonmap = 0
+		global.deltawave = 0
+		global.deltaparts = 0
+	}
 }

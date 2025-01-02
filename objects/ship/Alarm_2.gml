@@ -1,7 +1,9 @@
 ///@description attacking
 
 if instance_exists(target) then 
-{
+{	
+	if action[0] = "battle" then ammo_selected = x4_ammo
+	
 	if target.v_zone_bz=true then 
 	{
 		attacking=false;
@@ -17,7 +19,7 @@ if instance_exists(target) then
 		}
 		else
 		{
-			if point_distance(x,y,target.x,target.y) <= 500//global.range then
+			if point_distance(x,y,target.x,target.y) <= global.attack_range then
 			{   
 				restore:=false;
 				//if GunSprite[1]<1 then 
@@ -25,6 +27,7 @@ if instance_exists(target) then
 				//	show_HUD_message(text.no_gun); break;
 			    //}
 				//ammo[ammo[0,0],0]-=guns*global.code1;
+				not_attacking_since = 0
 				event_user(1);
 			}
 		}

@@ -34,8 +34,10 @@ firing=0;
 help_open=0;
 map_open=false;
 target=noone;
+chef=0;
 global.cloaked=0;
 global.droneformation=1
+global.attack_range = 720;
 radarrange=1300;                     //Äàëüíîñòü "âèäèìîñòè" ðàäàðà, âñòðîåííîãî â ìèíèêàðòó.
 range=650;
 stoped=false;                       //Ñòàòóñ ñòûêîâêè.
@@ -73,6 +75,7 @@ restore=0;
 own_health_bilo=0;
 damageToDraw=0;
 hasStartedAlarm8=false;
+RPOINT=0;
 
 SHIPNAME=spectrum_spr;
 

@@ -57,3 +57,164 @@ if is_using_ability_2 = true then
 {
 	draw_sprite_ext(cell_selected_spr,0,ability_2_x,ability_2_y,51/37,51/37,0,c_white,0.6);
 }
+
+
+
+//HUD NICKNAME ETC
+
+var xx = 1920/2;
+var yy = 1080/2;
+var a, dmgBoost, hpBoost, shdBoost;
+
+//Ïîëîñêà çäîðîâüÿ è ùèòà. 
+//Îòîáðàæåíèå íèêà.
+draw_set_halign(fa_center);
+draw_set_alpha(1);
+draw_set_font(nicktext);
+draw_set_color(global.HUD_color);
+var rpf=global.rpfactor;
+var rpbelow=0;
+var rpabove=0;
+var subimg = 0;
+
+var _res = get_rankpoints()
+
+global.subimg=_res[0];
+global.rpbelow=_res[1];
+global.rpabove=_res[2];
+RPOINT=_res[3];
+	
+/*
+* ****USERNAME + COMPANY + RANK + GATES**** *
+*/ 
+if gamer.destroyed=0 then //check if gamer not killed
+{
+	draw_set_font(nicktext)    
+	draw_set_valign(fa_middle);
+	draw_text_ol(xx,yy+73,string(global.nickname),global.HUD_color,c_black); //nickname
+	draw_sprite(icons_spr,corporation,xx+string_width(string(global.nickname))/2+15,yy+73); //firm
+	draw_sprite(ranks_spr,global.subimg,xx-string_width(string(global.nickname))/2-15,yy+75) 
+    
+	if(global.alphacompleted+global.betacompleted+global.gammacompleted+global.deltacompleted == 4) 
+	{
+		draw_sprite(ggring_spr,1,xx-string_width(global.nickname)/2-15,yy+63)
+	} 
+	else 
+	{
+		if(global.alphacompleted == 1) 
+		{
+			draw_sprite(ggring_spr,0,xx-string_width(global.nickname)/2-21,yy+63) //476
+		}
+		if(global.betacompleted == 1) 
+		{
+			draw_sprite(ggring_spr,0,xx-string_width(global.nickname)/2-15,yy+63)//476
+		}
+		if(global.gammacompleted == 1) 
+		{
+			draw_sprite(ggring_spr,0,xx-string_width(global.nickname)/2-9,yy+63)//476
+		}
+		if(global.deltacompleted == 1) 
+		{
+			draw_sprite(ggring_spr,0,xx-string_width(global.nickname)/2-15,yy+63-5)//454
+		}
+	}
+		/*
+		* ****DRONE STUFF IS DOWN HERE**** *
+	*/   
+	if(global.droid_enable=false) 
+	{
+		draw_set_halign(fa_center)
+		draw_set_alpha(0.6)
+		draw_set_font(Digits);
+		var startx = round(x-27);
+		for(var i=1; i<=12; i+=1)
+		{
+			if(droid[i,1] == "flax")
+			{
+			    if(droid[i,4] == "HAVOC")
+				{
+					draw_set_color(c_red)
+			        draw_text(startx,round(y-60),string("F"))
+			        startx+=5;
+				}
+				else if(droid[i,4] == "HERCULES"){draw_set_color(c_aqua)
+				    draw_text(startx,round(y-60),string("F"))
+				    startx+=5;
+				}
+				else
+				{
+					draw_set_color(c_white)
+				        draw_text(startx,round(y-60),string("F"))
+				        startx+=5;
+				}
+			}
+			else if(droid[i,1] == "iris")
+			{
+				if(droid[i,4] == "HAVOC")
+				{
+					draw_set_color(c_red)
+				    draw_text(startx,round(y-60),string("I"))
+				    startx+=5;
+				}
+				else if(droid[i,4] == "HERCULES")
+				{
+					draw_set_color(c_aqua)
+				    draw_text(startx,round(y-60),string("I"))
+				    startx+=5;
+				}
+				else
+				{
+					draw_set_color(c_white)
+				    draw_text(startx,round(y-60),string("I"))
+				    startx+=5;
+				}
+			}
+			else if(droid[i,1] == "apis")
+			{
+				if(droid[i,4] == "HAVOC")
+				{
+					draw_set_color(c_red)
+				    draw_text(startx,round(y-60),string("A"))
+				    startx+=5;
+				}
+				else if(droid[i,4] == "HERCULES")
+				{
+					draw_set_color(c_aqua)
+				    draw_text(startx,round(y-60),string("A"))
+				    startx+=5;
+				}
+				else
+				{
+					draw_set_color(c_white)
+				    draw_text(startx,round(y-60),string("A"))
+				    startx+=5;
+				}
+			}
+			else if(droid[i,1] == "zeus")
+			{
+				if(droid[i,4] == "HAVOC")
+				{
+					draw_set_color(c_red)
+					draw_text(startx,round(y-60),string("Z"))
+					startx+=5;
+				}
+				else if(droid[i,4] == "HERCULES")
+				{
+					draw_set_color(c_aqua)
+					draw_text(startx,round(y-60),string("Z"))
+					startx+=5;
+				}
+				else
+				{
+					draw_set_color(c_white)
+				    draw_text(startx,round(y-60),string("Z"))
+				    startx+=5;
+				}
+			}
+		}
+			draw_set_color(global.HUD_color); //Bugfix
+	}
+	
+//draw_set_halign(fa_center); draw_sprite(HUDDRONE,((global.droneformation)-1),xx+round(x-50),yy+round(y-75))
+draw_set_halign(fa_center); draw_sprite(huddrone_spr,((global.droneformation)-1),xx-60,yy-55)
+}

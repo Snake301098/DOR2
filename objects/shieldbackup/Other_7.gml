@@ -1,6 +1,6 @@
 /// @description END
 var myID = owner
-var _cooldown = 10 * room_speed;
+var _cooldown = global.shieldbackup_cooldown;
 
 with(cooldowns_ctrl)
 {

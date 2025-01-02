@@ -1,6 +1,6 @@
 ///@description drones
 var i;
-
+/*
 if(id.object_index != gamer){
     
     //Yay... Random stuff kthnxbai
@@ -36,7 +36,7 @@ if(id.object_index != gamer){
     }
 	
 } 
-
+*/
 
 if !global.droid_enable exit;
 //Replace 10th drones with apis and zeus

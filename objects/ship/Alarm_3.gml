@@ -8,6 +8,7 @@ if isInvader = 0 then
 		if choose(0,0,0,1,1) = 1 then
 		{
 			action[0]="farming"
+			ammo_selected = choose(x1_ammo,x1_ammo,x1_ammo,x2_ammo,x2_ammo,x2_ammo,x3_ammo,x3_ammo,x4_ammo)
 		}
 	}
 } else action[0]="battle"

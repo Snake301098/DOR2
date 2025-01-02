@@ -238,7 +238,7 @@ var _canusersb=0;
 
 
 var me = id;
-if canusersb=1 and instance_exists(target)
+if canusersb=1 and instance_exists(target) and action[0] = "battle"
 {
 	if target.v_zone_bz=true then 
 	{
@@ -253,7 +253,7 @@ if canusersb=1 and instance_exists(target)
 		}
 		else
 		{
-			if distance_to_object(target) <= global.range
+			if distance_to_object(target) <= global.attack_range
 			{
 				alarm[11]=1;
 				canusersb=0;
@@ -349,6 +349,8 @@ if action[0] = "running"
 }
 
 if Ship = "aegis" then action[0]="healer"
+
+
 /*
 //if too far from target
 if instance_exists(target) then 

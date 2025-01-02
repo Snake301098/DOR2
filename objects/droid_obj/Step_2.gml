@@ -1,8 +1,8 @@
 /******************************************
 Don't forget to also add them to ships
 ******************************************/
-var ownerx=gamer.x;
-var ownery=gamer.y;
+var ownerx=owner.x;
+var ownery=owner.y;
 
 if owner=gamer.id then
 {

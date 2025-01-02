@@ -25,3 +25,10 @@ global.ammo_laser_far_dmg = 0.5;
 
 global.attacking_type = 0; //0 is laser near and 1 is ammo far
 global.nuke_k1 = 0;
+
+global.rsb_cooldown = 120
+global.emp_cooldown = 10 * room_speed
+global.ish_cooldown = 10 * room_speed
+global.smb_cooldown = 10 * room_speed
+global.warrep_cooldown = 10 * room_speed
+global.shieldbackup_cooldown = 10 * room_speed

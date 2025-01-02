@@ -405,7 +405,7 @@ function info(item,_info,lvl=1)
 		        }
 		    break; 
 	
-		case "HAVOC":
+		case "havoc":
 		    switch _info
 		        {
 		        case "name": return "HAVOC"; break;
@@ -417,7 +417,7 @@ function info(item,_info,lvl=1)
 		        }
 		    break;
     
-		case "HERCULES":
+		case "hercules":
 		    switch _info
 		        {
 		        case "name": return "HERCULES"; break;        
@@ -470,13 +470,36 @@ function info(item,_info,lvl=1)
 		#endregion
 		
 		/************************************************
-		                NICKNAMES
+		                GG
+		*************************************************/
+		#region
+		case "alpha":
+		    if _info = "total_parts" then return 34;
+		    break;
+			
+		case "beta":
+		    if _info = "total_parts" then return 48;
+		    break;
+			
+		case "gamma":
+		    if _info = "total_parts" then return 82;
+		    break;
+			
+		case "delta":
+		    if _info = "total_parts" then return 128;
+		    break;
+   
+		#endregion
+		
+		/************************************************
+		                SKILLTREE
 		*************************************************/
 		#region
 		case "ship_hull_i":
 		    switch _info
 		    {
 		        case "level_max": return 2; break;
+		        case "description": return "Increase HP\nLevel 1: +10,000 HP\nLevel 2: +20,000 HP"; break;
 		    }
 		    break;
 			
@@ -484,6 +507,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 3; break;
+		        case "description": return "Increase HP\nLevel 1: +15,000 HP\nLevel 2: +30,000 HP\nLevel 2: +45,000 HP"; break;
 		    }
 		    break;
 			
@@ -491,6 +515,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase shield amount\nLevel 1: +5%\nLevel 2: +10%\nLevel 3: +15%\nLevel 4: 20%\nLevel 5: +25%"; break;
 		    }
 		    break;
 			
@@ -498,6 +523,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase ship repairing speed\nLevel 1: +5%\nLevel 2: +10%\nLevel 3: +15%\nLevel 4: 20%\nLevel 5: +25%"; break;
 		    }
 		    break;
 			
@@ -505,6 +531,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 2; break;
+		        case "description": return "Increase damage against players\nLevel 1: +2%\nLevel 2: +4%"; break;
 		    }
 		    break;
 			
@@ -512,6 +539,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 3; break;
+		        case "description": return "Increase damage against players\nLevel 1: +3%\nLevel 2: +6%\nLevel 2: +9%"; break;
 		    }
 		    break;
 			
@@ -519,6 +547,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase damage on aliens\nLevel 1: +4%\nLevel 2: +8%\nLevel 3: +12%\nLevel 4: 16%\nLevel 5: +20%"; break;
 		    }
 		    break;
 			
@@ -526,6 +555,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase credit rewards\nLevel 1: +5%\nLevel 2: +10%\nLevel 3: +15%\nLevel 4: 20%\nLevel 5: +25%"; break;
 		    }
 		    break;
 			
@@ -533,6 +563,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 2; break;
+		        case "description": return "Increase uridium rewards\nLevel 1: +2%\nLevel 2: +4%"; break;
 		    }
 		    break;
 			
@@ -540,6 +571,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 3; break;
+		        case "description": return "Increase uridium rewards\nLevel 1: +3%\nLevel 2: +6%\nLevel 2: +9%"; break;
 		    }
 		    break;
 			
@@ -547,6 +579,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 2; break;
+		        case "description": return "Increase honor rewards\nLevel 1: +2%\nLevel 2: +4%"; break;
 		    }
 		    break;
 			
@@ -554,6 +587,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 3; break;
+		        case "description": return "Increase honor rewards\nLevel 1: +3%\nLevel 2: +6%\nLevel 2: +9%"; break;
 		    }
 		    break;
 			
@@ -561,6 +595,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 2; break;
+		        case "description": return "Reduce probability of being hit by lasers\nLevel 1: -2%\nLevel 2: -4%"; break;
 		    }
 		    break;
 			
@@ -568,6 +603,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 3; break;
+		        case "description": return "Reduce probability of being hit by lasers\nLevel 1: -3%\nLevel 2: -6%\nLevel 3: -9%"; break;
 		    }
 		    break;
 			
@@ -575,6 +611,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Reduce probability of lasers MISS\nLevel 1: -3%\nLevel 2: -6%\nLevel 3: -9%\nLevel 4: 12%\nLevel 5: 15%"; break;
 		    }
 		    break;
 			
@@ -582,6 +619,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase shield absorbtion\nLevel 1: +2%\nLevel 2: +4%\nLevel 3: +6%\nLevel 4: +8%\nLevel 5: +10%"; break;
 		    }
 		    break;
 			
@@ -589,6 +627,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "qzds"; break;
 		    }
 		    break;
 			
@@ -596,6 +635,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase ISH duration\nLevel 1: +5%\nLevel 2: +10%\nLevel 3: +15%\nLevel 4: 20%\nLevel 5: +25%"; break;
 		    }
 		    break;
 			
@@ -603,6 +643,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase Shieldbackup amount\nLevel 1: +5%\nLevel 2: +10%\nLevel 3: +15%\nLevel 4: 20%\nLevel 5: +25%"; break;
 		    }
 		    break;
 			
@@ -610,6 +651,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
+		        case "description": return "Increase warrep repair speed\nLevel 1: +5%\nLevel 2: +10%\nLevel 3: +15%\nLevel 4: 20%\nLevel 5: +25%"; break;
 		    }
 		    break;
 		#endregion

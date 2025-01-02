@@ -35,11 +35,37 @@ var _ratio = 1.2;
 var _start = 1920/2-sprite_get_width(hud_ammo2_spr)/2*_ratio
 draw_sprite_ext(shiphud_spr,0,_start,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_rsb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
+//draw_sprite_ext(reload_spr,
 draw_sprite_ext(hud_dcr_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*1*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_emp_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*2*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_ish_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*3*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*4*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_ammo2_spr,0,_start,870,_ratio,_ratio,0,c_white,1); //ammo
+
+//RELOAD SPRITES
+var _warrep_reload_img = 0;
+var _emp_reload_img = 0;
+var _ish_reload_img = 0;
+var _shieldbackup_reload_img = 0;
+with cooldowns_ctrl 
+{
+	if owner = gamer.id
+	{
+		_warrep_reload_img = round(100 * (alarm_get(1) / global.emp_cooldown));
+		_emp_reload_img = round(100 * (alarm_get(2) / global.emp_cooldown));
+		_ish_reload_img = round(100 * (alarm_get(3) / global.emp_cooldown));
+		_shieldbackup_reload_img = round(100 * (alarm_get(4) / global.emp_cooldown));
+	}
+}
+var _rsb_reload_img = 0;
+with gamer {_rsb_reload_img = round(100 * (alarm_get(10) / global.rsb_cooldown))+1;}
+
+draw_sprite_ext(reload_spr,_rsb_reload_img,_start + sprite_get_width(shiphud_spr)*_ratio,920,_ratio,_ratio,0,c_white,1)
+draw_sprite_ext(reload_spr,_warrep_reload_img,_start + 39*_ratio,870,_ratio,_ratio,0,c_white,1)
+draw_sprite_ext(reload_spr,_emp_reload_img,_start + sprite_get_width(shiphud_spr)*_ratio+39*2*_ratio,920,_ratio,_ratio,0,c_white,1)
+draw_sprite_ext(reload_spr,_ish_reload_img,_start + sprite_get_width(shiphud_spr)*_ratio+39*3*_ratio,920,_ratio,_ratio,0,c_white,1)
+draw_sprite_ext(reload_spr,_shieldbackup_reload_img,_start,870,_ratio,_ratio,0,c_white,1)
+
 
 //Draw ammo text
 draw_set_halign(fa_left);
@@ -87,6 +113,7 @@ draw_sprite_ext(pet_kamikaze_spr,0,xx_pet+33,yy_pet+183,0.55,0.55,0,c_white,1)
 if kamikaze_selected then draw_sprite_ext(pet_selected_spr,0,xx_pet+33,yy_pet+183,0.55,0.55,0,c_white,1)
 
 //Draw CP HUD
+/*
 if room=global.cproom
 {
 	draw_sprite_ext(window_background_spr,0,500,100,0.3,0.3,0,c_white,1);

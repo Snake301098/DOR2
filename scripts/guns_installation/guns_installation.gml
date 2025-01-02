@@ -76,32 +76,35 @@ function guns_installation(_id){
 		    else if droid[i,1]="apis" then Apis_numb+=1
 		    else if droid[i,1]="zeus" then Zeus_numb+=1;
 		    else Iris_numb+=1;
-			//Slot 1
-		    switch info(droid[i,2],"type")
-		    {
-		        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
-		        case "shield": 
-				{
-					var _absorb = info(droid[i,2],"absorb")
-					var _quantity = info(droid[i,2],"quantity");
-					shield_def+=info(droid[i,2],"quantity"); 
-					shieldAbsorbC2 += _quantity * _absorb 
-					break;
-				}
-		    }
-			//Slot 2
-		    switch info(droid[i,3],"type")
-		    {
-		        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
-		        case "shield": 
-				{
-					var _absorb = info(droid[i,3],"absorb")
-					var _quantity = info(droid[i,3],"quantity");
-					shield_def+=info(droid[i,3],"quantity"); 
-					shieldAbsorbC2 += _quantity * _absorb 
-					break;
-				}
-		    }
+			if id = gamer.id
+			{
+				//Slot 1
+			    switch info(droid[i,2],"type")
+			    {
+			        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
+			        case "shield": 
+					{
+						var _absorb = info(droid[i,2],"absorb")
+						var _quantity = info(droid[i,2],"quantity");
+						shield_def+=info(droid[i,2],"quantity"); 
+						shieldAbsorbC2 += _quantity * _absorb 
+						break;
+					}
+			    }
+				//Slot 2
+			    switch info(droid[i,3],"type")
+			    {
+			        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
+			        case "shield": 
+					{
+						var _absorb = info(droid[i,3],"absorb")
+						var _quantity = info(droid[i,3],"quantity");
+						shield_def+=info(droid[i,3],"quantity"); 
+						shieldAbsorbC2 += _quantity * _absorb 
+						break;
+					}
+			    }
+			}
 		} 
 		
 		shield_defC2 = shield_def
@@ -153,32 +156,35 @@ function guns_installation(_id){
 		    else if droid[i,1]="apis" then Apis_numb+=1
 		    else if droid[i,1]="zeus" then Zeus_numb+=1;
 		    else Iris_numb+=1;
-			//Slot 1
-		    switch info(droid[i,2],"type")
-		    {
-		        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
-		        case "shield": 
-				{
-					var _absorb = info(droid[i,2],"absorb")
-					var _quantity = info(droid[i,2],"quantity");
-					shield_def+=info(droid[i,2],"quantity"); 
-					shieldAbsorbC1 += _quantity * _absorb 
-					break;
-				}
-		    }
-			//Slot 2
-		    switch info(droid[i,3],"type")
-		    {
-		        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
-		        case "shield": 
-				{
-					var _absorb = info(droid[i,3],"absorb")
-					var _quantity = info(droid[i,3],"quantity");
-					shield_def+=info(droid[i,3],"quantity"); 
-					shieldAbsorbC1 += _quantity * _absorb 
-					break;
-				}
-		    }
+			if id = gamer.id
+			{
+				//Slot 1
+			    switch info(droid[i,2],"type")
+			    {
+			        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
+			        case "shield": 
+					{
+						var _absorb = info(droid[i,2],"absorb")
+						var _quantity = info(droid[i,2],"quantity");
+						shield_def+=info(droid[i,2],"quantity"); 
+						shieldAbsorbC1 += _quantity * _absorb 
+						break;
+					}
+			    }
+				//Slot 2
+			    switch info(droid[i,3],"type")
+			    {
+			        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
+			        case "shield": 
+					{
+						var _absorb = info(droid[i,3],"absorb")
+						var _quantity = info(droid[i,3],"quantity");
+						shield_def+=info(droid[i,3],"quantity"); 
+						shieldAbsorbC1 += _quantity * _absorb 
+						break;
+					}
+			    }
+			}
 		} 
 		
 		shield_defC1 = shield_def
@@ -246,22 +252,7 @@ function guns_installation(_id){
 		        }
 		} */
     
-		//Check drones
-		herculesCount = 0;
-		havocCount = 0;
-		droneCount = 0;
 
-		for(i=1; i<=10; i+=1){
-		        if(droid[i,1] == "noone" || droid[i,1] == "") {break;}
-		        droneCount+=1;
-		        if(droid[i,4] == "HAVOC"){
-		            havocCount += 1;
-		        }else if(droid[i,4] == "HERCULES"){
-		            herculesCount +=1;
-		        }else{
-
-		        }
-		}
 
 		//DRONES FORMATIONS
 		 /*   if(_id == gamer || _id == gamer.id){
@@ -339,11 +330,18 @@ function guns_installation(_id){
 		                SKILLTREE
 		*************************************************/
 		#region
-	    if _id.pilotsheet_ship_hull_i = 1 then {health_def+=10000}
-	    if _id.pilotsheet_ship_hull_i = 2 then {health_def+=20000}
-	    if _id.pilotsheet_ship_hull_ii = 1 then {health_def+=15000}
-	    if _id.pilotsheet_ship_hull_ii = 2 then {health_def+=30000}
-	    if _id.pilotsheet_ship_hull_ii = 3 then {health_def+=45000}      
+		//HP
+		health_def += ship_hull_i * 10000 + ship_hull_ii * 15000
+		
+		//SHIELD
+		shield_def += shield_def * shield_engineering * 0.05
+		shield_defC1 += shield_defC1 * shield_engineering * 0.05
+		shield_defC2 += shield_defC2 * shield_engineering * 0.05
+		
+		//SHIELD ABSORB
+		shieldAbsorb += shield_mechanics * 0.02
+		shieldAbsorbC1 += shield_mechanics * 0.02
+		shieldAbsorbC2 += shield_mechanics * 0.02
 		#endregion
 
 

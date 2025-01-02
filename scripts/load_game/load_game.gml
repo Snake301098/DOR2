@@ -9,14 +9,14 @@ function load_game()
 	gamer.corporation = ini_read_real("Player","company",0);
 	global.corporation = ini_read_real("Player","company",0);
 	global.credit = ini_read_real("Player","credit",0);
-	global.ggenergy = ini_read_real("Player","ggenergy",0);
+	global.ggenergy = ini_read_real("Player","ggclick",0);
 	global.chest_green_key = ini_read_real("Player","chest_green_key",0);
 	global.chest_gold_key = ini_read_real("Player","chest_gold_key",0);
 	global.experience = ini_read_real("Player","experience",0);
 	global.level = ini_read_real("Player","level",1);
 	global.honor = ini_read_real("Player","honor",0);
 	global.rankpoints = ini_read_real("Player","rankpoints",0);
-	global.rpfactor = 1;
+	global.rpfactor = ini_read_real("Player","rpfactor",0);
 	global.uridium = ini_read_real("Player","uridium",0)
 	global.logfile = ini_read_real("Player","logfile",0);
 
@@ -119,13 +119,13 @@ function load_game()
 	    gamer.droidC1[i,1] = ini_read_string("Drones","drone"+string(i),"");
 	    gamer.droidC1[i,2] = ini_read_string("Drones","slot"+string(i)+"_1_C1","");
 	    gamer.droidC1[i,3] = ini_read_string("Drones","slot"+string(i)+"_2_C1","");
-	    gamer.droidC1[i,4] = ini_read_string("Drones","design"+string(i),"");
+	    gamer.droidC1[i,4] = ini_read_string("Drones","design_"+string(i)+"_C1","");
 		if gamer.droidC1[i,1] != "" and gamer.droidC1[i,1] != "noone" then gamer.dronesNbr+=1;
 		//Config 2
 	    gamer.droidC2[i,1] = ini_read_string("Drones","drone"+string(i),"");
 	    gamer.droidC2[i,2] = ini_read_string("Drones","slot"+string(i)+"_1_C2","");
 	    gamer.droidC2[i,3] = ini_read_string("Drones","slot"+string(i)+"_2_C2","");
-	    gamer.droidC2[i,4] = ini_read_string("Drones","design"+string(i),"");
+	    gamer.droidC2[i,4] = ini_read_string("Drones","design_"+string(i)+"_C2","");
 		if gamer.droidC2[i,1] != "" and gamer.droidC2[i,1] != "noone" then gamer.dronesNbr+=1;
 	}
 

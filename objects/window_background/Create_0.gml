@@ -21,6 +21,8 @@ upgrade_text = "";
 //SKILLTREE
 skilltree_points = -1		
 skilltree_cost = -1
+skilltree_selected = ""
+skilltree_selected_description = ""
 
 //init user events
 event_user(0); //creation in the main tabs

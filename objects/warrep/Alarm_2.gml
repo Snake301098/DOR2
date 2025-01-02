@@ -1,6 +1,6 @@
 /// @description End of warrep
 var myID = owner
-var _cooldown = 10 * room_speed;
+var _cooldown = global.warrep_cooldown;
 
 with(cooldowns_ctrl)
 {

@@ -73,45 +73,28 @@ Flax_numb=0; Iris_numb=0;           //Êîë-âî äðîèäîâ.
 Rocket_rate:=0;                     //Çàäåðæêà ìåæäó âûñòðåëàìè ðàêåò.
 SuperGunNumb:=0;                    //Êîë-âî êðóòûõ ïóøåê.
 DroidOff=false;                     //Îòêëþ÷åíû ëè äðîèäû (äëÿ ïîâûøåíèÿ ïðîèç-ñòè).
-/*Ñâåäåíèÿ î áîåïðèïàñàõ.
-[0,0]=íîìåð âûáðàííûõ áîåïðèïàñîâ. [i,1]=êîë-âî i-ûõ áîåïðèïàñîâ. [i,1]=èíäåêñ ìîäåëè i-ãî âûñòðåëà. [i,2]=èíäåêñ çâóêà i-ãî âûñòðåëà.*/
-/*
-ammo[0,0]=1;  ammo[1,0]=100*global.code1; ammo[1,1]=x1ammo; ammo[1,2]=global.x1ammo_sound;
-ammo[2,0]=5*global.code1; ammo[2,1]=x2ammo; ammo[2,2]=global.x1ammo_sound;
-ammo[3,0]=5*global.code1; ammo[3,1]=x3ammo; ammo[3,2]=global.x1ammo_sound;
-ammo[4,0]=5*global.code1; ammo[4,1]=x4ammo; ammo[4,2]=global.x4ammo_sound;
-ammo[5,0]=5*global.code1; ammo[5,1]=sub_ammo; ammo[5,2]=global.sub_ammo_sound;
-//Òîò æå ìàññèâ, íî ïðî ðàêåòû. rocket_ammo[i,3]-óðîí.
-rocket_ammo[0,0]:=1; rocket_ammo[1,0]:=10*global.code1; rocket_ammo[1,1]:=rocket_spr;
-rocket_ammo[1,2]:=global.rocket_s; rocket_ammo[1,3]:=100;
-*/
-//for (i:=1; i<=12; i+=1) {
-//droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
-/* Ñâåäåíèÿ î äðîèäàõ. [i,0] - id i-ãî ñëîòà äðîèäîâ. [i,1] - êàêîé äðîèä ïîä íîìåðîì i. [i,1+j] - ÷åì çàíÿò j-é ñëîò äðîèäà ïîä íîìåðîì i. */
-/*
-Laser[0]:=5;
-for (i:=1; i<=5; i+=1) Laser[i]="noone"
-/* Ñâåäåíèÿ î ñëîòàõ ïóøåê íà êîðàáëå. Gun[i]= êàêîé ïóøêîé çàíÿò i-é ñëîò äëÿ ïóøåê íà êîðàáëå */
-/*
-GunDmg[0]:=5;
-for (i:=1; i<=5; i+=1) GunDmg[i]=0;
-//Storing the dmg for each gun
 
-GunLvl[0]:=5;
-for (i:=1; i<=5; i+=1) GunLvl[i]=0;
-//Storing the lvl for each gun
-
-LaserLvl[0]:=5;
-for (i:=1; i<=5; i+=1) LaserLvl[i]=0;
-//Storing the lvl for each laser
-
-LaserDmg[0]:=5;
-for (i:=1; i<=5; i+=1) LaserDmg[i]=0;
-//Storing the dmg for each gun
-
-Generator[0]:=9;
-for (i:=1; i<=30; i+=1) Generator[i]="noone"
-/* Ñâåäåíèÿ î ñëîòàõ ãåíåðàòîðîâ íà êîðàáëå. Generator[i]= êàêèì ãåíåðàòîðîì çàíÿò i-é ñëîò äëÿ ãåíåðàòîðîâ íà êîðàáëå */
+//SKILLTREE
+ship_hull_i = 0
+ship_hull_ii = 0
+shield_engineering = 0
+engineering = 0
+bounty_hunter_i = 0
+bounty_hunter_ii = 0
+alien_hunter = 0
+greed = 0
+luck_i = 0
+luck_ii = 0
+cruelty_i = 0
+cruelty_ii = 0
+evasive_i = 0
+evasive_ii = 0
+electro_optics = 0
+shield_mechanics = 0
+smb_upgrade = 0
+ish_upgrade = 0
+shieldbackup_upgrade = 0
+warrep_upgrade = 0
 
 Inventory[0]:=72;
 for (i:=1; i<=Inventory[0]; i+=1) Inventory[i]="noone"

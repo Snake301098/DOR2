@@ -1,5 +1,7 @@
 //if dead respawn
 
+with(droid_obj){x=owner.x;y=owner.y}
+
 //RESPAWN AT BASE
 if destroyed=1
 {

@@ -19,7 +19,7 @@ file_text_close(file)
 
 //ORIGINS
 _Profilex = 740;
-_Profiley = 250;
+_Profiley = 290;
 
 _PVPx = 780;
 _PVPy = 250;

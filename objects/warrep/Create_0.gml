@@ -1,7 +1,7 @@
 delay = room_speed / 2
 owner=noone;
 sprite_index=warrep_spr;
-healthRegen=10000;
+healthRegen=0;
 image_speed=1// /15;
 depth=-50;
 

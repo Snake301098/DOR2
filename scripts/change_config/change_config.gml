@@ -56,6 +56,11 @@ function change_config(_id)
 				alarm[0] = 5*60;
 			}	
 		}
+		
+		with window_background
+		{
+			if active_tab = "EQUIPMENT" then event_user(1);
+		}
 	}
 	else
 	{

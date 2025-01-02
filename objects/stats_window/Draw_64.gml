@@ -19,7 +19,7 @@ switch active_tab
 		//STATS PROFILE
 		var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, cell_position;
 		var cells_start_x = _Profilex;
-		var cells_start_y = _Profiley;
+		var cells_start_y = _Profiley+50;
 		var spacing_x = 200;
 		var spacing_y = 120;
 		var rows = 5;
@@ -43,8 +43,24 @@ switch active_tab
 				}
 			}
 		}
+		
+		var _rankx = (700+1490)/2;
+		var _ranky = _Profiley-20;
+		
+		var _res_rankpoints = get_rankpoints();
+		
+		draw_set_font(hangarfont);
+		draw_text(_rankx-85,_ranky-20,string(global.rpbelow))
+		draw_text(_rankx,_ranky-23-20,string(global.rankpoints))
+		draw_text(_rankx+85,_ranky-20,string(global.rpabove))
+		
+		draw_sprite_ext(ranks_spr,max(0,_res_rankpoints[0]-1),_rankx-85,_ranky,1,1,0,c_white,1);
+		draw_sprite_ext(ranks_spr,_res_rankpoints[0],_rankx,_ranky-23,1,1,0,c_white,1);
+		draw_sprite_ext(ranks_spr,min(19,_res_rankpoints[0]+1),_rankx+85,_ranky,1,1,0,c_white,1);
+		
+		draw_healthbar(_rankx-70,_ranky-10,_rankx+70,_ranky+10,(global.rankpoints - global.rpbelow)/(global.rpabove - global.rpbelow)*100,c_black,c_navy,c_navy,0,true,true);
 		break;
-		#endregion
+		#endregion 
 	}
 	
 	//PVP

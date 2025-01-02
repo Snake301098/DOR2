@@ -12,6 +12,7 @@ x1=0;//direction at time 1
 y1=0;
 x2=0;//direction at time 2
 y2=0;
+not_attacking_since = 0 //when not attacking since long time can start repairing
 cooldown_alarm1=1 //=1 if can use
 isStopped=0; //ship movement IA when just not moving
 isAttacked=0; //if another ship is attacking id
@@ -85,7 +86,7 @@ Rocket_rate:=4;                         //Çàäåðæêà ìåæäó âûñòð
 //Power:="azz";                          //Àðãóìåíò äëÿ ðàíäîìàéçåðà ñèëû.
 MaxAmmo:=1;                             //Êàêèå ñàìûå êðóòûå ïàòðîíû åñòü â àðñåíàëå âðàãà.
 visible=false;
-alarm[5]=1;
+//alarm[5]=1;
 damageToDraw=0;
 hasStartedAlarm8=false;
 gotKilledBy = 0;
@@ -164,6 +165,7 @@ droidC1=droid;
 droidC2=droid;
 
 event_inherited();                      //Çàïóñê ðîä. ñîáûòèÿ.
+event_user(0);
 event_user(3);
 guns_installation(id);
 own_health=health_def;

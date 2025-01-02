@@ -12,11 +12,31 @@ if ammo_selected = rsb then _ammo_sound = rsb_sound
 
 if id = gamer.id 
 {
-	if ammo_selected = x1_ammo then global.x1 -= gamer.guns
-	if ammo_selected = x2_ammo then global.x2 -= gamer.guns
-	if ammo_selected = x3_ammo then global.x3 -= gamer.guns
-	if ammo_selected = x4_ammo then global.x4 -= gamer.guns
-	if ammo_selected = rsb then global.x6 -= gamer.guns
+	if ammo_selected = x1_ammo
+	{
+		if global.x1 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+		global.x1 -= gamer.guns
+	}
+	if ammo_selected = x2_ammo
+	{
+		if global.x2 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+		global.x2 -= gamer.guns
+	}
+	if ammo_selected = x3_ammo
+	{
+		if global.x3 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+		global.x3 -= gamer.guns
+	}
+	if ammo_selected = x4_ammo
+	{
+		if global.x4 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+		global.x4 -= gamer.guns
+	}
+	if ammo_selected = rsb
+	{
+		if global.x6 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+		global.x16 -= gamer.guns
+	}
 }
 
 //MaxDamage = 15000

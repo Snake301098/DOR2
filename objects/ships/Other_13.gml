@@ -1,5 +1,5 @@
 ///@description POWER
-var i, iris_numb, flax_numb, engines, lf_1_numb, mp_1_numb, shields, dronedesign, shiptype;
+var i, iris_numb, flax_numb, engines, lf_1_numb, mp_1_numb, shields, dronedesign, shiptype, dronedesign_proba;
 iris_numb:=0; flax_numb:=0; engines:=0   dronedesign:=0; shiptype=0;
 var lf4_nbrC1=0;lf4_nbrC2=0;lf3_nbrC1=0;lf3_nbrC2=0;mp1_nbrC1=0;mp1_nbrC2=0;bo2_nbrC1=0;bo2_nbrC2=0;bo1_nbrC1=0;bo1_nbrC2=0;bo0_nbrC1=0;bo0_nbrC2=0;spd3_nbrC1=0;spd3_nbrC2=0;spd2_nbrC1=0;spd2_nbrC2=0;spd1_nbrC1=0;spd1_nbrC2=0;
 
@@ -38,7 +38,12 @@ GunC2=[]
 Engine=[]
 EngineC1=[]
 EngineC2=[]
+droid=[]
+droidC1=[]
+droidC2=[]
 
+dronedesign=choose("normal","havoc","havoc","hercules","mix","mix") 
+	
 //POWER 5 ----------------------------------
 if Power >= 5
 {
@@ -47,12 +52,9 @@ if Power >= 5
 	rings=choose(3,3,3,4,4,4,4,4);
 
 	//DRONES
-	iris_numb = irandom_range(7,10);
+	iris_numb = irandom_range(8,10);
 	flax_numb = 10 - iris_numb;
-	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
-	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
-	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
-	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
+	dronedesign_proba=choose(80,90,100);
 	droneformation=choose(1,2,3)//1=default, 2=heart
 	
 	var gun_slotsC1 = gun_slots ;
@@ -72,7 +74,7 @@ if Power >= 5
 	var bo1_nbrC1 = shield_slotsC1 - bo2_nbrC1
 	
 	var spd3_nbrC1 = round(prob1[irandom(array_length(prob1)-1)]/100*generator_slotsC1)
-	var spd2_nbrC1 = shield_slotsC1 - bo2_nbrC1
+	var spd2_nbrC1 = generator_slotsC1 - spd3_nbrC1
 	
 	var lf4_nbrC2 = round(prob1[irandom(array_length(prob1)-1)]/100*gun_slotsC2)
 	var lf3_nbrC2 = gun_slotsC2-lf4_nbrC2
@@ -81,11 +83,29 @@ if Power >= 5
 	var bo1_nbrC2 = shield_slotsC2 - bo2_nbrC2
 	
 	var spd3_nbrC2 = round(prob1[irandom(array_length(prob1)-1)]/100*generator_slotsC2)
-	var spd2_nbrC2 = shield_slotsC2 - bo2_nbrC2
+	var spd2_nbrC2 = generator_slotsC2 - spd3_nbrC2
 	
 	//SKILLTREE
-	pilotsheet_ship_hull_i=2
-	if(pilotsheet_ship_hull_i=2) then pilotsheet_ship_hull_ii=choose(1,1,2,2,2,3,3,3);
+	ship_hull_i=2
+	if ship_hull_i=2 then ship_hull_ii = choose(1,1,2,2,2,3,3,3);
+	shield_engineering = choose(2,3,3,4,4,5,5);
+	engineering = choose(2,3,3,4,4,5,5);
+	bounty_hunter_i = 2
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(1,1,2,2,2,3,3,3);
+	alien_hunter = choose(2,3,3,4,4,5,5);
+	greed = choose(2,3,3,4,4,5,5);
+	luck_i = 2
+	if luck_i = 2 then luck_ii = choose(1,1,2,2,2,3,3,3);
+	cruelty_i = 2
+	if cruelty_i = 2 then cruelty_ii = choose(1,1,2,2,2,3,3,3);
+	evasive_i = 2
+	if evasive_i = 2 then evasive_ii = choose(1,1,2,2,2,3,3,3);
+	electro_optics = choose(2,3,3,4,4,5,5);
+	shield_mechanics = choose(2,3,3,4,4,5,5);
+	smb_upgrade = choose(2,3,3,4,4,5,5);
+	ish_upgrade = choose(2,3,3,4,4,5,5);
+	shieldbackup_upgrade = choose(2,3,3,4,4,5,5);
+	warrep_upgrade = choose(2,3,3,4,4,5,5);
 	
 	//ABILITIES
 	ability_1 = "warrep"
@@ -102,12 +122,9 @@ if Power = 4
 	rings=choose(2,2,2,3,3,3,3,3,4,4,4);
 
 	//DRONES
-	iris_numb = irandom_range(7,10);
+	iris_numb = irandom_range(6,10);
 	flax_numb = 10 - iris_numb;
-	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
-	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
-	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
-	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
+	dronedesign_proba=choose(60,70,80);
 	droneformation=choose(1,2,3)//1=default, 2=heart
 
 	var gun_slotsC1 = gun_slots ;
@@ -127,7 +144,7 @@ if Power = 4
 	var bo1_nbrC1 = shield_slotsC1 - bo2_nbrC1
 	
 	var spd3_nbrC1 = round(prob1[irandom(array_length(prob1)-1)]/100*generator_slotsC1)
-	var spd2_nbrC1 = shield_slotsC1 - bo2_nbrC1
+	var spd2_nbrC1 = shield_slotsC1 - spd3_nbrC1
 	
 	var lf4_nbrC2 = round(prob1[irandom(array_length(prob1)-1)]/100*gun_slotsC2)
 	var lf3_nbrC2 = gun_slotsC2-lf4_nbrC2
@@ -136,11 +153,29 @@ if Power = 4
 	var bo1_nbrC2 = shield_slotsC2 - bo2_nbrC2
 	
 	var spd3_nbrC2 = round(prob1[irandom(array_length(prob1)-1)]/100*generator_slotsC2)
-	var spd2_nbrC2 = shield_slotsC2 - bo2_nbrC2	
-
+	var spd2_nbrC2 = generator_slotsC2 - spd3_nbrC2	
+	
 	//SKILLTREE
-	pilotsheet_ship_hull_i=choose(1,1,2,2,2,2,2);
-	if(pilotsheet_ship_hull_i=2) then pilotsheet_ship_hull_ii=choose(0,0,0,1,1,1,1,2,2,2,3,3);
+	ship_hull_i=2
+	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
+	shield_engineering = choose(1,2,2,3,3,4,4,5);
+	engineering = choose(1,2,2,3,3,4,4,5);
+	bounty_hunter_i = 2
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
+	alien_hunter = choose(1,2,2,3,3,4,4,5);
+	greed = choose(1,2,2,3,3,4,4,5);
+	luck_i = 2
+	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
+	cruelty_i = 2
+	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
+	evasive_i = 2
+	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
+	electro_optics = choose(1,2,2,3,3,4,4,5);
+	shield_mechanics = choose(1,2,2,3,3,4,4,5);
+	smb_upgrade = choose(1,2,2,3,3,4,4,5);
+	ish_upgrade = choose(1,2,2,3,3,4,4,5);
+	shieldbackup_upgrade = choose(1,2,2,3,3,4,4,5);
+	warrep_upgrade = choose(1,2,2,3,3,4,4,5);
 	
 	//ABILITIES
 	if irandom(3) = 0 then	ability_1 = "warrep"
@@ -156,12 +191,9 @@ if Power = 3
 	rings=choose(1,1,2,2,2,2,3,3,3,4);
 
 	//DRONES
-	iris_numb = irandom_range(7,10);
+	iris_numb = irandom_range(2,6);
 	flax_numb = 10 - iris_numb;	
-	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
-	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
-	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
-	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
+	dronedesign_proba=choose(35,50,60);
 	droneformation=choose(1,2,3)//1=default, 2=heart
 
 	
@@ -186,7 +218,7 @@ if Power = 3
 	
 	var spd3_nbrC1 = round(prob1[irandom(array_length(prob1)-1)]/100*generator_slotsC1)
 	var spd1_nbrC1 = round(prob2[irandom(array_length(prob2)-1)]/100*generator_slotsC1)
-	var spd2_nbrC1 = shield_slotsC1 - spd3_nbrC1 - spd1_nbrC1
+	var spd2_nbrC1 = generator_slotsC1 - spd3_nbrC1 - spd1_nbrC1
 	
 	var lf4_nbrC2 = round(prob1[irandom(array_length(prob1)-1)]/100*gun_slotsC2)
 	var mp1_nbrC2 = round(prob2[irandom(array_length(prob2)-1)]/100*gun_slotsC2)
@@ -198,12 +230,30 @@ if Power = 3
 	
 	var spd3_nbrC2 = round(prob1[irandom(array_length(prob1)-1)]/100*generator_slotsC2)
 	var spd1_nbrC2 = round(prob2[irandom(array_length(prob2)-1)]/100*generator_slotsC2)
-	var spd2_nbrC2 = shield_slotsC2 - spd3_nbrC2 - spd1_nbrC2
+	var spd2_nbrC2 = generator_slotsC2 - spd3_nbrC2 - spd1_nbrC2
 	
 
 	//SKILLTREE
-	pilotsheet_ship_hull_i=choose(0,0,1,1,1,2,2);
-	if(pilotsheet_ship_hull_i=2) then pilotsheet_ship_hull_ii=choose(0,0,1,1,1,2,2,2,3,3);
+	ship_hull_i=choose(0,1,1,2,2);
+	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
+	shield_engineering = choose(0,1,1,2,2,2,2,3,3,4,5);
+	engineering = choose(0,1,1,2,2,2,2,3,3,4,5);
+	bounty_hunter_i = choose(0,1,1,2,2);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
+	alien_hunter = choose(0,1,1,2,2,2,2,3,3,4,5);
+	greed = choose(0,1,1,2,2,2,2,3,3,4,5);
+	luck_i = choose(0,1,1,2,2);
+	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
+	cruelty_i = choose(0,1,1,2,2);
+	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
+	evasive_i = choose(0,1,1,2,2);
+	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
+	electro_optics = choose(0,1,1,2,2,2,2,3,3,4,5);
+	shield_mechanics = choose(0,1,1,2,2,2,2,3,3,4,5);
+	smb_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
+	ish_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
+	shieldbackup_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
+	warrep_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
 }
 
 
@@ -216,13 +266,10 @@ if Power = 2
 	rings=choose(0,0,0,1,1,1,1,1,2,2);
 
 	//DRONES
-	iris_numb = irandom_range(7,10);
-	flax_numb = 10 - iris_numb;
-	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
-	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
-	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
-	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
-	droneformation=choose(1,2,3)//1=default, 2=heart
+	iris_numb = irandom_range(0,1);
+	flax_numb = irandom_range(2,5);
+	dronedesign_proba=choose(15,20,30);
+	droneformation=1//1=default, 2=heart
 	
 	
 	var gun_slotsC1 = gun_slots ;
@@ -242,7 +289,7 @@ if Power = 2
 	var bo1_nbrC1 = shield_slotsC1 - bo0_nbrC1
 	
 	var spd1_nbrC1 = round(prob2[irandom(array_length(prob2)-1)]/100*generator_slotsC1)
-	var spd2_nbrC1 = shield_slotsC1 - spd1_nbrC1
+	var spd2_nbrC1 = generator_slotsC1 - spd1_nbrC1
 	
 	var mp1_nbrC2 = round(prob2[irandom(array_length(prob2)-1)]/100*gun_slotsC2)
 	var lf3_nbrC2 = gun_slotsC2-mp1_nbrC2
@@ -251,12 +298,29 @@ if Power = 2
 	var bo1_nbrC2 = shield_slotsC2 - bo0_nbrC2
 	
 	var spd1_nbrC2 = round(prob2[irandom(array_length(prob2)-1)]/100*generator_slotsC2)
-	var spd2_nbrC2 = shield_slotsC2 - spd1_nbrC2
-	
+	var spd2_nbrC2 = generator_slotsC2 - spd1_nbrC2
 	
 	//SKILLTREE
-	pilotsheet_ship_hull_i=choose(0,0,0,0,0,1,1,1,1,2,2);
-	if(pilotsheet_ship_hull_i=2) then pilotsheet_ship_hull_ii=choose(0,0,0,0,0,1,1,1,1,1,2,2,2,3,3);
+	ship_hull_i=choose(0,0,1,1,2);
+	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
+	shield_engineering = choose(0,0,1,1,1,2,2,2,3);
+	engineering = choose(0,0,1,1,1,2,2,2,3);
+	bounty_hunter_i = choose(0,0,1,1,2);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
+	alien_hunter = choose(0,0,1,1,1,2,2,2,3);
+	greed = choose(0,0,1,1,1,2,2,2,3);
+	luck_i = choose(0,0,1,1,2);
+	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
+	cruelty_i = choose(0,0,1,1,2);
+	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
+	evasive_i = choose(0,0,1,1,2);
+	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
+	electro_optics = choose(0,0,1,1,1,2,2,2,3);
+	shield_mechanics = choose(0,0,1,1,1,2,2,2,3);
+	smb_upgrade = choose(0,0,1,1,1,2,2,2,3);
+	ish_upgrade = choose(0,0,1,1,1,2,2,2,3);
+	shieldbackup_upgrade = choose(0,0,1,1,1,2,2,2,3);
+	warrep_upgrade = choose(0,0,1,1,1,2,2,2,3);
 }
 
 
@@ -269,15 +333,12 @@ if Power = 1
 	rings=choose(0,0,0,0,0,0,0,1);
 
 	//DRONES
-	iris_numb = irandom_range(7,10);
-	flax_numb = 10 - iris_numb;
+	iris_numb = 0;
+	flax_numb = irandom_range(0,3);
 	for (i=1;i<=min(flax_numb,10);i++){droid[i,1]:="flax";}
 	for (i=flax_numb+1; i<=min(flax_numb+iris_numb,10);i++){if (i>=0) droid[i,1]:="iris";}	
-	dronedesign=choose(1,1,2,3,2,3) //1=normal, 2=havoc, 3=hercules
-	if dronedesign=1 then {dnormal=1; dhavoc=0; dhercules=0;}
-	else if dronedesign=2 then {dnormal=0; dhavoc=1; dhercules=0;}
-	else if dronedesign=3 then {dnormal=0; dhavoc=0; dhercules=1;}
-	droneformation=choose(1,2,3)//1=default, 2=heart
+	dronedesign_proba=choose(0,5,10);
+	droneformation=1//1=default, 2=heart
 	
 	
 	var gun_slotsC1 = gun_slots ;
@@ -311,8 +372,26 @@ if Power = 1
 	
 	
 	//SKILLTREE
-	pilotsheet_ship_hull_i=choose(0,0,0,0,0,1,1,1);
-	if(pilotsheet_ship_hull_i=2) then pilotsheet_ship_hull_ii=choose(0,0,0,0,0,1,1,1,1,1,2,2,2,3,3);
+	ship_hull_i=choose(0,0,0,1,1);
+	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
+	shield_engineering = choose(0,0,0,1,1,1,2,2);
+	engineering = choose(0,0,0,1,1,1,2,2);
+	bounty_hunter_i = choose(0,0,0,1,1);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
+	alien_hunter = choose(0,0,0,1,1,1,2,2);
+	greed = choose(0,0,0,1,1,1,2,2);
+	luck_i = choose(0,0,0,1,1);
+	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
+	cruelty_i = choose(0,0,0,1,1);
+	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
+	evasive_i = choose(0,0,0,1,1);
+	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
+	electro_optics = choose(0,0,0,1,1,1,2,2);
+	shield_mechanics = choose(0,0,0,1,1,1,2,2);
+	smb_upgrade = choose(0,0,0,1,1,1,2,2);
+	ish_upgrade = choose(0,0,0,1,1,1,2,2);
+	shieldbackup_upgrade = choose(0,0,0,1,1,1,2,2);
+	warrep_upgrade = choose(0,0,0,1,1,1,2,2);
 }
 
 
@@ -330,15 +409,24 @@ var shield_shipC2 = engine_slots - generator_shipC2;
 var shield_droidsC2 = shield_slotsC2 - shield_shipC2;
 var engine_shipC2 = shield_shipC2 + generator_shipC2;
 
+/*
 array_push(GunC1,gun_shipC1)
 array_push(EngineC1,engine_shipC1)
 
 array_push(GunC2,gun_shipC2)
 array_push(EngineC2,engine_shipC2)
+*/
+
+array_push(GunC1,mp1_nbrC1+lf3_nbrC1+lf4_nbrC1)
+array_push(EngineC1,bo0_nbrC1+bo1_nbrC1+bo2_nbrC1+spd1_nbrC1+spd2_nbrC1+spd3_nbrC1)
+
+array_push(GunC2,mp1_nbrC2+lf3_nbrC2+lf4_nbrC2)
+array_push(EngineC2,mp1_nbrC2+lf3_nbrC2+lf4_nbrC2+mp1_nbrC2+lf3_nbrC2+lf4_nbrC2)
 
 for (i:=1; i<=mp1_nbrC1; i+=1;) {array_push(GunC1,"MP-1");}
 for (i:=1; i<=lf3_nbrC1; i+=1;) {array_push(GunC1,"LF-3");}
 for (i:=1; i<=lf4_nbrC1; i+=1;) {array_push(GunC1,"LF-4");}
+for (i:=array_length(GunC1); i<=gun_slots;i++) {array_push(GunC1,"");}
 
 for (i:=1; i<=bo0_nbrC1; i+=1;) {array_push(EngineC1,"B0-0");}
 for (i:=1; i<=bo1_nbrC1; i+=1;) {array_push(EngineC1,"B0-1");}
@@ -347,10 +435,12 @@ for (i:=1; i<=bo2_nbrC1; i+=1;) {array_push(EngineC1,"B0-2");}
 for (i:=1; i<=spd1_nbrC1; i+=1;) {array_push(EngineC1,"SPD-1");}
 for (i:=1; i<=spd2_nbrC1; i+=1;) {array_push(EngineC1,"SPD-2");}
 for (i:=1; i<=spd3_nbrC1; i+=1;) {array_push(EngineC1,"SPD-3");}
+for (i:=array_length(EngineC1); i<=engine_slots;i++) {array_push(EngineC1,"");}
 
 for (i:=1; i<=mp1_nbrC2; i+=1;) {array_push(GunC2,"MP-1");}
 for (i:=1; i<=lf3_nbrC2; i+=1;) {array_push(GunC2,"LF-3");}
 for (i:=1; i<=lf4_nbrC2; i+=1;) {array_push(GunC2,"LF-4");}
+for (i:=array_length(GunC2); i<=gun_slots;i++) {array_push(GunC2,"");}
 
 for (i:=1; i<=bo0_nbrC2; i+=1;) {array_push(EngineC2,"B0-0");}
 for (i:=1; i<=bo1_nbrC2; i+=1;) {array_push(EngineC2,"B0-1");}
@@ -359,10 +449,28 @@ for (i:=1; i<=bo2_nbrC2; i+=1;) {array_push(EngineC2,"B0-2");}
 for (i:=1; i<=spd1_nbrC2; i+=1;) {array_push(EngineC2,"SPD-1");}
 for (i:=1; i<=spd2_nbrC2; i+=1;) {array_push(EngineC2,"SPD-2");}
 for (i:=1; i<=spd3_nbrC2; i+=1;) {array_push(EngineC2,"SPD-3");}
+for (i:=array_length(EngineC2); i<=engine_slots;i++) {array_push(EngineC2,"");}
 
-for (i:=1; i<=flax_numb; i+=1;) {droid[i,1]="flax"}
-for (i=1+flax_numb;i<=flax_numb+iris_numb;i++){droid[i,1]:="iris";}
-    	
+for (i:=1; i<=flax_numb; i+=1;) 
+{
+	droid[i,1]="flax"
+	var _dronedesign = "normal"
+	if irandom(100) <= dronedesign_proba then _dronedesign = dronedesign
+	if _dronedesign = "mix" then _dronedesign = choose("hercules","havoc");
+	droid[i,4] = _dronedesign;
+}
+for (i=1+flax_numb;i<=flax_numb+iris_numb;i++)
+{
+	droid[i,1]:="iris";
+	var _dronedesign = "normal"
+	if irandom(100) <= dronedesign_proba then _dronedesign = dronedesign
+	if _dronedesign = "mix" then _dronedesign = choose("hercules","havoc");
+	droid[i,4] = _dronedesign;
+}
+for (var i:=array_length(droid); i<=10;i++) {array_push(droid,["","","","",""]);}
+for (var i:=array_length(droidC1); i<=10;i++) {array_push(droidC1,["","","","",""]);}
+for (var i:=array_length(droidC2); i<=10;i++) {array_push(droidC2,["","","","",""]);}
+
 GunC2 = GunC1
 EngineC2 = EngineC1
 droidC2 = droid

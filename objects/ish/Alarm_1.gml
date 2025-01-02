@@ -1,7 +1,7 @@
 /// @description END
 owner.is_using_ish = false;
 var myID = owner
-var _cooldown = 10 * room_speed;
+var _cooldown = global.ish_cooldown;
 
 with(cooldowns_ctrl)
 {

@@ -46,7 +46,7 @@ if attacking=true then
 				}
 				else
 				{
-					if point_distance(x,y,target.x,target.y) <= global.range+target.sprite_width*0.75 then
+					if point_distance(x,y,target.x,target.y) <= global.attack_range then
 					{   
 						restore:=false;
 						//if GunSprite[1]<1 then 
@@ -163,6 +163,46 @@ if own_health <= 0
 	attacking = false;
 	//Remove gamer from targets
 	with(ship){if instance_exists(target){if target = gamer.id then target = noone}}
+	
+	//GG lifes
+	if room = GGA then global.alphalife--
+	if room = GGB then global.alphalife--
+	if room = GGY then global.alphalife--
+	if room = GGD then global.alphalife--
+	
+	if global.alphalife <= 0
+	{
+		global.alphalife = 0
+		global.alphaonmap = 0
+		global.alphawave = 0
+		global.alphaparts = 0
+	}
+	
+	if global.betalife <= 0
+	{
+		global.betalife = 0
+		global.betaonmap = 0
+		global.betawave = 0
+		global.betaparts = 0
+	}
+	
+	if global.gammalife <= 0
+	{
+		global.gammalife = 0
+		global.gammaonmap = 0
+		global.gammawave = 0
+		global.gammaparts = 0
+	}
+	
+	if global.deltalife <= 0
+	{
+		global.deltalife = 0
+		global.deltaonmap = 0
+		global.deltawave = 0
+		global.deltaparts = 0
+	}
+	
+	//Respawn
 	if !instance_exists(respawn) then instance_create_depth(0,0,0,respawn);
 }
 

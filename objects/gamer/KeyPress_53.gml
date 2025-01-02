@@ -31,8 +31,7 @@ else
 		}
 		else
 		{
-			var range = 500;
-			if point_distance(x,y,target.x,target.y) <= range+target.sprite_width*0.75 then
+			if point_distance(x,y,target.x,target.y) <= global.attack_range then
 			{   
 				restore:=false;
 				//if GunSprite[1]<1 then 

@@ -1,5 +1,6 @@
 /// @description escape
-if action[0]="running"
+
+if action[0] = "running"
 {
 	if hasJumped=0
 	{

@@ -199,94 +199,78 @@ switch active_tab
 						if position <= 10 then
 						//if position <= array_length(gamer.droid) then
 						{
-							switch gamer.droid[position,1]
+							if gamer.droid[position,1] != "flax"
 							{
-								case "iris":
-								{
-									var cell_item1, cell_item2;
-									//DRONE
-									cell=instance_create_depth(0, 0, depth-1, shop_cell);
-									cell.x=cells_start_x+(i-1)*spacing_x
-									cell.y=cells_start_y+(j-1)*spacing_y
-									cell.position = j;
-									cell.content="iris";
-									cell.sprite_index=shop_icons_spr;
-									cell.clickable=false;
+								var cell_item1, cell_item2, cell_item3;
+								//DRONE
+								cell=instance_create_depth(0, 0, depth-1, shop_cell);
+								cell.x=cells_start_x+(i-1)*spacing_x
+								cell.y=cells_start_y+(j-1)*spacing_y
+								cell.position = j;
+								cell.content=gamer.droid[position,1];
+								cell.sprite_index=shop_icons_spr;
+								cell.clickable=false;
 									
-									cell_position+=1;
-									//ITEM1
-									cell_item1=instance_create_depth(0, 0, depth-1, inv_cell);
-									cell_item1.x=cell.x+100
-									cell_item1.y=cell.y-30
-									cell_item1.position = cell_position;
-									cell_item1.droneItemNbr = 1;
-									cell_item1.category="drone_item";
-									cell_item1.sprite_index=inv_cell_spr;
-									if gamer.droid[position,2] != noone and gamer.droid[position,2] != "" then cell_item1.content= gamer.droid[position,2] else cell_item1.content = noone;
+								//cell_position+=1;
+								//ITEM1
+								cell_item1=instance_create_depth(0, 0, depth-1, inv_cell);
+								cell_item1.x=cell.x+100
+								cell_item1.y=cell.y-30
+								cell_item1.position = position;
+								cell_item1.droneItemNbr = 1;
+								cell_item1.category="drone_item";
+								cell_item1.sprite_index=inv_cell_spr;
+								if gamer.droid[position,2] != noone and gamer.droid[position,2] != "" then cell_item1.content= gamer.droid[position,2] else cell_item1.content = noone;
 									
-									cell_position+=1;
-									//ITEM2
-									cell_item2=instance_create_depth(0, 0, depth-1, inv_cell);
-									cell_item2.x=cell.x+100
-									cell_item2.y=cell.y+30
-									cell_item2.position = cell_position;
-									cell_item2.droneItemNbr = 2;
-									cell_item2.category="drone_item";
-									cell_item2.sprite_index=inv_cell_spr;
-									if gamer.droid[position,3] != noone and gamer.droid[position,3] != "" then cell_item2.content= gamer.droid[position,3] else cell_item2.content = noone;
+								//cell_position+=1;
+								//ITEM2
+								cell_item2=instance_create_depth(0, 0, depth-1, inv_cell);
+								cell_item2.x=cell.x+100
+								cell_item2.y=cell.y+30
+								cell_item2.position = position;
+								cell_item2.droneItemNbr = 2;
+								cell_item2.category="drone_item";
+								cell_item2.sprite_index=inv_cell_spr;
+								if gamer.droid[position,3] != noone and gamer.droid[position,3] != "" then cell_item2.content= gamer.droid[position,3] else cell_item2.content = noone;
 									
+								//DESIGN
+								cell_item3=instance_create_depth(0, 0, depth-1, inv_cell);
+								cell_item3.x=cell.x+180
+								cell_item3.y=cell.y
+								cell_item3.position = position;
+								cell_item3.category="drone_design";
+								cell_item3.sprite_index=inv_cell_spr;
+								if gamer.droid[position,4] != noone and gamer.droid[position,4] != "" then cell_item3.content= gamer.droid[position,4] else cell_item3.content = noone;
+							}
+							else
+							{
+								cell=instance_create_depth(0, 0, depth-1, shop_cell);
+								cell.x=cells_start_x+(i-1)*spacing_x
+								cell.y=cells_start_y+(j-1)*spacing_y
+								cell.position = j;
+								cell.content="flax";
+								cell.sprite_index=shop_icons_spr;
+								cell.clickable=false;
 									
-									break;
-								}
-							
-								case "flax":
-								{
-									cell=instance_create_depth(0, 0, depth-1, shop_cell);
-									cell.x=cells_start_x+(i-1)*spacing_x
-									cell.y=cells_start_y+(j-1)*spacing_y
-									cell.position = j;
-									cell.content="flax";
-									cell.sprite_index=shop_icons_spr;
-									cell.clickable=false;
+								//cell_position+=1;
+								//ITEM1
+								cell_item1=instance_create_depth(0, 0, depth-1, inv_cell);
+								cell_item1.x=cell.x+100
+								cell_item1.y=cell.y
+								cell_item1.position = position;
+								cell_item1.droneItemNbr = 1;
+								cell_item1.category="drone_item";
+								cell_item1.sprite_index=inv_cell_spr;
+								if gamer.droid[position,2] != noone and gamer.droid[position,2] != "" then cell_item1.content= gamer.droid[position,2] else cell_item1.content = noone;
 									
-									cell_position+=1;
-									//ITEM1
-									cell_item1=instance_create_depth(0, 0, depth-1, inv_cell);
-									cell_item1.x=cell.x+100
-									cell_item1.y=cell.y
-									cell_item1.position = cell_position;
-									cell_item1.droneItemNbr = 1;
-									cell_item1.category="drone_item";
-									cell_item1.sprite_index=inv_cell_spr;
-									if gamer.droid[position,2] != noone and gamer.droid[position,2] != "" then cell_item1.content= gamer.droid[position,2] else cell_item1.content = noone;
-									
-									
-									break;
-								}
-							
-								case "apis":
-								{
-									cell=instance_create_depth(0, 0, depth-1, shop_cell);
-									cell.x=cells_start_x+(i-1)*spacing_x
-									cell.y=cells_start_y+(j-1)*spacing_y
-									cell.position = j;
-									cell.content="apis";
-									cell.sprite_index=shop_icons_spr;
-									cell.clickable=false;
-									break;
-								}
-							
-								case "zeus":
-								{
-									cell=instance_create_depth(0, 0, depth-1, shop_cell);
-									cell.x=cells_start_x+(i-1)*spacing_x
-									cell.y=cells_start_y+(j-1)*spacing_y
-									cell.position = j;
-									cell.content="zeus";
-									cell.sprite_index=shop_icons_spr;
-									cell.clickable=false;
-									break;
-								}
+								//DESIGN
+								cell_item3=instance_create_depth(0, 0, depth-1, inv_cell);
+								cell_item3.x=cell.xx+180
+								cell_item3.y=cell.y+30
+								cell_item3.position = position;
+								cell_item3.category="drone_design";
+								cell_item3.sprite_index=inv_cell_spr;
+								if gamer.droid[position,4] != noone and gamer.droid[position,4] != "" then cell_item3.content= gamer.droid[position,4] else cell_item3.content = noone;
 							}
 						}
 					}
@@ -986,7 +970,7 @@ switch active_tab
 		#region
 		var btn_side_start, btn_side_end, number_btn, totalheight, buttons_x;
 	
-		buttons_x=425;
+		buttons_x=400;
 		number_btn=5;
 		btn_side_start=320;
 		btn_side_end=750;
@@ -1019,66 +1003,51 @@ switch active_tab
 		side_btn_3.button_sprite=button_side_spr;
 		side_btn_3.button_text="DELTA"
 		side_btn_3.image_index=2;
-	
+				
+		//QUANTITY BUTTON (no qty when buying ships)
+		btn_qty=instance_create_depth(0,0,depth-1,button_qty);
+		btn_qty.x=1300;
+		btn_qty.y=650;
+		btn_qty.shop_section="gg";
+		btn_qty.image_index=button_qty_spr;
+				
+		//BUY BUTTON
+		change_design_btn = instance_create_depth(0,0,depth-1,button_action)
+		change_design_btn.x = 1300;
+		change_design_btn.y = 720;
+		change_design_btn.button_sprite=button_action_spr;
+		change_design_btn.button_id="gg_buy";
+		change_design_btn.button_text="USE ENERGY";
+		change_design_btn.image_index=2;
+		
 		#endregion
 		
 		switch active_side_tab
 		{
 			//ALPHA
-			#region
 			case "ALPHA":
 			{
 				side_btn_0.image_index=1;
-				
-				//SHIPS TO BUY
-			/*	var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, ships_list;
-				
-				ships_list=["nostromo", "leonov", "bigboy", "bigboy", "vengeance", "goliath"];
-	
-				cells_start_x = 640;
-				cells_start_y = 390;
-				spacing_x = 110;
-				spacing_y = 110;
-				rows = 4;
-				columns = 3;
-	
-				for (j=1; j<=rows; j+=1)
-				{
-					for (i=1; i<=columns; i+=1)
-					{
-						position=i + (j-1) * columns;
-						if (position-1)<array_length(ships_list) then
-						{
-							cell=instance_create_depth(0, 0, depth-1, shop_cell);
-							cell.x=cells_start_x+(i-1)*spacing_x
-							cell.y=cells_start_y+(j-1)*spacing_y
-							cell.position = position;
-							cell.content=ships_list[position-1];
-							cell.clickable=true;
-							cell.sprite_index=shop_icons_spr;
-						}
-					}
-				}*/
-				
-				//QUANTITY BUTTON (no qty when buying ships)
-				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
-				btn_qty.x=1300;
-				btn_qty.y=650;
-				btn_qty.shop_section="gg";
-				btn_qty.image_index=button_qty_spr;
-				
-				//BUY BUTTON
-				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
-				change_design_btn.x = 1300;
-				change_design_btn.y = 720;
-				change_design_btn.button_sprite=button_action_spr;
-				change_design_btn.button_id="gg_buy";
-				change_design_btn.button_text="USE ENERGY";
-				change_design_btn.image_index=2;
-				
 				break;
 			}
-			#endregion
+			
+			case "BETA":
+			{
+				side_btn_1.image_index=1;
+				break;
+			}
+			
+			case "GAMMA":
+			{
+				side_btn_2.image_index=1;
+				break;
+			}
+			
+			case "DELTA":
+			{
+				side_btn_3.image_index=1;
+				break;
+			}
 			
 			default: {active_side_tab="ALPHA"; event_user(1);}
 		}

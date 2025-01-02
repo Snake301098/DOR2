@@ -1,7 +1,7 @@
 /// @description End of EMP
 owner.is_using_emp = false;
 var myID = owner
-var _cooldown = 10 * room_speed;
+var _cooldown = global.emp_cooldown;
 
 with(cooldowns_ctrl)
 {

@@ -5,11 +5,11 @@ if room = GGA or room = GGB or room = GGD or room = GGY then _radarrange = 10000
 draw_set_alpha(1);
 draw_sprite_stretched(mimage,0,x+20,y+50,170*1*1.4/1.2,142*0.8*1.4/1.2)
 draw_set_alpha(1);
-draw_sprite_ext(minimaphud_spr,0,x,y,1.4,1.4,0,c_white,1)
+draw_sprite_ext(minimaphud_spr,0,x-11,y-8,1.4,1.4,0,c_white,1)
 draw_set_alpha(1);
 
-decx=32;
-decy=60;
+decx=32;//32
+decy=60;//60
 var xmultiplier:=room_width  / 128 /1.4
 var ymultiplier:=room_height / 80 /1.4
 
@@ -234,7 +234,6 @@ with (gamer) {
 
 }
 
-draw_sprite_ext(nuke_spr,0,1920/2,1050,5,5,-90,c_white,1);
     
     
 #endregion

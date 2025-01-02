@@ -28,7 +28,7 @@ if instance_exists(target)
 		ii.speed = ((global.laser_speed)/2);
 		ii.target:=target; ii.owner:=id;
 		ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);
-		alarm[10] = 120;
+		alarm[10] = global.rsb_cooldown;
 
 	}
 

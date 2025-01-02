@@ -19,6 +19,7 @@ switch active_tab
 	{
 		//var dd = load_csv("stats.csv")
 		//show_message(dd[# 0,0])
+		load_stats();
 	
 		//NEW GENS	
 		var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, cell_position;

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"info_ammos",
   "isCompatibility":false,
   "isDnD":false,
