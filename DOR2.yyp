@@ -44,7 +44,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"DOR2",
   "resources":[
@@ -213,6 +213,7 @@
     {"id":{"name":"get_ores_name","path":"scripts/get_ores_name/get_ores_name.yy",},},
     {"id":{"name":"get_ores_sprite","path":"scripts/get_ores_sprite/get_ores_sprite.yy",},},
     {"id":{"name":"get_rankpoints","path":"scripts/get_rankpoints/get_rankpoints.yy",},},
+    {"id":{"name":"get_stats","path":"scripts/get_stats/get_stats.yy",},},
     {"id":{"name":"guns_installation","path":"scripts/guns_installation/guns_installation.yy",},},
     {"id":{"name":"hangar_equip","path":"scripts/hangar_equip/hangar_equip.yy",},},
     {"id":{"name":"hangar_get_upgrades_text","path":"scripts/hangar_get_upgrades_text/hangar_get_upgrades_text.yy",},},
@@ -225,7 +226,6 @@
     {"id":{"name":"info","path":"scripts/info/info.yy",},},
     {"id":{"name":"load_game","path":"scripts/load_game/load_game.yy",},},
     {"id":{"name":"load_quests","path":"scripts/load_quests/load_quests.yy",},},
-    {"id":{"name":"load_stats","path":"scripts/load_stats/load_stats.yy",},},
     {"id":{"name":"LoadFMOD","path":"scripts/LoadFMOD/LoadFMOD.yy",},},
     {"id":{"name":"select_ammo","path":"scripts/select_ammo/select_ammo.yy",},},
     {"id":{"name":"select_target_mob","path":"scripts/select_target_mob/select_target_mob.yy",},},
@@ -239,6 +239,7 @@
     {"id":{"name":"spawn_ship","path":"scripts/spawn_ship/spawn_ship.yy",},},
     {"id":{"name":"stats","path":"scripts/stats/stats.yy",},},
     {"id":{"name":"text_add","path":"scripts/text_add/text_add.yy",},},
+    {"id":{"name":"update_stats","path":"scripts/update_stats/update_stats.yy",},},
     {"id":{"name":"ammo_mob_sound","path":"sounds/ammo_mob_sound/ammo_mob_sound.yy",},},
     {"id":{"name":"bigexpl1_sound","path":"sounds/bigexpl1_sound/bigexpl1_sound.yy",},},
     {"id":{"name":"bonus_grub","path":"sounds/bonus_grub/bonus_grub.yy",},},

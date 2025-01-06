@@ -2,10 +2,12 @@ owner=noone;                      //"Õîçÿèí" ñíàðÿäà.
 damage=10;
 damage_x=1;                        //Óðîí.
 target:=noone;                    //Öåëü ïàòðîíà.
-alarm[0]=60;
+alarm[0]=60;                    //Öåëü ïàòðîíà.
+alarm[1]=1;
 image_speed=0
 drawDamage = true
 image_alpha=0;
+_ammo = "x1"
 
 if object_index=x1_ammo then 
 {

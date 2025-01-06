@@ -10,6 +10,7 @@ else if room=GGD then {mapname="GG D ]=-"}
 //else if room=GGKR then {mapname="GG K ]=-"}
 else {mapname="]=-"}
 name=alienname + mapname
+mob_name = "sibelon"
 sprite_index=sibelon_spr
 health_def=200000;                         //Îïðåäåëåíèå ìàêñèìàëüíîãî çäîðîâüÿ ìîáà.
 own_health=health_def;                  //Ïðèðàâíèâàíèå òåêóùåãî êîë-âà çäîðîâüÿ ê ìàêñèìàëüíîìó.

@@ -28,3 +28,5 @@ with(gamer)
 		if target = myid then {target = noone; attacking=false}
 	}
 }
+
+if owner = gamer.id then update_stats("emp_used")

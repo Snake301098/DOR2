@@ -12,6 +12,7 @@ else {mapname="]=-"}
 
 image_speed=0.4
 name=alienname + mapname
+mob_name = "mordon"
 sprite_index=mordon_spr
 health_def=20000;                         //Îïðåäåëåíèå ìàêñèìàëüíîãî çäîðîâüÿ ìîáà.
 own_health=health_def;                  //Ïðèðàâíèâàíèå òåêóùåãî êîë-âà çäîðîâüÿ ê ìàêñèìàëüíîìó.

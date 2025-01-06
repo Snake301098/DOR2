@@ -12,6 +12,7 @@ else {mapname="]=-"}
 
 image_speed=0.4
 name=alienname + mapname
+mob_name = "sibelonit"
 sprite_index=sibelonit_spr
 health_def=40000;                         //Îïðåäåëåíèå ìàêñèìàëüíîãî çäîðîâüÿ ìîáà.
 own_health=health_def;                  //Ïðèðàâíèâàíèå òåêóùåãî êîë-âà çäîðîâüÿ ê ìàêñèìàëüíîìó.

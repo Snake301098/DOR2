@@ -40,6 +40,11 @@ function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_
 		a.idship=_victim;
 		a.t=_damage; //dmg
 		a.color_1=_color;
+		
+		if _attacker=gamer.id
+		{
+			if is_real(_damage) then update_stats(_ammo+"_dmg", _damage)
+		}
 	}
 }
 

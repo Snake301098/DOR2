@@ -77,7 +77,8 @@ damageToDraw=0;
 hasStartedAlarm8=false;
 RPOINT=0;
 
-SHIPNAME=spectrum_spr;
+ship_sprite=spectrum_spr;
+ship_name="spectrum";
 
 //window_set_size(1920,1080);
 

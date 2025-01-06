@@ -3,6 +3,7 @@ function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_
 	var a,b,c,healthAbsord,shieldAbsorb,shieldPen,healthAbsorb;
 	if _attacker.target=_victim or _ammo = "kamikaze" then
 	{
+		if _victim = gamer.id then update_stats("ish_avoided",_damage)
 	    if _victim.is_using_ish=true then {a="MISS"} else
 	    {
 			var bonus_evasion = 0
@@ -35,7 +36,12 @@ function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_
 			}
 			if _ammo = "kamikaze" then a=_damage
 			deal_damage(_attacker,_victim,_ammo,a,_draw,_color)
-			if _ammo = "laser" then instance_destroy()
+			if _ammo = "x1" then instance_destroy()
+			if _ammo = "x2" then instance_destroy()
+			if _ammo = "x3" then instance_destroy()
+			if _ammo = "x4" then instance_destroy()
+			if _ammo = "x5" then instance_destroy()
+			if _ammo = "x6" then instance_destroy()
 		}
 	}
 }

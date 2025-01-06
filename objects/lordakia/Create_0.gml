@@ -9,6 +9,7 @@ else {mapname="]=-"}
 
 image_speed=0.4
 name=alienname + mapname
+mob_name = "lordakia"
 target=noone;
 sprite_index=lordakia_spr
 health_def=2000;                         //Îïðåäåëåíèå ìàêñèìàëüíîãî çäîðîâüÿ ìîáà.

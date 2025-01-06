@@ -35,7 +35,7 @@ switch active_tab
 			for (i=1; i<=columns; i+=1)
 			{
 				//position=i + (j-1) * columns;
-				position=(j-1)*columns+i+(page_ships-1)*rows*columns;
+				position=(j-1)*columns+i
 				if (position-1)<array_length(stats_list) then
 				{
 					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y,stats_list[position-1]);

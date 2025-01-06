@@ -6,8 +6,18 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
    {
 	   //var theContent;
 	   //theContent = content;
-	   with (stats_ships_icon) {selected=false;}
-	   selected=true;
+	   if selected = false
+	   {
+		   with (stats_ships_icon) {selected=false;}
+		   selected=true;
+		   stats_window.ship_selected = ship_name
+	   }
+	   else
+	   {
+		 stats_ships_icon.selected=false
+		 stats_window.ship_selected="all"
+	   }
+	   with(stats_window){event_user(1)}
 	   //var _cost_qty, _cost_type, _cost_lot;
 	   
 	   //GET COST INFO

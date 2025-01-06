@@ -6,6 +6,7 @@ else if room=GGY then {mapname="GG Y ]=-"}
 else if room=GGD then {mapname="GG D ]=-"}
 else {mapname="]=-"}
 name=alienname + mapname
+mob_name = "streuner"
 target=noone;
 sprite_index=streuner_1_spr
 health_def=600;                         //Îïðåäåëåíèå ìàêñèìàëüíîãî çäîðîâüÿ ìîáà.

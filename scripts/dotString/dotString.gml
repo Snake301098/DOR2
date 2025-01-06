@@ -1,5 +1,6 @@
 function dotString(nbr,k_format=false)
 {
+	if nbr = "" then {return("");exit;}
 	if k_format=true
 	{
 		var _base,_left,_right,_letter;

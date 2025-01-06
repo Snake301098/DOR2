@@ -56,8 +56,12 @@ if instance_exists(gamer.target)
 	  
 		var _cargobox = instance_create_depth(x,y,0,cargo_box);
 		_cargobox.gg_energy = ggenergy_qty
-		
+	
 		check_quests(id,room)
+		
+		update_stats(mob_name+"_kills")
+		update_stats("credit",CREDITS * (1 + gamer.greed * 0.03))
+		update_stats("uridium",URIDIUM * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03))
 	}
 }
 

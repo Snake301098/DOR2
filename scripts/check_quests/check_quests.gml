@@ -3,20 +3,8 @@
 function check_quests(_id, _room)
 {
 	var _entity_killed = "1"
-	with (_id){_entity_killed = object_index}
 	
-	if _entity_killed = streuner then _entity_killed = "streuner"
-	if _entity_killed = lordakia then _entity_killed = "lordakia"
-	if _entity_killed = saimon then _entity_killed = "saimon"
-	if _entity_killed = mordon then _entity_killed = "mordon"
-	if _entity_killed = devolarium then _entity_killed = "devolarium"
-	if _entity_killed = sibelon then _entity_killed = "sibelon"
-	if _entity_killed = sibelonit then _entity_killed = "sibelonit"
-	if _entity_killed = lordakium then _entity_killed = "lordakium"
-	if _entity_killed = kristallin then _entity_killed = "kristallin"
-	if _entity_killed = kristallon then _entity_killed = "kristallon"
-	if _entity_killed = streunerR then _entity_killed = "streunerR"
-	if _entity_killed = ship then _entity_killed = "player"
+	if _entity_killed = ship then _entity_killed = "player" else _entity_killed = _id.mob_name
 	
 	var entity,progress,total,map,reward_qty,reward_type;
 	

@@ -3,19 +3,20 @@ var start_length, end_length, total_length, number_btn, first_layer_buttons;
 
 //x=gamer.x
 //y=gamer.y
+instance_destroy(stats_ships_icon)
 
 
 //DRAW SHIPS
 var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, cell_position;
 var cells_start_x = 370;
-var cells_start_y = 250;
+var cells_start_y = 320;
 var spacing_x = 110;
 var spacing_y = 110;
 var rows = 5;
 var columns = 2;
 	
 //SHIPS TO BUY
-var ships_list = ["saturn", "citadel", "lightning"];
+var ships_list = ["nostromo","leonov","bigboy","vengeance","adept","avenger","lightning","revenge","corsair","goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"];
 var owned_list = [1,0,0] 
 	
 	
@@ -24,7 +25,7 @@ for (j=1; j<=rows; j+=1)
 	for (i=1; i<=columns; i+=1)
 	{
 		//position=i + (j-1) * columns;
-		position=(j-1)*columns+i+(page_ships-1)*rows*columns;
+		position=(j-1)*columns+i+(page_ships1-1)*rows*columns;
 		if (position-1)<array_length(ships_list) then
 		{
 			cell=instance_create_depth(0, 0, depth-1, stats_ships_icon);
@@ -33,26 +34,26 @@ for (j=1; j<=rows; j+=1)
 			//cell.position = position;
 			cell.ship_name=ships_list[position-1];
 			cell.clickable=true;
-			cell.owned=owned_list[position-1];
+			cell.owned=1//owned_list[position-1];
 		}
 	}
 }
 				
 				
 //LEFT RIGHT BUTTONS
-left_btn=instance_create_depth(0,0,depth-1,button_left_right);
-left_btn.category = "ships"
-left_btn.x=100//370+100/2;
+left_btn=instance_create_depth(0,0,depth-5,button_left_right);
+left_btn.category = "ships_stats"
+left_btn.x=370+100/2;
 left_btn.y=170;
-if page_ships=1 then left_btn.image_index=0 else left_btn.image_index=1;
-left_btn.btn_direction="left";
+if page_ships1=1 then left_btn.image_index=0 else left_btn.image_index=1;
+left_btn.btn_direction="up";
 				
-right_btn=instance_create_depth(0,0,depth-1,button_left_right);
-right_btn.category = "ships"
-right_btn.x=1920/2//370+100/2;
-right_btn.y=1080/2//810;
-if page_ships=2 then right_btn.image_index=0 else right_btn.image_index=1;
-right_btn.btn_direction="right";
+right_btn=instance_create_depth(0,0,depth-5,button_left_right);
+right_btn.category = "ships_stats"
+right_btn.x=370+100/2;
+right_btn.y=810;
+if page_ships1=3 then right_btn.image_index=0 else right_btn.image_index=1;
+right_btn.btn_direction="down";
 
 
 //DRAW ABOVE BUTTONS

@@ -16,26 +16,31 @@ if id = gamer.id
 	{
 		if global.x1 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
 		global.x1 -= gamer.guns
+		update_stats("x1_used",gamer.guns)
 	}
 	if ammo_selected = x2_ammo
 	{
 		if global.x2 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
 		global.x2 -= gamer.guns
+		update_stats("x2_used",gamer.guns)
 	}
 	if ammo_selected = x3_ammo
 	{
 		if global.x3 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
 		global.x3 -= gamer.guns
+		update_stats("x3_used",gamer.guns)
 	}
 	if ammo_selected = x4_ammo
 	{
 		if global.x4 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
 		global.x4 -= gamer.guns
+		update_stats("x4_used",gamer.guns)
 	}
 	if ammo_selected = rsb
 	{
 		if global.x6 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
 		global.x16 -= gamer.guns
+		update_stats("x6_used",gamer.guns)
 	}
 }
 

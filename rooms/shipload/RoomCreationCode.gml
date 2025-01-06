@@ -32,3 +32,11 @@ global.ish_cooldown = 10 * room_speed
 global.smb_cooldown = 10 * room_speed
 global.warrep_cooldown = 10 * room_speed
 global.shieldbackup_cooldown = 10 * room_speed
+
+var file =  file_text_open_write("stats2.csv")
+file_text_write_string(file,"salut oui je pense")
+file_text_writeln(file);
+file_text_write_string(file,"saluWDSDAFt oFWADSui je pense")
+file_text_close(file)
+
+global.stats = load_csv("stats.csv")

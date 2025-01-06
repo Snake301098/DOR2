@@ -1,9 +1,9 @@
 {
-  "$GMScript":"",
-  "%Name":"load_stats",
+  "$GMScript":"v1",
+  "%Name":"get_stats",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"load_stats",
+  "name":"get_stats",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

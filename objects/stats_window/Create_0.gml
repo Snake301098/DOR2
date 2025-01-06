@@ -5,7 +5,7 @@ y=0;
 active_tab = "PROFILE";
 item_info = ""; //show stats of objects etc
 page_droid=1;
-page_ships=1;
+page_ships1=1;
 
 //SHOP PARAMETERS
 item_selected=""; //for buying or upgrading stuff, we store the item there
@@ -13,9 +13,11 @@ buy_qty=1; //same for qty buy
 cost_qty=0;
 cost_type="";
 
-var file = file_text_open_write("stats2.csv")
-file_text_write_string(file,"oui,non,hey")
-file_text_close(file)
+//var file = file_text_open_write("stats2.csv")
+//file_text_write_string(file,"oui,non,hey")
+//file_text_close(file)
+
+ship_selected="all"
 
 //ORIGINS
 _Profilex = 740;

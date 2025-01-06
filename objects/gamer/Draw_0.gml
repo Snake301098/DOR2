@@ -16,7 +16,7 @@ if(attacking == false) {
     image_index = round(set_angle(image_index*(360/32),directions,dirspeed)/(360/32));
 }
 //draw_sprite_ext(SHIPNAME,image_index,x,y,global.scale,global.scale,0,c_white,alpha) 
-draw_sprite_ext(SHIPNAME,image_index,x,y,1,1,0,c_white,alpha) 
+draw_sprite_ext(ship_sprite,image_index,x,y,1,1,0,c_white,alpha) 
 
 //HEALTH
 if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
