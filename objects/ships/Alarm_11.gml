@@ -6,6 +6,14 @@ var vengx,vengy,goliex,goliey,uses;
 
 //attacking = true
 
+if id = gamer.id and hasused = 0
+{
+	if global.x6 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+	global.x6 -= gamer.guns; 
+	update_stats("x6_used",gamer.guns)
+	if gamer.attacking = false then gamer.attacking = true
+}
+
 if instance_exists(target)
 {
 	uses=5

@@ -8,6 +8,7 @@ var _ammo_sound = x1_sound
 if ammo_selected = x2_ammo then _ammo_sound = x2_sound
 if ammo_selected = x3_ammo then _ammo_sound = x3_sound
 if ammo_selected = x4_ammo then _ammo_sound = x4_sound
+if ammo_selected = sab then _ammo_sound = sab_sound
 if ammo_selected = rsb then _ammo_sound = rsb_sound
 
 if id = gamer.id 
@@ -36,11 +37,11 @@ if id = gamer.id
 		global.x4 -= gamer.guns
 		update_stats("x4_used",gamer.guns)
 	}
-	if ammo_selected = rsb
+	if ammo_selected = sab
 	{
-		if global.x6 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
-		global.x16 -= gamer.guns
-		update_stats("x6_used",gamer.guns)
+		if global.x5 < gamer.guns then {show_HUD_message("No enough ammos"); exit;}
+		global.x5 -= gamer.guns
+		update_stats("x5_used",gamer.guns)
 	}
 }
 
@@ -60,12 +61,12 @@ if instance_exists(target)
 		}
 			
 	//SAB AMMO.
-	if id=1 //ammo[0,0]=5 then
+	if ammo_selected = sab //ammo[0,0]=5 then
 	{
-	    ii = instance_create_depth(gamer.target.x+xdec,gamer.target.y+ydec,0,ammo_selected);
+	    ii = instance_create_depth(target.x+xdec,target.y+ydec,0,ammo_selected);
 	    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 	    ii.speed = global.laser_speed;
-	    ii.target:=gamer; ii.owner:=id; ii.myOwner=id;
+	    ii.target:=target; ii.owner:=id; ii.myOwner=id;
 	    ii.damage = MaxDamage; ii.drawDamage=true; with(ii) event_user(0);
 	}
 	else

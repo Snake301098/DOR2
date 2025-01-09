@@ -42,6 +42,17 @@ draw_sprite_ext(hud_ish_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*3
 draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*4*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_ammo2_spr,0,_start,870,_ratio,_ratio,0,c_white,1); //ammo
 
+//Ammo selected
+var _xx_sel = 0
+if gamer.ammo_display = "x1" then _xx_sel = _start 
+if gamer.ammo_display = "x2" then _xx_sel = _start + sprite_get_width(shiphud_spr)*_ratio*1/5
+if gamer.ammo_display = "x3" then _xx_sel = _start + sprite_get_width(shiphud_spr)*_ratio*2/5
+if gamer.ammo_display = "x4" then _xx_sel = _start + sprite_get_width(shiphud_spr)*_ratio*3/5
+if gamer.ammo_display = "x5" then _xx_sel = _start + sprite_get_width(shiphud_spr)*_ratio*4/5
+if gamer.ammo_display = "x6" then _xx_sel = _start + sprite_get_width(shiphud_spr)*_ratio*6/5
+draw_sprite_ext(cell_selected_spr,0,_xx_sel + 0.5*38*_ratio,920+ 0.5*38*_ratio,_ratio*38/42,_ratio*38/42,0,c_white,0.3);
+
+
 //RELOAD SPRITES
 var _warrep_reload_img = 0;
 var _emp_reload_img = 0;

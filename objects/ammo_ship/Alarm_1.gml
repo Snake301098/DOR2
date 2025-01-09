@@ -1,5 +1,6 @@
+if object_index = x1_ammo then _ammo="x1"
 if object_index = x2_ammo then _ammo="x2"
 if object_index = x3_ammo then _ammo="x3"
 if object_index = x4_ammo then _ammo="x4"
-//if object_index = x5_ammo then _ammo="x5"
+if object_index = sab then _ammo="x5"
 if object_index = rsb then _ammo="x6"

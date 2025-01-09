@@ -7,24 +7,34 @@ function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_
 	
 	if is_numeric(_damage)
 	{	
-		var _shield_absorb = _victim.shieldAbsorb;
-	
-		if _victim.own_shield <= _damage * _shield_absorb
+		if _ammo = "x5"
 		{
-			_victim.own_health -= _damage - _victim.own_shield
-			_victim.own_shield = 0
+			_victim.own_shield -= _damage
+			_attacker.own_shield += _damage
 		}
 		else
 		{
-			_victim.own_health -= _damage * (1 - _shield_absorb)
-			_victim.own_shield -= _damage * _shield_absorb
+			var _shield_absorb = _victim.shieldAbsorb;
+	
+			if _victim.own_shield <= _damage * _shield_absorb
+			{
+				_victim.own_health -= _damage - _victim.own_shield
+				_victim.own_shield = 0
+			}
+			else
+			{
+				_victim.own_health -= _damage * (1 - _shield_absorb)
+				_victim.own_shield -= _damage * _shield_absorb
+			}
 		}
 	}
 	
+	//Remove repbot and shield repair
 	if _victim = gamer.id then with(gamer){alarm[2] = 3*60} else with(_victim){alarm[4]=3*60}
 	with(shield_restore_ctrl){if owner=_victim then instance_destroy();}
 	with(repbot){if owner=_victim then instance_destroy();}
 
+	//DRAW LOGIC
 	if instance_exists(gamer.target)
 	{
 		if (_victim = gamer.id or _victim = gamer.target) and (_draw = true) then _draw = true else _draw = false

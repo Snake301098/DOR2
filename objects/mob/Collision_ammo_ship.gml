@@ -1,5 +1,5 @@
 var a;
-if id=other.owner.target then
+/*if id=other.owner.target then
 {
 if lock_=false then 
     {
@@ -32,6 +32,6 @@ with(instance_create(a.x,a.y,laserdamage_expl))
     event_user(0);
     if not other.expl_color=false then
         image_blend=other.expl_color;
-    }*/
+    }
 with(a) instance_destroy();
 }

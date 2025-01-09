@@ -3,6 +3,12 @@ function select_ammo(_ammo)
 {
 	with(gamer)
 	{
+		if _ammo = x1_ammo then gamer.ammo_display = "x1"
+		if _ammo = x2_ammo then gamer.ammo_display = "x2"
+		if _ammo = x3_ammo then gamer.ammo_display = "x3"
+		if _ammo = x4_ammo then gamer.ammo_display = "x4"
+		if _ammo = sab then gamer.ammo_display = "x5"
+		
 		if target != noone
 		{
 			if attacking = false

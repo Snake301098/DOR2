@@ -2,12 +2,14 @@ if logfile > 0
 {
 	show_HUD_message(string(logfile) + " logfiles received!")
 	global.logfile += logfile
+	update_stats("logfiles",logfile);
 }
 
 if gg_energy > 0 
 {
 	show_HUD_message(string(gg_energy) + " GG energies received!")
 	global.ggenergy += gg_energy
+	update_stats("gg_clicks",gg_energy)
 }
 
 instance_destroy()

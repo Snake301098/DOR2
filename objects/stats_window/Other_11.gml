@@ -234,8 +234,8 @@ switch active_tab
 					cell.ship_name=ammos_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=dotString(get_stats(ammos_list[position-1]+"_used"),true)
-					cell.label2=dotString(get_stats(label2[position-1]),true)
+					cell.label=dotString(get_stats(ammos_list[position-1]+"_used",ship_selected),true)
+					cell.label2=dotString(get_stats(label2[position-1],ship_selected),true)
 				}
 			}
 		}
@@ -259,7 +259,7 @@ switch active_tab
 	
 		
 		var gg_list = ["alpha", "beta", "gamma","delta"];
-		var used = [5646344,2452,513,67]; 
+		var stats_names = ["GGA","GGB","GGY","GGD"]; 
 	
 	
 		for (j=1; j<=rows; j+=1)
@@ -277,7 +277,7 @@ switch active_tab
 					cell.ship_name=gg_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=444443333344//dotString(used[position-1],true)
+					cell.label=get_stats(stats_names[position-1],ship_selected)//dotString(used[position-1],true)
 				}
 			}
 		}

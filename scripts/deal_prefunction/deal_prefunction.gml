@@ -1,9 +1,13 @@
 function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_color=c_white,_comment="")
-{
+{	
+	var _target = noone;
+	with(_attacker){if instance_exists(target) then _target=target}
 	var a,b,c,healthAbsord,shieldAbsorb,shieldPen,healthAbsorb;
-	if _attacker.target=_victim or _ammo = "kamikaze" then
+	if(_ammo="x5" and _attacker = _victim) or (_target=_victim and _ammo != "x5" and _ammo != "kamikaze") or (_ammo = "kamikaze") then
 	{
-		if _victim = gamer.id then update_stats("ish_avoided",_damage)
+		if _ammo = "x5" and instance_exists(_target) then _victim = _target
+		if _victim = gamer.id and _victim.is_using_ish=true then update_stats("ish_avoided",_damage)
+		//if _victim = gamer.id and _victim.is_using_ish=false then update_stats("dmg_taken",_damage)
 	    if _victim.is_using_ish=true then {a="MISS"} else
 	    {
 			var bonus_evasion = 0

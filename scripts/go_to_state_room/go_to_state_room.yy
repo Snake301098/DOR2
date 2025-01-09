@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"go_to_state_room",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"go_to_state_room",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

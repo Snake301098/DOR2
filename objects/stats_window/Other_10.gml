@@ -4,6 +4,7 @@ var start_length, end_length, total_length, number_btn, first_layer_buttons;
 //x=gamer.x
 //y=gamer.y
 instance_destroy(stats_ships_icon)
+instance_destroy(button_left_right)
 
 
 //DRAW SHIPS
@@ -41,18 +42,18 @@ for (j=1; j<=rows; j+=1)
 				
 				
 //LEFT RIGHT BUTTONS
-left_btn=instance_create_depth(0,0,depth-5,button_left_right);
+var left_btn=instance_create_depth(0,0,depth-5,button_left_right);
 left_btn.category = "ships_stats"
 left_btn.x=370+100/2;
 left_btn.y=170;
-if page_ships1=1 then left_btn.image_index=0 else left_btn.image_index=1;
+if page_ships1<=1 then left_btn.image_index=0 else left_btn.image_index=1;
 left_btn.btn_direction="up";
 				
-right_btn=instance_create_depth(0,0,depth-5,button_left_right);
+var right_btn=instance_create_depth(0,0,depth-5,button_left_right);
 right_btn.category = "ships_stats"
 right_btn.x=370+100/2;
 right_btn.y=810;
-if page_ships1=3 then right_btn.image_index=0 else right_btn.image_index=1;
+if page_ships1>=3 then right_btn.image_index=0 else right_btn.image_index=1;
 right_btn.btn_direction="down";
 
 

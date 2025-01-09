@@ -8,4 +8,3 @@ instance_create_depth(0,0,-50,HUD_user);
 instance_create_depth(0,0,-50,population_ctrl);
 instance_create_depth(0,0,-50,minimap);
 instance_create_depth(0,0,-50,text);
-room_goto(lv2_1);

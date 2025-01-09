@@ -31,6 +31,7 @@ dronesNbr=0;
 passive=false;
 isFollower = 0;
 firing=0;
+ammo_selected=x1_ammo
 help_open=0;
 map_open=false;
 target=noone;
@@ -206,6 +207,11 @@ own_health=health_def;
 event_user(0);
 event_user(15);
 action[0] = "gamer"
+
+go_to_state_room()
+gamer.x = gamer.state_x;
+gamer.y = gamer.state_y;
+gamer.ammo_display = "x1" //ammo to be displayed selected on hud
 
 instance_create_depth(0,0,0,oCamera);
 var _cooldown = instance_create_depth(0,0,0,cooldowns_ctrl);

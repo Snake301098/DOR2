@@ -1,4 +1,5 @@
 //GAMER DEAD
+update_stats("deaths")
 deactivated_clock=10; 
 gamer.destroyed=1;
 dead_in_gg=false;

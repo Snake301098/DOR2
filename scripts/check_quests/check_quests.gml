@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function check_quests(_id, _room)
 {
-	var _entity_killed = "1"
+	var _entity_killed = _id.object_index
 	
 	if _entity_killed = ship then _entity_killed = "player" else _entity_killed = _id.mob_name
 	
@@ -64,6 +64,8 @@ function check_quests(_id, _room)
 					global.chest_green_key += reward_qty
 					show_protocol_message("You received " + string(reward_qty) + " green chest keys!")
 				}
+				
+				update_stats("quests");
 				
 				if i = 1 then create_quest(1)
 				if i = 2 then create_quest(2)

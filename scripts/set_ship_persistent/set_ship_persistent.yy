@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"set_ship_persistent",
   "isCompatibility":false,
   "isDnD":false,

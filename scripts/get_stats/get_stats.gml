@@ -17,7 +17,7 @@ function get_stats(_stat_name,_ship="all")
 	
 	if _stat_name = "kills" then
 	{
-		var _stats = ["nostromo_kills_kills","leonov_kills","bigboy_kills","vengeance_kills","adept_kills","avenger_kills","lightning_kills","revenge_kills","corsair_kills","goliath_kills","bastion_kills","enforcer_kills","centaur_kills","exalted_kills","goal_kills","kick_kills","referee_kills","saturn_kills","veteran_kills","diminisher_kills","sentinel_kills","solace_kills","spectrum_kills","venom_kills","spearhead_kills","aegis_kills","citadel_kills"]
+		var _stats = ["nostromo_kills","leonov_kills","bigboy_kills","vengeance_kills","adept_kills","avenger_kills","lightning_kills","revenge_kills","corsair_kills","goliath_kills","bastion_kills","enforcer_kills","centaur_kills","exalted_kills","goal_kills","kick_kills","referee_kills","saturn_kills","veteran_kills","diminisher_kills","sentinel_kills","solace_kills","spectrum_kills","venom_kills","spearhead_kills","aegis_kills","citadel_kills"]
 	}
 	
 	if _stat_name = "gogo_kills" then
@@ -37,7 +37,12 @@ function get_stats(_stat_name,_ship="all")
 	
 	if _stat_name = "badships_kills" then
 	{
-		var _stats = ["nostromo_kills_kills","leonov_kills","bigboy_kills"]
+		var _stats = ["nostromo_kills","leonov_kills","bigboy_kills"]
+	}
+	
+	if _stat_name = "gg" then
+	{
+		var _stats = ["GGA","GGB","GGY","GGD"]
 	}
 	
 	

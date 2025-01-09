@@ -23,9 +23,9 @@ function load_game()
 
 	//STATE
 	gamer.own_health = ini_read_real("State","health",1000);
-	gamer.state_room = ini_read_real("State","room",0);
-	gamer.state_x=ini_read_real("State","room",0);
-	gamer.state_y=ini_read_real("State","room",0);
+	gamer.state_room = ini_read_string("State","room","11");
+	gamer.state_x=ini_read_real("State","x",0);
+	gamer.state_y=ini_read_real("State","y",0);
 	global.hangar=ini_read_real("State", "hangar", 1)
 	global.cloaked = ini_read_real("State","cloaked",0);
 	gamer.droneformation = ini_read_real("State","drone_formation",1);
@@ -187,7 +187,7 @@ function load_game()
 	global.medails_point_kill = ini_read_real("Medails","point_kill",0)
 	global.medails_invader = ini_read_real("Medails","invader",0)
 	
-	
+	/**
 	//STATS
 	global.kills=ini_read_real("","kills",0);
 	global.deaths=ini_read_real("Stats","deaths",0);
@@ -292,7 +292,7 @@ function load_game()
 	global.pieces_qty = [piece_0,piece_1,piece_2,piece_3,piece_4,piece_5,piece_6,piece_7,piece_8,piece_9,piece_10,piece_11,piece_12,piece_13,piece_14,piece_15];
 	global.pieces_received_qty = [piece_0_received,piece_1_received,piece_2_received,piece_3_received,piece_4_received,piece_5_received,piece_6_received,piece_7_received,piece_8_received,piece_9_received,piece_10_received,piece_11_received,piece_12_received,piece_13_received,piece_14_received,piece_15_received];
 	global.pieces_capacity = ini_read_real("Pieces","capacity",0);
-	
+	*/
 	//PET
 	global.petname=ini_read_string("Pet","name","");
 	
