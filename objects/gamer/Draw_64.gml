@@ -1,4 +1,39 @@
 /// @description 
+
+var ship_sprite=info(ship_name,"sprite");
+if(global.cloaked == 1){
+    alpha=0.5
+}else{
+    alpha=1
+}
+if destroyed=1 then alpha=0;
+
+
+if(attacking == false) {
+    directions=direction;
+    image_index = round(set_angle(image_index*(360/32),directions,dirspeed)/(360/32));
+}else{ 
+	if instance_exists(target) then directions=point_direction(gamer.x,gamer.y,round(target.x),round(target.y)); 
+	else directions=point_direction(gamer.x,gamer.y,round(mouse_x),round(mouse_y)); 
+    image_index = round(set_angle(image_index*(360/32),directions,dirspeed)/(360/32));
+}
+
+draw_sprite_ext(ship_sprite,image_index,1920/2,1080/2,1,1,0,c_white,alpha) 
+
+//HEALTH
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-105,1920/2+55,1080/2-100,followHP/health_def*100,c_black,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-105,1920/2+55,1080/2-100,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9);} //+41+25
+
+//SHIELD
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-90,1920/2+55,1080/2-85,followShield/shield_def*100,c_black,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-90,1920/2+55,1080/2-85,own_shield/shield_def*100,c_black,c_aqua,c_aqua,0,0,0);draw_set_alpha(0.9);} //+41+25
+
+
+
+
+
+/*
+
 var nbr_frames_reloading_spr = sprite_get_number(reloading_spr); 
 
 //ABILITY 1
@@ -11,6 +46,7 @@ var ability_2_timer = 0;
 var ability_2_x = 1920-250;
 var ability_2_y = 1080-150;
 
+/*
 with(cooldowns_ctrl)
 {
 	if owner = gamer.id
@@ -58,7 +94,7 @@ if is_using_ability_2 = true then
 	draw_sprite_ext(cell_selected_spr,0,ability_2_x,ability_2_y,51/37,51/37,0,c_white,0.6);
 }
 
-
+*/
 
 //HUD NICKNAME ETC
 

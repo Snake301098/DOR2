@@ -95,23 +95,28 @@ draw_text(_start+39*1*_ratio,910,dotString(global.warrep,true))
 
 //Draw the HUD
 draw_set_valign(fa_middle);
+draw_set_halign(fa_left)
 draw_sprite_ext(userhud_spr,0,25,60,1.2,1.2,0,c_white,0.8)
-draw_text_ext(+95,76+31,string(strEP),-1,string_width*0.7);   
-draw_text_ext(+80,97+31,string(global.level),-1,string_width*0.7);
-draw_text_ext(+90,117+31,string(strHO),-1,string_width*0.7);
-draw_text_ext(+220,97+31,string(dotString(round(strURI))),-1,string_width*0.7);
-draw_text_ext(+220,76+31,string(strCR),-1,string_width*0.7); 
-draw_text_ext(+90,117+31,string(dotString(round(global.ggenergy))),-1,string_width*0.7);
+draw_text_ext(+70,76+31,string(strEP),-1,string_width*0.7);   
+draw_text_ext(+70,97+31,string(global.level),-1,string_width*0.7);
+draw_text_ext(+70,117+31,string(strHO),-1,string_width*0.7);
+draw_text_ext(+70,137+31,string(global.ggenergy),-1,string_width*0.7);
+draw_text_ext(+195,97+31,string(dotString(round(global.uridium))),-1,string_width*0.7);
+draw_text_ext(+195,76+31,string(strCR),-1,string_width*0.7); 
+draw_text_ext(+195,117+31,string(dotString(round(global.tdm_tickets))),-1,string_width*0.7);
+draw_text_ext(+195,137+31,string(dotString(round(global.chest_gold_key))) + " Go | " + string(dotString(round(global.chest_green_key))) + " Gr",-1,string_width*0.7);
 //draw_text_ext(+220,145,string(global.boxkey),-1,string_width*0.7);    
-draw_text_ext(+220,135,string(global.resetcpclock),-1,string_width*0.7); 
-if global.cproom = noone then draw_text_ext(+220,117,"CP Offline",-1,string_width*0.7) else draw_text_ext(+220,117,string(info_map(global.cproom,"name")),-1,string_width*0.7);
+//draw_text_ext(+220,135,string(global.resetcpclock),-1,string_width*0.7); 
 
 //HP etc
 draw_set_valign(fa_middle);
 draw_sprite_ext(hud_ammo_spr,0,330,60,1.2,1.2,0,c_white,0.8)
-draw_text_ext(+395,76+31,string(dotString(round(gamer.own_health))),-1,string_width*0.7); 
-draw_text_ext(+395,97+31,string(dotString(round(gamer.own_shield))),-1,string_width*0.7);  
-draw_text_ext(+395,117+31,string(gamer.config),-1,string_width*0.7);    
+draw_text_ext(+370,97+31,string(dotString(round(gamer.own_health))),-1,string_width*0.7); 
+draw_text_ext(+370,117+31,string(dotString(round(gamer.own_shield))),-1,string_width*0.7);  
+draw_text_ext(+370,137+31,string(gamer.config),-1,string_width*0.7);    
+//draw_text_ext(+495,76+31,string(dotString(round(global.chest_gold_key))),-1,string_width*0.7); 
+//draw_text_ext(+495,97+31,string(dotString(round(global.chest_green_key))),-1,string_width*0.7);  
+//draw_text_ext(+495,117+31,string(global.ggenergy),-1,string_width*0.7);    
 //draw_text_ext(+80,97,string(global.level),-1,string_width*0.7);
 //draw_text_ext(+90,117,string(strHO),-1,string_width*0.7);
 //draw_text_ext(+220,97,string(strURI),-1,string_width*0.7);

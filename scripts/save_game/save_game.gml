@@ -20,6 +20,8 @@ function save_game()
 	ini_write_real("Player","rpfactor",global.rpfactor);
 	ini_write_real("Player","uridium",global.uridium)
 	ini_write_real("Player","logfile",global.logfile);
+	ini_write_real("Player","tdm_tickets",global.tdm_tickets);
+	ini_write_string("Player","ship_name",gamer.ship_name);
 
 
 	//STATE

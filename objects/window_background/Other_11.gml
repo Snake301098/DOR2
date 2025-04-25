@@ -69,6 +69,15 @@ switch active_tab
 			case "SHIP":
 			{
 				side_btn_1.image_index=1;
+				
+				//SHIP IMAGE
+				var _ship_icon=instance_create_depth(0, 0, depth-1, shop_cell);
+				_ship_icon.x=620
+				_ship_icon.y=500
+				_ship_icon.content=gamer.ship_name
+				_ship_icon.clickable=false;
+				_ship_icon.category="ships";
+				_ship_icon.sprite_index=shop_icons_spr;
 
 				//GUNS
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
@@ -123,7 +132,7 @@ switch active_tab
 	
 				//INVENTORY
 				cells_start_x = 1260;
-				cells_start_y = 350;
+				cells_start_y = 300;
 				spacing_x = 53;
 				spacing_y = 53;
 				rows = 7;
@@ -133,17 +142,36 @@ switch active_tab
 				{
 					for (i=1; i<=columns; i+=1)
 					{
-						cell=instance_create_depth(0, 0, depth-1, inv_cell);
-						cell.x=cells_start_x+(i-1)*spacing_x
-						cell.y=cells_start_y+(j-1)*spacing_y
-						cell.position = i + (j-1) * columns;
-						cell.category="inventory";
-						cell.sprite_index=inv_cell_spr;
+						position=(j-1)*columns+i+(page_inventory-1)*rows*columns;
+						if position <= 99 then
+						{
+							cell=instance_create_depth(0, 0, depth-1, inv_cell);
+							cell.x=cells_start_x+(i-1)*spacing_x
+							cell.y=cells_start_y+(j-1)*spacing_y
+							cell.position = position
+							cell.category="inventory";
+							cell.sprite_index=inv_cell_spr;
 			
-						if gamer.Inventory[cell.position] != noone and gamer.Inventory[cell.position] != "" then cell.content= gamer.Inventory[cell.position] else cell.content = noone;
-			
+							if gamer.Inventory[cell.position] != noone and gamer.Inventory[cell.position] != "" then cell.content= gamer.Inventory[cell.position] else cell.content = noone;
+						}
 					}
 				}
+				
+				//INVENTORY BTNS
+				//LEFT RIGHT BUTTONS
+				left_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				left_btn.category = "inventory"
+				left_btn.x=1370-50;
+				left_btn.y=680;
+				if page_inventory=1 then left_btn.image_index=0 else left_btn.image_index=1;
+				left_btn.btn_direction="left";
+				
+				right_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				right_btn.category = "inventory"
+				right_btn.x=1370+50;
+				right_btn.y=680;
+				if page_inventory=3 then right_btn.image_index=0 else right_btn.image_index=1;
+				right_btn.btn_direction="right";
 	
 				//SHIP
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
@@ -183,7 +211,7 @@ switch active_tab
 				side_btn_2.image_index=1;
 				//DRONES		
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, cell_position;
-				cells_start_x = 640;
+				cells_start_x = 620;
 				cells_start_y = 390;
 				spacing_x = 330;
 				spacing_y = 160;
@@ -265,7 +293,7 @@ switch active_tab
 									
 								//DESIGN
 								cell_item3=instance_create_depth(0, 0, depth-1, inv_cell);
-								cell_item3.x=cell.xx+180
+								cell_item3.x=cell.x+180
 								cell_item3.y=cell.y+30
 								cell_item3.position = position;
 								cell_item3.category="drone_design";
@@ -278,7 +306,7 @@ switch active_tab
 				
 				//INVENTORY
 				cells_start_x = 1260;
-				cells_start_y = 350;
+				cells_start_y = 300;
 				spacing_x = 53;
 				spacing_y = 53;
 				rows = 7;
@@ -288,18 +316,38 @@ switch active_tab
 				{
 					for (i=1; i<=columns; i+=1)
 					{
-						cell=instance_create_depth(0, 0, depth-1, inv_cell);
-						cell.x=cells_start_x+(i-1)*spacing_x
-						cell.y=cells_start_y+(j-1)*spacing_y
-						cell.position = i + (j-1) * columns;
-						cell.category="inventory";
-						cell.sprite_index=inv_cell_spr;
+						position=(j-1)*columns+i+(page_inventory-1)*rows*columns;
+						if position <= 99 then
+						{
+							cell=instance_create_depth(0, 0, depth-1, inv_cell);
+							cell.x=cells_start_x+(i-1)*spacing_x
+							cell.y=cells_start_y+(j-1)*spacing_y
+							cell.position = position
+							cell.category="inventory";
+							cell.sprite_index=inv_cell_spr;
 			
-						if gamer.Inventory[cell.position] != noone and gamer.Inventory[cell.position] != "" then cell.content= gamer.Inventory[cell.position] else cell.content = noone;
-			
+							if gamer.Inventory[cell.position] != noone and gamer.Inventory[cell.position] != "" then cell.content= gamer.Inventory[cell.position] else cell.content = noone;
+						}
 					}
 				}
 				
+				//INVENTORY BTNS
+				//LEFT RIGHT BUTTONS
+				var _left_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				_left_btn.category = "inventory"
+				_left_btn.x=1370-50;
+				_left_btn.y=680;
+				if page_inventory=1 then _left_btn.image_index=0 else _left_btn.image_index=1;
+				_left_btn.btn_direction="left";
+				
+				var _right_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				_right_btn.category = "inventory"
+				_right_btn.x=1370+50;
+				_right_btn.y=680;
+				if page_inventory=3 then _right_btn.image_index=0 else _right_btn.image_index=1;
+				_right_btn.btn_direction="right";
+				
+				//DROIDS
 				//LEFT RIGHT BUTTONS
 				left_btn=instance_create_depth(0,0,depth-1,button_left_right);
 				left_btn.category = "droid"
@@ -343,9 +391,11 @@ switch active_tab
 			case "PET":
 			{
 				side_btn_3.image_index=1;
+				
+				
 				//INVENTORY
 				cells_start_x = 1260;
-				cells_start_y = 350;
+				cells_start_y = 300;
 				spacing_x = 53;
 				spacing_y = 53;
 				rows = 7;
@@ -355,17 +405,36 @@ switch active_tab
 				{
 					for (i=1; i<=columns; i+=1)
 					{
-						cell=instance_create_depth(0, 0, depth-1, inv_cell);
-						cell.x=cells_start_x+(i-1)*spacing_x
-						cell.y=cells_start_y+(j-1)*spacing_y
-						cell.position = i + (j-1) * columns;
-						cell.category="inventory";
-						cell.sprite_index=inv_cell_spr;
+						position=(j-1)*columns+i+(page_inventory-1)*rows*columns;
+						if position <= 99 then
+						{
+							cell=instance_create_depth(0, 0, depth-1, inv_cell);
+							cell.x=cells_start_x+(i-1)*spacing_x
+							cell.y=cells_start_y+(j-1)*spacing_y
+							cell.position = position
+							cell.category="inventory";
+							cell.sprite_index=inv_cell_spr;
 			
-						if gamer.Inventory[cell.position] != noone and gamer.Inventory[cell.position] != "" then cell.content= gamer.Inventory[cell.position] else cell.content = noone;
-			
+							if gamer.Inventory[cell.position] != noone and gamer.Inventory[cell.position] != "" then cell.content= gamer.Inventory[cell.position] else cell.content = noone;
+						}
 					}
 				}
+				
+				//INVENTORY BTNS
+				//LEFT RIGHT BUTTONS
+				left_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				left_btn.category = "inventory"
+				left_btn.x=1370-50;
+				left_btn.y=680;
+				if page_inventory=1 then left_btn.image_index=0 else left_btn.image_index=1;
+				left_btn.btn_direction="left";
+				
+				right_btn=instance_create_depth(0,0,depth-1,button_left_right);
+				right_btn.category = "inventory"
+				right_btn.x=1370+50;
+				right_btn.y=680;
+				if page_inventory=3 then right_btn.image_index=0 else right_btn.image_index=1;
+				right_btn.btn_direction="right";
 				
 				//EQUIP
 				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
@@ -428,7 +497,7 @@ switch active_tab
 		side_btn_2.x = buttons_x;
 		side_btn_2.y = btn_side_start + totalheight / (number_btn-1) * 2;
 		side_btn_2.button_sprite=button_side_spr;
-		side_btn_2.button_text="MODULES"
+		side_btn_2.button_text="DRONES"
 		side_btn_2.image_index=2;
 	
 		side_btn_3 = instance_create_depth(0,0,depth-1,button_side)
@@ -502,6 +571,7 @@ switch active_tab
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
 				change_design_btn.image_index=2;
+				change_design_btn.ask_quantity=false;
 				
 				//LEFT RIGHT BUTTONS
 				left_btn=instance_create_depth(0,0,depth-1,button_left_right);
@@ -581,37 +651,53 @@ switch active_tab
 			}
 			#endregion
 			
-			//MODULES
+			//DRONES
 			#region
-			case "MODULES":
+			case "DRONES":
 			{
 				side_btn_1.image_index=1;
 				buy_qty=1;
 				
 				//SHIPS TO BUY
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, modules_list;
+				var nbr_flax = 0
+				var nbr_iris = 0
+				var nbr_apis = 0
+				var nbr_zeus = 0
 				
-				modules_list=["LF-4_1", "HST-1_1"];
+				for(var i=1; i<=10;i++)
+				{
+					if gamer.droid[i,1] = "flax" then nbr_flax++
+					if gamer.droid[i,1] = "iris" then nbr_iris++
+					if gamer.droid[i,1] = "apis" then nbr_apis++
+					if gamer.droid[i,1] = "zeus" then nbr_zeus++
+				}
+				drones_list=[]
+				if nbr_flax<8 then array_push(drones_list,"flax")
+				if nbr_iris<8 then array_push(drones_list,"iris")
+				if nbr_apis<1 then array_push(drones_list,"apis")
+				if nbr_zeus<1 then array_push(drones_list,"zeus")
+				
 	
 				cells_start_x = 640;
 				cells_start_y = 370;
 				spacing_x = 115;
 				spacing_y = 115;
-				rows = 1;
-				columns = 2;
+				rows = 2;
+				columns = 3;
 	
 				for (j=1; j<=rows; j+=1)
 				{
 					for (i=1; i<=columns; i+=1)
 					{
 						position=i + (j-1) * columns;
-						if (position-1)<array_length(modules_list) then
+						if (position-1)<array_length(drones_list) then
 						{
 							cell=instance_create_depth(0, 0, depth-1, shop_cell);
 							cell.x=cells_start_x+(i-1)*spacing_x
 							cell.y=cells_start_y+(j-1)*spacing_y
 							cell.position = position;
-							cell.content=modules_list[position-1];
+							cell.content=drones_list[position-1];
 							cell.clickable=true;
 							cell.category="modules";
 							cell.sprite_index=shop_icons_spr;
@@ -635,6 +721,7 @@ switch active_tab
 				change_design_btn.button_id="buy";
 				change_design_btn.button_text="BUY";
 				change_design_btn.image_index=2;
+				change_design_btn.ask_quantity=false;
 				
 				break;
 			}

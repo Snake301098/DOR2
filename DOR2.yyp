@@ -44,7 +44,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"DOR2",
   "resources":[
@@ -75,6 +75,7 @@
     {"id":{"name":"controlpoint","path":"objects/controlpoint/controlpoint.yy",},},
     {"id":{"name":"cooldowns_ctrl","path":"objects/cooldowns_ctrl/cooldowns_ctrl.yy",},},
     {"id":{"name":"damage_drawer","path":"objects/damage_drawer/damage_drawer.yy",},},
+    {"id":{"name":"design_window","path":"objects/design_window/design_window.yy",},},
     {"id":{"name":"devolarium","path":"objects/devolarium/devolarium.yy",},},
     {"id":{"name":"dmg_boost","path":"objects/dmg_boost/dmg_boost.yy",},},
     {"id":{"name":"droid_obj","path":"objects/droid_obj/droid_obj.yy",},},
@@ -91,6 +92,7 @@
     {"id":{"name":"kristallin","path":"objects/kristallin/kristallin.yy",},},
     {"id":{"name":"kristallon","path":"objects/kristallon/kristallon.yy",},},
     {"id":{"name":"laser_ship","path":"objects/laser_ship/laser_ship.yy",},},
+    {"id":{"name":"log_msgs_window","path":"objects/log_msgs_window/log_msgs_window.yy",},},
     {"id":{"name":"lordakia","path":"objects/lordakia/lordakia.yy",},},
     {"id":{"name":"lordakium","path":"objects/lordakium/lordakium.yy",},},
     {"id":{"name":"minimap","path":"objects/minimap/minimap.yy",},},
@@ -221,7 +223,6 @@
     {"id":{"name":"hangar_get_upgrades_text","path":"scripts/hangar_get_upgrades_text/hangar_get_upgrades_text.yy",},},
     {"id":{"name":"info_ammos","path":"scripts/info_ammos/info_ammos.yy",},},
     {"id":{"name":"info_map","path":"scripts/info_map/info_map.yy",},},
-    {"id":{"name":"info_ships","path":"scripts/info_ships/info_ships.yy",},},
     {"id":{"name":"info_shiptypes","path":"scripts/info_shiptypes/info_shiptypes.yy",},},
     {"id":{"name":"info_upgrades","path":"scripts/info_upgrades/info_upgrades.yy",},},
     {"id":{"name":"info_weapons","path":"scripts/info_weapons/info_weapons.yy",},},

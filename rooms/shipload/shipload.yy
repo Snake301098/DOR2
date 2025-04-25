@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"",
+  "$GMRoom":"v1",
   "%Name":"shipload",
   "creationCodeFile":"rooms/shipload/RoomCreationCode.gml",
   "inheritCode":false,

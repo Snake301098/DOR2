@@ -19,6 +19,8 @@ function load_game()
 	global.rpfactor = ini_read_real("Player","rpfactor",0);
 	global.uridium = ini_read_real("Player","uridium",0)
 	global.logfile = ini_read_real("Player","logfile",0);
+	global.tdm_tickets = ini_read_real("Player","tdm_tickets",0);
+	gamer.ship_name = ini_read_string("Player","ship_name",0);
 
 
 	//STATE
@@ -92,9 +94,7 @@ function load_game()
 	for(i = 1; i<=15; i+=1)
 	{
 	    gamer.GunC1[i] = ini_read_string(_hangar_string,"gun"+string(i)+"C1","");
-		if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then gamer.GunC1[0]+=1;
 	    gamer.GunC2[i] = ini_read_string(_hangar_string,"gun"+string(i)+"C2","");
-		if gamer.GunC2[i] !="noone" and gamer.GunC2[i] !="" then gamer.GunC2[0]+=1;
 	}
 	
 	
@@ -102,9 +102,7 @@ function load_game()
 	for(i = 1; i<=15; i+=1)
 	{
 	    gamer.EngineC1[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C1","");
-		if gamer.EngineC1[i] !="noone" and gamer.EngineC1[i] !="" then gamer.EngineC1[0]+=1;
 	    gamer.EngineC2[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C2","");
-		if gamer.EngineC2[i] !="noone" and gamer.EngineC2[i] !="" then gamer.EngineC2[0]+=1;
 	}
 	//Inventory
 	for(i = 1; i<=99; i+=1)
@@ -324,7 +322,7 @@ function load_game()
 	
 	
 	global.loading=0;
-	gamer.Shiptype = info(gamer.Ship, "ship_class")
+	gamer.Shiptype = info(gamer.Ship, "ship_type")
 	guns_installation(gamer);
 	ini_close();
 }

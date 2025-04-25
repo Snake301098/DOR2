@@ -35,5 +35,5 @@ global.shieldbackup_cooldown = 10 * room_speed
 
 global.stats = load_csv("stats.csv")
 
-
+global.protocol_log = [];
 

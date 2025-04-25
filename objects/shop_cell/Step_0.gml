@@ -3,6 +3,16 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 {
    if clickable
    {
+	   if category = "change_design" then
+	   {
+		   if ownship > 0
+		   {
+				gamer.ship_name = content;
+				instance_destroy(design_window);
+				with(window_background){event_user(1);exit}
+		   }
+		   else exit
+	   }
 	   var theContent;
 	   theContent = content;
 	   with (shop_cell) {selected=false;}

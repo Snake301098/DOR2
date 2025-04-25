@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cproom_spawn_ships",
   "isCompatibility":false,
   "isDnD":false,

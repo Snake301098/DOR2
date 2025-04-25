@@ -9,21 +9,15 @@ function guns_installation(_id){
 		var i;
 		fatlasers:=false guns:=0; lasers=0; health_def:=10; MaxDamageGun:=0; MaxDamageLaser=0; bluing=false; //ammo[1,2]=global.x1ammo_sound; ammo[2,2]=global.x1ammo_sound; ammo[3,2]=global.x1ammo_sound; 
 		shield_def:=0;
-		Shiptype=info_ships(Ship,"ship_class");
+		Ship = gamer.ship_name;
+		Shiptype=info(Ship,"ship_type");
 		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
 		Flax_numb=0; Iris_numb:=0; SuperGunNumb:=0; Apis_numb=0; Zeus_numb=0;
 		gunlvlmin=0;
 		laserlvlmin=0;
-		//ship.
+		//ship
 		health_def:=info_shiptypes(Shiptype,"health");
-		//Gun[0]:=info(Ship,"gun_slots");
-		//GunDmg[0]:=info(Ship,"gun_slots");
-		//Generator[0]:=info_shiptypes(Shiptype,"generator_slots");
-		if id = gamer.id
-		{
-			Generator[0]=15
-			Engine[0]=15
-		}
+		
 		//Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
 		#endregion
 		
@@ -317,12 +311,6 @@ function guns_installation(_id){
 			global.storage_max = 100 + info_upgrades("storage", storage_lvl, "amount");
 		}
 */
-		//SPRITES
-		switch Ship
-		    {
-		    case "phoenix": sprite_index:=phoenix_spr; GunSprite[1]:=min(guns,1) break;
-		    default: GunSprite[1]:=min(guns,5) break;
-		    }
 
 		#endregion
 

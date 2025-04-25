@@ -127,139 +127,200 @@ function info(item,_info,lvl=1)
 		*************************************************/
 		#region
 
+		case "pheonix":
+			if _info = "cost_type" then return "uridium";
+			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return phoenix_spr;
+			if _info = "ship_type" then return "phoenix";
+			break;
+			
 		case "nostromo":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return nostromo_spr;
+			if _info = "ship_type" then return "nostromo";
 			break;
 			
 		case "leonov":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return leonov_spr;
+			if _info = "ship_type" then return "leonov";
 			break;
 			
 		case "bigboy":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return bigboy_spr;
+			if _info = "ship_type" then return "bigboy";
 			break;
 			
 		case "vengeance":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return vengeance_spr;
+			if _info = "ship_type" then return "vengeance";
 			break;
 			
 		case "adept":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return adept_spr;
+			if _info = "ship_type" then return "vengeance";
 			break;
 			
 		case "avenger":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return avenger_spr;
+			if _info = "ship_type" then return "vengeance";
 			break;
 			
 		case "lightning":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return lightning_spr;
+			if _info = "ship_type" then return "vengeance";
 			break;
 			
 		case "revenge":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return revenge_spr;
+			if _info = "ship_type" then return "vengeance";
 			break;
 			
 		case "corsair":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return corsair_spr;
+			if _info = "ship_type" then return "vengeance";
 			break;
 			
 		case "goliath":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return goliath_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "bastion":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return bastion_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "enforcer":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return enforcer_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "centaur":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return centaur_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "exalted":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return exalted_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "goal":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return goal_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "kick":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return kick_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "referee":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return referee_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "saturn":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return saturn_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "veteran":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return veteran_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "diminisher":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return diminisher_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "sentinel":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return sentinel_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "solace":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return solace_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "spectrum":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return spectrum_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "venom":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return venom_spr;
+			if _info = "ship_type" then return "goliath";
 			break;
 			
 		case "spearhead":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return spearhead_spr;
+			if _info = "ship_type" then return "spearhead";
 			break;
 			
 		case "aegis":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return aegis_spr;
+			if _info = "ship_type" then return "aegis";
 			break;
 			
 		case "citadel":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
+			if _info = "sprite" then return citadel_spr;
+			if _info = "ship_type" then return "citadel";
 			break;
 			
 		#endregion
@@ -352,7 +413,8 @@ function info(item,_info,lvl=1)
 		        {
 		        case "type": return "drone"; break;
 		        case "numb_slot": return 1; break;
-		        case "cost":
+		        case "cost_type": return "credit"; break;
+		        case "cost_qty":
 		            switch lvl
 		            {
 		            case 1: return 2000; break;
@@ -373,7 +435,8 @@ function info(item,_info,lvl=1)
 		        {
 		        case "type": return "drone"; break;
 		        case "numb_slot": return 2; break;
-		        case "cost":
+		        case "cost_type": return "uridium"; break;
+		        case "cost_qty":
 		            switch lvl
 		            {
 		            case 1: return 15000; break;

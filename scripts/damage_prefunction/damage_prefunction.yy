@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"damage_prefunction",
   "isCompatibility":false,
   "isDnD":false,

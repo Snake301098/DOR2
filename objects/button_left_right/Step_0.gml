@@ -14,6 +14,12 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 			if btn_direction="left" then {with window_background {page_droid-=1; event_user(1)}}
 		}
 		
+		if category = "inventory"
+		{
+			if btn_direction="right" then {with window_background {page_inventory+=1; event_user(1)}}
+			if btn_direction="left" then {with window_background {page_inventory-=1; event_user(1)}}
+		}
+		
 		if category = "ships_stats"
 		{
 			if btn_direction="down" then {with stats_window {page_ships1+=1; event_user(0); event_user(1)}}

@@ -14,3 +14,4 @@ name="";
 category="";
 clickable=true;
 selected=false;
+ownship=1;

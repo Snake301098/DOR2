@@ -15,12 +15,15 @@ switch active_tab
 		{
 			case "SHIP":
 			{
+				draw_set_halign(fa_center);
+				draw_set_valign(fa_middle);
 				draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
-				draw_sprite_ext(shop_icons_spr,24,620,500,1,1,0,c_white,1)
+				//draw_sprite_ext(shop_icons_spr,24,620,500,1,1,0,c_white,1)
 				draw_sprite_ext(hangar_bareer_spr,0,1170,550,5.3,1.5,90,c_white,1)
 				draw_set_font(hangarfont);
 				draw_text(730,390,"GUNS");
 				draw_text(730,590,"ENGINES");
+				draw_text(1370,680,string(page_inventory));
 				break;
 			}
 			
@@ -28,9 +31,8 @@ switch active_tab
 			{
 				draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
 				draw_set_font(hangarfont);
-				draw_set_halign(fa_center);
-				draw_set_valign(fa_middle);
 				draw_text(830,810,string(page_droid));
+				draw_text(1370,680,string(page_inventory));
 				draw_sprite_ext(hangar_bareer_spr,0,1170,550,5.3,1.5,90,c_white,1)
 				break;
 			}
@@ -39,6 +41,7 @@ switch active_tab
 			{
 				draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
 				draw_sprite_ext(hangar_bareer_spr,0,1170,550,5.3,1.5,90,c_white,1)
+				draw_text(1370,680,string(page_inventory));
 				break;
 			}
 		}

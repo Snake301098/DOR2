@@ -7,6 +7,7 @@ active_side_tab = "SHIP";
 item_info = ""; //show stats of objects etc
 page_droid=1;
 page_ships=1;
+page_inventory=1;
 
 //SHOP PARAMETERS
 item_selected=""; //for buying or upgrading stuff, we store the item there

@@ -5,6 +5,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 	{
 		case "equip": {hangar_equip(); break;}
 		case "buy": {event_user(0);break;}
+		case "change_design": {if instance_exists(design_window) then instance_destroy(design_window) else instance_create_depth(0,0,-800,design_window);break;}
 		case "upgrade": {with(window_background){event_user(5);};break;}
 		case "gg_buy": {with(window_background){event_user(4);};break;}
 		case "skilltree": {with(window_background){event_user(6);};break;}

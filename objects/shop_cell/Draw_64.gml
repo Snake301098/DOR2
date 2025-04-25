@@ -1,5 +1,7 @@
 draw_set_halign(fa_center);
-draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,c_white,1);
+var col = c_white
+if ownship=0 then col = c_gray
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,0,col,1);
 draw_set_font(hangarfont)
 if clickable=true then 
 {

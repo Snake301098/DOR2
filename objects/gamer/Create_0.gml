@@ -78,8 +78,8 @@ damageToDraw=0;
 hasStartedAlarm8=false;
 RPOINT=0;
 
-ship_sprite=spectrum_spr;
 ship_name="spectrum";
+ship_sprite=info(ship_name,"sprite");
 
 //window_set_size(1920,1080);
 
@@ -170,12 +170,14 @@ if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
 if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
 */
 
-Gun=array_create(15)
-GunC1=array_create(15)
-GunC2=array_create(15)
-Engine=array_create(15)
-EngineC1=array_create(15)
-EngineC2=array_create(15)
+Gun=array_create(info_shiptypes(info(ship_name,"ship_type"),"gun_slots")+1,"")
+Engine=array_create(info_shiptypes(info(ship_name,"ship_type"),"engine_slots")+1,"")
+Gun[0]:=info_shiptypes(Shiptype,"gun_slots");
+Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
+GunC1 = Gun
+GunC2 = Gun
+EngineC1 = Engine
+EngineC2 = Engine
 own_shieldC1=0
 own_shieldC2=0
 ship_speedC1=0
