@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"spawn_ship",
   "isCompatibility":false,
   "isDnD":false,

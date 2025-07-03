@@ -6,7 +6,7 @@ function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_
 	if(_ammo="x5" and _attacker = _victim) or (_target=_victim and _ammo != "x5" and _ammo != "kamikaze") or (_ammo = "kamikaze") then
 	{
 		if _ammo = "x5" and instance_exists(_target) then _victim = _target
-		if _victim = gamer.id and _victim.is_using_ish=true then update_stats("ish_avoided",_damage)
+		//if _victim = gamer.id and _victim.is_using_ish=true then update_stats("ish_avoided",_damage)
 		//if _victim = gamer.id and _victim.is_using_ish=false then update_stats("dmg_taken",_damage)
 	    if _victim.is_using_ish=true then {a="MISS"} else
 	    {

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"get_ennemy_corp",
   "isCompatibility":false,
   "isDnD":false,

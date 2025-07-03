@@ -174,10 +174,14 @@ Gun=array_create(info_shiptypes(info(ship_name,"ship_type"),"gun_slots")+1,"")
 Engine=array_create(info_shiptypes(info(ship_name,"ship_type"),"engine_slots")+1,"")
 Gun[0]:=info_shiptypes(Shiptype,"gun_slots");
 Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
-GunC1 = Gun
-GunC2 = Gun
-EngineC1 = Engine
-EngineC2 = Engine
+GunC1 = []
+GunC2 = []
+EngineC1 = []
+EngineC2 = []
+array_copy(GunC1, 0, Gun, 0, array_length(Gun))
+array_copy(GunC2, 0, Gun, 0, array_length(Gun))
+array_copy(EngineC1, 0, Engine, 0, array_length(Engine))
+array_copy(EngineC2, 0, Engine, 0, array_length(Engine))
 own_shieldC1=0
 own_shieldC2=0
 ship_speedC1=0

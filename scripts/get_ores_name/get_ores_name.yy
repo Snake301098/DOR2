@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"get_ores_name",
   "isCompatibility":false,
   "isDnD":false,

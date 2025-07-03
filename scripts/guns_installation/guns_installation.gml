@@ -9,7 +9,7 @@ function guns_installation(_id){
 		var i;
 		fatlasers:=false guns:=0; lasers=0; health_def:=10; MaxDamageGun:=0; MaxDamageLaser=0; bluing=false; //ammo[1,2]=global.x1ammo_sound; ammo[2,2]=global.x1ammo_sound; ammo[3,2]=global.x1ammo_sound; 
 		shield_def:=0;
-		Ship = gamer.ship_name;
+		//Ship = ship_name;
 		Shiptype=info(Ship,"ship_type");
 		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
 		Flax_numb=0; Iris_numb:=0; SuperGunNumb:=0; Apis_numb=0; Zeus_numb=0;
