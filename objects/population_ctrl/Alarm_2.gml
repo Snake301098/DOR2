@@ -71,7 +71,7 @@ if (room=lv1_2 or room=lv2_2 or room=lv3_2)   then
 
 //X-3,4
 if (room=lv1_3 or room=lv2_3 or room=lv3_3 or room=lv1_4 or room=lv2_4 or room=lv3_4)   then 
-{
+{	
 	if own_ships < own_ships_obj then
 	{
 		var to_spawn_nbr = irandom_range(0,own_ships_obj-own_ships);

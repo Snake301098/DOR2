@@ -114,10 +114,14 @@ else
 						Engine=array_create(info_shiptypes(Shiptype,"engine_slots")+1,"")
 						Gun[0]:=info_shiptypes(Shiptype,"gun_slots");
 						Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
-						GunC1 = Gun
-						GunC2 = Gun
-						EngineC1 = Engine
-						EngineC2 = Engine
+						GunC1 = []
+						GunC2 = []
+						EngineC1 = []
+						EngineC2 = []
+						array_copy(GunC1, 0, Gun, 0, array_length(Gun))
+						array_copy(GunC2, 0, Gun, 0, array_length(Gun))
+						array_copy(EngineC1, 0, Engine, 0, array_length(Engine))
+						array_copy(EngineC2, 0, Engine, 0, array_length(Engine))
 					}
 					update_stats("ownship")
 					guns_installation(gamer.id);
@@ -218,7 +222,7 @@ else
 		}
 		#endregion
 		
-		//AMMOS
+		//DRONES
 		#region
 		if active_side_tab = "DRONES" then
 		{
@@ -255,7 +259,7 @@ else
 							gamer.droidC2[_empty_slot,1] = _content
 					        gamer.droid[_empty_slot,0]=instance_create_depth(x,y,-1,droid_obj);
 					        gamer.droid[_empty_slot,0].pos:=i;
-					        gamer.droid[_empty_slot,0].owner=id;
+					        gamer.droid[_empty_slot,0].owner=gamer.id;
 					        gamer.droid[_empty_slot,0].x=id.x;
 					        gamer.droid[i,0].y=id.y;
 							guns_installation(gamer.id)

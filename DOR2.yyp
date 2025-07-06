@@ -44,7 +44,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"DOR2",
   "resources":[
@@ -249,6 +249,7 @@
     {"id":{"name":"bonus_grub","path":"sounds/bonus_grub/bonus_grub.yy",},},
     {"id":{"name":"emp_sound","path":"sounds/emp_sound/emp_sound.yy",},},
     {"id":{"name":"ish_sound","path":"sounds/ish_sound/ish_sound.yy",},},
+    {"id":{"name":"mot_sound_rocket","path":"sounds/mot_sound_rocket/mot_sound_rocket.yy",},},
     {"id":{"name":"move_sound","path":"sounds/move_sound/move_sound.yy",},},
     {"id":{"name":"repair_sound","path":"sounds/repair_sound/repair_sound.yy",},},
     {"id":{"name":"rocket_dmg_sound","path":"sounds/rocket_dmg_sound/rocket_dmg_sound.yy",},},

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"info",
   "isCompatibility":false,
   "isDnD":false,

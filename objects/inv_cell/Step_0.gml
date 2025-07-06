@@ -4,6 +4,7 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 	if content != noone and content != "" and content != "noone" then
 	{
 		with (inv_cell) {selected=false;}
+		with (shop_cell) {selected=false;}
 		selected=true;
 		if window_background.active_tab = "UPGRADES"
 		{

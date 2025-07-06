@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_current_pieces",
   "isCompatibility":false,
   "isDnD":false,

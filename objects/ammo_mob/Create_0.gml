@@ -25,7 +25,7 @@ yowner:=gamer.y;
 restoredHP=0;
 sprite_index=rocket_2_spr;
 alarm[3]=15;
-if distance_to_object(gamer) < 600 then audio_play_sound(rocket_sound,1,false);
+if distance_to_object(gamer) < 600 then audio_play_sound(ammo_mob_sound,1,false);
 
 targetedship=0;
 //ammoangle=irandom_range(-150,150);

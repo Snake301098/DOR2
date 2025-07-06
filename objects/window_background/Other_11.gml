@@ -237,7 +237,7 @@ switch active_tab
 								cell.position = j;
 								cell.content=gamer.droid[position,1];
 								cell.sprite_index=shop_icons_spr;
-								cell.clickable=false;
+								cell.clickable=true;
 									
 								//cell_position+=1;
 								//ITEM1
@@ -278,7 +278,7 @@ switch active_tab
 								cell.position = j;
 								cell.content="flax";
 								cell.sprite_index=shop_icons_spr;
-								cell.clickable=false;
+								cell.clickable=true;
 									
 								//cell_position+=1;
 								//ITEM1

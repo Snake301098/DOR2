@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cargo_script",
   "isCompatibility":false,
   "isDnD":false,

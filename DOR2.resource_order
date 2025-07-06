@@ -102,6 +102,7 @@
     {"name":"ammo_mob_sound","order":7,"path":"sounds/ammo_mob_sound/ammo_mob_sound.yy",},
     {"name":"emp_sound","order":3,"path":"sounds/emp_sound/emp_sound.yy",},
     {"name":"ish_sound","order":2,"path":"sounds/ish_sound/ish_sound.yy",},
+    {"name":"mot_sound_rocket","order":9,"path":"sounds/mot_sound_rocket/mot_sound_rocket.yy",},
     {"name":"move_sound","order":5,"path":"sounds/move_sound/move_sound.yy",},
     {"name":"repair_sound","order":6,"path":"sounds/repair_sound/repair_sound.yy",},
     {"name":"rsb_sound","order":1,"path":"sounds/rsb_sound/rsb_sound.yy",},

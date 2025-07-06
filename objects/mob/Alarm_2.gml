@@ -8,3 +8,4 @@ if !instance_exists(target)
 	_way.owner = id;
 }
 alarm[2] = irandom_range(2,15) * room_speed;
+alarm[3] = irandom(50)

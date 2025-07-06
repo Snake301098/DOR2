@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"compute_skilltree_price",
   "isCompatibility":false,
   "isDnD":false,
