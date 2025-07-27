@@ -29,11 +29,11 @@ if instance_exists(gamer.target)
 	{
 		//HEALTH
 		//draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,followHP/health_def*100,c_black,c_lime,c_lime,0,1,1);draw_set_alpha(0.9); //+41+25
-		draw_set_alpha(0.9);draw_healthbar(x-55,y-105,x+55,y-100,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9); //+41+25
+		draw_set_alpha(0.9);draw_healthbar(x-55,y-104,x+55,y-101,own_health/health_def*100,c_gray,c_lime,c_lime,0,1,1);draw_set_alpha(0.9); //+41+25
 
 		//SHIELD
 		//if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,followShield/shield_def*100,c_black,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
-		if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-90,x+55,y-85,own_shield/shield_def*100,c_black,c_aqua,c_aqua,0,0,0);draw_set_alpha(0.9);} //+41+25
+		if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(x-55,y-89,x+55,y-86,own_shield/shield_def*100,c_gray,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
 	}
 }
       		

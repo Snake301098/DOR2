@@ -1,4 +1,4 @@
-ini_open(SettingsFileName)
+/*ini_open(SettingsFileName)
 global.quality = ini_read_real("Game","quality",4);
 if (global.quality <0 || global.quality >4) global.quality=4;
 global.AIRSB = ini_read_real("AI","RSB",1);

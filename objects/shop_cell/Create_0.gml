@@ -15,3 +15,4 @@ category="";
 clickable=true;
 selected=false;
 ownship=1;
+show_cost_label = true;

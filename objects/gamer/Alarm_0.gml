@@ -1,10 +1,10 @@
-/*
-if (distance_to_object(instance_nearest(x,y,teleport))<100 or place_meeting(x,y,base)=true)
-  and info("map",room,"pvp")=false and attacking=false then 
+
+if (distance_to_object(instance_nearest(x,y,portal_object))<200 or place_meeting(x,y,base)=true)
+  and info_map(room,"pvp")=false and attacking=false and is_attacked=false then 
     {
-    if info("map",room,"owners")=corporation then
+    if info_map(room,"owners")=corporation then
         v_zone_bz=true}
-else v_zone_bz=false;*/
+else v_zone_bz=false;
 
 if own_health_bilo>own_health then 
     {

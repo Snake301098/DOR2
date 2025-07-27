@@ -101,7 +101,9 @@ if KeyActionCURKEY = 23 then
 {ENTRY="DCR" alarm[9]=1;}
 //JumpCPU
 if KeyActionCURKEY = 24 then
-{if instance_exists(jumpmap) then with(jumpmap) instance_destroy(); else instance_create_depth(x,y,-100,jumpmap);}
+{
+	if instance_exists(jumpmap) then with(jumpmap) instance_destroy(); else instance_create_depth(x,y,-100,jumpmap);
+}
 //ToggleHUD
 if KeyActionCURKEY = 25 then
 {if global.hidehud=0 then{ global.hidehud=1; show_protocol_message("Hiding HUD") show_HUD_message("Hiding HUD")} else{ global.hidehud=0 show_protocol_message("Revealing HUD") show_HUD_message("Revealing HUD")}}

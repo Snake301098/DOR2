@@ -29,8 +29,10 @@ function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_
 		}
 	}
 	
+	if _victim.own_health <= 0 and _ammo = "kamikaze" then _victim.killed_by_gamer_kami = true;
+	
 	//Remove repbot and shield repair
-	if _victim = gamer.id then with(gamer){alarm[2] = 3*60} else with(_victim){alarm[4]=3*60}
+	if _victim = gamer.id then with(gamer){is_attacked=true;alarm[2] = 3*60} else with(_victim){alarm[4]=3*60}
 	with(shield_restore_ctrl){if owner=_victim then instance_destroy();}
 	with(repbot){if owner=_victim then instance_destroy();}
 

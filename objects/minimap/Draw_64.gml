@@ -46,10 +46,12 @@ var ymultiplier:=room_height / 80 /1.4
         //else if (isfriendly=0 && room=arena) then
         //{    {draw_sprite(MINIENEMY,0,minimap.x+x / other.xmultiplier-decx,minimap.y+y / other.ymultiplier-decy);} }
 		}
-	with (teleport)
+	with (portal_object)
+	{
     if visible=true then{
         draw_circle_color(minimap.x+x / xmultiplier+32,minimap.y+y / ymultiplier+60,3,c_white,c_white,true)
 		}
+	}
     //with(gamer)
        // if map_open=true then
            // draw_sprite(global.maps1_spr,0,view_xview+view_wview div 2,view_yview+view_hview div 2);
@@ -212,7 +214,7 @@ with (gamer) {
 		draw_set_alpha(1)
 	}
 	
-    draw_set_font(Digits);
+    draw_set_font(HUD_font);
     //draw_text_ol(view_wview-(minimap.xscale+30)*global.xwidthscale*global.hudscale,view_hview-(minimap.yscale-18)*global.yheightscale*global.hudscale,string(gamer.x div 20) + "/" + string(gamer.y div 20),global.HUD_color,c_black);
     //draw_text_ol(view_wview-(minimap.xscale+75)*global.xwidthscale*global.hudscale,view_hview-(minimap.yscale-18)*global.yheightscale*global.hudscale,text.map_minimap,global.HUD_color,c_black);
     //(view_wview-(minimap.xscale+105)*global.xwidthscale*global.hudscale,view_hview-(minimap.yscale-18)*global.yheightscale*global.hudscale,string(room_caption),global.HUD_color,c_black);

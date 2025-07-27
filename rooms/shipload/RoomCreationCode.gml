@@ -33,6 +33,14 @@ global.smb_cooldown = 10 * room_speed
 global.warrep_cooldown = 10 * room_speed
 global.shieldbackup_cooldown = 10 * room_speed
 
+//DROIDS
+global.apis_cost = 30;
+global.zeus_cost = 50;
+
+//PET
+global.kami_cooldown =  30 * room_speed;
+global.cost_kamikaze = 500;
+
 global.stats = load_csv("stats.csv")
 
 global.protocol_log = [];

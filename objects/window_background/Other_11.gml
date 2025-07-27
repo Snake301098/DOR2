@@ -238,6 +238,7 @@ switch active_tab
 								cell.content=gamer.droid[position,1];
 								cell.sprite_index=shop_icons_spr;
 								cell.clickable=true;
+								cell.show_cost_label = false;
 									
 								//cell_position+=1;
 								//ITEM1
@@ -279,6 +280,7 @@ switch active_tab
 								cell.content="flax";
 								cell.sprite_index=shop_icons_spr;
 								cell.clickable=true;
+								cell.show_cost_label = false;
 									
 								//cell_position+=1;
 								//ITEM1

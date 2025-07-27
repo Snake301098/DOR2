@@ -91,7 +91,7 @@ if Power >= 5
 	shield_engineering = choose(2,3,3,4,4,5,5);
 	engineering = choose(2,3,3,4,4,5,5);
 	bounty_hunter_i = 2
-	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(1,1,2,2,2,3,3,3);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(1,2,2,3,3,3);
 	alien_hunter = choose(2,3,3,4,4,5,5);
 	greed = choose(2,3,3,4,4,5,5);
 	luck_i = 2
@@ -161,7 +161,7 @@ if Power = 4
 	shield_engineering = choose(1,2,2,3,3,4,4,5);
 	engineering = choose(1,2,2,3,3,4,4,5);
 	bounty_hunter_i = 2
-	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2,3,3);
 	alien_hunter = choose(1,2,2,3,3,4,4,5);
 	greed = choose(1,2,2,3,3,4,4,5);
 	luck_i = 2

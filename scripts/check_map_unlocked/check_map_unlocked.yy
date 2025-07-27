@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"check_map_unlocked",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_map_unlocked",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

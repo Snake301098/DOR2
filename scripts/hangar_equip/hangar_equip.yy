@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"hangar_equip",
   "isCompatibility":false,
   "isDnD":false,

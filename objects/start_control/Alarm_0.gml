@@ -110,6 +110,7 @@ FMODSoundSet3dMinMaxDistance(global.rocketDamage_s,300,700);
 FMODSoundSetMaxVolume(global.rocketDamage_s,1);
 */
 
-show_debug_message("Çàãðóæåíà 2-ÿ ÷àñòü ðåñóðñîâ");
-room_goto(shipload)
-alarm[1]=room_speed*2;
+show_debug_message("Starting");
+//room_goto(shipload)
+//alarm[1]=room_speed*2;
+alarm[1]=10;

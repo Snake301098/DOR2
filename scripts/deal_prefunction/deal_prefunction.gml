@@ -40,6 +40,7 @@ function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_
 			}
 			if _ammo = "kamikaze" then a=_damage
 			deal_damage(_attacker,_victim,_ammo,a,_draw,_color)
+			display_density_shield(_attacker,_victim,_draw)
 			if _ammo = "x1" then instance_destroy()
 			if _ammo = "x2" then instance_destroy()
 			if _ammo = "x3" then instance_destroy()

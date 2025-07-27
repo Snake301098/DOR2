@@ -32,19 +32,33 @@ if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51
 	}
 	if  isopened
 	{
-		if kamikaze_selected
+		if gamer.can_use_kami
 		{
-			kamikaze_selected = false 
-		}
-		else 
-		{
-			kamikaze_selected = true
-		}
+			if global.uridium >= global.cost_kamikaze
+			{
+				if kamikaze_selected
+				{
+					kamikaze_selected = false 
+				}
+				else 
+				{
+					kamikaze_selected = true
+				}
 	
-		var _status = kamikaze_selected
-		with(PET)
+				var _status = kamikaze_selected
+				with(PET)
+				{
+					if owner = gamer.id then kamikaze = _status 
+				}
+			}
+			else
+			{
+				show_message("Not enough uridium for Kamikaze");
+			}
+		}
+		else
 		{
-			if owner = gamer.id then kamikaze = _status 
+			show_HUD_message("Kamikaze still on cooldown...");
 		}
 	}
 }

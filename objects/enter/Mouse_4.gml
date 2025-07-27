@@ -6,8 +6,8 @@ global.mmopvpscore=0;
 global.eicpvpscore=0;
 global.vrupvpscore=0;
 global.killstreak=0;
-show_debug_message("HI iciii")
-show_debug_message(working_directory)
+//show_debug_message("HI iciii")
+//show_debug_message(working_directory)
 //if file_exists(working_directory + "\data\" + "Save.DO2") then
 if (file_exists("newSave.sav")) then
         {
@@ -37,12 +37,12 @@ if (file_exists("newSave.sav")) then
             }
         }*/
     //Êîíåö ïðîâåðêè âåðñèè.
-        alarm[0]=1*room_speed;
+        //alarm[0]=1*room_speed;
+        alarm[0]=10;
            //else show_message("Game save not found");
 		} else 
 		{
 			show_message("No Data file found");
 		}/**/
 
-sprite_index = buttons_spr;
 image_index = 2;

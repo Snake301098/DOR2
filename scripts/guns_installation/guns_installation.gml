@@ -224,6 +224,13 @@ function guns_installation(_id){
 		*************************************************/
 		#region
 		//DRONES
+		if id = gamer.id
+		{
+			for (i=1; i<=10; i++)
+			{
+				if instance_exists(droid[i,0]) then with(droid[i,0]) {alarm_set(2,1);}
+			}
+		}
 		/*
 		for (i:=1; i<=10; i+=1)
 		    {

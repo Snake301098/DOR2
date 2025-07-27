@@ -191,6 +191,7 @@
 							gamer.droid[i,2]="";
 							gamer.droid[i,3]="";
 							gamer.droid[i,4]="";
+							instance_destroy(gamer.droid[i,0]);
 						}
 					}
 							
@@ -236,6 +237,7 @@
 							gamer.droid[i,2]="";
 							gamer.droid[i,3]="";
 							gamer.droid[i,4]="";
+							instance_destroy(gamer.droid[i,0]);
 						}
 					}
 												

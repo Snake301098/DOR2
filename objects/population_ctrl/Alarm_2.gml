@@ -32,9 +32,16 @@ if (room=lv1_1 or room=lv2_1 or room=lv3_1)   then
 		if spawn_ennemy_prob >= 98 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
+			var _nbr = 1;
+			var is_group = false;
+			if irandom(10) = 5
+			{
+				is_group = true;
+				_nbr = choose(2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,6,6,7);
+			}
 			var ennemy_corp = get_ennemy_corp(info_map(room,"owners"))
 			var _power = choose(3,3,3,3,4,4,4,4,5,5);
-			spawn_ship(,,ennemy_corp,"battle",1,,_power)
+			spawn_ship(,,ennemy_corp,"battle",1,,_power,,_nbr,is_group)
 		}
 	}
 }
@@ -61,9 +68,16 @@ if (room=lv1_2 or room=lv2_2 or room=lv3_2)   then
 		if spawn_ennemy_prob >= 95 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
+			var _nbr = 1;
+			var is_group = false;
+			if irandom(10) = 5
+			{
+				is_group = true;
+				_nbr = choose(2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,6,6,7);
+			}
 			var ennemy_corp = get_ennemy_corp(info_map(room,"owners"))
 			var _power = choose(2,2,3,3,3,3,3,4,4,4,4,5,5);
-			spawn_ship(,,ennemy_corp,"battle",1,,_power)
+			spawn_ship(,,ennemy_corp,"battle",1,,_power,,_nbr,is_group)
 		}
 	}
 }
@@ -91,9 +105,16 @@ if (room=lv1_3 or room=lv2_3 or room=lv3_3 or room=lv1_4 or room=lv2_4 or room=l
 		if spawn_ennemy_prob >= 90 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
+			var _nbr = 1;
+			var is_group = false;
+			if irandom(10) = 5
+			{
+				is_group = true;
+				_nbr = choose(2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,6,6,7);
+			}
 			var ennemy_corp = get_ennemy_corp(info_map(room,"owners"))
 			var _power = choose(2,2,2,3,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5);
-			spawn_ship(,,ennemy_corp,"battle",1,,_power)
+			spawn_ship(,,ennemy_corp,"battle",1,,_power,,_nbr,is_group)
 		}
 	}
 }
@@ -121,9 +142,16 @@ if (room=lv4_1 or room=lv4_2 or room=lv4_3 or room=lv4_4 or room=lv4_5)   then
 		if spawn_ennemy_prob >= 80 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
+			var _nbr = 1;
+			var is_group = false;
+			if irandom(5) = 2
+			{
+				is_group = true;
+				_nbr = choose(2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,6,6,7);
+			}
 			var ennemy_corp = get_ennemy_corp(info_map(room,"owners"))
 			var _power = choose(2,2,2,3,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5);
-			spawn_ship(,,ennemy_corp,"battle",1,,_power)
+			spawn_ship(,,ennemy_corp,"battle",1,,_power,,_nbr,is_group)
 		}
 	}
 }
@@ -150,9 +178,16 @@ if (room=lv1_5 or room=lv2_5 or room=lv3_5 or room=lv1_6 or room=lv2_6 or room=l
 		if spawn_ennemy_prob >= 85 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
+			var _nbr = 1;
+			var is_group = false;
+			if irandom(10) = 5
+			{
+				is_group = true;
+				_nbr = choose(2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,6,6,7);
+			}
 			var ennemy_corp = get_ennemy_corp(info_map(room,"owners"))
 			var _power = choose(2,2,2,3,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5);
-			spawn_ship(,,ennemy_corp,"battle",1,,_power)
+			spawn_ship(,,ennemy_corp,"battle",1,,_power,,_nbr,is_group)
 		}
 	}
 }

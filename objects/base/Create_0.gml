@@ -31,7 +31,7 @@ x:=14960/2;
 y:=5000/2;
 }
 
-if room=control{
+if room=TDM{
 x:=800;
 y:=800;
 }

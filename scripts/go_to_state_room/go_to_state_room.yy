@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"go_to_state_room",
   "isCompatibility":false,
   "isDnD":false,

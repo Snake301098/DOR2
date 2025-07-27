@@ -25,6 +25,7 @@ shield_def = 10000;
 own_shield = 10000;
 followShield = own_shield;
 shieldAbsorb = 0.8;
+killed_by_gamer_kami = false;
 shieldPen = 0.8;
 attacking=false;
 ship_speed=8;

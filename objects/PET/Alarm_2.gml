@@ -75,4 +75,19 @@ with(mob)
 	}
 }
 
+
+var myID = owner
+var _cooldown = global.kami_cooldown;
+owner.can_use_kami = false;
+
+with(cooldowns_ctrl)
+{
+	if owner = myID then
+	{
+		alarm[5] = _cooldown;
+	}	
+}
+
+global.uridium -= global.cost_kamikaze;
+
 instance_destroy()

@@ -20,6 +20,22 @@ if content = "flax"
 	}
 	lvl = nbr_flax+1
 }
+
+if content = "apis"
+{
+	cost_type = "drone_parts"
+	cost_qty = global.apis_cost
+	cost_label = string(global.droid_parts) + "/" + string(cost_qty) + " drone parts";
+	exit;
+}
+
+if content = "zeus"
+{
+	cost_type = "drone_parts"
+	cost_qty = global.zeus_cost
+	cost_label = string(global.droid_parts) + "/" + string(cost_qty) + " drone parts";
+	exit;
+}
 cost_type = info(content,"cost_type")
 cost_qty = info(content,"cost_qty",lvl)
 if cost_type = "credit" then _costt = "C"

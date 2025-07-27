@@ -22,11 +22,11 @@ draw_sprite_ext(ship_sprite,image_index,1920/2,1080/2,1,1,0,c_white,alpha)
 
 //HEALTH
 //if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-105,1920/2+55,1080/2-100,followHP/health_def*100,c_black,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
-if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-104,1920/2+55,1080/2-101,own_health/health_def*100,c_black,c_lime,c_lime,0,0,0);draw_set_alpha(0.9);} //+41+25
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-104,1920/2+55,1080/2-101,own_health/health_def*100,c_grey,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
 
 //SHIELD
 //if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-90,1920/2+55,1080/2-85,followShield/shield_def*100,c_black,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
-if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-89,1920/2+55,1080/2-86,own_shield/shield_def*100,c_black,c_aqua,c_aqua,0,0,0);draw_set_alpha(0.9);} //+41+25
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-91,1920/2+55,1080/2-88,own_shield/shield_def*100,c_grey,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
 
 
 
@@ -127,7 +127,9 @@ if gamer.destroyed=0 then //check if gamer not killed
 {
 	draw_set_font(nicktext)    
 	draw_set_valign(fa_middle);
-	draw_text_ol(xx,yy+73,string(global.nickname),global.HUD_color,c_black); //nickname
+	//draw_text_ol(xx,yy+73,string(global.nickname),global.HUD_color,c_black,HUD_font); //nickname
+	draw_set_font(HUD_font)   
+	draw_text_ext(xx,yy+75,string(global.nickname),-1,string_width*0.7); 
 	draw_sprite(icons_spr,corporation,xx+string_width(string(global.nickname))/2+15,yy+73); //firm
 	draw_sprite(ranks_spr,global.subimg,xx-string_width(string(global.nickname))/2-15,yy+75) 
     

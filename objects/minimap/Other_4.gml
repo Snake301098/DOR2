@@ -42,7 +42,7 @@ if room=lv4_4 then mimage=39;
 if room=lv4_5 then mimage=23;
 //Special Maps
 if room=arena then mimage=43;
-if room=control then mimage=39;
+if room=TDM then mimage=39;
 //GG
 if room=GGA then mimage=GGA_bg;
 if room=GGB then mimage=GGB_bg;

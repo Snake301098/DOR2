@@ -1,6 +1,7 @@
 ///@description restore shield
 var _is_shield_restore_exist=0;
 var myid = id;
+is_attacked=false;
 if own_shield < shield_def
 {
 	if instance_exists(shield_restore_ctrl)

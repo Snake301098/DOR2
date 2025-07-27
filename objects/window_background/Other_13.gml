@@ -240,6 +240,76 @@ else
 					var _name =_content
 	
 					var _empty_slot = -1
+					if _content = "apis"
+					{
+						if gamer.droid[9,1] != "" and gamer.droid[9,1] != "noone"
+						{
+							show_message("There is already a drone at 9th slot");
+							exit;
+						}
+						else
+						{
+							if global.droid_parts >= global.apis_cost
+							{
+								gamer.droid[9,1] = _content
+								gamer.droidC1[9,1] = _content
+								gamer.droidC2[9,1] = _content
+							    gamer.droid[9,0]=instance_create_depth(x,y,-1,droid_obj);
+							    gamer.droid[9,0].pos:=9;
+							    gamer.droid[9,0].owner=gamer.id;
+							    gamer.droid[9,0].x=id.x;
+							    gamer.droid[9,0].y=id.y;
+								global.droid_parts -= global.apis_cost;
+								guns_installation(gamer.id)
+								show_message("Drone Apis was bought successfully");
+								active_side_tab = "AMMOS";
+								event_user(1);
+								active_side_tab = "DRONES";
+								event_user(1);
+								exit;
+							}
+							else
+							{
+								show_message("You do not have enough drones parts to buy this drone");
+								exit;
+							}
+						}
+					}
+					if _content = "zeus"
+					{
+						if gamer.droid[10,1] != "" and gamer.droid[10,1] != "noone"
+						{
+							show_message("There is already a drone at 10th slot");
+							exit;
+						}
+						else
+						{
+							if global.droid_parts >= global.zeus_cost
+							{
+								gamer.droid[10,1] = _content
+								gamer.droidC1[10,1] = _content
+								gamer.droidC2[10,1] = _content
+							    gamer.droid[10,0]=instance_create_depth(x,y,-1,droid_obj);
+							    gamer.droid[10,0].pos:=10;
+							    gamer.droid[10,0].owner=gamer.id;
+							    gamer.droid[10,0].x=id.x;
+							    gamer.droid[10,0].y=id.y;
+								global.droid_parts -= global.zeus_cost;
+								guns_installation(gamer.id)
+								show_message("Drone Zeus was bought successfully");
+								active_side_tab = "AMMOS";
+								event_user(1);
+								active_side_tab = "DRONES";
+								event_user(1);
+								exit;
+							}	
+							else
+							{
+								show_message("You do not have enough drones parts to buy this drone");
+								exit;
+							}
+						}
+					}
 					if _content = "iris" or _content = "flax"
 					{
 						for(var i=1;i<=8;i++)
@@ -291,8 +361,11 @@ else
 							global.uridium-=cost_qty*buy_qty
 						}
 					}
-					
 					show_message(_name + " was bought sucessfully!");
+					active_side_tab = "AMMOS";
+					event_user(1);
+					active_side_tab = "DRONES";
+					event_user(1);
 				}
 				else
 				{

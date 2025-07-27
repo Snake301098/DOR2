@@ -289,4 +289,4 @@ global.maps1_spr=sprite_add_sprite(working_directory + "\data" + "maps1.res");
 
 alarm[0]:=1;
 
-show_debug_message("Çàãðóæåíà 1-ÿ ÷àñòü ðåñóðñîâ");
+//show_debug_message("Çàãðóæåíà 1-ÿ ÷àñòü ðåñóðñîâ");

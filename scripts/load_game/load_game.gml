@@ -20,6 +20,7 @@ function load_game()
 	global.uridium = ini_read_real("Player","uridium",0)
 	global.logfile = ini_read_real("Player","logfile",0);
 	global.tdm_tickets = ini_read_real("Player","tdm_tickets",0);
+	global.droid_parts = ini_read_real("Player","droid_parts",0);
 	gamer.ship_name = ini_read_string("Player","ship_name",0);
 
 

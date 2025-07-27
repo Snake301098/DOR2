@@ -1,7 +1,7 @@
 /// @description Repair on map
 
 //DO CREDITS -500
-	var portal = instance_nearest(gamer.x,gamer.y,teleport);
+	var portal = instance_nearest(gamer.x,gamer.y,portal_object);
 	gamer.x=portal.x;
 	gamer.y=portal.y;
 	

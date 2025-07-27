@@ -48,7 +48,8 @@ if active_tab = "SKILLTREE" then
 				
 			if selected_id.owning >= selected_id.level_max
 			{
-				show_message("Already level max")  
+				show_message("Already level max")
+				exit;
 			}
 				
 			if global.logfile >= skilltree_cost

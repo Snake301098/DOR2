@@ -246,7 +246,7 @@ switch _room
             case "name": return "4-5" break;
             }
         break;   
-    case control:
+    case TDM:
         switch info_to_get
             {
             case "owners": return 3; break;
@@ -291,7 +291,7 @@ switch _room
             {
             case "owners": return 3; break;
             case "pvp": return true break;
-            case "name": return "GGY" break;
+            case "name": return "GGG" break;
             }
         break; 
     }

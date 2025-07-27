@@ -6,8 +6,8 @@ if owner!=gamer.id then
 if view_current!=1
 	{
 	//draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
-	    image_xscale=global.scale;
-	    image_yscale=global.scale;
+	    image_xscale=1;//global.scale;
+	    image_yscale=1;//global.scale;
 	    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
 	}
 }
@@ -20,8 +20,8 @@ if destroyed=1 then alpha=0;
 if view_current!=1
     {
     //draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
-        image_xscale=global.scale;
-        image_yscale=global.scale;
+        image_xscale=1;//global.scale;
+        image_yscale=1;//global.scale;
         draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,c_white,alpha);
     }
 

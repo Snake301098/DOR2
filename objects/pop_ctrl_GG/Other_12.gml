@@ -12,7 +12,7 @@ if room = GGB then sprite_portal_gg = beta_portal_spr;
 if room = GGD then sprite_portal_gg = delta_portal_spr;
 if room = GGY then sprite_portal_gg = gamma_portal_spr;
 
-var teleport1=instance_create_depth(gg_room_width/2-150, gg_room_height/2, 50, teleport);
+var teleport1=instance_create_depth(gg_room_width/2-150, gg_room_height/2, 50, portal);
 teleport1.map1=room;
 teleport1.map2=home_map;
 teleport1.visible=true;
@@ -21,7 +21,7 @@ teleport1.toy=4000/2;
 
 if wave <= 10
 {
-	var teleport2=instance_create_depth(gg_room_width/2+150, gg_room_height/2, 50, teleport);
+	var teleport2=instance_create_depth(gg_room_width/2+150, gg_room_height/2, 50, portal);
 	teleport2.map1=room;
 	teleport2.map2=room;
 	teleport2.sprite_index=sprite_portal_gg;

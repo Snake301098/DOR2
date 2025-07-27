@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"deal_prefunction",
   "isCompatibility":false,
   "isDnD":false,
