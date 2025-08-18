@@ -4,6 +4,7 @@ wave = 0;
 count_down_step = 0;
 started = false;
 
+
 if room = GGA then
 {
 	life = global.alphalife;

@@ -32,6 +32,7 @@ if gamer_get_reward = true
 	_cargobox.logfile = logfiles_qty
 		
 	check_quests(id,room);
+	update_stats(Ship+"_kills");
 }
 
 myid = id; //ID of who get killed

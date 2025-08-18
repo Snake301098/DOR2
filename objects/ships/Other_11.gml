@@ -73,8 +73,10 @@ if instance_exists(target)
 	{ //NOT SAB
 		if Ship = "phoenix" or Ship = "spearhead"
 		{
-			ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
-		    y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
+			//ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
+		    //y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
+			ii = instance_create_depth(x+xdec+lengthdir_x(0,image_angle),
+		    y+ydec+lengthdir_y(0,image_angle),0,ammo_selected);
 		    a=instance_create_depth(ii.x+xdec,ii.y+ydec,0,blust); a.owner:=id; with(a) event_user(0);
 		    ii.speed = global.laser_speed;
 		    ii.target:=target; ii.owner:=id; ii.myOwner=id;

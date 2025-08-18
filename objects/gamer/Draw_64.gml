@@ -102,12 +102,14 @@ var xx = 1920/2;
 var yy = 1080/2;
 var a, dmgBoost, hpBoost, shdBoost;
 
-//Ïîëîñêà çäîðîâüÿ è ùèòà. 
-//Îòîáðàæåíèå íèêà.
+//Rankpoints
 draw_set_halign(fa_center);
 draw_set_alpha(1);
 draw_set_font(nicktext);
 draw_set_color(global.HUD_color);
+
+global.rankpoints = round(global.experience / 100000 + global.honor / 100 + global.level * 100);
+
 var rpf=global.rpfactor;
 var rpbelow=0;
 var rpabove=0;

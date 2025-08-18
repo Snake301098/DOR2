@@ -46,3 +46,4 @@ event_user(0); //creation in the main tabs
 event_user(1); //creation in the sub tabs
 //event_user(3); it's when buying stuffs
 //event_user(4); it's when buying GG PORTALS
+alarm[0] = room_speed;

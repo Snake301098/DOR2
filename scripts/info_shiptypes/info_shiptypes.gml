@@ -5,7 +5,7 @@ function info_shiptypes(_shiptype,_info,_level=0)
 	var vengeance_health = 128000;
 	
 	
-	if _shiptype = "pheonix"
+	if _shiptype = "phoenix"
 	{
 		if _info = "speed" then return 320;
 		else if _info = "health" then return 6000;

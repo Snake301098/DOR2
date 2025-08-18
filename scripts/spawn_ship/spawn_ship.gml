@@ -1,4 +1,4 @@
-function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="goliath",_power=-1, _waiting_cp_spawn=0,nbr=1, group=false)
+function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="none",_power=-1, _waiting_cp_spawn=0,nbr=1, group=false)
 {
 //arg0: x
 //arg1: y
@@ -40,10 +40,14 @@ function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="g
 		var _Ship = _shipType;
 
 		if _power = -1  then  _power  =  choose(1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,4,4,4,5,5);
-			
+		
+		if _shipType = "none" then _shipType = choose("goliath","goliath","goliath","vengeance","badships","newships");
+		
+		if _shipType = "newships" then _Ship = choose("aegis","aegis","aegis","citadel","citadel","spearhead");
 		if _shipType = "vengeance" then _Ship = choose("vengeance","revenge","avenger","adept","corsair","lightning")
 		if _shipType = "goliath" then _Ship = choose("goliath","enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
 		if _shipType="badships" then _Ship = choose("phoenix","nostromo","bigboy","leonov")
+
 		if group = false 
 		{
 			if xx=-5 and yy=-5 then

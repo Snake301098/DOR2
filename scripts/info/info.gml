@@ -127,7 +127,7 @@ function info(item,_info,lvl=1)
 		*************************************************/
 		#region
 
-		case "pheonix":
+		case "phoenix":
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 256000;
 			if _info = "sprite" then return phoenix_spr;

@@ -10,7 +10,7 @@ var a=instance_create_depth(gamer.x,gamer.y,-3,bigexpl1);
 a.image_xscale=1;
 a.image_yscale=1;
 
-if room=GGA or room=GGB or room=GGD or room=GGY then
+if room=GGA or room=GGB or room=GGD or room=GGY or room=TDM then
 {
 	dead_in_gg=true;
 } 

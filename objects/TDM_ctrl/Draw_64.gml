@@ -8,7 +8,7 @@ draw_set_alpha(1);
 draw_sprite_ext(icons_spr,0,xx-20,yy-20,1,1,0,c_white,1);
 draw_sprite_ext(icons_spr,1,xx-20,yy,1,1,0,c_white,1);
 draw_sprite_ext(icons_spr,2,xx-20,yy+20,1,1,0,c_white,1);
-draw_text(xx+20,yy-20,"4");
-draw_text(xx+20,yy,"6");
-draw_text(xx+20,yy+20,"8");
+draw_text(xx+20,yy-20,mmo_ships);
+draw_text(xx+20,yy,eic_ships);
+draw_text(xx+20,yy+20,vru_ships);
 
