@@ -1,6 +1,7 @@
 event_user(0)
 alarm[0]=1;
 alarm[2]=1;
+alarm[3]=irandom_range(5,100) * room_speed;
 //alarm[1]=1;
 //alarm[9]=60;
 

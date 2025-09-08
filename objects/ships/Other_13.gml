@@ -50,6 +50,8 @@ if Power >= 5
 	//INFOS
 	RPOINT=irandom_range(80,100);
 	rings=choose(3,3,3,4,4,4,4,4);
+	will_run = choose(0,0,0,0,1); //if =1, then will run when getting under a certain % of HP
+	running_HP = random_range(0,0.15); // how much percentage of hp will start running
 
 	//DRONES
 	iris_numb = irandom_range(8,10);
@@ -120,6 +122,8 @@ if Power = 4
 	//INFOS
 	RPOINT=irandom_range(60,80);
 	rings=choose(2,2,2,3,3,3,3,3,4,4,4);
+	will_run = choose(0,0,0,1); //if =1, then will run when getting under a certain % of HP
+	running_HP = random_range(0,0.30); // how much percentage of hp will start running
 
 	//DRONES
 	iris_numb = irandom_range(6,10);
@@ -189,6 +193,8 @@ if Power = 3
 	//INFOS
 	RPOINT=irandom_range(40,60);
 	rings=choose(1,1,2,2,2,2,3,3,3,4);
+	will_run = choose(0,0,1); //if =1, then will run when getting under a certain % of HP
+	running_HP = random_range(0,0.40); // how much percentage of hp will start running
 
 	//DRONES
 	iris_numb = irandom_range(2,6);
@@ -264,6 +270,8 @@ if Power = 2
 	//INFOS
 	RPOINT=irandom_range(20,40);
 	rings=choose(0,0,0,1,1,1,1,1,2,2);
+	will_run = choose(0,0,1); //if =1, then will run when getting under a certain % of HP
+	running_HP = random_range(0,0.40); // how much percentage of hp will start running
 
 	//DRONES
 	iris_numb = irandom_range(0,1);
@@ -331,6 +339,8 @@ if Power = 1
 	//INFOS
 	RPOINT=irandom_range(5,20);
 	rings=choose(0,0,0,0,0,0,0,1);
+	will_run = choose(0,0,1); //if =1, then will run when getting under a certain % of HP
+	running_HP = random_range(0,0.50); // how much percentage of hp will start running
 
 	//DRONES
 	iris_numb = 0;
@@ -483,6 +493,12 @@ guns_installation(id);
 rounding[5]:=noone;
 
 
+//ABILITIES
+if Ship = "solace" then {can_use_solace = true; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = false;}
+if Ship = "spectrum" then {can_use_solace = false; can_use_spectrum = true; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = false;}
+if Ship = "diminisher" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = true; can_use_venom = false; can_use_sentinel = false;}
+if Ship = "venom" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = true; can_use_sentinel = false;}
+if Ship = "sentinel" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = true;}
 
 
 /*

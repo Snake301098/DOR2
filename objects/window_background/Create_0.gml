@@ -2,8 +2,8 @@
 // You can write your code in this editor
 x=0;
 y=0;
-active_tab = "EQUIPMENT";
-active_side_tab = "SHIP";
+active_tab = global.active_tab_hangar_window;
+active_side_tab = global.active_side_tab_hangar_window;
 item_info = ""; //show stats of objects etc
 page_droid=1;
 page_ships=1;

@@ -48,7 +48,7 @@ switch active_tab
 					cell.ship_name=ships_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=get_stats(ships_list[position-1]+"_kills",ship_selected)
+					cell.label=dotString(get_stats(ships_list[position-1]+"_kills",ship_selected))
 				}
 			}
 		}
@@ -82,7 +82,7 @@ switch active_tab
 					cell.ship_name=ships_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=get_stats(ships_list[position-1]+"_kills",ship_selected)
+					cell.label=dotString(get_stats(ships_list[position-1]+"_kills",ship_selected))
 				}
 			}
 		}
@@ -117,7 +117,7 @@ switch active_tab
 					cell.ship_name=ships_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=get_stats(ships_list[position-1]+"_kills",ship_selected)
+					cell.label=dotString(get_stats(ships_list[position-1]+"_kills",ship_selected))
 				}
 			}
 		}
@@ -150,7 +150,7 @@ switch active_tab
 					cell.ship_name=ships_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=get_stats(ships_list[position-1]+"_kills",ship_selected)
+					cell.label=dotString(get_stats(ships_list[position-1]+"_kills",ship_selected))
 				}
 			}
 		}
@@ -192,7 +192,7 @@ switch active_tab
 					cell.ship_name=mobs_list[position-1];
 					cell.clickable=false;
 					cell.owned=1;
-					cell.label=get_stats(mobs_list[position-1]+"_kills",ship_selected)//dotString(killed[position-1],true)
+					cell.label=dotString(get_stats(mobs_list[position-1]+"_kills",ship_selected))//dotString(killed[position-1],true)
 				}
 			}
 		}

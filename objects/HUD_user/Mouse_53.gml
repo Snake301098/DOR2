@@ -5,61 +5,14 @@
 
 //PET
 //ACTIVATE PET
-if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51 and (window_mouse_get_y() - yy_pet) > 120 and (window_mouse_get_y() - yy_pet) < 155 
+if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51 and (window_mouse_get_y() - yy_pet) > 130 and (window_mouse_get_y() - yy_pet) < 165 
 {
-	var isopened = false
-	if instance_exists(PET)
-	{
-		with(PET) {if owner = gamer.id then {isopened = true; instance_destroy()}}
-	}
-	
-	if !isopened
-	{
-		var _x = gamer.x + irandom_range(-100,100)
-		var _y = gamer.y + irandom_range(-100,100)
-		var _pet = instance_create_depth(_x,_y,-2,PET);
-		_pet.owner = gamer.id
-	}
+	with(gamer){event_user(13)};
 }
 
 //KAMIKAZE
-if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51 and (window_mouse_get_y() - yy_pet) > 163 and (window_mouse_get_y() - yy_pet) < 203 
+if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51 and (window_mouse_get_y() - yy_pet) > 173 and (window_mouse_get_y() - yy_pet) < 213 
 {
-	var isopened = false
-	if instance_exists(PET)
-	{
-		with(PET) {if owner = gamer.id then isopened = true}
-	}
-	if  isopened
-	{
-		if gamer.can_use_kami
-		{
-			if global.uridium >= global.cost_kamikaze
-			{
-				if kamikaze_selected
-				{
-					kamikaze_selected = false 
-				}
-				else 
-				{
-					kamikaze_selected = true
-				}
-	
-				var _status = kamikaze_selected
-				with(PET)
-				{
-					if owner = gamer.id then kamikaze = _status 
-				}
-			}
-			else
-			{
-				show_message("Not enough uridium for Kamikaze");
-			}
-		}
-		else
-		{
-			show_HUD_message("Kamikaze still on cooldown...");
-		}
-	}
+	event_user(0);
 }
 

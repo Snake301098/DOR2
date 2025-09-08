@@ -6,7 +6,7 @@ if mouse_debug = 1 then show_message("x: " + string(window_mouse_get_x()) + " / 
 
 //target = noone
 
-if instance_exists(window_background)=false and destroyed=0 then
+if instance_exists(window_background)=false and instance_exists(stats_window)=false and destroyed=0 then
 {
 /*
 if global.attacking_type = 0 then

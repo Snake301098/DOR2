@@ -4,19 +4,61 @@ switch wave
 {
 	case 1:
 	{
-		spawn_mob(streuner,,,5);
+		spawn_mob(streuner,,,40);
 		break;
 	}
 	
 	case 2:
 	{
-		spawn_mob(lordakia,,,5);
+		spawn_mob(lordakia,,,40);
+		break;
+	}
+	
+	case 3:
+	{
+		spawn_mob(mordon,,,40);
+		break;
+	}
+	
+	case 4:
+	{
+		spawn_mob(saimon,,,80);
+		break;
+	}
+	
+	case 5:
+	{
+		spawn_mob(devolarium,,,20);
+		break;
+	}
+	
+	case 6:
+	{
+		spawn_mob(kristallin,,,80);
+		break;
+	}
+	
+	case 7:
+	{
+		spawn_mob(sibelon,,,16);
+		break;
+	}
+	
+	case 8:
+	{
+		spawn_mob(sibelonit,,,80);
+		break;
+	}
+	
+	case 9:
+	{
+		spawn_mob(kristallon,,,16);
 		break;
 	}
 	
 	case 10:
 	{
-		spawn_mob(lordakia,,,5);
+		spawn_mob(lordakium,,,1);
 		break;
 	}
 	

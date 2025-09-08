@@ -36,6 +36,18 @@ is_using_emp=0;
 passive=false;
 isFollower = choose(0,0,1,1,1); //for alarm 1 ship movement AI logic
 
+//ABILITIES
+can_use_sentinel = false;
+can_use_solace = false;
+can_use_diminisher = false;
+can_use_spectrum = false;
+can_use_venom = false;
+is_using_sentinel = false;
+is_using_solace = false;
+is_using_diminisher = false;
+is_using_spectrum = false;
+is_using_venom = false;
+
 //SKILLTREE
 pilotsheet_ship_hull_i=0
 pilotsheet_ship_hull_ii=0
@@ -97,6 +109,8 @@ smb_upgrade = 0
 ish_upgrade = 0
 shieldbackup_upgrade = 0
 warrep_upgrade = 0
+will_run = 0 //if =1, then will run when getting under a certain % of HP
+running_HP = 0; // how much percentage of hp will start running
 
 Inventory[0]:=72;
 for (i:=1; i<=Inventory[0]; i+=1) Inventory[i]="noone"

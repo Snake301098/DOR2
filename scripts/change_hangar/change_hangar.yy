@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"change_hangar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"change_hangar",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

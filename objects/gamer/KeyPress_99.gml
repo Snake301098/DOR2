@@ -1,8 +1,6 @@
-/// @description X3
-
-//ability_trigger(id,ability_2,2);
-
-
-select_ammo(x3_ammo);
+/// @description
+audio_play_sound(select,1,false)
+KeyActionCURKEY=global.KeyActionNPAD3
+event_user(15);
 
 

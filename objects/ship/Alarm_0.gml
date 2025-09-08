@@ -55,7 +55,7 @@ else
 	}
 }
 
-alarm[0]=irandom_range(2,6)*room_speed;
+alarm[0]=random_range(30,140);
 
 //OLD
 #region

@@ -38,6 +38,7 @@ global.wasincontrolroombefore = 0 //to start spawning in the control map
 
 
 //CONTROL POINT
+/*
 global.mmoscorecp = 0;
 global.eicscorecp = 0;
 global.vruscorecp = 0;
@@ -53,6 +54,7 @@ global.iscpon=0;
 global.cpison=0;
 global.resetcpclock = 2; 
 global.cproom = noone;
+*/
 
 //Customizable Quickaction bar
 //Let"s load some default variables

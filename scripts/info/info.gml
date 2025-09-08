@@ -116,11 +116,58 @@ function info(item,_info,lvl=1)
 		        case "cost_type": return "uridium"; 
 		    }
 		    break;
-	
-		//---------------- Boosters --------------------
-		case "boosters": return 15000;    
-
 		#endregion
+		
+		/************************************************
+		                BOOSTERS
+		*************************************************/
+		case "DMG_1":
+		    switch _info
+		    {
+		        case "cost_qty": return 1000; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break; 
+			
+		case "DMG_2":
+		    switch _info
+		    {
+		        case "cost_qty": return 2000; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break; 
+			
+		case "HP_1":
+		    switch _info
+		    {
+		        case "cost_qty": return 1000; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break; 
+			
+		case "HP_2":
+		    switch _info
+		    {
+		        case "cost_qty": return 2000; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break; 
+			
+		case "SHD_1":
+		    switch _info
+		    {
+		        case "cost_qty": return 1000; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break; 
+			
+		case "SHD_2":
+		    switch _info
+		    {
+		        case "cost_qty": return 2000; 
+		        case "cost_type": return "uridium"; 
+		    }
+		    break; 
 		
 		/************************************************
 		                SHIPS

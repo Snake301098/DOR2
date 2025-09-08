@@ -9,6 +9,9 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		case "change_design": {if instance_exists(design_window) then instance_destroy(design_window) else instance_create_depth(0,0,-800,design_window);break;}
 		case "upgrade": {with(window_background){event_user(5);};break;}
 		case "gg_buy": {with(window_background){event_user(4);};break;}
+		case "buy_pet": {with(window_background){event_user(8);};break;}
+		case "buy_kamikaze": {with(window_background){event_user(9);};break;}
+		case "buy_fuel": {event_user(1);break;}
 		case "skilltree": {with(window_background){event_user(6);};break;}
 		case "transfer_ores": {if !global.transfer_used then {with(quests_window){event_user(2);}} else {show_message("Transfer already done. Wait next round to transfer again");}break;}
 	}

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ability_trigger",
   "isCompatibility":false,
   "isDnD":false,

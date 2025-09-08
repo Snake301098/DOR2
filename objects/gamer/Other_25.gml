@@ -1,36 +1,84 @@
 //Nothing
 if KeyActionCURKEY = 0 then
 {}
-//Cloack
-if KeyActionCURKEY = 1 then
-{ENTRY="CLOAK" alarm[9]=1;}
 //X1
-if KeyActionCURKEY = 2 then
-{ammo[0,0]=1; if attacking=false and target!=noone then {attacking=true;}}
+if KeyActionCURKEY = 1 then
+{select_ammo(x1_ammo);}
 //X2
-if KeyActionCURKEY = 3 then
-{ammo[0,0]=2; if attacking=false and target!=noone then {attacking=true;}}
+if KeyActionCURKEY = 2 then
+{select_ammo(x2_ammo);}
 //X3
-if KeyActionCURKEY = 4 then
-{ammo[0,0]=3; if attacking=false and target!=noone then {attacking=true;}}
+if KeyActionCURKEY = 3 then
+{select_ammo(x3_ammo);}
 //X4
-if KeyActionCURKEY = 5 then
-{ammo[0,0]=4; if attacking=false and target!=noone then {attacking=true;}}
+if KeyActionCURKEY = 4 then
+{select_ammo(x4_ammo);}
 //SAB
-if KeyActionCURKEY = 6 then
-{ammo[0,0]=5; if attacking=false and target!=noone then {attacking=true;}}
+if KeyActionCURKEY = 5 then
+{select_ammo(sab);}
 //RSB
-if KeyActionCURKEY = 7 then
-{ENTRY="RSB" alarm[9]=1;}
+if KeyActionCURKEY = 6 then
+{event_user(14);}
 //WARREP
-if KeyActionCURKEY = 8 then
-{OwnerID=id; if global.warrepcount >= 1 then{ if canusewarrep=1 then{ {a=instance_create(x,y,warrep)} with (a) {owner=OwnerID} global.warrepcount -= 1 canusewarrep=0; gamercooldowns.alarm[9]=1;} else {show_HUD_message(string(text.warreprecharging))} } else {show_HUD_message(string(text.nowarreps))}}
+if KeyActionCURKEY = 7 then
+{if global.warrep > 0 then ability_trigger(id,"warrep") else show_HUD_message("No warrep remaining")}
 //ShieldBackup
-if KeyActionCURKEY = 9 then
-{OwnerID=id; if global.shieldbackupcount >= 1 then{ if canuseshieldbackup=1 then{ {a=instance_create(x,y,shieldbackup)} with (a) {owner=OwnerID} global.shieldbackupcount -= 1 canuseshieldbackup=0; gamercooldowns.alarm[10]=1; } else {show_HUD_message(string(text.shieldbackuprecharging))} } else {show_HUD_message(string(text.noshieldbackups))}}
+if KeyActionCURKEY = 8 then
+{if global.shieldbackup > 0 then ability_trigger(id,"shieldbackup") else show_HUD_message("No shield backup remaining")}
 //EMP
+if KeyActionCURKEY = 9 then
+{if global.emp > 0 then ability_trigger(id,"EMP") else show_HUD_message("No EMP remaining")}
+//Cloack
 if KeyActionCURKEY = 10 then
-{OwnerID=id; if global.empcount >= 1 then{ if canuseemp=1 then{ {a=instance_create(x,y,emp_obj)} with (a) {owner=OwnerID} is_using_emp=true global.empcount -= 1 alarm[8]=1.5*room_speed canuseemp=0; gamercooldowns.alarm[5]=1; } else {show_HUD_message(string(text.emprecharging))} } else {show_HUD_message(string(text.noemps))}}
+{ENTRY="CLOAK" alarm[9]=1;}
+//Active PET
+if KeyActionCURKEY = 11 then
+{event_user(13);}
+//PET kamikaze
+if KeyActionCURKEY = 12 then
+{with(HUD_user){event_user(0);}}
+//DOCK
+if KeyActionCURKEY = 13 then
+{ENTRY="DOCK" alarm[9]=1;}
+//STATS
+if KeyActionCURKEY = 14 then
+{if instance_exists(stats_window) then instance_destroy(stats_window) else { instance_destroy(window_background); instance_destroy(jumpmap); instance_destroy(window_background); instance_create_depth(0,0,-510,stats_window);}}
+//QUESTS
+if KeyActionCURKEY = 15 then
+{if instance_exists(quests_window) then instance_destroy(quests_window) else { instance_destroy(quests_window); instance_destroy(jumpmap); instance_create_depth(0,0,-510,quests_window);}}
+//Jump
+if KeyActionCURKEY = 16 then
+{ENTRY="JUMP" alarm[9]=1;}
+//Repair
+if KeyActionCURKEY = 17 then
+{if (instance_exists(repbot)=false and own_health!=health_def and attacking=false) then {rep=instance_create_depth(x,y,-5,repbot); rep.owner=gamer.id;}}
+//ISH
+if KeyActionCURKEY = 22 then
+{if global.ish > 0 then ability_trigger(id,"ISH") else show_HUD_message("No ISH remaining")}
+//SKIP COUNTDOWN
+if KeyActionCURKEY = 26 then
+{if instance_exists(pop_ctrl_GG) then pop_ctrl_GG.count_down_step = 1;}
+//SAVE GAME
+if KeyActionCURKEY = 27 then
+{save_game();}
+//CHANGE CONFIG
+if KeyActionCURKEY = 29 then
+{change_config(gamer.id);}
+//SHIP SKILL
+if KeyActionCURKEY = 30 then
+{
+	if ship_name = "sentinel" then {ability_trigger(id,"sentinel_effect")}
+	if ship_name = "spectrum" then {ability_trigger(id,"spectrum_effect")}
+	if ship_name = "solace" then {ability_trigger(id,"solace_effect")}
+	if ship_name = "diminisher" then {ability_trigger(id,"diminisher_effect")}
+	if ship_name = "venom" then {ability_trigger(id,"venom_effect")}
+}
+
+
+
+
+/*
+
 //AdminMode
 if KeyActionCURKEY = 11 then
 {if admincheat=1 then{if global.isadmin=0 then {SHPRTN=Ship; global.isadmin=1; Ship = "admin"; event_user(0); guns_installation(gamer); show_protocol_message(string(text.adminon)){}}else if global.isadmin=1 then {global.isadmin=0Ship = SHPRTN;alarm[1]=10*2;show_protocol_message(string(text.adminoff))event_user(0);gamer.MaxDamage=dmgrtn{}}}else if admincheat=0 then{show_HUD_message(string(text.adminmodeisdisabled))}}
@@ -64,23 +112,14 @@ if KeyActionCURKEY = 13 then
     {
         show_HUD_message(string("Spectrum ability is loading..."))
     } */
-}
-
+//}
+/*
 
 //EnergyLeech
 if KeyActionCURKEY = 14 then
 {if global.eleech=0 then{global.eleech=1;show_HUD_message(string(text.eleechon))instance_create(x,y,eleech_obj)}else if global.eleech=1 then{global.eleech=0;show_HUD_message(string(text.eleechoff))}}
-//Dock
-if KeyActionCURKEY = 15 then
-{ENTRY="DOCK" alarm[9]=1;}
-//Jump
-if KeyActionCURKEY = 16 then
-{ENTRY="JUMP" alarm[9]=1;}
-//Repair
-if KeyActionCURKEY = 17 then
-{
-	if (instance_exists(repbot)=false and own_health!=health_def and attacking=false) then {rep=instance_create_depth(x,y,-5,repbot); rep.owner=gamer.id;}
-}
+
+
 //DroneFormationDefault
 if KeyActionCURKEY = 18 then
 {if global.droneformation!=1 then{global.droneformation=1; guns_installation(gamer); restore=true; alarm[1]=15*2;}}

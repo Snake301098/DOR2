@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_level_from_xp",
   "isCompatibility":false,
   "isDnD":false,

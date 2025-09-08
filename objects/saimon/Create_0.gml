@@ -35,6 +35,5 @@ EPPOINTS:=1600*global.GAMERATE;
 HONORPOINTS:=8*global.GAMERATE; 
 CREDITS:=1600*global.GAMERATE;
 URIDIUM:=4*global.GAMERATE;
-reward=set_mob_reward("sibelon", "normal", room);
 followHP = health_def;
 followShield = own_shield;

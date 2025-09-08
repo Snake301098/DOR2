@@ -2,7 +2,17 @@
 
 if instance_exists(target) then 
 {	
-	if action[0] = "battle" then ammo_selected = x4_ammo
+	if action[0] = "battle" then
+	{
+		if RPOINT >= 50 then ammo_selected = x4_ammo
+		else ammo_selected = choose(x4_ammo,x4_ammo,x4_ammo,x4_ammo,x3_ammo,x3_ammo,x2_ammo,x1_ammo);
+	}
+	if action[0] = "farming" then 
+	{
+		if RPOINT >= 80 then ammo_selected = choose(x4_ammo,x4_ammo,x3_ammo,x3_ammo,x2_ammo,x1_ammo);
+		if RPOINT < 80  and RPOINT >= 50 ammo_selected = choose(x4_ammo,x3_ammo,x2_ammo,x2_ammo,x2_ammo,x1_ammo,x1_ammo,x1_ammo);
+		if RPOINT < 50 ammo_selected = choose(x4_ammo,x3_ammo,x2_ammo,x2_ammo,x2_ammo,x1_ammo,x1_ammo,x1_ammo,x1_ammo,x1_ammo);
+	}
 	
 	if target.v_zone_bz=true then 
 	{

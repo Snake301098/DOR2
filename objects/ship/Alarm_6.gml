@@ -2,8 +2,19 @@
 
 //running or attacking ships nearby
 //setting chef as well to follow players
+fully_spawned = true;
 
 var potentiel_chefs = [];
+
+if action[0] = "voyager"
+{
+	if choose(0,1,1) == 1
+	{
+		//simulating the player is kind of afk while traveling and dont see anything
+		alarm[6] = irandom_range(40,130);
+		exit;
+	}
+}
 
 if action[0] != "running" //it was if is not invader before
 {
@@ -12,10 +23,10 @@ if action[0] != "running" //it was if is not invader before
 	for (i=1; i<=nbr_ships; i+=1)
 	{
 		
-		//RUN ---------------------------
 		var _ship = ships_list[|i-1]; 
 		if _ship.corporation != corporation
 		{
+			//RUN ---------------------------
 			if _ship.RPOINT >= RPOINT + 20 and distance_to_object(_ship) < irandom_range(300,550) and corporation = info_map(room, "owners") and isInvader = 0 
 			{
 				if info_map(room,"pvp") = false
@@ -31,7 +42,7 @@ if action[0] != "running" //it was if is not invader before
 			
 			
 			//FIGHT SHIP ------------------------------------
-			if _ship.RPOINT < RPOINT + 20 and distance_to_object(_ship) < irandom_range(300,550) and isInvader = 0 
+			if _ship.RPOINT < RPOINT + 20 and distance_to_object(_ship) < irandom_range(300,550)
 			{
 				if isAttacking = 0
 				{

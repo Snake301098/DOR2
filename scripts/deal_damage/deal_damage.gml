@@ -6,27 +6,40 @@ function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_
 	if _victim = gamer.id then _color = c_purple else _color = c_red
 	
 	if is_numeric(_damage)
-	{	
+	{
+		var _sentinel_effect_coef = 1;
+		var _spectrum_effect_coef = 1;
+		var _spectrum_effect_coef = 1;
+		var _diminisher_effect_coef = 1;
+		if _victim.is_using_sentinel = true then _sentinel_effect_coef = 0.7;
+		if _victim.is_using_spectrum = true then _spectrum_effect_coef = 0.5;
+		if _attacker.is_using_spectrum = true then _spectrum_effect_coef = 0.75;
+		if _victim.is_using_diminisher = true then _diminisher_effect_coef = 2;
+		
+		_damage *= _spectrum_effect_coef;
+		
 		if _ammo = "x5"
 		{
-			_victim.own_shield -= _damage
-			_attacker.own_shield += _damage
+			_victim.own_shield -= _damage * _sentinel_effect_coef * _diminisher_effect_coef
+			_attacker.own_shield += _damage * _sentinel_effect_coef * _diminisher_effect_coef
 		}
 		else
 		{
 			var _shield_absorb = _victim.shieldAbsorb;
+			if _ammo = "venom_effect" then _shield_absorb = 0;
 	
-			if _victim.own_shield <= _damage * _shield_absorb
+			if _victim.own_shield <= _damage * _shield_absorb * _sentinel_effect_coef * _diminisher_effect_coef
 			{
 				_victim.own_health -= _damage - _victim.own_shield
 				_victim.own_shield = 0
 			}
 			else
 			{
-				_victim.own_health -= _damage * (1 - _shield_absorb)
-				_victim.own_shield -= _damage * _shield_absorb
+				_victim.own_health -= _damage * (1 - _shield_absorb * _sentinel_effect_coef * _diminisher_effect_coef)
+				_victim.own_shield -= _damage * _shield_absorb * _sentinel_effect_coef * _diminisher_effect_coef
 			}
 		}
+		_damage *= _sentinel_effect_coef * _diminisher_effect_coef;
 	}
 	
 	if _victim.own_health <= 0 and _ammo = "kamikaze" then _victim.killed_by_gamer_kami = true;

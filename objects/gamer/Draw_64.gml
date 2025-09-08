@@ -1,6 +1,7 @@
 /// @description 
 
 var ship_sprite=info(ship_name,"sprite");
+if ship_name = "" then ship_sprite = empty_spr
 if(global.cloaked == 1){
     alpha=0.5
 }else{

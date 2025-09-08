@@ -1,6 +1,11 @@
 /// @description 
-if ship_name = "nostromo" then sprite_index = nostromo_spr
+if ship_name = "goliaths" then sprite_index = goliaths_spr
+if ship_name = "vengeances" then sprite_index = vengeances_spr
+if ship_name = "bad_ships" then sprite_index = bad_ships_spr
+if ship_name = "new_gens" then sprite_index = new_gens_spr
 if ship_name = "leonov" then sprite_index = leonov_spr
+if ship_name = "phoenix" then sprite_index = phoenix_spr
+if ship_name = "nostromo" then sprite_index = nostromo_spr
 if ship_name = "bigboy" then sprite_index = bigboy_spr
 if ship_name = "vengeance" then sprite_index = vengeance_spr
 if ship_name = "adept" then sprite_index = adept_spr

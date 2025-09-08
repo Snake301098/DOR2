@@ -17,7 +17,7 @@ var rows = 5;
 var columns = 2;
 	
 //SHIPS TO BUY
-var ships_list = ["nostromo","leonov","bigboy","vengeance","adept","avenger","lightning","revenge","corsair","goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"];
+var ships_list = ["bad_ships","vengeances","goliaths","new_gens","phoenix","nostromo","leonov","bigboy","vengeance","adept","avenger","lightning","revenge","corsair","goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"];
 var owned_list = [1,0,0] 
 	
 	
@@ -45,15 +45,15 @@ for (j=1; j<=rows; j+=1)
 var left_btn=instance_create_depth(0,0,depth-5,button_left_right);
 left_btn.category = "ships_stats"
 left_btn.x=370+100/2;
-left_btn.y=170;
+left_btn.y=200;
 if page_ships1<=1 then left_btn.image_index=0 else left_btn.image_index=1;
 left_btn.btn_direction="up";
 				
 var right_btn=instance_create_depth(0,0,depth-5,button_left_right);
 right_btn.category = "ships_stats"
 right_btn.x=370+100/2;
-right_btn.y=810;
-if page_ships1>=3 then right_btn.image_index=0 else right_btn.image_index=1;
+right_btn.y=840;
+if page_ships1>=4 then right_btn.image_index=0 else right_btn.image_index=1;
 right_btn.btn_direction="down";
 
 

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"check_map_unlocked",
   "isCompatibility":false,
   "isDnD":false,

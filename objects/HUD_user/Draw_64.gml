@@ -42,6 +42,9 @@ draw_sprite_ext(hud_ish_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*3
 draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*4*_ratio,920,_ratio,_ratio,0,c_white,1); //ammo
 draw_sprite_ext(hud_ammo2_spr,0,_start,870,_ratio,_ratio,0,c_white,1); //ammo
 
+//ABILITY SHIP SKILL
+draw_sprite_ext(stats_icons_spr,3,_start+39*2,870,1,1,0,c_white,1); //ship skill
+
 //Ammo selected
 var _xx_sel = 0
 if gamer.ammo_display = "x1" then _xx_sel = _start 
@@ -63,6 +66,9 @@ with cooldowns_ctrl
 {
 	if owner = gamer.id
 	{
+		//ABILITY SHIP SKILL
+		var _ability_reload_img = 0;
+		if gamer.ship_name = "sentinel" then _ability_reload_img = round(100 * (alarm_get(6) / global.warrep_cooldown));
 		_warrep_reload_img = round(100 * (alarm_get(1) / global.warrep_cooldown));
 		_emp_reload_img = round(100 * (alarm_get(2) / global.emp_cooldown));
 		_ish_reload_img = round(100 * (alarm_get(3) / global.ish_cooldown));
@@ -75,6 +81,9 @@ with gamer {_rsb_reload_img = round(100 * (alarm_get(10) / global.rsb_cooldown))
 
 draw_sprite_ext(reload_spr,_rsb_reload_img,_start + sprite_get_width(shiphud_spr)*_ratio,920,_ratio,_ratio,0,c_white,1)
 draw_sprite_ext(reload_spr,_warrep_reload_img,_start + 39*_ratio,870,_ratio,_ratio,0,c_white,1)
+//ABILITY SHIP SKILL
+draw_sprite_ext(reload_spr,_ability_reload_img,_start + 2*39*_ratio,870,_ratio,_ratio,0,c_white,1)
+
 draw_sprite_ext(reload_spr,_emp_reload_img,_start + sprite_get_width(shiphud_spr)*_ratio+39*2*_ratio,920,_ratio,_ratio,0,c_white,1)
 draw_sprite_ext(reload_spr,_ish_reload_img,_start + sprite_get_width(shiphud_spr)*_ratio+39*3*_ratio,920,_ratio,_ratio,0,c_white,1)
 draw_sprite_ext(reload_spr,_shieldbackup_reload_img,_start,870,_ratio,_ratio,0,c_white,1)
@@ -98,12 +107,12 @@ draw_text(_start+39*1*_ratio,910,dotString(global.warrep,true))
 draw_set_valign(fa_middle);
 draw_set_halign(fa_left)
 draw_sprite_ext(userhud_spr,0,25,60,1.2,1.2,0,c_white,0.8)
-draw_text_ext(+70,76+31,string(strEP),-1,string_width*0.7);   
+draw_text_ext(+70,76+31,string(dotString(strEP)),-1,string_width*0.7);   
 draw_text_ext(+70,97+31,string(global.level),-1,string_width*0.7);
-draw_text_ext(+70,117+31,string(strHO),-1,string_width*0.7);
-draw_text_ext(+70,137+31,string(global.ggenergy),-1,string_width*0.7);
+draw_text_ext(+70,117+31,string(dotString(strHO)),-1,string_width*0.7);
+draw_text_ext(+70,137+31,string(dotString(global.ggenergy)),-1,string_width*0.7);
 draw_text_ext(+195,97+31,string(dotString(round(global.uridium))),-1,string_width*0.7);
-draw_text_ext(+195,76+31,string(strCR),-1,string_width*0.7); 
+draw_text_ext(+195,76+31,string(dotString(strCR)),-1,string_width*0.7); 
 draw_text_ext(+195,117+31,string(dotString(round(global.tdm_tickets))),-1,string_width*0.7);
 draw_text_ext(+195,137+31,string(dotString(round(global.chest_gold_key))) + " Go | " + string(dotString(round(global.chest_green_key))) + " Gr",-1,string_width*0.7);
 //draw_text_ext(+220,145,string(global.boxkey),-1,string_width*0.7);    
@@ -126,10 +135,19 @@ draw_text_ext(+370,137+31,string(gamer.config),-1,string_width*0.7);
 //draw_text_ext(+90,135,string(global.ggenergy),-1,string_width*0.7);
 
 //PET
-draw_sprite_ext(pet_hud_spr,0,xx_pet,yy_pet+20,1,1,0,c_white,1)
+if instance_exists(PET)
+{
+	draw_sprite_ext(pet_hud_spr,1,xx_pet,yy_pet+20,1,1,0,c_white,1)
+	draw_sprite_ext(pet_spr,19,xx_pet+45,yy_pet+100,0.5,0.5,0,c_white,0.8);
+}
+else
+{
+	draw_sprite_ext(pet_hud_spr,0,xx_pet,yy_pet+20,1,1,0,c_white,1)	
+}
 draw_sprite_ext(pet_kamikaze_spr,0,xx_pet+33,yy_pet+203,0.55,0.55,0,c_white,1)
 if kamikaze_selected then draw_sprite_ext(pet_selected_spr,0,xx_pet+33,yy_pet+203,0.55,0.55,0,c_white,1)
 draw_sprite_ext(reload_spr,_kamikaze_reload_img,xx_pet+10,yy_pet+180,_ratio,_ratio,0,c_white,1)
+draw_text(xx_pet+240,yy_pet+80,dotString(global.pet_fuel));
 
 //Draw CP HUD
 /*

@@ -2,10 +2,10 @@
 // You can write your code in this editor
 x=0;
 y=0;
-active_tab = "PROFILE";
+active_tab = global.active_page_stats_window;
 item_info = ""; //show stats of objects etc
 page_droid=1;
-page_ships1=1;
+page_ships1=global.ship_page_stats_window;
 
 //SHOP PARAMETERS
 item_selected=""; //for buying or upgrading stuff, we store the item there
@@ -17,7 +17,7 @@ cost_type="";
 //file_text_write_string(file,"oui,non,hey")
 //file_text_close(file)
 
-ship_selected="all"
+ship_selected=global.ship_selected_stats_window;
 
 //ORIGINS
 _Profilex = 740;

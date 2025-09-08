@@ -3,7 +3,7 @@ event_inherited();
 //FOLLOW CHEF
 #region
 
-if chef > 0 and action[0] != "running" then 
+if chef > 0 and action[0] != "running" and action[0] != "voyager" then 
 {
 	if path_index != follow_chef_0 and path_index != follow_chef_1 and path_index != follow_chef_2	and path_index != follow_chef_3 and path_index != follow_chef_4 and path_index != follow_chef_5 and path_index != follow_chef_6 and path_index != follow_chef_7 then 
 	{
@@ -348,8 +348,11 @@ if action[0] = "running"
 	move_towards_point(running_x,running_y,ship_speed)
 }
 
-if Ship = "aegis" then action[0]="healer"
-
+if action[0] = "voyager"
+{
+	path_end();
+	move_towards_point(voyager_target_x,voyager_target_y,ship_speed);	
+}
 
 /*
 //if too far from target

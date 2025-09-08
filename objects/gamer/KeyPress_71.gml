@@ -1,4 +1,10 @@
-///@description NUKE
+///@description 
+audio_play_sound(select,1,false)
+KeyActionCURKEY=global.KeyActionG
+event_user(15);
+
+
+
 
 /*
 if can_use_nuke_k1 = true

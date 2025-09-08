@@ -19,6 +19,9 @@ isAttacked=0; //if another ship is attacking id
 isAttacking=0; //if is attacking another ship
 can_use_nuke_k1=true;
 ammo_selected=x4_ammo;
+voyager_target_x = 0; //if ship wants to go from a map to another it will check those coordinates as target
+voyager_target_y = 0;
+fully_spawned = false; //3seconds after spawning will become true, so if voyager ship spawns it wont be directly jumping when touching the "origin" portal
 
 money=0;                                //Íàãðàäà çà êîðàáëü ââèäå äåíåã.
 runing=false;                           //Îïðåäåëÿåò, ïûòàåòñÿ ëè êîðàáëü ñáåæàòü.
@@ -194,5 +197,5 @@ alarm[1]=irandom_range(10,120);
 alarm[2]=irandom_range(10,120);
 alarm[3]=irandom_range(10,120);
 alarm[4]=irandom_range(10,120);
-alarm[6]=irandom_range(10,120);
+alarm[6]=irandom_range(150,300);
 alarm[9] = irandom_range(10,120);

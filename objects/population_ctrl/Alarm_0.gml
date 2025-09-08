@@ -143,7 +143,7 @@ if (room=lv1_8 or room=lv2_8 or room=lv3_8)   then
 	}
 }
 
-alarm[0]  = irandom_range(5,15) * room_speed;    
+alarm[0]  = irandom_range(15,30) * room_speed;    
     /*
 if (room=lv1_2 or room=lv2_2 or room=lv3_2) then
     {

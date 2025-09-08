@@ -15,13 +15,23 @@ function create_quest(i)
 	if entity = "player"
 	{
 		map = choose("own","ennemy","pvp","all")
-		reward_type = "chest_green_key"
-		total = choose(10,25,50)
-		if total = 10 then reward_qty = 1
-		if total = 25 then reward_qty = 2
-		if total = 50 then reward_qty = 3
-		
-		if map = "pvp" then reward_qty*=2
+		reward_type = choose("chest_green_key","chest_green_key","chest_gold_key")
+		if reward_type = "chest_green_key"
+		{
+			total = choose(10,25,50)
+			if total = 10 then reward_qty = 1
+			if total = 25 then reward_qty = 2
+			if total = 50 then reward_qty = 3
+		}
+		else
+		{
+			total = choose(15,35,75)
+			if total = 10 then reward_qty = 1
+			if total = 25 then reward_qty = 2
+			if total = 50 then reward_qty = 3			
+		}
+		if map = "pvp" then reward_qty+=1
+		if map = "ennemy" then reward_qty+=2
 	}
 	
 		if entity = "mob"

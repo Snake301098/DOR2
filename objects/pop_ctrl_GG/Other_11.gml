@@ -14,7 +14,6 @@ if wave = 11 and started = false then
 	started = true;
 	wave = 0
 	//GIVE REWARDS HERE AND UPDATE STATS
-	show_protocol_message("GG completed");
 	
 	if room = GGA
 	{
@@ -24,6 +23,16 @@ if wave = 11 and started = false then
 		global.alphawave = 0
 		global.alphaparts = 0
 		update_stats("GGA")
+		
+		var URIDIUM = 20000;
+		var _X4 = 20000;
+		var EPPOINTS = 100000;
+		var HONORPOINTS = 4000000;
+		show_protocol_message("GG Alpha completed");
+		show_protocol_message(string(text.received) + " " + string(dotString(URIDIUM)) + " " + "Uridium")
+		show_protocol_message(string(text.received) + " " + string(dotString(_X4)) + " " + "UCB-100")
+		show_protocol_message(string(text.received) + " " + string(dotString(EPPOINTS)) + " " + string("xp"))
+		show_protocol_message(string(text.received) + " " + string(dotString(HONORPOINTS)) + " " + string("honor"))
 	}
 	
 	if room = GGB
@@ -33,7 +42,17 @@ if wave = 11 and started = false then
 		global.betaonmap = 0
 		global.betawave = 0
 		global.betaparts = 0
-		update_stats("GGA")
+		update_stats("GGB")
+		
+		var URIDIUM = 40000;
+		var _X4 = 40000;
+		var EPPOINTS = 200000;
+		var HONORPOINTS = 8000000;
+		show_protocol_message("GG Beta completed");
+		show_protocol_message(string(text.received) + " " + string(dotString(URIDIUM)) + " " + "Uridium")
+		show_protocol_message(string(text.received) + " " + string(dotString(_X4)) + " " + "UCB-100")
+		show_protocol_message(string(text.received) + " " + string(dotString(EPPOINTS)) + " " + string("xp"))
+		show_protocol_message(string(text.received) + " " + string(dotString(HONORPOINTS)) + " " + string("honor"))
 	}
 	
 	if room = GGY
@@ -44,6 +63,16 @@ if wave = 11 and started = false then
 		global.gammawave = 0
 		global.gammaparts = 0
 		update_stats("GGY")
+		
+		var URIDIUM = 60000;
+		var _X4 = 60000;
+		var EPPOINTS = 300000;
+		var HONORPOINTS = 12000000;
+		show_protocol_message("GG Gamma completed");
+		show_protocol_message(string(text.received) + " " + string(dotString(URIDIUM)) + " " + "Uridium")
+		show_protocol_message(string(text.received) + " " + string(dotString(_X4)) + " " + "UCB-100")
+		show_protocol_message(string(text.received) + " " + string(dotString(EPPOINTS)) + " " + string("xp"))
+		show_protocol_message(string(text.received) + " " + string(dotString(HONORPOINTS)) + " " + string("honor"))
 	}
 	
 	if room = GGD
@@ -54,5 +83,15 @@ if wave = 11 and started = false then
 		global.deltawave = 0
 		global.deltaparts = 0
 		update_stats("GGD")
+		
+		var URIDIUM = 45000;
+		var _X4 = 45000;
+		var EPPOINTS = 225000;
+		var HONORPOINTS = 9000000;
+		show_protocol_message("GG Delta completed");
+		show_protocol_message(string(text.received) + " " + string(dotString(URIDIUM)) + " " + "Uridium")
+		show_protocol_message(string(text.received) + " " + string(dotString(_X4)) + " " + "UCB-100")
+		show_protocol_message(string(text.received) + " " + string(dotString(EPPOINTS)) + " " + string("xp"))
+		show_protocol_message(string(text.received) + " " + string(dotString(HONORPOINTS)) + " " + string("honor"))
 	}
 }

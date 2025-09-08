@@ -8,6 +8,39 @@ function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="n
 //arg5: Shiptype
 //arg6: Power
 
+
+	//VOYAGER
+	#region
+	var voyager_x1=0;
+	var voyager_x2=0;
+	var voyager_y1=0;
+	var voyager_y2=0;
+	if _action = "voyager" and room != arena
+	{
+		var portal_target = 0;
+		var portal_origin = 0;
+		var all_portals = [];
+		with portal_object {array_push(all_portals,id)}
+		if array_length(all_portals) >= 2
+		{
+			var indice_origin = irandom_range(0,array_length(all_portals)-1)
+			portal_origin = all_portals[indice_origin]
+			voyager_x1 = portal_origin.x
+			voyager_y1 = portal_origin.y
+			array_delete(all_portals,indice_origin,1);
+			
+			var indice_target = irandom_range(0,array_length(all_portals)-1)
+			portal_target = all_portals[indice_target]
+			voyager_x2 = (portal_target.x - voyager_x1)*1000000 + voyager_x1
+			voyager_y2 = (portal_target.y - voyager_y1)*1000000 + voyager_y1
+		}
+		else
+		{
+			show_message("Issue found only one portal for voyager spawning")
+		}
+	}
+	#endregion
+
 	var _id_chef = 0;
 
 
@@ -83,6 +116,13 @@ function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="n
 			event_user(3);
 			guns_installation(id);
 			own_health=health_def;
+			if action[0] = "voyager" and room != arena
+			{
+				x = voyager_x1 + irandom_range(-100,100);
+				y = voyager_y1 + irandom_range(-100,100);
+				voyager_target_x = voyager_x2 + irandom_range(-100,100);
+				voyager_target_y = voyager_y2 + irandom_range(-100,100);
+			}
 		}
 		
 		if group = true

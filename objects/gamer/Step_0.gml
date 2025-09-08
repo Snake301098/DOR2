@@ -38,28 +38,44 @@ if attacking=true then
 			}
 			else
 			{
-			//if ammo[ammo[0,0],0] / global.code1<guns  {show_HUD_message(text.no_ammo); break;}           
-				if corporation=target.corporation then            
+				var ammo_qty = 0;
+				if ammo_selected = x1_ammo then ammo_qty = global.x1;
+				if ammo_selected = x2_ammo then ammo_qty = global.x2;
+				if ammo_selected = x3_ammo then ammo_qty = global.x3;
+				if ammo_selected = x4_ammo then ammo_qty = global.x4;
+				if ammo_selected = sab then ammo_qty = global.x5;
+				if ammo_selected = rsb then ammo_qty = global.x6;
+				
+				if ammo_qty >= gamer.guns
 				{
-					show_HUD_message(text.target_is_ally)
-					attacking=false;
-				}
-				else
-				{
-					if point_distance(x,y,target.x,target.y) <= global.attack_range then
-					{   
-						restore:=false;
-						//if GunSprite[1]<1 then 
-						//{
-						//	show_HUD_message(text.no_gun); break;
-			            //}
-						//ammo[ammo[0,0],0]-=guns*global.code1;
-						event_user(1);
+					if corporation=target.corporation then            
+					{
+						show_HUD_message(text.target_is_ally)
+						attacking=false;
 					}
 					else
 					{
-						show_HUD_message(text.target_lenght_out);
+						if point_distance(x,y,target.x,target.y) <= global.attack_range then
+						{   
+							restore:=false;
+							if gamer.guns < 1 then 
+							{
+								show_HUD_message(text.no_gun);
+				            }
+							else
+							{
+								event_user(1);
+							}
+						}
+						else
+						{
+							show_HUD_message(text.target_lenght_out);
+						}
 					}
+				}
+				else
+				{
+					show_HUD_message("No more ammos..");
 				}
 			}
 		}
@@ -144,10 +160,13 @@ else
 if target=id then target=noone;
 
 //Health fix; Prevens HP from going over max when using energy leech.
-if gamer.own_health > gamer.health_def then
+if gamer.own_health > gamer.health_def or is_nan(own_health) then
 {
-gamer.own_health=gamer.health_def
+	gamer.own_health=gamer.health_def
 }
+
+//fix2
+if is_nan(own_shield) then own_shield = shield_def;
 
 //Cloak fix; Prevens you from staying cloaked when shooting.
 if attacking=true and global.cloaked=1 then {global.cloaked=0}
@@ -201,6 +220,8 @@ if own_health <= 0
 		global.deltawave = 0
 		global.deltaparts = 0
 	}
+	
+	with(PET){if owner=gamer.id then instance_destroy();}
 	
 	//Respawn
 	if !instance_exists(respawn) then instance_create_depth(0,0,0,respawn);

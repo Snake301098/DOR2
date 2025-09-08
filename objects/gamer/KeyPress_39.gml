@@ -1,3 +1,5 @@
+/*
+
 //x=room_width/2;
 //y=room_height/2
 spawn_ship(gamer.x,gamer.y,1,,,,1,,)

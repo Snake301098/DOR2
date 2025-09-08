@@ -2,11 +2,15 @@
 
 var myID = id;
 var isAttackedByID = -1;
+var theMaxDmg = -1;
 with(ships)
 {
 	if instance_exists(target)
 	{
-		if target = myID then isAttackedByID = target;
+		if target = myID
+		{
+			if MaxDamage >= theMaxDmg then {isAttackedByID = target; theMaxDmg = MaxDamage;}
+		}
 	}
 }
 

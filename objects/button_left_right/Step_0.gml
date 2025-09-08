@@ -22,8 +22,8 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 		
 		if category = "ships_stats"
 		{
-			if btn_direction="down" then {with stats_window {page_ships1+=1; event_user(0); event_user(1)}}
-			if btn_direction="up" then {with stats_window{page_ships1-=1; event_user(0); event_user(1)}}
+			if btn_direction="down" then {with stats_window {page_ships1+=1; global.ship_page_stats_window = page_ships1; event_user(0); event_user(1)}}
+			if btn_direction="up" then {with stats_window{page_ships1-=1; global.ship_page_stats_window = page_ships1; event_user(0); event_user(1)}}
 		}
 		cooldown=true
 		alarm[0] = 20;

@@ -1,5 +1,7 @@
 /// @description 
 
+if global.ship_selected_stats_window = ship_name then selected = true;
+
 if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x - sprite_get_width(sprite_index)*image_xscale/2, y - sprite_get_height(sprite_index)*image_yscale/2, x + sprite_get_width(sprite_index)*image_xscale/2, y + sprite_get_height(sprite_index)*image_yscale/2))
 {
    if clickable
@@ -10,12 +12,14 @@ if (mouse_check_button_pressed(mb_left) and point_in_rectangle(device_mouse_x_to
 	   {
 		   with (stats_ships_icon) {selected=false;}
 		   selected=true;
+		   global.ship_selected_stats_window = ship_name;
 		   stats_window.ship_selected = ship_name
 	   }
 	   else
 	   {
 		 stats_ships_icon.selected=false
 		 stats_window.ship_selected="all"
+		 global.ship_selected_stats_window = "all"
 	   }
 	   with(stats_window){event_user(1)}
 	   //var _cost_qty, _cost_type, _cost_lot;

@@ -1,2 +1,4 @@
-/// @description SKIP COUNTDOWN GG
-if instance_exists(pop_ctrl_GG) then pop_ctrl_GG.count_down_step = 1;
+/// @description 
+audio_play_sound(select,1,false)
+KeyActionCURKEY=global.KeyActionU
+event_user(15);

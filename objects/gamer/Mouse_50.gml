@@ -1,5 +1,5 @@
 /// @description move ship
-if instance_exists(window_background)=false and destroyed=0 then
+if instance_exists(window_background)=false and instance_exists(stats_window) = false and destroyed=0 then
 {
 	if moveship = true
 	{

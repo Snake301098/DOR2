@@ -79,6 +79,25 @@ function hangar_equip(){
 		}
 		#endregion
 		
+		//uninstalling from PET item
+		#region
+		if cell_selected.category = "pet_guns"
+		{
+			for (var pos=1; pos<=99; pos+=1)
+			{
+				if gamer.Inventory[pos] = "" or gamer.Inventory[pos]= "noone" then 
+				{
+					gamer.Inventory[pos]=cell_selected.content; 
+					loaded=true; 
+					global.pet_guns[cell_selected.position]=""; 
+					with (inv_cell) {if (category="inventory" and position=pos) then selected=true else selected=false;}
+					with(PET){event_user(0);}
+					break;
+				}
+			}
+		}
+		#endregion
+		
 		//installing from inventory
 		#region
 		if cell_selected.category = "inventory"
@@ -95,6 +114,22 @@ function hangar_equip(){
 							loaded=true; 
 							gamer.Inventory[cell_selected.position]=""; 
 							with (inv_cell) {if (category="inventory" and position=pos) then selected=true else selected=false;}
+							break;
+						}
+					}
+				}
+				
+				if _current_tab = "PET"
+				{
+					for (var pos=1; pos<=global.pet_guns[0]; pos+=1)
+					{
+						if global.pet_guns[pos] = "" or global.pet_guns[pos]= "noone" then 
+						{
+							global.pet_guns[pos]=cell_selected.content; 
+							loaded=true; 
+							gamer.Inventory[cell_selected.position]=""; 
+							with (inv_cell) {if (category="inventory" and position=pos) then selected=true else selected=false;}
+							with(PET){event_user(0);}
 							break;
 						}
 					}

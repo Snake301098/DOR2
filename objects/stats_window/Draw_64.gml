@@ -38,7 +38,7 @@ switch active_tab
 				if (position-1)<array_length(stats_list) then
 				{
 					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y,stats_list[position-1]);
-					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y+25,get_stats(stats_names[position-1],ship_selected));
+					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y+25,dotString(get_stats(stats_names[position-1],ship_selected)));
 				}
 			}
 		}
@@ -49,9 +49,9 @@ switch active_tab
 		var _res_rankpoints = get_rankpoints();
 		
 		draw_set_font(hangarfont);
-		draw_text(_rankx-85,_ranky-20,string(global.rpbelow))
-		draw_text(_rankx,_ranky-23-20,string(global.rankpoints))
-		draw_text(_rankx+85,_ranky-20,string(global.rpabove))
+		draw_text(_rankx-85,_ranky-20,string(dotString(round(global.rpbelow))))
+		draw_text(_rankx,_ranky-23-20,string(dotString(round(global.rankpoints))))
+		draw_text(_rankx+85,_ranky-20,string(dotString(round(global.rpabove))))
 		
 		draw_sprite_ext(ranks_spr,max(0,_res_rankpoints[0]-1),_rankx-85,_ranky,1,1,0,c_white,1);
 		draw_sprite_ext(ranks_spr,_res_rankpoints[0],_rankx,_ranky-23,1,1,0,c_white,1);
@@ -70,16 +70,16 @@ switch active_tab
 		draw_set_halign(fa_center)
 		draw_set_font(hangarfont);
 		draw_text(_PVPx-110,_PVPy,"NEW GENS");
-		draw_text(_PVPx-110,_PVPy+25,"58234");
+		draw_text(_PVPx-110,_PVPy+25,dotString(get_stats("newgen_kills",ship_selected)));
 			
 		draw_text(_PVPx-110,_PVPy+150,"GOLIATHS");
-		draw_text(_PVPx-110,_PVPy+150+25,"58234");
+		draw_text(_PVPx-110,_PVPy+150+25,dotString(get_stats("gogo_kills",ship_selected)));
 			
-		draw_text(_PVPx-110,_PVPy+400,"VENGEANCES");
-		draw_text(_PVPx-110,_PVPy+400+25,"58234");
+		draw_text(_PVPx-110,_PVPy+400,"venven_kills");
+		draw_text(_PVPx-110,_PVPy+400+25,dotString(get_stats("gogo_kills",ship_selected)));
 			
 		draw_text(_PVPx-110,_PVPy+550,"BAD SHIPS");
-		draw_text(_PVPx-110,_PVPy+550+25,"58234");
+		draw_text(_PVPx-110,_PVPy+550+25,dotString(get_stats("badships_kills",ship_selected)));
 		break;
 		#endregion
 	}

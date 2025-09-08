@@ -7,6 +7,7 @@ instance_destroy(shop_cell);
 instance_destroy(button_left_right);
 instance_destroy(button_qty);
 instance_destroy(skilltree_cell);
+instance_destroy(button_switch);
 
 //show_message(active_tab)
 switch active_tab
@@ -199,10 +200,27 @@ switch active_tab
 				change_design_btn.button_id="sell";
 				change_design_btn.button_text="Sell";
 				change_design_btn.image_index=2;
+				
+				//CONFIG buttons
+				var config1_btn = instance_create_depth(0,0,depth-1,button_switch);
+				config1_btn.x = 1055;
+				config1_btn.y = 300;
+				config1_btn.button_sprite = button_default_spr;
+				config1_btn.button_id = "config1";
+				config1_btn.button_text = "1";
+				config1_btn.image_index=1;
+				
+				var config2_btn = instance_create_depth(0,0,depth-1,button_switch);
+				config2_btn.x = 1100;
+				config2_btn.y = 300;
+				config2_btn.button_sprite = button_default_spr;
+				config2_btn.button_id = "config2";
+				config2_btn.button_text = "2";
+				config2_btn.image_index=2;		
+				
 				break;
 			}
 			#endregion
-	
 	
 			//DRONES
 			#region
@@ -383,6 +401,23 @@ switch active_tab
 				change_design_btn.button_text="Sell";
 				change_design_btn.image_index=2;
 				
+				//CONFIG buttons
+				var config1_btn = instance_create_depth(0,0,depth-1,button_switch);
+				config1_btn.x = 1055;
+				config1_btn.y = 300;
+				config1_btn.button_sprite = button_default_spr;
+				config1_btn.button_id = "config1";
+				config1_btn.button_text = "1";
+				config1_btn.image_index=1;
+				
+				var config2_btn = instance_create_depth(0,0,depth-1,button_switch);
+				config2_btn.x = 1100;
+				config2_btn.y = 300;
+				config2_btn.button_sprite = button_default_spr;
+				config2_btn.button_id = "config2";
+				config2_btn.button_text = "2";
+				config2_btn.image_index=2;	
+				
 				
 				break;
 			}
@@ -393,6 +428,73 @@ switch active_tab
 			case "PET":
 			{
 				side_btn_3.image_index=1;
+				
+				if global.pet_unlocked = 1
+				{
+					//show cells for slots
+					//GUNS
+					var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell;
+	
+					cells_start_x = 740;
+					cells_start_y = 420;
+					spacing_x = 53;
+					spacing_y = 53;
+					var cells = 5;
+					var items = global.pet_guns;
+					columns = 5;
+					rows = cells div columns;
+	
+					for (i=1; i<=cells; i+=1)
+					{
+						var _row = i div (columns + 1)
+						var _column = i - (_row * columns) - 1
+						cell=instance_create_depth(0, 0, depth-1, inv_cell);
+						cell.x=cells_start_x+(_column)*spacing_x
+						cell.y=cells_start_y+(_row)*spacing_y
+						cell.position = i;
+						cell.category="pet_guns";
+						cell.sprite_index=inv_cell_spr;
+			
+						if items[cell.position] != noone and items[cell.position] != "" then cell.content= items[cell.position] else cell.content = noone;
+					}
+					
+					
+					//KAMIKAZE
+					if global.pet_kamikaze = 0
+					{
+						//BUY KAMIKAZE
+						var buy_pet_btn = instance_create_depth(0,0,depth-1,button_action)
+						buy_pet_btn.x = 980;
+						buy_pet_btn.y = 330;
+						buy_pet_btn.button_sprite=button_action_spr;
+						buy_pet_btn.button_id="buy_kamikaze";
+						buy_pet_btn.button_text="Buy Kami (50k U)";
+						buy_pet_btn.ask_quantity=false;
+						buy_pet_btn.image_index=2;
+					}
+					
+					//FUEL
+					var buy_fuel_btn = instance_create_depth(0,0,depth-1,button_action)
+					buy_fuel_btn .x = 610;
+					buy_fuel_btn .y = 480;
+					buy_fuel_btn .button_sprite=button_action_spr;
+					buy_fuel_btn .button_id="buy_fuel";
+					buy_fuel_btn .button_text="Buy fuel";
+					buy_fuel_btn .ask_quantity=true;
+					buy_fuel_btn .image_index=2;
+				}
+				else
+				{
+					//BUY PET
+					var buy_pet_btn = instance_create_depth(0,0,depth-1,button_action)
+					buy_pet_btn.x = 872;
+					buy_pet_btn.y = 1080/2;
+					buy_pet_btn.button_sprite=button_action_spr;
+					buy_pet_btn.button_id="buy_pet";
+					buy_pet_btn.button_text="Buy PET (50k U)";
+					buy_pet_btn.ask_quantity=false;
+					buy_pet_btn.image_index=2;
+				}
 				
 				
 				//INVENTORY
@@ -460,7 +562,60 @@ switch active_tab
 			}
 			#endregion
 			
-			default: {active_side_tab="SHIP"; event_user(1);}
+			//HANGARS
+			#region
+			case "HANGARS":
+			{
+
+				side_btn_4.image_index=1;
+				//HANGARS buttons
+				var hangar1_btn = instance_create_depth(0,0,depth-1,button_switch);
+				hangar1_btn.x = 650;
+				hangar1_btn.y = 720;
+				hangar1_btn.button_sprite = button_default_spr;
+				hangar1_btn.button_id = "hangar1";
+				hangar1_btn.button_text = "Hangar 1";
+				hangar1_btn.image_index=1;	
+				
+				var hangar2_btn = instance_create_depth(0,0,depth-1,button_switch);
+				hangar2_btn.x = 850;
+				hangar2_btn.y = 720;
+				hangar2_btn.button_sprite = button_default_spr;
+				hangar2_btn.button_id = "hangar2";
+				hangar2_btn.button_text = "Hangar 2";
+				hangar2_btn.image_index=1;	
+				
+				var hangar3_btn = instance_create_depth(0,0,depth-1,button_switch);
+				hangar3_btn.x = 1050;
+				hangar3_btn.y = 720;
+				hangar3_btn.button_sprite = button_default_spr;
+				hangar3_btn.button_id = "hangar3";
+				hangar3_btn.button_text = "Hangar 3";
+				hangar3_btn.image_index=1;	
+				
+				var hangar4_btn = instance_create_depth(0,0,depth-1,button_switch);
+				hangar4_btn.x = 1250;
+				hangar4_btn.y = 720;
+				hangar4_btn.button_sprite = button_default_spr;
+				hangar4_btn.button_id = "hangar4";
+				hangar4_btn.button_text = "Hangar 4";
+				hangar4_btn.image_index=1;	
+				
+				var hangar5_btn = instance_create_depth(0,0,depth-1,button_switch);
+				hangar5_btn.x = 1450;
+				hangar5_btn.y = 720;
+				hangar5_btn.button_sprite = button_default_spr;
+				hangar5_btn.button_id = "hangar5";
+				hangar5_btn.button_text = "Hangar 5";
+				hangar5_btn.image_index=1;	
+				
+				break;
+			}
+			
+			#endregion
+			
+			
+			default: {active_side_tab="SHIP"; global.active_side_tab_hangar_window = "SHIP"; event_user(1);}
 		}
 		break;
 	}
@@ -788,7 +943,67 @@ switch active_tab
 			}
 			#endregion
 			
-			default: {active_side_tab="SHIPS"; event_user(1);}
+			//OTHERS
+			#region
+			case "OTHERS":
+			{
+				side_btn_1.image_index=1;
+				buy_qty=1;
+				
+				//SHIPS TO BUY
+				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, others_list;
+				
+				others_list=["DMG_1","DMG_2","HP_1","HP_2","SHD_1","SHD_2"];
+	
+				cells_start_x = 640;
+				cells_start_y = 370;
+				spacing_x = 115;
+				spacing_y = 115;
+				rows = 4;
+				columns = 3;
+	
+				for (j=1; j<=rows; j+=1)
+				{
+					for (i=1; i<=columns; i+=1)
+					{
+						position=i + (j-1) * columns;
+						if (position-1)<array_length(others_list) then
+						{
+							cell=instance_create_depth(0, 0, depth-1, shop_cell);
+							cell.x=cells_start_x+(i-1)*spacing_x
+							cell.y=cells_start_y+(j-1)*spacing_y
+							cell.position = position;
+							cell.content=others_list[position-1];
+							cell.clickable=true;
+							cell.category="ammos";
+							cell.sprite_index=shop_icons_spr;
+						}
+					}
+				}
+				
+				/*
+				//QUANTITY BUTTON (no qty when buying ships)
+				btn_qty=instance_create_depth(0,0,depth-1,button_qty);
+				btn_qty.x=1340;
+				btn_qty.y=650;
+				btn_qty.shop_section="shop";
+				btn_qty.image_index=button_qty_spr;*/
+				
+				//BUY BUTTON
+				change_design_btn = instance_create_depth(0,0,depth-1,button_action)
+				change_design_btn.x = 1370;
+				change_design_btn.y = 740;
+				change_design_btn.button_sprite=button_action_spr;
+				change_design_btn.button_id="buy";
+				change_design_btn.button_text="BUY";
+				change_design_btn.image_index=2;
+				
+				break;
+			}
+			#endregion	
+			
+			
+			default: {active_side_tab="SHIPS"; global.active_side_tab_hangar_window = "SHIPS"; event_user(1);}
 		}
 		break;
 	}
@@ -1138,7 +1353,7 @@ switch active_tab
 				break;
 			}
 			
-			default: {active_side_tab="ALPHA"; event_user(1);}
+			default: {active_side_tab="ALPHA"; global.active_side_tab_hangar_window = "ALPHA"; event_user(1);}
 		}
 		break;
 	}

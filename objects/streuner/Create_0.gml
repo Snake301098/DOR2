@@ -34,6 +34,5 @@ EPPOINTS:=400*global.GAMERATE;
 HONORPOINTS:=2*global.GAMERATE;
 CREDITS:=400*global.GAMERATE;
 URIDIUM:=1*global.GAMERATE;
-reward=set_mob_reward("streuner_1", "normal", room);
 followHP = health_def;
 followShield = own_shield;

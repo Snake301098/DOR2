@@ -6,7 +6,11 @@ function get_stats(_stat_name,_ship="all")
 	var res = 0
 	var _stats = [_stat_name]
 	var _ships = [_ship]
-	if _ship = "all" then _ships = ["nostromo","leonov","bigboy","vengeance","adept","avenger","lightning","revenge","corsair","goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"]
+	if _ship = "all" then _ships = ["phoenix","nostromo","leonov","bigboy","vengeance","adept","avenger","lightning","revenge","corsair","goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"]
+	if _ship = "bad_ships" then _ships = ["phoenix","nostromo","leonov","bigboy"];
+	if _ship = "new_gens" then _ships = ["spearhead","citadel","aegis"];
+	if _ship = "vengeances" then _ships = ["vengeance","adept","avenger","lightning","revenge","corsair"];
+	if _ship = "goliaths" then _ships = ["goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom"];
 	
 	if _stat_name = "none" then {return("");exit;}
 	
@@ -17,7 +21,7 @@ function get_stats(_stat_name,_ship="all")
 	
 	if _stat_name = "kills" then
 	{
-		var _stats = ["nostromo_kills","leonov_kills","bigboy_kills","vengeance_kills","adept_kills","avenger_kills","lightning_kills","revenge_kills","corsair_kills","goliath_kills","bastion_kills","enforcer_kills","centaur_kills","exalted_kills","goal_kills","kick_kills","referee_kills","saturn_kills","veteran_kills","diminisher_kills","sentinel_kills","solace_kills","spectrum_kills","venom_kills","spearhead_kills","aegis_kills","citadel_kills"]
+		var _stats = ["phoenix_kills","nostromo_kills","leonov_kills","bigboy_kills","vengeance_kills","adept_kills","avenger_kills","lightning_kills","revenge_kills","corsair_kills","goliath_kills","bastion_kills","enforcer_kills","centaur_kills","exalted_kills","goal_kills","kick_kills","referee_kills","saturn_kills","veteran_kills","diminisher_kills","sentinel_kills","solace_kills","spectrum_kills","venom_kills","spearhead_kills","aegis_kills","citadel_kills"]
 	}
 	
 	if _stat_name = "gogo_kills" then
@@ -37,7 +41,7 @@ function get_stats(_stat_name,_ship="all")
 	
 	if _stat_name = "badships_kills" then
 	{
-		var _stats = ["nostromo_kills","leonov_kills","bigboy_kills"]
+		var _stats = ["phoenix_kills","nostromo_kills","leonov_kills","bigboy_kills"]
 	}
 	
 	if _stat_name = "gg" then

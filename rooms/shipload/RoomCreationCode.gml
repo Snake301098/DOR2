@@ -1,7 +1,7 @@
 randomize();
 instance_create_depth(0,0,0,start_control);
 
-instance_create_depth(0,0,0,rewards_control);
+//instance_create_depth(0,0,0,rewards_control);
 
 //INIT GLOBAL PARAMETERS
 global.transfer_capacity = 20;
@@ -44,4 +44,20 @@ global.cost_kamikaze = 500;
 global.stats = load_csv("stats.csv")
 
 global.protocol_log = [];
+
+
+//BOOSTERS PARAMETERS
+global.booster_damage_i_value = 0.1;
+global.booster_damage_ii_value = 0.2;
+global.booster_hp_i_value = 0.1;
+global.booster_hp_ii_value = 0.2;
+global.booster_shield_i_value = 0.1;
+global.booster_shield_ii_value = 0.2;
+
+//WINDOWS VALUES SELECTED
+global.ship_selected_stats_window = "all";
+global.ship_page_stats_window = 1;
+global.active_page_stats_window = "PROFILE";
+global.active_tab_hangar_window = "EQUIPMENT";
+global.active_side_tab_hangar_window = "SHIP";
 

@@ -1,3 +1,4 @@
-/// @description ISH
-
-if global.ish > 0 then ability_trigger(id,"ISH") else show_HUD_message("No ISH remaining")
+/// @description
+audio_play_sound(select,1,false)
+KeyActionCURKEY=global.KeyAction3
+event_user(15);

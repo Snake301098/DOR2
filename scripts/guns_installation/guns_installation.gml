@@ -75,12 +75,20 @@ function guns_installation(_id){
 				//Slot 1
 			    switch info(droid[i,2],"type")
 			    {
-			        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
+			        case "gun": 
+					{
+						var bonus = 1;
+						if droid[i,4] = "havoc" then bonus = 1.1;
+						MaxDamage+=info(droid[i,2],"damage")*bonus; guns+=1;
+						break;
+					}
 			        case "shield": 
 					{
-						var _absorb = info(droid[i,2],"absorb")
-						var _quantity = info(droid[i,2],"quantity");
-						shield_def+=info(droid[i,2],"quantity"); 
+						var bonus = 1;
+						if droid[i,4] = "hercules" then bonus = 1.1;
+						var _absorb = info(droid[i,2],"absorb");
+						var _quantity = info(droid[i,2],"quantity")*bonus;
+						shield_def+=info(droid[i,2],"quantity");
 						shieldAbsorbC2 += _quantity * _absorb 
 						break;
 					}
@@ -88,11 +96,19 @@ function guns_installation(_id){
 				//Slot 2
 			    switch info(droid[i,3],"type")
 			    {
-			        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
+			        case "gun":
+					{
+						var bonus = 1;
+						if droid[i,4] = "havoc" then bonus = 1.1;
+						MaxDamage+=info(droid[i,3],"damage")*bonus; guns+=1;
+						break;
+					}
 			        case "shield": 
 					{
+						var bonus = 1;
+						if droid[i,4] = "hercules" then bonus = 1.1;
 						var _absorb = info(droid[i,3],"absorb")
-						var _quantity = info(droid[i,3],"quantity");
+						var _quantity = info(droid[i,3],"quantity")*bonus;
 						shield_def+=info(droid[i,3],"quantity"); 
 						shieldAbsorbC2 += _quantity * _absorb 
 						break;
@@ -155,11 +171,19 @@ function guns_installation(_id){
 				//Slot 1
 			    switch info(droid[i,2],"type")
 			    {
-			        case "gun": MaxDamage+=info(droid[i,2],"damage"); guns+=1; break;
+			        case "gun": 
+					{
+						var bonus = 1;
+						if droid[i,4] = "havoc" then bonus = 1.1;
+						MaxDamage+=info(droid[i,2],"damage")*bonus; guns+=1;
+						break;
+					}
 			        case "shield": 
 					{
+						var bonus = 1;
+						if droid[i,4] = "hercules" then bonus = 1.1;
 						var _absorb = info(droid[i,2],"absorb")
-						var _quantity = info(droid[i,2],"quantity");
+						var _quantity = info(droid[i,2],"quantity")*bonus;
 						shield_def+=info(droid[i,2],"quantity"); 
 						shieldAbsorbC1 += _quantity * _absorb 
 						break;
@@ -168,11 +192,19 @@ function guns_installation(_id){
 				//Slot 2
 			    switch info(droid[i,3],"type")
 			    {
-			        case "gun": MaxDamage+=info(droid[i,3],"damage"); guns+=1; break;
+			        case "gun":
+					{
+						var bonus = 1;
+						if droid[i,4] = "havoc" then bonus = 1.1;
+						MaxDamage+=info(droid[i,3],"damage")*bonus; guns+=1;
+						break;
+					}
 			        case "shield": 
 					{
+						var bonus = 1;
+						if droid[i,4] = "hercules" then bonus = 1.1;
 						var _absorb = info(droid[i,3],"absorb")
-						var _quantity = info(droid[i,3],"quantity");
+						var _quantity = info(droid[i,3],"quantity")*bonus;
 						shield_def+=info(droid[i,3],"quantity"); 
 						shieldAbsorbC1 += _quantity * _absorb 
 						break;
@@ -322,7 +354,7 @@ function guns_installation(_id){
 		#endregion
 
 		/************************************************
-		                SKILLTREE
+		                SKILLTREE + BOOSTERS
 		*************************************************/
 		#region
 		//HP
@@ -338,6 +370,18 @@ function guns_installation(_id){
 		shieldAbsorbC1 += shield_mechanics * 0.02
 		shieldAbsorbC2 += shield_mechanics * 0.02
 		#endregion
+		
+		
+		//BOOSTERS
+		if id = gamer.id
+		{
+			if global.booster_hp_i > 0 then health_def *= (1+global.booster_hp_i_value);
+			if global.booster_hp_ii > 0 then health_def *= (1+global.booster_hp_ii_value);
+			if global.booster_shield_i > 0 then {shield_def *= (1+global.booster_shield_i_value); shield_defC1 *= (1+global.booster_shield_i_value); shield_defC2 *= (1+global.booster_shield_i_value);}
+			if global.booster_shield_ii > 0 then {shield_def *= (1+global.booster_shield_ii_value); shield_defC1 *= (1+global.booster_shield_ii_value); shield_defC2 *= (1+global.booster_shield_ii_value);}
+			if global.booster_damage_i > 0 then {MaxDamage *= (1+global.booster_damage_i_value); MaxDamageC1 *= (1+global.booster_damage_i_value); MaxDamageC2 *= (1+global.booster_damage_i_value);}
+			if global.booster_damage_ii > 0 then {MaxDamage *= (1+global.booster_damage_ii_value); MaxDamageC1 *= (1+global.booster_damage_ii_value); MaxDamageC2 *= (1+global.booster_damage_ii_value);}
+		}
 
 
 		//END

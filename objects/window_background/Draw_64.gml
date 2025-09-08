@@ -21,8 +21,9 @@ switch active_tab
 				//draw_sprite_ext(shop_icons_spr,24,620,500,1,1,0,c_white,1)
 				draw_sprite_ext(hangar_bareer_spr,0,1170,550,5.3,1.5,90,c_white,1)
 				draw_set_font(hangarfont);
-				draw_text(730,390,"GUNS");
-				draw_text(730,590,"ENGINES");
+				draw_text(1000,300,"CONFIG:");
+				draw_text(735,390,"GUNS");
+				draw_text(735,590,"ENGINES");
 				draw_text(1370,680,string(page_inventory));
 				break;
 			}
@@ -31,6 +32,9 @@ switch active_tab
 			{
 				draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
 				draw_set_font(hangarfont);
+				draw_set_halign(fa_center);
+				draw_set_valign(fa_middle);
+				draw_text(1000,300,"CONFIG:");
 				draw_text(830,810,string(page_droid));
 				draw_text(1370,680,string(page_inventory));
 				draw_sprite_ext(hangar_bareer_spr,0,1170,550,5.3,1.5,90,c_white,1)
@@ -39,9 +43,25 @@ switch active_tab
 			
 			case "PET":
 			{
+				var _alpha = 0;
+				if global.pet_unlocked = 1
+				{
+					_alpha = 1;
+					draw_text(730,385,"GUNS");
+					if global.pet_kamikaze = 1 then draw_text(730,330,"KAMIKAZE: YES") else draw_text(730,330,"KAMIKAZE: NO");
+				}
+				
+				draw_sprite_ext(pet_spr,24,610,400,1,1,0,c_white,_alpha)
+				
 				draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
 				draw_sprite_ext(hangar_bareer_spr,0,1170,550,5.3,1.5,90,c_white,1)
 				draw_text(1370,680,string(page_inventory));
+				break;
+			}
+			
+			case "HANGARS":
+			{
+				draw_sprite_ext(window_layer_spr,0,1920/2+85,1080/2+10,2.77,2.37,0,c_white,1)
 				break;
 			}
 		}

@@ -11,6 +11,11 @@ function clear_ship_destroy_id(_id)
 	with (laser_ship) {if (target = myid or owner=myid) then instance_destroy();}
 	with (heal_ammo) {if (target = myid or owner=myid) then instance_destroy();}
 	with (ammo_explosion) {if (target = myid or owner=myid) then instance_destroy();}
+	with (sentinel_effect) {if owner=myid then instance_destroy();}
+	with (spectrum_effect) {if owner=myid then instance_destroy();}
+	with (solace_effect) {if owner=myid then instance_destroy();}
+	with (venom_effect) {if owner=myid then instance_destroy();}
+	with (diminisher_effect) {if owner=myid then instance_destroy();}
 	with (droid_obj) {if (owner=myid) then instance_destroy();}
 	with (way) {if owner=myid then instance_destroy();}
 	with (warrep) {if owner=myid then instance_destroy();}

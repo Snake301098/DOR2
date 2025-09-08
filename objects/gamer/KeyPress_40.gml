@@ -1,1 +1,2 @@
+/*
 room_goto(lv2_3)

@@ -40,7 +40,7 @@ chef=0;
 global.cloaked=0;
 global.droneformation=1
 global.attack_range = 720;
-radarrange=800;                     //Äàëüíîñòü "âèäèìîñòè" ðàäàðà, âñòðîåííîãî â ìèíèêàðòó.
+radarrange=600;                     //Äàëüíîñòü "âèäèìîñòè" ðàäàðà, âñòðîåííîãî â ìèíèêàðòó.
 range=650;
 stoped=false;                       //Ñòàòóñ ñòûêîâêè.
 alarm[0]=15*2;                      //Ìàññèâ, îòâå÷àþùèé çà äèçàéíû. [0] - óñòàíîâëåííûé äèçàéí, [i] - åñòü ëè ó èãðîêà i-ûé äèçàéí.
@@ -171,38 +171,6 @@ if Ship = "citadel" then {gun_slots = 5; shield_slots=18}
 if Ship = "spearhead" then {gun_slots = 5; shield_slots=7}
 */
 
-Gun=array_create(info_shiptypes(info(ship_name,"ship_type"),"gun_slots")+1,"")
-Engine=array_create(info_shiptypes(info(ship_name,"ship_type"),"engine_slots")+1,"")
-Gun[0]:=info_shiptypes(Shiptype,"gun_slots");
-Engine[0]:=info_shiptypes(Shiptype,"engine_slots");
-GunC1 = []
-GunC2 = []
-EngineC1 = []
-EngineC2 = []
-array_copy(GunC1, 0, Gun, 0, array_length(Gun))
-array_copy(GunC2, 0, Gun, 0, array_length(Gun))
-array_copy(EngineC1, 0, Engine, 0, array_length(Engine))
-array_copy(EngineC2, 0, Engine, 0, array_length(Engine))
-own_shieldC1=0
-own_shieldC2=0
-ship_speedC1=0
-ship_speedC2=0
-MaxDamage=0
-MaxDamageC1=0
-MaxDamageC2=0
-shieldAbsorb=0
-shieldAbsorbC1=0
-shieldAbsorbC2=0
-Inventory=0
-InventoryC1=0
-InventoryC2=0
-droid=array_create(11);
-for (i:=1; i<=10; i+=1) {droid[i,0]=noone; droid[i,1]:="noone"; droid[i,2]:="noone"; droid[i,3]:="noone"; droid[i,4]:="noone";}
-droidC1=array_create(11);
-for (i:=1; i<=10; i+=1) {droidC1[i,0]=noone; droidC1[i,1]:="noone"; droidC1[i,2]:="noone"; droidC1[i,3]:="noone"; droidC1[i,4]:="noone";}
-droidC2=array_create(11);
-for (i:=1; i<=10; i+=1) {droidC2[i,0]=noone; droidC2[i,1]:="noone"; droidC2[i,2]:="noone"; droidC2[i,3]:="noone"; droidC2[i,4]:="noone";}
-
 
 visible=true;
 load_game();
@@ -221,6 +189,7 @@ gamer.y = gamer.state_y;
 gamer.ammo_display = "x1" //ammo to be displayed selected on hud
 
 instance_create_depth(0,0,0,oCamera);
+instance_create_depth(0,0,0,boosters_window);
 var _cooldown = instance_create_depth(0,0,0,cooldowns_ctrl);
 _cooldown.owner = id;
 
@@ -242,3 +211,6 @@ guns_installation(gamer);
 count=0
 hasused=0
 rsb_rate=0
+
+
+

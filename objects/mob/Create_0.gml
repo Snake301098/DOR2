@@ -38,6 +38,12 @@ URIDIUM=0;
 _run_to_x = irandom_range(100, room_width-100);
 _run_to_y = irandom_range(100, room_height-100);
 
+is_using_sentinel = false;
+is_using_solace = false;
+is_using_diminisher = false;
+is_using_spectrum = false;
+is_using_venom = false;
+
 //sprite_index=
 //passive:=false;                 //Ïàññèâíûé ëè ìîá (ñëåäóåò ëè çà îáèä÷èêîì).
 Loot[0,0]:=0; 
@@ -48,4 +54,5 @@ alarm[0] = irandom_range(50,90);
 alarm[1] = irandom_range(50,90);
 alarm[2] = irandom_range(2,15) * room_speed;
 alarm[3] = irandom(50)
+alarm[4] = 1;
 alarm[10] = irandom_range(50,90);

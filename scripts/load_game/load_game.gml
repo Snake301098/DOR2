@@ -1,4 +1,4 @@
-function load_game()
+function load_game(hangar_nbr=-1)
 {
 	var _hangar_string;
 	ini_open("newSave.sav");
@@ -21,7 +21,20 @@ function load_game()
 	global.logfile = ini_read_real("Player","logfile",0);
 	global.tdm_tickets = ini_read_real("Player","tdm_tickets",0);
 	global.droid_parts = ini_read_real("Player","droid_parts",0);
-	gamer.ship_name = ini_read_string("Player","ship_name",0);
+	//gamer.ship_name = ini_read_string("Player","ship_name",0);
+	if hangar_nbr = -1 then	global.active_hangar = ini_read_real("Player","active_hangar",1) else global.active_hangar = hangar_nbr;
+	global.hangar2_unlocked = ini_read_real("Player","hangar2_unlocked",1);
+	global.hangar3_unlocked = ini_read_real("Player","hangar3_unlocked",1);
+	global.hangar4_unlocked = ini_read_real("Player","hangar4_unlocked",1);
+	global.hangar5_unlocked = ini_read_real("Player","hangar5_unlocked",1);
+	
+	
+	//PET
+	global.pet_unlocked = ini_read_real("PET","pet_unlocked",0);
+	global.pet_kamikaze = ini_read_real("PET","pet_kamikaze",0);
+	global.pet_hp = ini_read_real("PET","pet_hp",0);
+	global.pet_fuel= ini_read_real("PET","pet_fuel",0);
+	global.pet_guns = [5,ini_read_string("PET","slot_1",""),ini_read_string("PET","slot_2",""),ini_read_string("PET","slot_3",""),ini_read_string("PET","slot_4",""),ini_read_string("PET","slot_5","")];
 
 
 	//STATE
@@ -46,6 +59,14 @@ function load_game()
 	var seprom=ini_read_real("Cargo", "seprom", 1);
 	var palladium=ini_read_real("Cargo", "palladium", 1);
 	global.ores_qty=[prometium,endurium,terbium,duranium,prometid,promerium,seprom,palladium];
+	
+	//BOOSTERS
+	global.booster_damage_i = ini_read_real("Boosters", "booster_damage_i", 0);
+	global.booster_damage_ii = ini_read_real("Boosters", "booster_damage_ii", 0);
+	global.booster_hp_i = ini_read_real("Boosters", "booster_hp_i", 0);
+	global.booster_hp_ii = ini_read_real("Boosters", "booster_hp_ii", 0);
+	global.booster_shield_i = ini_read_real("Boosters", "booster_shield_i", 0);
+	global.booster_shield_ii = ini_read_real("Boosters", "booster_shield_ii", 0);
 	
 	//STORAGE
 	global.storage_level=ini_read_real("Storage", "storage_level", 1);
@@ -83,9 +104,12 @@ function load_game()
 	global.warrep = ini_read_real("Ammo", "warrep", 1);
 	global.dcr = ini_read_real("Ammo", "dcr", 1);
 	
+	ini_close();
 	
+	if hangar_nbr = -1 then	load_hangar(global.active_hangar) else load_hangar(hangar_nbr);
+	/*
 	//HANGAR + DRONES
-	_hangar_string = "Hangar" + string(global.hangar);
+	_hangar_string = "Hangar" + string(global.active_hangar);
 	gamer.Ship = ini_read_string(_hangar_string,"ship","nostromo");
 	global.ship_level = ini_read_real(_hangar_string,"ship_level",1);
 
@@ -105,12 +129,19 @@ function load_game()
 	    gamer.EngineC1[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C1","");
 	    gamer.EngineC2[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C2","");
 	}
+	*/
+	
+	ini_open("newSave.sav");
+	
+	
 	//Inventory
 	for(i = 1; i<=99; i+=1)
 	{
 	    gamer.InventoryC1[i] = ini_read_string("InventoryC1",string(i),"");
 	    gamer.InventoryC2[i] = ini_read_string("InventoryC2",string(i),"");
 	}
+	
+	
 	
 	//Drones
 	for(i = 1; i<=10; i+=1){

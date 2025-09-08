@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"set_mob_reward",
   "isCompatibility":false,
   "isDnD":false,

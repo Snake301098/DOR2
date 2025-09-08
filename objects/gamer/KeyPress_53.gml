@@ -1,4 +1,9 @@
-/// @description RSB
+/// @description
+audio_play_sound(select,1,false)
+KeyActionCURKEY=global.KeyAction5
+event_user(15);
+
+/*
 var _canusersb=0;
 
 just_hit_rsb=1

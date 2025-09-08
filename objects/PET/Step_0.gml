@@ -4,7 +4,7 @@
 //if instance_exists(owner) then image_index = owner.image_index
 
 if instance_exists(owner.target) then target = owner.target else target = noone
-if owner.attacking = true then attacking = true
+if owner.attacking = true then attacking = true else attacking = false;
 
 if attacking=false
 {

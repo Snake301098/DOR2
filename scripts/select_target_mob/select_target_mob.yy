@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"select_target_mob",
   "isCompatibility":false,
   "isDnD":false,

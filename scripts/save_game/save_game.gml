@@ -23,7 +23,24 @@ function save_game()
 	ini_write_real("Player","tdm_tickets",global.tdm_tickets);
 	ini_write_real("Player","droid_parts",global.droid_parts);
 	ini_write_string("Player","ship_name",gamer.ship_name);
+	ini_write_real("Player","active_hangar",global.active_hangar);
+	ini_write_real("Player","hangar2_unlocked",global.hangar2_unlocked);
+	ini_write_real("Player","hangar3_unlocked",global.hangar3_unlocked);
+	ini_write_real("Player","hangar4_unlocked",global.hangar4_unlocked);
+	ini_write_real("Player","hangar5_unlocked",global.hangar5_unlocked);
+	
 
+	//PET
+	ini_write_real("PET","pet_unlocked",global.pet_unlocked);
+	ini_write_real("PET","pet_kamikaze",global.pet_kamikaze);
+	ini_write_real("PET","pet_hp",global.pet_hp);
+	ini_write_real("PET","pet_fuel",global.pet_fuel);
+	ini_write_string("PET","slot_1",global.pet_guns[1]);
+	ini_write_string("PET","slot_2",global.pet_guns[2]);
+	ini_write_string("PET","slot_3",global.pet_guns[3]);
+	ini_write_string("PET","slot_4",global.pet_guns[4]);
+	ini_write_string("PET","slot_5",global.pet_guns[5]);
+	
 
 	//STATE
 	ini_write_real("State","health",gamer.own_health);
@@ -41,7 +58,7 @@ function save_game()
 	ini_write_real("Ammo", "x1", global.x1);
 	ini_write_real("Ammo", "x2", global.x2);
 	ini_write_real("Ammo", "x3", global.x3);
-	ini_write_real("Ammo", "x4", global.x4);
+	//ini_write_real("Ammo", "x4", global.x4);
 	ini_write_real("Ammo", "x5", global.x5);
 	ini_write_real("Ammo", "x6", global.x6);
 	ini_write_real("Ammo", "emp", global.emp);
@@ -51,9 +68,21 @@ function save_game()
 	ini_write_real("Ammo", "warrep", global.warrep);
 	ini_write_real("Ammo", "dcr", global.dcr);
 	
+	//BOOSTERS
+	ini_write_real("Boosters", "booster_damage_i", global.booster_damage_i);
+	ini_write_real("Boosters", "booster_damage_i", global.booster_damage_ii);
+	ini_write_real("Boosters", "booster_damage_i", global.booster_hp_i);
+	ini_write_real("Boosters", "booster_damage_i", global.booster_hp_ii);
+	ini_write_real("Boosters", "booster_damage_i", global.booster_shield_i);
+	ini_write_real("Boosters", "booster_damage_i", global.booster_shield_ii);
+	
+	ini_close();
+	
+	save_hangar(global.active_hangar);
+	/*
 	
 	//HANGAR + DRONES
-	_hangar_string = "Hangar" + string(global.hangar);
+	_hangar_string = "Hangar" + string(global.active_hangar);
 	ini_write_string(_hangar_string,"ship",gamer.Ship);
 	ini_write_real(_hangar_string,"ship_level",global.ship_level);
 
@@ -62,7 +91,7 @@ function save_game()
 	//Gun
 	for(i=1; i<=15; i+=1)
 	{
-		if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then ini_write_string(_hangar_string,"gun"+string(i)+"C1",gamer.GunC1[i]);gamer.GunC1[0]+=1;
+		if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then ini_write_string(_hangar_string,"gun"+string(i)+"C1",gamer.GunC1[i]);
 		if gamer.GunC2[i] !="noone" and gamer.GunC2[i] !="" then ini_write_string(_hangar_string,"gun"+string(i)+"C2",gamer.GunC2[i])
 	}
 	
@@ -73,12 +102,19 @@ function save_game()
 		if gamer.EngineC1[i] !="noone" and gamer.EngineC1[i] !="" then ini_write_string(_hangar_string,"engine"+string(i)+"C1",gamer.EngineC1[i]);
 		if gamer.EngineC2[i] !="noone" and gamer.EngineC2[i] !="" then ini_write_string(_hangar_string,"engine"+string(i)+"C2",gamer.EngineC2[i]);
 	}
+	
+	*/
+	
+	ini_open("newSave.sav");
+	
+	
 	//Inventory
 	for(i = 1; i<=99; i+=1)
 	{
 	    ini_write_string("InventoryC1",string(i),gamer.InventoryC1[i]);
 	    ini_write_string("InventoryC2",string(i),gamer.InventoryC2[i]);
 	}
+	
 	
 	//Drones
 	for(i = 1; i<=10; i+=1){
@@ -193,13 +229,24 @@ function save_game()
 	var file =  file_text_open_write("testfolder/Backup_Stats_" + date + ".csv")
 	var _STATS = ds_grid_create(1,1)
 	ds_grid_copy(_STATS,global.stats)
-	
-	for(var i=0; i<ds_grid_width(_STATS);i++) 
+
+	//first row
+	var row = ""
+	for(var j=0; j<ds_grid_width(_STATS); j++)
 	{
-		var row = ""
-		for(var j=0; j<ds_grid_height(_STATS); j++)
+		row = row + string(_STATS[# j,0]) + ","
+	}
+	row = string_delete(row, string_length(row), 1)
+	file_text_write_string(file,row)
+	file_text_writeln(file);
+
+	//other rows
+	for(var i=1; i<ds_grid_height(_STATS); i++)
+	{
+		row = ""
+		for(var j=0; j<ds_grid_width(_STATS);j++)
 		{
-			row = row + string(_STATS[# i,j]) + ","
+			row = row + string(_STATS[# j,i]) + ","
 		}
 		row = string_delete(row, string_length(row), 1)
 		file_text_write_string(file,row)

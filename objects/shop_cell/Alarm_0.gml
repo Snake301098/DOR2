@@ -72,10 +72,10 @@ switch content
     case "shieldbackup": {image_index=71; break;}
     case "warrep": {image_index=72; break;}
     //Boosters
-    case "premium_lasers": {image_index=74; break;}
-    case "booster_dmg_ext": {image_index=74; break;}
-    case "booster_hp_reg": {image_index=75; break;}
-    case "booster_hp_ext": {image_index=76; break;}
-    case "booster_shd_reg": {image_index=77; break;}
-    case "booster_shd_ext": {image_index=78; break;}
+    case "DMG_1": {image_index=73; break;}
+    case "DMG_2": {image_index=74; break;}
+    case "HP_1": {image_index=75; break;}
+    case "HP_2": {image_index=76; break;}
+    case "SHD_1": {image_index=77; break;}
+    case "SHD_2": {image_index=78; break;}
     }

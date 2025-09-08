@@ -56,6 +56,76 @@ function ability_trigger(owner,ability)
 			if owner = gamer.id then show_HUD_message("Shield backup still recharging")
 		}
 	}
+	
+	//sentinel effect ----------------------------------------------
+	if ability = "sentinel_effect"
+	{
+		if owner.can_use_sentinel = true
+		{
+			var _sentinel_effect = instance_create_depth(0,0,0,sentinel_effect);
+			_sentinel_effect.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("Sentinel skill is still recharging")
+		}
+	}
+	
+	//spectrum effect ----------------------------------------------
+	if ability = "spectrum_effect"
+	{
+		if owner.can_use_spectrum = true
+		{
+			var _spectrum_effect = instance_create_depth(0,0,0,spectrum_effect);
+			_spectrum_effect.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("Spectrum skill is still recharging")
+		}
+	}
+	
+	//Solace effect ----------------------------------------------
+	if ability = "solace_effect"
+	{
+		if owner.can_use_solace = true
+		{
+			var _solace_effect = instance_create_depth(0,0,0,solace_effect);
+			_solace_effect.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("Solace skill is still recharging")
+		}
+	}
+	
+	//Diminisher effect ----------------------------------------------
+	if ability = "diminisher_effect"
+	{
+		if owner.can_use_diminisher = true
+		{
+			var _diminisher_effect = instance_create_depth(0,0,0,diminisher_effect);
+			_diminisher_effect.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("Diminisher skill is still recharging")
+		}
+	}
+	
+	//Venom effect ----------------------------------------------
+	if ability = "venom_effect"
+	{
+		if owner.can_use_venom = true
+		{
+			var _venom_effect = instance_create_depth(0,0,0,venom_effect);
+			_venom_effect.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("Venom skill is still recharging")
+		}
+	}
 	/*
 	//DMG BOOST ----------------------------------------------
 	if ability = "dmg_boost"
