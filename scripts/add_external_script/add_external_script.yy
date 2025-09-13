@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"add_external_script",
   "isCompatibility":false,
   "isDnD":false,

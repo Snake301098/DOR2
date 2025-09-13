@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"display_density_shield",
   "isCompatibility":false,
   "isDnD":false,

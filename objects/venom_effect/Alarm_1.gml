@@ -14,7 +14,7 @@ if _target != _target_old or _target = -1 then instance_destroy()
 
 if instance_exists(_target) then deal_damage(owner,_target,"venom_effect",_DMG) else instance_destroy();
 
-_DNG += 200;
+_DMG += 200;
 
 if _DMG > 8500 then instance_destroy();
 

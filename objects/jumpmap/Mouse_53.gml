@@ -4,3 +4,4 @@ else if image_index = 0 and window_mouse_get_x() > 1090 and window_mouse_get_x()
 else if image_index = 0 and window_mouse_get_x() > 1212 and window_mouse_get_x() < 1313 and window_mouse_get_y() > 752 and window_mouse_get_y() < 817 then room_goto(lv3_1)
 else if image_index = 0 and window_mouse_get_x() > 1090 and window_mouse_get_x() < 1189 and window_mouse_get_y() > 754 and window_mouse_get_y() < 811 then room_goto(lv3_2)
 
+

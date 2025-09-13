@@ -3,6 +3,7 @@ var c;
 c:=0;
 
 if mouse_debug = 1 then show_message("x: " + string(window_mouse_get_x()) + " / y: " + string(window_mouse_get_y()))
+if mouse_debug = 1 then show_message("x: " + string(device_mouse_x_to_gui(0)) + " / y: " + string(device_mouse_y_to_gui(0)))
 
 //target = noone
 

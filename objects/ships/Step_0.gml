@@ -34,3 +34,7 @@ if own_shield < 0 then own_shield = 0
 if own_shield > shield_def then own_shield = shield_def
 if own_health > health_def then own_health = health_def
 if attacking = true then alarm[2] = 3*60;
+
+//gas ship
+part_system_position(P_System_linear,x-lengthdir_x(17,image_angle),y-lengthdir_y(17,image_angle));
+part_emitter_region(P_System_linear, Particle1_Emitter2, -5, 5, -5, 5, pt_shape_flare, ps_distr_linear);	

@@ -3,6 +3,7 @@ image_index=1;
 x=6200;
 y=0;
 config=1;
+//window_set_fullscreen(true)
 nickname = "gamer";
 event_inherited(); 
 attacking=false; //rocket launcher
@@ -192,6 +193,7 @@ instance_create_depth(0,0,0,oCamera);
 instance_create_depth(0,0,0,boosters_window);
 var _cooldown = instance_create_depth(0,0,0,cooldowns_ctrl);
 _cooldown.owner = id;
+//instance_create_depth(0,0,0,particules_ctrl);
 
 //Abilities
 ability_1 = "warrep"

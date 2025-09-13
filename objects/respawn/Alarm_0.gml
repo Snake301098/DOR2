@@ -16,11 +16,12 @@ if dead_in_gg
 }
 else
 {
-	if show_question("Your ship was destroyed.\nRepair on the map for 500 credits?") then
+	if show_question("Your ship was destroyed.\nRepair on the map for 1000 uridium?") then
 	{
 		//REPAIR ON MAP
-		event_user(0);
-	} else
+		if global.uridium >= 500 then event_user(0) else  {show_message("Not enough uridium");event_user(1);};
+	} 
+	else
 	{
 		//DO NOT REPAIR ON MAP
 		event_user(1);

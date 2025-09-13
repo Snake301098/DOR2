@@ -39,7 +39,7 @@ function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_
 				_victim.own_shield -= _damage * _shield_absorb * _sentinel_effect_coef * _diminisher_effect_coef
 			}
 		}
-		_damage *= _sentinel_effect_coef * _diminisher_effect_coef;
+		_damage *= round(_sentinel_effect_coef * _diminisher_effect_coef);
 	}
 	
 	if _victim.own_health <= 0 and _ammo = "kamikaze" then _victim.killed_by_gamer_kami = true;

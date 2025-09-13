@@ -1,3 +1,5 @@
+instance_create_depth(0,0,0,jumpmap)
+
 /*
 //instance_create_depth(gamer.x,gamer.y,depth,sibelon)
 

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"info_shiptypes",
   "isCompatibility":false,
   "isDnD":false,

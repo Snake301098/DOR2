@@ -121,3 +121,29 @@ for (i:=1; i<=40; i+=1) Reserv[i]="noone"
 /* Ñâåäåíèÿ î ñëîòàõ ðåçåðâà. Reserv[i]= êàêîé ïóøêîé çàíÿò i-é ðåçåðâíûé ñëîò. */
 
 //GunSprite[0]:=noone; GunSprite[1]:=0;  //[0] - èíäåêñ ñïðàéòà ïóøåê. [1] - êàäð ñïðàéòà ïóøåê.
+
+
+
+// PARTICULES SYSTEM GAS SHIP
+P_System_linear = part_system_create();
+Particle2 = part_type_create();
+part_type_shape(Particle2,pt_shape_flare);
+part_type_sprite(Particle2,engine_small,1,1,1)
+part_type_size(Particle2,0.8,1,-0.02,0);
+//part_type_color1(global.Particle1,c_green);
+part_type_alpha1(Particle2,0.9);
+part_system_global_space(P_System_linear, true);
+part_type_life(Particle2,15,30);
+//part_particles_create(global.P_System, 150, 150, global.Particle1, 0.04);
+Particle1_Emitter2 = part_emitter_create(P_System_linear);
+//part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x-10, mouse_x+10, mouse_y-10, mouse_y+10, ps_shape_ellipse, ps_distr_gaussian);
+part_emitter_stream(P_System_linear, Particle1_Emitter2, Particle2, 1);
+
+
+
+
+
+
+
+
+

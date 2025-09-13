@@ -1,10 +1,10 @@
 //Getting some data
 //EP
-var strEP = dotString(round(global.experience));
+var strEP = global.experience;
 //Honor
-var strHO = dotString(round(global.honor));
+var strHO = global.honor;
 //Credits
-var strCR = dotString(round(global.credit));
+var strCR = global.credit;
 //Uridium
 //strURI = dotString(round(global.uridium));
     
@@ -68,7 +68,11 @@ with cooldowns_ctrl
 	{
 		//ABILITY SHIP SKILL
 		var _ability_reload_img = 0;
-		if gamer.ship_name = "sentinel" then _ability_reload_img = round(100 * (alarm_get(6) / global.warrep_cooldown));
+		if gamer.ship_name = "sentinel" then _ability_reload_img = round(100 * (alarm_get(6) / global.sentinel_effect_cooldown));
+		if gamer.ship_name = "solace" then _ability_reload_img = round(100 * (alarm_get(7) / global.solace_effect_cooldown));
+		if gamer.ship_name = "spectrum" then _ability_reload_img = round(100 * (alarm_get(9) / global.spectrum_effect_cooldown));
+		if gamer.ship_name = "diminisher" then _ability_reload_img = round(100 * (alarm_get(8) / global.diminisher_effect_cooldown));
+		if gamer.ship_name = "venom" then _ability_reload_img = round(100 * (alarm_get(10) / global.venom_effect_cooldown));
 		_warrep_reload_img = round(100 * (alarm_get(1) / global.warrep_cooldown));
 		_emp_reload_img = round(100 * (alarm_get(2) / global.emp_cooldown));
 		_ish_reload_img = round(100 * (alarm_get(3) / global.ish_cooldown));

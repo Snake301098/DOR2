@@ -15,7 +15,8 @@ if firing < 15 firing+= 3;}
 if firing < 15 firing += 0.5/2/1.5;
 if firing >= 15 firing=15
 #endregion
-
+part_emitter_region( global.stars_sys, global._pemit1, 0, room_width, 0, room_height, ps_shape_rectangle, 0);
+	
 
 //FIRING SPEED ---------------------------------------
 #region

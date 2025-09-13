@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"clear_ship_destroy_id",
   "isCompatibility":false,
   "isDnD":false,
