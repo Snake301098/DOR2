@@ -13,5 +13,5 @@ with owner
 _target = a;
 _target_old = a;
 
-//if owner = gamer.id then update_stats("warrep_used")
+if owner = gamer.id then update_stats("venom_used")
 

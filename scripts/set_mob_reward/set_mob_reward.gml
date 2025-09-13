@@ -1,7 +1,7 @@
 /// @description
 function set_mob_reward(mob_name, mob_type, _room)
 {
-	
+	/*
 	var number_of_rewards = 1;
 	var possible_rewards_index = [];
 	var possible_rewards_qty_low = [];
@@ -94,6 +94,8 @@ function set_mob_reward(mob_name, mob_type, _room)
 			final_reward[i,1] = final_reward[i,1] * 1.2;
 		}
 	}
-	
 	return(final_reward);
+	*/
+	
+	return([]);
 }

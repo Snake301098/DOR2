@@ -43,6 +43,20 @@ function ability_trigger(owner,ability)
 		}
 	}
 	
+	//ISH ----------------------------------------------
+	if ability = "SMB"
+	{
+		if owner.can_use_smb = true
+		{
+			var _smb = instance_create_depth(0,0,0,smb);
+			_smb.owner = owner.id;
+		}
+		else
+		{
+			if owner = gamer.id then show_HUD_message("SMB still recharging")
+		}
+	}
+	
 	//shieldbackup ----------------------------------------------
 	if ability = "shieldbackup"
 	{

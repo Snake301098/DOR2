@@ -5,13 +5,13 @@
 
 //PET
 //ACTIVATE PET
-if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51 and (window_mouse_get_y() - yy_pet) > 130 and (window_mouse_get_y() - yy_pet) < 165 
+if (device_mouse_x_to_gui(0) - xx_pet) > 17 and (device_mouse_x_to_gui(0) - xx_pet) < 51 and (device_mouse_y_to_gui(0) - yy_pet) > 130 and (device_mouse_y_to_gui(0) - yy_pet) < 165 
 {
 	with(gamer){event_user(13)};
 }
 
 //KAMIKAZE
-if (window_mouse_get_x() - xx_pet) > 17 and (window_mouse_get_x() - xx_pet) < 51 and (window_mouse_get_y() - yy_pet) > 173 and (window_mouse_get_y() - yy_pet) < 213 
+if (device_mouse_x_to_gui(0) - xx_pet) > 17 and (device_mouse_x_to_gui(0) - xx_pet) < 51 and (device_mouse_y_to_gui(0) - yy_pet) > 173 and (device_mouse_y_to_gui(0) - yy_pet) < 213 
 {
 	event_user(0);
 }

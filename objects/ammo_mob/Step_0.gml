@@ -42,14 +42,6 @@ else
 ammoangle = ammoangle*decrease_angle_factor;
 //decrease_angle_factor = decrease_angle_factor * anglemultiplier;
 
-
-if guns=1 then sprite_index=rocket_1_spr
-else if guns=2 then sprite_index=rocket_2_spr
-else if guns=3 then sprite_index=rocket_3_spr
-else if guns=4 then sprite_index=rocket_4_spr
-else if guns=5 then sprite_index=rocket_5_spr
-else sprite_index=rocket_2_spr
-
 /*
 var colliding_door_id = instance_place(x, y, ships);
 if (colliding_door_id != noone and colliding_door_id != ownership.id) {

@@ -56,6 +56,7 @@ critical_hit = false;
 nearestship=noone;
 v_zone_bz=false;
 is_using_ish=0;
+is_using_smb=false;
 cloaked=0;
 passive=false;
 tdmteam="";
@@ -185,6 +186,7 @@ can_use_ability_2 = true;
 can_use_warrep = true;
 can_use_shieldbackup=true;
 can_use_ish=true;
+can_use_smb=true;
 can_use_emp=true;
 
 running_x=0; //memorize where to run, so once reached the portal it continues going straight after it instead

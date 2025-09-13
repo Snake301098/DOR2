@@ -8,14 +8,14 @@ var repairing = owner.health_def*0.5
 if owner.own_health<owner.health_def 
 {
 	deal_healing(owner,owner,"solace_effect",repairing,"health")
-	//if owner = gamer.id then update_stats("warrep_repaired",healthRegen)
+	if owner = gamer.id then update_stats("solace_repaired",repairing)
 }
 else
 {
-	//if owner = gamer.id then update_stats("warrep_repaired",owner.health_def - owner.own_health)
+	if owner = gamer.id then update_stats("solace_repaired",owner.health_def - owner.own_health)
 	 owner.own_health = owner.health_def 
 }
 
 
-//if owner = gamer.id then update_stats("warrep_used")
+if owner = gamer.id then update_stats("solace_used")
 

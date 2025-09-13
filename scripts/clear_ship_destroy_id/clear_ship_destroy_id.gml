@@ -22,6 +22,7 @@ function clear_ship_destroy_id(_id)
 	with (shieldbackup) {if owner=myid then instance_destroy();}
 	with (emp) {if owner=myid then instance_destroy();}
 	with (ish) {if owner=myid then instance_destroy();}
+	with (smb) {if owner=myid then instance_destroy();}
 	with (shield_restore_ctrl) {if owner=myid then instance_destroy();}
 	with (cooldowns_ctrl) {if owner=myid then instance_destroy();}
 	with (nuke) {if owner=myid then instance_destroy();}

@@ -9,8 +9,8 @@ numb_bonus_grubers:=0; numb_hunters_mob:=0;
 
 //Variables
 var smallAlien, largeAlien, uberMap, bonusbox_limit, bossNormal, bossPVP, uberPVP
-smallAlien = 22;
-largeAlien = 10;
+smallAlien = 30;
+largeAlien = 20;
 bossNormal = 4;
 uberMap = 1;   
 bonusbox_limit=40; 

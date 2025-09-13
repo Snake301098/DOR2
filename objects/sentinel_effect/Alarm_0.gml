@@ -5,5 +5,5 @@ owner.is_using_sentinel = true;
 
 
 
-//if owner = gamer.id then update_stats("warrep_used")
+if owner = gamer.id then update_stats("sentinel_used")
 

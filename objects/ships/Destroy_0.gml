@@ -62,6 +62,12 @@ clear_ship_destroy_id(myid) //remove ship id from targets
 if gamer.target=id then {GKILL=1;}   //or PET.target=id 
 if gamer.target=other.id  then {GKILL=1;}     //or PET.target=other.id
 
+
+part_type_clear(Particle2)
+part_type_destroy(Particle2)
+part_particles_clear(P_System_linear);
+part_system_destroy(P_System_linear);
+
 /*
 //TDM
 if(tdmteam="vru")then{global.tdm_vru_lifes-=1;}  

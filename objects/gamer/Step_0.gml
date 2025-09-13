@@ -15,8 +15,7 @@ if firing < 15 firing+= 3;}
 if firing < 15 firing += 0.5/2/1.5;
 if firing >= 15 firing=15
 #endregion
-part_emitter_region( global.stars_sys, global._pemit1, 0, room_width, 0, room_height, ps_shape_rectangle, 0);
-	
+
 
 //FIRING SPEED ---------------------------------------
 #region
@@ -161,9 +160,9 @@ else
 if target=id then target=noone;
 
 //Health fix; Prevens HP from going over max when using energy leech.
-if gamer.own_health > gamer.health_def or is_nan(own_health) then
+if own_health > health_def or is_nan(own_health) then
 {
-	gamer.own_health=gamer.health_def
+	own_health=health_def
 }
 
 //fix2

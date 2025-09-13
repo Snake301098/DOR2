@@ -16,6 +16,9 @@ function deal_damage(_attacker,_victim,_ammo,_damage,_draw=true,_color=c_white,_
 		if _attacker.is_using_spectrum = true then _spectrum_effect_coef = 0.75;
 		if _victim.is_using_diminisher = true then _diminisher_effect_coef = 2;
 		
+		
+		//if is_real(_damage) and _ then update_stats(_ammo+"_dmg", _damage)
+		
 		_damage *= _spectrum_effect_coef;
 		
 		if _ammo = "x5"

@@ -1,5 +1,7 @@
 /// @description 
 //Èíèöèàëèçàöèÿ ñèñòåìû ÷àñòèö
+
+/*
 global.sys = part_system_create();
 
 //Ýìèòòåð

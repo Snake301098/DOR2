@@ -1,4 +1,4 @@
-if mouse_debug = 1 then mouse_debug = 0 else mouse_debug = 1
+//if mouse_debug = 1 then mouse_debug = 0 else mouse_debug = 1
 
 /*
 

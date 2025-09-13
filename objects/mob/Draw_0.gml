@@ -9,7 +9,7 @@ draw_sprite_ext(sprite_index,image_index,round(x),round(y),1,1,image_angle,c_whi
                 draw_set_font(nicktext);
 				draw_set_valign(fa_middle);
 				draw_set_halign(fa_center);
-            draw_text_ol(round(x),round(y+35),name,make_color_rgb(190,0,0));
+            draw_text_ol(round(x),round(y+sprite_get_height(sprite_index)/2),name,make_color_rgb(190,0,0));
         
        // if instance_exists(gamer) then if id=gamer.target
             {

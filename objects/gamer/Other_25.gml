@@ -55,12 +55,17 @@ if KeyActionCURKEY = 17 then
 //ISH
 if KeyActionCURKEY = 22 then
 {if global.ish > 0 then ability_trigger(id,"ISH") else show_HUD_message("No ISH remaining")}
+//JUMP CPU
+if KeyActionCURKEY = 24 then
+{if instance_exists(jumpmap) then instance_destroy(jumpmap) else instance_create_depth(0,0,-500,jumpmap)}
 //SKIP COUNTDOWN
 if KeyActionCURKEY = 26 then
 {if instance_exists(pop_ctrl_GG) then pop_ctrl_GG.count_down_step = 1;}
 //SAVE GAME
 if KeyActionCURKEY = 27 then
 {save_game();}
+if KeyActionCURKEY = 28 then
+{if global.ish > 0 then ability_trigger(id,"SMB") else show_HUD_message("No SMB remaining")}
 //CHANGE CONFIG
 if KeyActionCURKEY = 29 then
 {change_config(gamer.id);}
@@ -73,6 +78,9 @@ if KeyActionCURKEY = 30 then
 	if ship_name = "diminisher" then {ability_trigger(id,"diminisher_effect")}
 	if ship_name = "venom" then {ability_trigger(id,"venom_effect")}
 }
+//MESSAGES LOG
+if KeyActionCURKEY = 31 then
+{if instance_exists(log_msgs_window) then instance_destroy(log_msgs_window) else instance_create_depth(0,0,-500,log_msgs_window)}
 
 
 

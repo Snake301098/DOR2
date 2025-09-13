@@ -7,7 +7,7 @@ if instance_exists(target)
 		with (way) {if owner=other.id then instance_destroy()};
 		speed:=0;
 	}
-	else if point_distance(x,y,target.x,target.y) <= range then
+	else if point_distance(x,y,target.x,target.y) <= range*1.8 then
 	{        
 		//Âûñòðåë.
 		ii = instance_create_depth(x,y,-1,ammo_mob);

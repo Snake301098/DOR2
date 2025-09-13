@@ -7,20 +7,20 @@ if action[0] = "battle" or isInvader = true then
 	if instance_exists(target) then
 	{
 		//if is in range
-		if distance_to_object(target) <= global.range*1.3 then
+		if distance_to_object(target) <= global.range*1.4 then
 		{
-			if choose(0,0,0,1) = 1 then select_target(id) //SELECT TARGET
+			if choose(0,0,0,0,1) = 1 then select_target(id) //SELECT TARGET
 		}
 		else
 		//if is not in range
 		{
-			if choose(0,0,1,1) = 1 then select_target(id) //SELECT TARGET
+			if choose(0,0,0,1) = 1 then select_target(id) //SELECT TARGET
 		}
 	}
 	else
 	//no target
 	{
-		if choose(0,1,1,1) = 1 then select_target(id); //SELECT TARGET
+		if choose(0,1,1,1,1) = 1 then select_target(id); //SELECT TARGET
 	}
 }
 else if action[0] = "farming" then
