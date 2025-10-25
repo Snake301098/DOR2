@@ -81,7 +81,7 @@ switch active_tab
 		draw_set_font(hangarfont);
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
-		//draw_text(1000,600,"This is a cool gun*\n*with so much power");
+		draw_text(1370,400,item_description);
 								
 		if active_side_tab = "SHIPS" then draw_text(830,810,string(page_ships));
 		break;
@@ -176,7 +176,7 @@ switch active_tab
 			case "BETA":
 			{
 				var portal_image = 1;
-				var owned_portal_parts = global.alphaparts;
+				var owned_portal_parts = global.betaparts;
 				var total_portal_parts = info("beta","total_parts");
 				break;
 			}
@@ -184,7 +184,7 @@ switch active_tab
 			case "GAMMA":
 			{
 				var portal_image = 2;
-				var owned_portal_parts = global.alphaparts;
+				var owned_portal_parts = global.gammaparts;
 				var total_portal_parts = info("gamma","total_parts");
 				break;
 			}
@@ -192,7 +192,7 @@ switch active_tab
 			case "DELTA":
 			{
 				var portal_image = 3;
-				var owned_portal_parts = global.alphaparts;
+				var owned_portal_parts = global.deltaparts;
 				var total_portal_parts = info("delta","total_parts");
 				break;
 			}
@@ -210,7 +210,7 @@ switch active_tab
 		draw_text(1300,600,"ENERGY AVAILABLE: " + string(global.ggenergy));
 				
 		//GG PORTAL PROGRESS
-		draw_healthbar(700,655,900,685,35,c_black,c_red,c_lime,0,true,true);
+		draw_healthbar(700,655,900,685,owned_portal_parts/total_portal_parts*100,c_black,c_red,c_lime,0,true,true);
 		draw_text(800,640,string(owned_portal_parts) + "/" + string(total_portal_parts));
 				
 		//SHOWING GG REWARDS

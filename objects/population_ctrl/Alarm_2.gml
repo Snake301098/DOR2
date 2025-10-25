@@ -28,8 +28,8 @@ if (room=lv1_1 or room=lv2_1 or room=lv3_1)   then
 	{
 		var spawn_ennemy_prob = irandom(100);
 		var spawn_enemy_nbr = 0;
-		if spawn_ennemy_prob >= 95 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
-		if spawn_ennemy_prob >= 98 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 97 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 99 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
 			var _nbr = 1;
@@ -64,8 +64,8 @@ if (room=lv1_2 or room=lv2_2 or room=lv3_2)   then
 	{
 		var spawn_ennemy_prob = irandom(100);
 		var spawn_enemy_nbr = 0;
-		if spawn_ennemy_prob >= 90 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
-		if spawn_ennemy_prob >= 95 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 94 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 97 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
 			var _nbr = 1;
@@ -101,8 +101,8 @@ if (room=lv1_3 or room=lv2_3 or room=lv3_3 or room=lv1_4 or room=lv2_4 or room=l
 	{
 		var spawn_ennemy_prob = irandom(100);
 		var spawn_enemy_nbr = 0;
-		if spawn_ennemy_prob >= 80 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
-		if spawn_ennemy_prob >= 90 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 92 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 95 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
 			var _nbr = 1;
@@ -174,8 +174,8 @@ if (room=lv1_5 or room=lv2_5 or room=lv3_5 or room=lv1_6 or room=lv2_6 or room=l
 	{
 		var spawn_ennemy_prob = irandom(100);
 		var spawn_enemy_nbr = 0;
-		if spawn_ennemy_prob >= 75 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
-		if spawn_ennemy_prob >= 85 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 79 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
+		if spawn_ennemy_prob >= 88 then spawn_enemy_nbr+=choose(1,1,1,1,1,1,1,2,2,3);
 		for(var i=0; i<=spawn_enemy_nbr; i+=1)
 		{
 			var _nbr = 1;

@@ -44,7 +44,6 @@ if ship_name = "lordakium" then sprite_index = lordakium_spr
 if ship_name = "kristallin" then sprite_index = kristallin_spr
 if ship_name = "streunerR" then sprite_index = streunerR_spr
 
-
 if owned = true then owned_color = c_white
 
 alpha=1
@@ -70,6 +69,12 @@ if ship_name = "alpha" then {sprite_index = alpha_portal_spr; image_index = 0; i
 if ship_name = "beta" then {sprite_index = beta_portal_spr; image_index = 0; image_xscale = xsc; image_yscale = ysc}
 if ship_name = "gamma" then {sprite_index = gamma_portal_spr; image_index = 0; image_xscale = xsc; image_yscale = ysc}
 if ship_name = "delta" then {sprite_index = delta_portal_spr; image_index = 0; image_xscale = xsc; image_yscale = ysc}
+if ship_name = "sentinel_effect" then {sprite_index = stats_icons_spr; image_index = 9; image_xscale = xsc; image_yscale = ysc}
+if ship_name = "diminisher_effect" then {sprite_index = stats_icons_spr; image_index = 7; image_xscale = xsc; image_yscale = ysc}
+if ship_name = "venom_effect" then {sprite_index = stats_icons_spr; image_index = 16; image_xscale = xsc; image_yscale = ysc}
+if ship_name = "spectrum_effect" then {sprite_index = stats_icons_spr; image_index = 15; image_xscale = xsc; image_yscale = ysc}
+if ship_name = "solace_effect" then {sprite_index = stats_icons_spr; image_index = 1; image_xscale = xsc; image_yscale = ysc}
+if ship_name = "kamikaze" then {sprite_index = pet_kamikaze_spr; image_index = 0; image_xscale = xsc; image_yscale = ysc}
 
 
 

@@ -1,14 +1,33 @@
-function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_color=c_white,_comment="")
+function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_ammo_id=noone,_color=c_white,_comment="")
 {	
+	if _draw = false then 
+	{
+		if _ammo = "x1" or _ammo = "x2" or _ammo = "x3" or _ammo = "x4" or _ammo = "x5" or _ammo = "x6" then instance_destroy(_ammo_id)
+		exit;
+	}
+	
 	var _target = noone;
 	with(_attacker){if instance_exists(target) then _target=target}
+	//var _ammo_owner;
+	//with(_ammo_id){if instance_exists(owner) then _ammo_owner = owner else _ammo_owner=-1}
+	//if _ammo_owner = -1 then exit;
 	var a,b,c,healthAbsord,shieldAbsorb,shieldPen,healthAbsorb;
-	if(_ammo="x5" and _attacker = _victim) or (_target=_victim and _ammo != "x5" and _ammo != "kamikaze") or (_ammo = "kamikaze") then
-	{
+	//if(_ammo="x5" and _attacker = _ammo_owner) or (_target=_victim and _ammo != "x5" and _ammo != "kamikaze") or (_ammo = "kamikaze") then
+	//{
 		if _ammo = "x5" and instance_exists(_target) then _victim = _target
 		//if _victim = gamer.id and _victim.is_using_ish=true then update_stats("ish_avoided",_damage)
 		//if _victim = gamer.id and _victim.is_using_ish=false then update_stats("dmg_taken",_damage)
-	    if _victim.is_using_ish=true then {a="MISS"} else
+	    if _victim.is_using_ish=true then
+		{
+			a="MISS"
+			if _victim = gamer.id
+			{
+				if is_real(_damage) then update_stats("ish_avoided", round(_damage))
+				if _ammo = "x1" or _ammo = "x2" or _ammo = "x3" or _ammo = "x4" or _ammo = "x5" or _ammo = "x6" then instance_destroy(_ammo_id)
+			}
+			
+		}
+		else
 	    {
 			var bonus_evasion = 0
 			var bonus_electro = 0
@@ -41,12 +60,7 @@ function deal_prefunction(_attacker,_victim,_ammo,_damage,_damage_x,_draw=true,_
 			if _ammo = "kamikaze" or _ammo = "smb" then a=_damage
 			deal_damage(_attacker,_victim,_ammo,a,_draw,_color)
 			display_density_shield(_attacker,_victim,_draw)
-			if _ammo = "x1" then instance_destroy()
-			if _ammo = "x2" then instance_destroy()
-			if _ammo = "x3" then instance_destroy()
-			if _ammo = "x4" then instance_destroy()
-			if _ammo = "x5" then instance_destroy()
-			if _ammo = "x6" then instance_destroy()
+			if _ammo = "x1" or _ammo = "x2" or _ammo = "x3" or _ammo = "x4" or _ammo = "x5" or _ammo = "x6" then instance_destroy(_ammo_id)
 		}
-	}
+	//}
 }

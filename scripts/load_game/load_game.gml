@@ -12,6 +12,8 @@ function load_game(hangar_nbr=-1)
 	global.ggenergy = ini_read_real("Player","ggclick",0);
 	global.chest_green_key = ini_read_real("Player","chest_green_key",0);
 	global.chest_gold_key = ini_read_real("Player","chest_gold_key",0);
+	global.credit_reward_green_key = ini_read_real("Player","credit_reward_green_key",0);
+	global.uridium_reward_gold_key = ini_read_real("Player","uridium_reward_gold_key",0);
 	global.experience = ini_read_real("Player","experience",0);
 	global.level = ini_read_real("Player","level",1);
 	global.honor = ini_read_real("Player","honor",0);
@@ -327,7 +329,8 @@ function load_game(hangar_nbr=-1)
 	global.petname=ini_read_string("Pet","name","");
 	
 
-
+	//LOAD QUESTS
+	load_quests();
 
 	//global.eco10 = ini_read_real("Player","eco10",0);
 	//global.rsb = ini_read_real("Player","rsb",0);
@@ -352,9 +355,25 @@ function load_game(hangar_nbr=-1)
 	global.old_lasers = ini_read_real("lasers","type",1);*/
 	//-------------- PET
 	
+	//STATS
+	global.stats = load_csv("stats.csv")
+	var _data = load_csv("stats.csv")
+	
+	var _STATS = ds_grid_create(1,1)
+	ds_grid_copy(_STATS,_data)
+
+	//other rows
+	for(var i=1; i<ds_grid_height(_data); i++)
+	{
+		for(var j=1; j<ds_grid_width(_data);j++)
+		{
+			_STATS[# j,i] = real(_data[# j,i])
+		}
+	}
+	global.stats = _STATS
 	
 	global.loading=0;
-	gamer.Shiptype = info(gamer.Ship, "ship_type")
+	gamer.Shiptype = info(gamer.ship_name, "ship_type")
 	guns_installation(gamer);
 	ini_close();
 }

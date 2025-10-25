@@ -14,6 +14,7 @@ item_selected=""; //for buying or upgrading stuff, we store the item there
 buy_qty=1; //same for qty buy
 cost_qty=0;
 cost_type="";
+item_description=""
 
 
 //UPGRADES PARAMETERS

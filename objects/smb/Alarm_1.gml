@@ -10,7 +10,7 @@ _pety = y
 corp = owner.corporation;
 dist_1 = 200;
 dist_2 = 600;
-_damage = 50000;
+_damage = 50000 + owner.smb_upgrade * 5000;
 _owner = owner;
 if owner = gamer.id then _draw = true else _draw = false
 
@@ -26,7 +26,7 @@ with(ships)
 			if dist > dist_1 and dist <=dist_2 then dmg = _damage / (dist_1-dist_2) * (dist - dist_2)
 			dmg = irandom_range(80,120)*dmg/100;
 			
-			deal_prefunction(_owner,id,"SMB",dmg,1,_draw)
+			deal_prefunction(_owner,id,"smb",dmg,1,_draw)
 			/*
 			//shot by gamer
 			if _owner=gamer.id then

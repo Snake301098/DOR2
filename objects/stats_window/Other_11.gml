@@ -12,6 +12,15 @@ with(stats_ships_icon){if clickable=false then instance_destroy()};
 switch active_tab
 {
 	
+	//PROFILE
+	#region
+	case "PROFILE":
+	{
+		event_user(6);
+		break;
+	}
+	#endregion
+	
 	//KILLS
 	#region
 	case "PVP":
@@ -215,8 +224,8 @@ switch active_tab
 		var columns = 5;
 	
 		
-		var ammos_list = ["x1", "x2", "x3","x4","x5","x6","warrep","shieldbackup","ish","smb","emp"];
-		var label2 = ["x1_dmg","x2_dmg","x3_dmg","x4_dmg","x5_dmg","x6_dmg","warrep_repaired","shieldbackup_shield","ish_avoided","none","none"]; 
+		var ammos_list = ["x1", "x2", "x3","x4","x5","x6","warrep","shieldbackup","ish","smb","emp","kamikaze","diminisher_effect","sentinel_effect","solace_effect","spectrum_effect","venom_effect"];
+		var label2 = ["x1_dmg","x2_dmg","x3_dmg","x4_dmg","x5_dmg","x6_dmg","warrep_repaired","shieldbackup_shield","ish_avoided","smb_dmg","none","kamikaze_dmg","diminisher_dmg_done","sentinel_dmg_saved","solace_repaired","spectrum_dmg_saved","venom_effect_dmg"]; 
 	
 	
 		for (j=1; j<=rows; j+=1)

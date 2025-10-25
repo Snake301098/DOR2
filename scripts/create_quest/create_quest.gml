@@ -26,9 +26,9 @@ function create_quest(i)
 		else
 		{
 			total = choose(15,35,75)
-			if total = 10 then reward_qty = 1
-			if total = 25 then reward_qty = 2
-			if total = 50 then reward_qty = 3			
+			if total = 13 then reward_qty = 1
+			if total = 35 then reward_qty = 2
+			if total = 75 then reward_qty = 3			
 		}
 		if map = "pvp" then reward_qty+=1
 		if map = "ennemy" then reward_qty+=2
@@ -38,7 +38,7 @@ function create_quest(i)
 	{
 		entity = choose("streuner","lordakia","saimon","mordon","devolarium","sibelon","lordakium","sibelonit","kristallin","kristallon")
 		map = choose("own","own","own","ennemy")
-		reward_type = "gg_energy"
+		reward_type = "logfiles"
 	
 		if entity = "streuner"
 		{
@@ -107,9 +107,9 @@ function create_quest(i)
 		if entity = "kristallin"
 		{
 			total = choose(20,40,60);
-			if total = 10 then reward_qty = 15
-			if total = 20 then reward_qty = 25
-			if total = 30 then reward_qty = 50
+			if total = 20 then reward_qty = 15
+			if total = 40 then reward_qty = 25
+			if total = 60 then reward_qty = 50
 		}
 	
 	
@@ -124,9 +124,9 @@ function create_quest(i)
 		if entity = "streunerR"
 		{
 			total = choose(20,40,60);
-			if total = 10 then reward_qty = 10
-			if total = 20 then reward_qty = 20
-			if total = 30 then reward_qty = 30
+			if total = 20 then reward_qty = 10
+			if total = 40 then reward_qty = 20
+			if total = 60 then reward_qty = 30
 		}
 	
 	

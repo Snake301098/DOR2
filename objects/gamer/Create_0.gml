@@ -77,7 +77,7 @@ useeleech=0;
 v_zone_bz=false;
 cloaked=0;
 restore=0;
-own_health_bilo=0;
+own_health_bilo=1000;
 damageToDraw=0;
 hasStartedAlarm8=false;
 RPOINT=0;
@@ -193,6 +193,7 @@ gamer.ammo_display = "x1" //ammo to be displayed selected on hud
 
 instance_create_depth(0,0,0,oCamera);
 instance_create_depth(0,0,0,boosters_window);
+instance_create_depth(0,0,0,auto_save_ctrl);
 var _cooldown = instance_create_depth(0,0,0,cooldowns_ctrl);
 _cooldown.owner = id;
 //instance_create_depth(0,0,0,particules_ctrl);

@@ -22,7 +22,7 @@ function save_hangar(hangar_nbr)
 		//C1
 		if i < array_length(gamer.GunC1)
 		{
-			if gamer.GunC1[i] !="noone" and gamer.GunC1[i] !="" then ini_write_string(_hangar_string,"gun"+string(i)+"C1",gamer.GunC1[i]);
+			ini_write_string(_hangar_string,"gun"+string(i)+"C1",gamer.GunC1[i]);
 		}
 		else
 		{
@@ -31,7 +31,7 @@ function save_hangar(hangar_nbr)
 		//C2
 		if i < array_length(gamer.GunC2)
 		{
-			if gamer.GunC2[i] !="noone" and gamer.GunC2[i] !="" then ini_write_string(_hangar_string,"gun"+string(i)+"C2",gamer.GunC2[i])
+			ini_write_string(_hangar_string,"gun"+string(i)+"C2",gamer.GunC2[i])
 		}
 		else
 		{
@@ -46,7 +46,7 @@ function save_hangar(hangar_nbr)
 		//C1
 		if i < array_length(gamer.EngineC1)
 		{
-			if gamer.EngineC1[i] !="noone" and gamer.EngineC1[i] !="" then ini_write_string(_hangar_string,"engine"+string(i)+"C1",gamer.EngineC1[i]);
+			ini_write_string(_hangar_string,"engine"+string(i)+"C1",gamer.EngineC1[i]);
 		}
 		else
 		{
@@ -55,7 +55,7 @@ function save_hangar(hangar_nbr)
 		//C2
 		if i < array_length(gamer.EngineC2)
 		{
-			if gamer.EngineC2[i] !="noone" and gamer.EngineC2[i] !="" then ini_write_string(_hangar_string,"engine"+string(i)+"C2",gamer.EngineC2[i]);
+			ini_write_string(_hangar_string,"engine"+string(i)+"C2",gamer.EngineC2[i]);
 		}
 		else
 		{

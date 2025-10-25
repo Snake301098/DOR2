@@ -74,12 +74,12 @@ function load_hangar(hangar_nbr)
 	for(i = 1; i<=20; i+=1)
 	{
 		//C1
-		if i < array_length(gamer.GunC1)
+		if i < array_length(gamer.EngineC1)
 		{
 			gamer.EngineC1[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C1","");
 		}
 		//C2
-		if i < array_length(gamer.GunC2)
+		if i < array_length(gamer.EngineC2)
 		{
 		    gamer.EngineC2[i] = ini_read_string(_hangar_string,"engine"+string(i)+"C2","");
 		}

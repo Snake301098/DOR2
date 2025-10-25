@@ -15,3 +15,4 @@ xx_pet = 30
 yy_pet = 720-220
 
 kamikaze_selected = false
+alarm[1]=1;

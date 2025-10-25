@@ -15,3 +15,4 @@ if object_index = x4_ammo then _ammo="x4"
 if object_index = sab then _ammo="x5"
 if object_index = rsb then _ammo="x6"
 sprite_index = new_laser_spr;
+initialized = false

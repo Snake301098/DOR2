@@ -15,6 +15,44 @@ if instance_exists(gamer.target)
 
 if gamer_get_reward = true
 {
+	//SHIP SKINS
+	var _xp_bonus = 1;
+	var _honor_bonus = 1;
+	var _uridium_bonus = 1;
+	if gamer.ship_name = "adept" then _xp_bonus = 1.1;
+	if gamer.ship_name = "veteran" then _xp_bonus = 1.1;
+	if gamer.ship_name = "corsair" then _honor_bonus = 1.1;
+	if gamer.ship_name = "exalted" then _honor_bonus = 1.1;
+	if gamer.ship_name = "goal" then _uridium_bonus = 1.05;
+	
+	var EPPOINTS = 1;
+	var HONORPOINTS = 1
+	var URIDIUM = 1;
+	var CREDITS = 1;
+	if ship_name = "pheonix" then {EPPOINTS=100;HONORPOINTS=10;URIDIUM=10;CREDITS=10000;}
+	if ship_name = "nostromo" then {EPPOINTS=6400;HONORPOINTS=64;URIDIUM=64;CREDITS=64000;}
+	if ship_name = "leonov" then {EPPOINTS=400;HONORPOINTS=4;URIDIUM=4;CREDITS=4000;}
+	if ship_name = "bigboy" then {EPPOINTS=25600;HONORPOINTS=256;URIDIUM=256;CREDITS=256000;}
+	if info(ship_name,"ship_type") = "vengeance" then {EPPOINTS=12800;HONORPOINTS=128;URIDIUM=128;CREDITS=128000;}
+	if info(ship_name,"ship_type") = "goliath" then {EPPOINTS=51200;HONORPOINTS=512;URIDIUM=512;CREDITS=512000;}
+	if ship_name = "spearhead" then {EPPOINTS=7500;HONORPOINTS=75;URIDIUM=75;CREDITS=75000;}
+	if ship_name = "aegis" then {EPPOINTS=25000;HONORPOINTS=25;URIDIUM=25;CREDITS=25000;}
+	if ship_name = "citadel" then {EPPOINTS=120000;HONORPOINTS=1200;URIDIUM=1200;CREDITS=1200000;}
+	
+	
+	//SHIP SKINS
+	var _xp_bonus = 1;
+	var _honor_bonus = 1;
+	var _uridium_bonus = 1;
+	if gamer.ship_name = "adept" then _xp_bonus = 1.1;
+	if gamer.ship_name = "veteran" then _xp_bonus = 1.1;
+	if gamer.ship_name = "corsair" then _honor_bonus = 1.1;
+	if gamer.ship_name = "exalted" then _honor_bonus = 1.1;
+	if gamer.ship_name = "goal" then _uridium_bonus = 1.05;
+	URIDIUM = URIDIUM * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03) * _uridium_bonus
+	CREDITS = CREDITS * (1 + gamer.greed * 0.03)
+	EPPOINTS = EPPOINTS * _xp_bonus;
+	HONORPOINTS = HONORPOINTS * (1 + gamer.cruelty_i * 0.02 + gamer.cruelty_ii * 0.03) * _honor_bonus;		
 	//LOGFILE REWARD based on Box Muller transfor to sort a normal distribution
 	var i = random(1);
 	var j = random(1);
@@ -31,8 +69,19 @@ if gamer_get_reward = true
 	_cargobox.color = "blue"
 	_cargobox.logfile = logfiles_qty
 		
+	show_protocol_message("You have destroyed player " + nickname);
+	global.experience+=EPPOINTS;
+	global.honor+=HONORPOINTS
+	global.uridium+=URIDIUM;
+	global.credit+=CREDITS;
+	show_protocol_message(string(text.received) + " " + string(EPPOINTS) + " " + string("xp"))
+	show_protocol_message(string(text.received) + " " + string(HONORPOINTS) + " " + string("honor"))
+	show_protocol_message(string(text.received) + " " + string(CREDITS) + " " + string("credits"));
+	show_protocol_message(string(text.received) + " " + string(URIDIUM) + " " + "Uridium")
 	check_quests(id,room);
-	update_stats(Ship+"_kills");
+	update_stats(ship_name +"_kills");
+	update_stats("credit",CREDITS)
+	update_stats("uridium",URIDIUM)
 }
 
 myid = id; //ID of who get killed
@@ -91,73 +140,6 @@ with (ammo_ship) {if owner=other.id then instance_destroy();}
 //with (laserdamage_expl) if owner=other.id then instanece_destroy();
 //with (blust) if owner=other.id then instance_destroy();
 //Ïðîâåðêà íóæíî ëè îòîáðàæàòü ýôôåêòû.
-
-
-//REWARD DROP LOOT
-if object_index = ship and gotKilledBy=gamer.id
-{
-	var _prob_rew_nbr = random(1);
-	var number_of_rewards = 0;
-	if _prob_rew_nbr >= 2/3 then number_of_rewards += 1;
-	if _prob_rew_nbr >= 0.95 then number_of_rewards += 1;
-	var loots = [];
-	
-	if number_of_rewards >= 1
-	{
-		for(i=1; i<=number_of_rewards; i++)
-		{
-			if info_map(room, "owners") = gamer.corporation
-			{
-				var _prob = random(1);
-				var piece_index = choose(0,1,2,3);
-				if _prob >= 0.60 then piece_index = choose(4,5,6,7);
-				if _prob >= 0.95 then piece_index = choose(8,9,10,11);
-				{
-					array_push(loots, [piece_index, 1]);
-				}
-			}
-			else
-			{
-				var _prob = random(1);
-				var piece_index = choose(0,1,2,3);
-				if _prob >= 0.8 then piece_index = choose(4,5,6,7);
-				if _prob >= 0.99 then piece_index = choose(8,9,10,11);
-				{
-					array_push(loots, [piece_index, 1]);
-				}
-			}
-		}
-	}
-	
-	//DOLLARS
-	drop = instance_create_depth(0,0,-100,dropobject);
-	drop.x = x;
-	drop.y = y;
-	drop.object_type = "dollars";
-	drop.object_qty = 250;
-			
-			
-	drop = instance_create_depth(0,0,-100,dropobject);
-	drop.x = x;
-	drop.y = y; 
-	drop.object_type = "xp";
-	drop.object_qty = 1200;
-			
-			
-	if array_length(loots) > 0 then
-	{
-		for(var i=0; i<array_length(loots); i++)
-		{
-			drop = instance_create_depth(0,0,-100,dropobject);
-			drop.x = x;
-			drop.y = y;
-			drop.object_name = loots[i,0];
-			drop.object_type = "pieces";
-			drop.object_qty = loots[i,1];
-		}
-	}
-}
-
 
 
 

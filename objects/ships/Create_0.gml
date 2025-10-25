@@ -127,6 +127,7 @@ for (i:=1; i<=40; i+=1) Reserv[i]="noone"
 // PARTICULES SYSTEM GAS SHIP
 P_System_linear = part_system_create();
 Particle2 = part_type_create();
+part_system_depth(P_System_linear,depth+1)
 part_type_shape(Particle2,pt_shape_flare);
 part_type_sprite(Particle2,engine_small,1,1,1)
 part_type_size(Particle2,0.8,1,-0.02,0);

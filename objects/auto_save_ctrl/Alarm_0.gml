@@ -1,0 +1,8 @@
+/// @description 
+
+save_game();
+
+
+
+alarm[0] = room_speed * 60 * 5
+

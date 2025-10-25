@@ -35,12 +35,25 @@ if instance_exists(gamer.target)
 }
 if gamer_get_reward = true
 {
-	global.uridium+=URIDIUM * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03);
-	global.credit+=CREDITS * (1 + gamer.greed * 0.03);
+	//SHIP SKINS
+	var _xp_bonus = 1;
+	var _honor_bonus = 1;
+	var _uridium_bonus = 1;
+	if gamer.ship_name = "adept" then _xp_bonus = 1.1;
+	if gamer.ship_name = "veteran" then _xp_bonus = 1.1;
+	if gamer.ship_name = "corsair" then _honor_bonus = 1.1;
+	if gamer.ship_name = "exalted" then _honor_bonus = 1.1;
+	if gamer.ship_name = "goal" then _uridium_bonus = 1.05;
+	URIDIUM = URIDIUM * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03) * _uridium_bonus
+	CREDITS = CREDITS * (1 + gamer.greed * 0.03)
+	EPPOINTS = EPPOINTS * _xp_bonus;
+	HONORPOINTS = HONORPOINTS * (1 + gamer.cruelty_i * 0.02 + gamer.cruelty_ii * 0.03) * _honor_bonus;
+	global.uridium+=URIDIUM;
+	global.credit+=CREDITS;
 	show_protocol_message(text_add("You have destroyed a: %1.#You have recieved %2 credits.",name,CREDITS));
 	global.alienkills+=1;
 	global.experience+=EPPOINTS;
-	global.honor+=HONORPOINTS * (1 + gamer.cruelty_i * 0.02 + gamer.cruelty_ii * 0.03);
+	global.honor+=HONORPOINTS
 	show_protocol_message(string(text.received) + " " + string(URIDIUM) + " " + "Uridium")
 	show_protocol_message(string(text.received) + " " + string(EPPOINTS) + " " + string("xp"))
 	show_protocol_message(string(text.received) + " " + string(HONORPOINTS) + " " + string("honor"))
@@ -48,7 +61,7 @@ if gamer_get_reward = true
 	//LOGFILE REWARD based on Box Muller transfor to sort a normal distribution
 	if room!=GGA and room!=GGB and room!=GGY and room!=GGD
 	{
-		var hp_ref = 400//k
+		var hp_ref = 800//k
 		var log_avg_ref = 5//ggenergy for hpref k hit+shield points
 		var log_std_ref = 2//ggenergy for hpref k hit+shield points
 	
@@ -85,8 +98,8 @@ if gamer_get_reward = true
 	check_quests(id,room)
 		
 	update_stats(mob_name+"_kills")
-	update_stats("credit",CREDITS * (1 + gamer.greed * 0.03))
-	update_stats("uridium",URIDIUM * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03))
+	update_stats("credit",CREDITS)
+	update_stats("uridium",URIDIUM)
 }
 
 clear_ship_destroy_id(id)

@@ -10,7 +10,7 @@ function guns_installation(_id){
 		fatlasers:=false guns:=0; lasers=0; health_def:=10; MaxDamageGun:=0; MaxDamageLaser=0; bluing=false; //ammo[1,2]=global.x1ammo_sound; ammo[2,2]=global.x1ammo_sound; ammo[3,2]=global.x1ammo_sound; 
 		shield_def:=0;
 		//Ship = ship_name;
-		Shiptype=info(Ship,"ship_type");
+		Shiptype=info(ship_name,"ship_type");
 		ship_speed:=info_shiptypes(Shiptype,"speed"); Engines:=0; 
 		Flax_numb=0; Iris_numb:=0; SuperGunNumb:=0; Apis_numb=0; Zeus_numb=0;
 		gunlvlmin=0;
@@ -119,7 +119,7 @@ function guns_installation(_id){
 		
 		shield_defC2 = shield_def
 		own_shieldC2 = shield_defC2
-		shieldAbsorbC2 = shieldAbsorbC2 / shield_defC2
+		if shield_defC2 = 0 then shieldAbsorbC2=0 else shieldAbsorbC2 = shieldAbsorbC2 / shield_defC2
 		ship_speedC2 = ship_speed/(450/(5)) // factor to adapt speed in game
 		MaxDamageC2 = MaxDamage
 		if id = gamer.id then gunsC2 = guns
@@ -215,7 +215,7 @@ function guns_installation(_id){
 		
 		shield_defC1 = shield_def
 		own_shieldC1 = shield_defC1
-		shieldAbsorbC1 = shieldAbsorbC1 / shield_defC1
+		if shield_defC1 = 0 then shieldAbsorbC1=0 else shieldAbsorbC1 = shieldAbsorbC1 / shield_defC1
 		ship_speedC1 = ship_speed/(450/(5)) // factor to adapt speed in game
 		MaxDamageC1 = MaxDamage
 		if id = gamer.id then gunsC1 = guns
@@ -372,6 +372,16 @@ function guns_installation(_id){
 		#endregion
 		
 		
+		//SHIP SKINS
+		if ship_name = "avenger" then {shield_def *= 1.1; shield_defC1 *= 1.1; shield_defC2 *= 1.1;}
+		if ship_name = "revenge" then {MaxDamage *= 1.1; MaxDamageC1 *= 1.1; MaxDamageC2 *= 1.1;}
+		if ship_name = "lightning" then {MaxDamage *= 1.2; MaxDamageC1 *= 1.2; MaxDamageC2 *= 1.2;}
+		if ship_name = "enforcer" then {MaxDamage *= 1.1; MaxDamageC1 *= 1.1; MaxDamageC2 *= 1.1;}
+		if ship_name = "bastion" then {shield_def *= 1.1; shield_defC1 *= 1.1; shield_defC2 *= 1.1;}
+		if ship_name = "centaur" then {health_def *= 1.1;}
+		if ship_name = "saturn" then {health_def *= 1.2;}
+		
+		
 		//BOOSTERS
 		if id = gamer.id
 		{
@@ -387,7 +397,7 @@ function guns_installation(_id){
 		//END
 		event_user(2);
 		if own_health>health_def then own_health=health_def;
-		own_health_bilo:=own_health;
+		//own_health_bilo:=own_health;
 	}
 }
 

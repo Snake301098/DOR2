@@ -14,7 +14,7 @@ function get_rankpoints()
 	if global.rankpoints > 9000*rpf then //Chief space pilot
 	{subimg=2; rpbelow=9000*rpf; rpabove=12000*rpf; RPOINT=15}
 	if global.rankpoints > 12000*rpf then //Basic sergeant
-	{subimg=3; rpbelow=12000*rpf; rpabove=5500*rpf; RPOINT=20}
+	{subimg=3; rpbelow=12000*rpf; rpabove=15000*rpf; RPOINT=20}
 	if global.rankpoints > 15000*rpf then  //Sergeant
 	{subimg=4; rpbelow=15000*rpf; rpabove=20000*rpf; RPOINT=25}
 	if global.rankpoints > 20000*rpf then    //Chief sergeant

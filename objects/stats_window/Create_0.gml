@@ -7,6 +7,12 @@ item_info = ""; //show stats of objects etc
 page_droid=1;
 page_ships1=global.ship_page_stats_window;
 
+//PROFILE
+profile_stats = [];
+stats_list = ["CREDITS", "URIDIUM", "PVP KILLS","PVE KILLS","DEATHS","DMG DONE","DMG TAKEN","QUESTS","GG","TDM VICTORY","HIGHEST KILLSTREAK","GG ENERGIES","LOGFILES"];
+stats_names = ["credit","uridium","kills","mob_kills","deaths","dmg_done","dmg_taken","quests","gg","TDM_win","none","gg_clicks","logfiles"];
+k_list = [true,true,false,true,false,true,true,false,false,false,false,true,true];
+
 //SHOP PARAMETERS
 item_selected=""; //for buying or upgrading stuff, we store the item there
 buy_qty=1; //same for qty buy
@@ -44,6 +50,7 @@ rewards=[]
 //init user events
 event_user(0); //creation in the main tabs
 event_user(1); //creation in the sub tabs
+event_user(6); //creation in the sub tabs
 //event_user(3); it's when buying stuffs
 //event_user(4); it's when buying GG PORTALS
 alarm[0] = room_speed;

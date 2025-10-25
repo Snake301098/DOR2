@@ -29,7 +29,8 @@ if distance_to_object(gamer) < 600 then audio_play_sound(ammo_mob_sound,1,false)
 
 targetedship=0;
 //ammoangle=irandom_range(-150,150);
-ammoangle=irandom_range(-90,90);
+//ammoangle=irandom_range(-90,90);
+ammoangle=0;
 //decrease_angle_factor=0.9999;
 decrease_angle_factor=0.93;
 if instance_exists(gamer.target) then targetedship:=gamer.target;

@@ -43,7 +43,11 @@ draw_sprite_ext(hud_smb_spr,0,_start + sprite_get_width(shiphud_spr)*_ratio+39*4
 draw_sprite_ext(hud_ammo2_spr,0,_start,870,_ratio,_ratio,0,c_white,1); //ammo
 
 //ABILITY SHIP SKILL
-draw_sprite_ext(stats_icons_spr,3,_start+39*2,870,1,1,0,c_white,1); //ship skill
+if gamer.ship_name="solace" then draw_sprite_ext(stats_icons_spr,1,_start + 2.5*39*_ratio,870+25,_ratio,_ratio,0,c_white,1); //ship skill
+if gamer.ship_name="sentinel" then draw_sprite_ext(stats_icons_spr,9,_start + 2.5*39*_ratio,870+25,_ratio,_ratio,0,c_white,1); //ship skill
+if gamer.ship_name="diminisher" then draw_sprite_ext(stats_icons_spr,7,_start + 2.5*39*_ratio,870+25,_ratio,_ratio,0,c_white,1); //ship skill
+if gamer.ship_name="venom" then draw_sprite_ext(stats_icons_spr,16,_start + 2.5*39*_ratio,870+25,_ratio,_ratio,0,c_white,1); //ship skill
+if gamer.ship_name="spectrum" then draw_sprite_ext(stats_icons_spr,15,_start + 2.5*39*_ratio,870+25,_ratio,_ratio,0,c_white,1); //ship skill
 
 //Ammo selected
 var _xx_sel = 0
@@ -114,21 +118,21 @@ draw_sprite_ext(userhud_spr,0,25,60,1.2,1.2,0,c_white,0.8)
 draw_text_ext(+70,76+31,string(dotString(strEP)),-1,string_width*0.7);   
 draw_text_ext(+70,97+31,string(global.level),-1,string_width*0.7);
 draw_text_ext(+70,117+31,string(dotString(strHO)),-1,string_width*0.7);
-draw_text_ext(+70,137+31,string(dotString(global.ggenergy)),-1,string_width*0.7);
+draw_text_ext(+70,137+31,string(dotString(global.droid_parts)),-1,string_width*0.7);
 draw_text_ext(+195,97+31,string(dotString(round(global.uridium))),-1,string_width*0.7);
 draw_text_ext(+195,76+31,string(dotString(strCR)),-1,string_width*0.7); 
 draw_text_ext(+195,117+31,string(dotString(round(global.tdm_tickets))),-1,string_width*0.7);
 draw_text_ext(+195,137+31,string(dotString(round(global.chest_gold_key))) + " Go | " + string(dotString(round(global.chest_green_key))) + " Gr",-1,string_width*0.7);
-//draw_text_ext(+220,145,string(global.boxkey),-1,string_width*0.7);    
+//draw_text_ext(+220,145,string(global.boxkey),-1,string_width*0.7;
 //draw_text_ext(+220,135,string(global.resetcpclock),-1,string_width*0.7); 
 
 //HP etc
 draw_set_valign(fa_middle);
 draw_sprite_ext(hud_ammo_spr,0,330,60,1,1,0,c_white,0.8)
-draw_text_ext(+370,77+31,"THANATOS",-1,string_width*0.7); 
-draw_text_ext(+370,97+31,string(dotString(round(gamer.own_health))),-1,string_width*0.7); 
-draw_text_ext(+370,117+31,string(dotString(round(gamer.own_shield))),-1,string_width*0.7);  
-draw_text_ext(+370,137+31,string(gamer.config),-1,string_width*0.7);    
+draw_text_ext(+370,77+22,string(dotString(round(gamer.own_health))),-1,string_width*0.7); 
+draw_text_ext(+370,97+20,string(dotString(round(gamer.own_shield))),-1,string_width*0.7); 
+//draw_text_ext(+370,117+31,string(dotString(round(gamer.own_shield))),-1,string_width*0.7);  
+draw_text_ext(+370,137+15,string(gamer.config),-1,string_width*0.7);
 //draw_text_ext(+495,76+31,string(dotString(round(global.chest_gold_key))),-1,string_width*0.7); 
 //draw_text_ext(+495,97+31,string(dotString(round(global.chest_green_key))),-1,string_width*0.7);  
 //draw_text_ext(+495,117+31,string(global.ggenergy),-1,string_width*0.7);    

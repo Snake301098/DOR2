@@ -4,15 +4,24 @@ function jump_to_map(_room){
 	
 	if room != _room
 	{
-		if global.uridium >= 500 then
+		var can_tp = check_map_unlocked(room,_room,room);
+		if can_tp[0] = true
 		{
-			global.uridium -= 500
-			room_goto(_room)
-			show_protocol_message("Used Jumpmap for 500 uridium");
+		
+			if global.uridium >= 500 then
+			{
+				global.uridium -= 500
+				room_goto(_room)
+				show_protocol_message("Used Jumpmap for 500 uridium");
+			}
+			else
+			{
+				show_protocol_message("You need 500 uridium to use jumpmap");
+			}
 		}
 		else
 		{
-			show_protocol_message("You need 500 uridium to use jumpmap");
+			show_HUD_message("Map unlocked at level " + string(can_tp[1]));
 		}
 	}
 }

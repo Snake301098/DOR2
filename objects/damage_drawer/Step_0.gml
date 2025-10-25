@@ -6,7 +6,10 @@ yy-=5*_ycoef;
 scale+=0.026*_scalecoef;
 
 if t = "0" then t = "MISS";
-if is_numeric(t) then t = dotString(t);
+if is_numeric(t) and is_nan(t) = false then
+{
+	t = dotString(round(t));
+}
 
 if instance_exists(idship) then
 {

@@ -65,7 +65,7 @@ if KeyActionCURKEY = 26 then
 if KeyActionCURKEY = 27 then
 {save_game();}
 if KeyActionCURKEY = 28 then
-{if global.ish > 0 then ability_trigger(id,"SMB") else show_HUD_message("No SMB remaining")}
+{if global.smb > 0 then ability_trigger(id,"SMB") else show_HUD_message("No SMB remaining")}
 //CHANGE CONFIG
 if KeyActionCURKEY = 29 then
 {change_config(gamer.id);}
@@ -81,6 +81,13 @@ if KeyActionCURKEY = 30 then
 //MESSAGES LOG
 if KeyActionCURKEY = 31 then
 {if instance_exists(log_msgs_window) then instance_destroy(log_msgs_window) else instance_create_depth(0,0,-500,log_msgs_window)}
+//QUESTS WINDDOW
+if KeyActionCURKEY = 32 then
+{if instance_exists(quests_window) then instance_destroy(quests_window) else instance_create_depth(0,0,-50,quests_window)}
+//REWARDS WINDDOW
+if KeyActionCURKEY = 33 then
+{if instance_exists(rewards_window) then instance_destroy(rewards_window) else instance_create_depth(0,0,-50,rewards_window)}
+
 
 
 

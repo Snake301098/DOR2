@@ -41,7 +41,7 @@ global.zeus_cost = 50;
 global.kami_cooldown =  30 * room_speed;
 global.cost_kamikaze = 500;
 
-global.stats = load_csv("stats.csv")
+//global.stats = load_csv("stats.csv")
 
 global.protocol_log = [];
 
@@ -67,3 +67,7 @@ global.active_page_stats_window = "PROFILE";
 global.active_tab_hangar_window = "EQUIPMENT";
 global.active_side_tab_hangar_window = "SHIP";
 
+
+//REWARD
+global.credit_reward_green_key_treshold = 10000000;
+global.uridium_reward_gold_key_treshold = 10000;

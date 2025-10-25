@@ -1,4 +1,4 @@
-if device_mouse_x_to_gui(0) > 580 and device_mouse_x_to_gui(0) < 688 and device_mouse_y_to_gui(0) > 299 and device_mouse_y_to_gui(0) < 336 then if image_index=0 then image_index=1 else image_index=0;
+if device_mouse_x_to_gui(0) > 560 and device_mouse_x_to_gui(0) < 688 and device_mouse_y_to_gui(0) > 299 and device_mouse_y_to_gui(0) < 336 then if image_index=0 then image_index=1 else image_index=0;
 else if image_index = 0 and device_mouse_x_to_gui(0) > 580 and device_mouse_x_to_gui(0) < 680 and device_mouse_y_to_gui(0) > 516 and device_mouse_y_to_gui(0) < 580 then room_goto(lv1_1)
 else if image_index = 0 and device_mouse_x_to_gui(0) > 717 and device_mouse_x_to_gui(0) < 817 and device_mouse_y_to_gui(0) > 516 and device_mouse_y_to_gui(0) < 580 then room_goto(lv1_2)
 else if image_index = 0 and device_mouse_x_to_gui(0) > 836 and device_mouse_x_to_gui(0) < 936 and device_mouse_y_to_gui(0) > 456 and device_mouse_y_to_gui(0) < 520 then room_goto(lv1_3)

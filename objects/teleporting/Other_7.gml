@@ -9,6 +9,7 @@ gamer.teleport_[0].image_index=0;
 gamer.x = tox;
 gamer.y = toy;
 
+if gamer.own_health <= 0 then instance_destroy();
 
 var i;
 if room=map1 then

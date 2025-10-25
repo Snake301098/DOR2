@@ -160,13 +160,13 @@ else
 if target=id then target=noone;
 
 //Health fix; Prevens HP from going over max when using energy leech.
-if own_health > health_def or is_nan(own_health) then
+if own_health > health_def
 {
 	own_health=health_def
 }
 
 //fix2
-if is_nan(own_shield) then own_shield = shield_def;
+//if is_nan(own_shield) then own_shield = shield_def;
 
 //Cloak fix; Prevens you from staying cloaked when shooting.
 if attacking=true and global.cloaked=1 then {global.cloaked=0}
@@ -182,6 +182,7 @@ if own_health <= 0
 	attacking = false;
 	//Remove gamer from targets
 	with(ship){if instance_exists(target){if target = gamer.id then target = noone}}
+	with(way){if owner = gamer.id then instance_destroy();}
 	
 	//GG lifes
 	if room = GGA then global.alphalife--

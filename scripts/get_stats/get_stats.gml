@@ -44,6 +44,11 @@ function get_stats(_stat_name,_ship="all")
 		var _stats = ["phoenix_kills","nostromo_kills","leonov_kills","bigboy_kills"]
 	}
 	
+	if _stat_name = "dmg_done" then
+	{
+		var _stats = ["x1_dmg","x2_dmg","x3_dmg","x4_dmg","x5_dmg","x6_dmg","venom_effect_dmg","smb_dmg","kamikaze_dmg"]
+	}
+	
 	if _stat_name = "gg" then
 	{
 		var _stats = ["GGA","GGB","GGY","GGD"]

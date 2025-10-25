@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"jump_to_map",
   "isCompatibility":false,
   "isDnD":false,

@@ -19,7 +19,7 @@ switch wave
 	
 	case 3:
 	{
-		spawn_mob(kristallin,,,30);
+		spawn_mob(kristallin,,,20);
 		spawn_mob(saimon,,,20);
 		spawn_mob(mordon,,,10);
 		break;
@@ -42,14 +42,14 @@ switch wave
 	
 	case 6:
 	{
-		spawn_mob(sibelonit,,,30);
+		spawn_mob(sibelonit,,,20);
 		spawn_mob(sibelon,,,3);
 		break;
 	}
 	
 	case 7:
 	{
-		spawn_mob(kristallin,,,30);
+		spawn_mob(kristallin,,,20);
 		spawn_mob(sibelonit,,,10);
 		spawn_mob(streuner,,,10);
 		break;
@@ -57,20 +57,20 @@ switch wave
 	
 	case 8:
 	{
-		spawn_mob(kristallin,,,30);
+		spawn_mob(kristallin,,,20);
 		spawn_mob(kristallon,,,2);
 		break;
 	}
 	
 	case 9:
 	{
-		spawn_mob(lordakium,,,6);
+		spawn_mob(lordakium,,,4);
 		break;
 	}
 	
 	case 10:
 	{
-		spawn_mob(kristallon,,,6);
+		spawn_mob(kristallon,,,4);
 		break;
 	}
 	

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"damage_syntax",
   "isCompatibility":false,
   "isDnD":false,

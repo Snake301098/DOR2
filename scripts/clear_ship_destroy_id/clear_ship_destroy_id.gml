@@ -28,5 +28,6 @@ function clear_ship_destroy_id(_id)
 	with (nuke) {if owner=myid then instance_destroy();}
 	with(mob){if target=myid then {target=noone;attacking=false;}}
 	with (ship) {if chef=myid then chef=0; if target=myid then {target=noone;attacking=false;}}
+	with (PET) {if owner=myid then instance_destroy();}
 	with(gamer){if target=myid then {target=noone;attacking=false}}
 }

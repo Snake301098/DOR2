@@ -49,7 +49,7 @@ if id = gamer.id
 
 //Îòêëþ÷åíèå ÁÇ
 v_zone_bz:=false;
-//Âûñòðåë âûáðàííûì òèïîì ëàçåðà
+//Âûñòðåë âûáðàííûì òèïîì ëàçåðàJHJDFYHRNRHF5555DHUSDUERHBJRTJZ
 if instance_exists(target)
 {
 	with(target) a:=distance_to_object(gamer);
@@ -71,7 +71,7 @@ if instance_exists(target)
 	}
 	else
 	{ //NOT SAB
-		if Ship = "phoenix" or Ship = "spearhead"
+		if ship_name = "phoenix" or ship_name = "spearhead"
 		{
 			//ii = instance_create_depth(x+xdec+lengthdir_x(ActivityCtrl.phoenix_gun_place,image_angle),
 		    //y+ydec+lengthdir_y(ActivityCtrl.phoenix_gun_place,image_angle),0,ammo_selected);
@@ -88,10 +88,10 @@ if instance_exists(target)
 			var dec1a,dec1b,dec2a,dec2b,dec3a,dec3b,dec4a,dec4b,dec5a,dec5b;
 			dec1a=0;dec1b=0;dec2a=0;dec2b=0;dec3a=0;dec3b=0;dec4a=0;dec4b=0;dec5a=0;dec5b=0;
 			
-			if Ship="bigboy" then {dec1a=71;dec1b=0;dec2a=59.67;dec2b=39.56;dec3a=59.67;dec3b=-39.56;dec4a=45.71;dec4b=100;dec5a=45.71;dec5b=-100;}
-			if (Ship="nostromo" or Ship="leonov") then {dec1a=73;dec1b=0;dec2a=51.42;dec2b=13.5;dec3a=51.42;dec3b=-13.5;dec4a=37.16;dec4b=13.81;dec5a=37.16;dec5b=-13.81;}
+			if ship_name="bigboy" then {dec1a=71;dec1b=0;dec2a=59.67;dec2b=39.56;dec3a=59.67;dec3b=-39.56;dec4a=45.71;dec4b=100;dec5a=45.71;dec5b=-100;}
+			if (ship_name="nostromo" or ship_name="leonov") then {dec1a=73;dec1b=0;dec2a=51.42;dec2b=13.5;dec3a=51.42;dec3b=-13.5;dec4a=37.16;dec4b=13.81;dec5a=37.16;dec5b=-13.81;}
 			if Shiptype="vengeance" then {dec1a=94;dec1b=0;dec2a=51.55;dec2b=18;dec3a=51.55;dec3b=-18;dec4a=48.5;dec4b=81.7;dec5a=48.5;dec5b=-81.7;}
-			if (Shiptype="goliath" or Ship="citadel" or Ship="aegis") then {dec1a=30;dec1b=0;dec2a=68.10;dec2b=29.54;dec3a=70.71;dec3b=-24.74;dec4a=34.48;dec4b=119.54;dec5a=32.65;dec5b=-117.35;}
+			if (Shiptype="goliath" or ship_name="citadel" or ship_name="aegis") then {dec1a=30;dec1b=0;dec2a=68.10;dec2b=29.54;dec3a=70.71;dec3b=-24.74;dec4a=34.48;dec4b=119.54;dec5a=32.65;dec5b=-117.35;}
 			
 			var factor = 0.75;
 			dec1a=factor*dec1a;dec1b=factor*dec1b;

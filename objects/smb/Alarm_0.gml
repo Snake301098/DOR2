@@ -4,6 +4,7 @@ owner.is_using_smb = true;
 x = owner.x
 y = owner.y
 
+if point_distance(gamer.x,gamer.y,owner.x,owner.y) <= 600 then audio_play_sound(smb_sound,1,false)
 //alarm[1] = 60 * 2 * (1 + owner.ish_upgrade * 0.05); //end of ISH
 
 //if point_distance(gamer.x,gamer.y,owner.x,owner.y) <= 600 then audio_play_sound(ish_sound,1,false)

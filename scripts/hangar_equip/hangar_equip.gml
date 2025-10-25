@@ -139,7 +139,7 @@ function hangar_equip(){
 				{
 					for (var pos=1; pos<=10; pos+=1)
 					{
-						if gamer.droid[pos,0] != "" and gamer.droid[pos,0] != "noone" 
+						if gamer.droid[pos,1] != "" and gamer.droid[pos,1] != "noone" 
 						{
 							if gamer.droid[pos,2] = "" or gamer.droid[pos,2]= "noone" then 
 							{
@@ -150,7 +150,7 @@ function hangar_equip(){
 								break;
 							}
 						
-							if gamer.droid[pos,3] = "" or gamer.droid[pos,3]= "noone" then 
+							if (gamer.droid[pos,3] = "" or gamer.droid[pos,3]= "noone") and gamer.droid[pos,1]!="flax" then 
 							{
 								gamer.droid[pos,3]=cell_selected.content; 
 								loaded=true; 
@@ -184,7 +184,7 @@ function hangar_equip(){
 				{
 					for (var pos=1; pos<=10; pos+=1)
 					{
-						if gamer.droid[pos,0] != "" and gamer.droid[pos,0] != "noone" 
+						if gamer.droid[pos,1] != "" and gamer.droid[pos,1] != "noone" 
 						{
 							if gamer.droid[pos,2] = "" or gamer.droid[pos,2]= "noone" then 
 							{
@@ -195,7 +195,7 @@ function hangar_equip(){
 								break;
 							}
 						
-							if gamer.droid[pos,3] = "" or gamer.droid[pos,3]= "noone" then 
+							if (gamer.droid[pos,3] = "" or gamer.droid[pos,3]= "noone") and gamer.droid[pos,1] != "flax"  then 
 							{
 								gamer.droid[pos,3]=cell_selected.content; 
 								loaded=true; 

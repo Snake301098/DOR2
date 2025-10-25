@@ -60,8 +60,6 @@ if global.alphaonmap=1 and global.alphawave <=10 then
     teleport6.tox=irandom_range(100, gg_room_width - 100);
     teleport6.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport6.visible=false; teleport6.working=false;}
 if global.betaonmap=1 and global.betawave <=10 then
 {    
     teleport7=instance_create_depth(2500/scale,2300/scale,50,portal_object);
@@ -72,8 +70,6 @@ if global.betaonmap=1 and global.betawave <=10 then
     teleport7.tox=irandom_range(100, gg_room_width - 100);
     teleport7.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport7.visible=false; teleport7.working=false;}
 if global.gammaonmap=1 and global.gammawave <=10 then
 {    
     teleport8=instance_create_depth(1000/scale,2800/scale,50,portal_object);
@@ -84,8 +80,6 @@ if global.gammaonmap=1 and global.gammawave <=10 then
     teleport8.tox=irandom_range(100, gg_room_width - 100);
     teleport8.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport8.visible=false; teleport8.working=false;}
 if global.deltaonmap=1 and global.deltawave <10 then
 {    
     teleport9=instance_create_depth(4000/scale,3000/scale,50,portal_object);
@@ -96,8 +90,6 @@ if global.deltaonmap=1 and global.deltawave <10 then
     teleport8.tox=irandom_range(100, gg_room_width - 100);
     teleport8.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport9.visible=false; teleport9.working=false;}
 }break;}
     
     
@@ -133,8 +125,6 @@ if global.alphaonmap=1 and global.alphawave <=10 then
     teleport6.tox=irandom_range(100, gg_room_width - 100);
     teleport6.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport6.visible=false; teleport6.working=false;}
 if global.betaonmap=1 and global.betawave <=10  then
 {    
     teleport7=instance_create_depth(13400/scale,7600/scale,50,portal_object);
@@ -145,8 +135,6 @@ if global.betaonmap=1 and global.betawave <=10  then
     teleport7.tox=irandom_range(100, gg_room_width - 100);
     teleport7.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport7.visible=false; teleport7.working=false;}
 if global.gammaonmap=1 and global.gammawave <=10  then
 {    
     teleport8=instance_create_depth(14900/scale,7000/scale,50,portal_object);
@@ -157,8 +145,6 @@ if global.gammaonmap=1 and global.gammawave <=10  then
     teleport8.tox=irandom_range(100, gg_room_width - 100);
     teleport8.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport8.visible=false; teleport8.working=false;}
 if global.deltaonmap=1 and global.deltawave <=10  then
 {    
     teleport9=instance_create_depth(12000/scale,6700/scale,50,portal_object);
@@ -169,8 +155,6 @@ if global.deltaonmap=1 and global.deltawave <=10  then
     teleport9.tox=irandom_range(100, gg_room_width - 100);
     teleport9.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{teleport9.visible=false; teleport9.working=false;}
 }break;}    
 
 
@@ -202,8 +186,6 @@ if global.alphaonmap=1 and global.alphawave <=10  then
     teleport6.tox=irandom_range(100, gg_room_width - 100);
     teleport6.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{}//teleport6.visible=false; teleport6.working=false;
 if global.betaonmap=1 and global.betawave <=10  then
 {    
     teleport7=instance_create_depth(13400/scale,2300/scale,50,portal_object);
@@ -214,8 +196,6 @@ if global.betaonmap=1 and global.betawave <=10  then
     teleport7.tox=irandom_range(100, gg_room_width - 100);
     teleport7.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{}//teleport7.visible=false; teleport7.working=false;
 if global.gammaonmap=1 and global.gammawave <=10  then
 {    
     teleport8=instance_create_depth(14900/scale,2800/scale,50,portal_object);
@@ -226,8 +206,6 @@ if global.gammaonmap=1 and global.gammawave <=10  then
     teleport8.tox=irandom_range(100, gg_room_width - 100);
     teleport8.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{}//teleport8.visible=false; teleport8.working=false;
 if global.deltaonmap=1 and global.deltawave <=10  then
 {    
     teleport9=instance_create_depth(12500/scale,3000/scale,50,portal_object);
@@ -238,8 +216,6 @@ if global.deltaonmap=1 and global.deltawave <=10  then
     teleport9.tox=irandom_range(100, gg_room_width - 100);
     teleport9.toy=irandom_range(100, gg_room_height - 100);
 }
-else
-{}//{teleport9.visible=false; teleport9.working=false;
 }break;}    
     
     
@@ -255,7 +231,7 @@ case lv1_2:
     teleport2.map2=lv1_3;
     teleport2.tox=1024/scale;
     teleport2.toy=1024/scale;
-    teleport3=instance_create_depth(1024/scale,8960/scale,50,portal_object);
+    teleport3=instance_create_depth(14960/scale,8960/scale,50,portal_object);
     teleport3.map1=lv1_2;
     teleport3.map2=lv1_4;
     teleport3.tox=1024/scale;
@@ -516,7 +492,7 @@ case lv2_4:
     teleport2.map1=lv2_4;
     teleport2.map2=lv4_2;
     teleport2.tox=8000/scale;
-    teleport2.toy=5000/scale;
+    teleport2.toy=1024/scale;
     teleport3=instance_create_depth(1024/scale,8960/scale,50,portal_object);
     teleport3.map1=lv3_3;
     teleport3.map2=lv2_4;

@@ -33,14 +33,16 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 1; 
 		        case "cost_type": return "credit"; 
+				case "description": return"Name: X1 \nDescription: This ammunition deals x1 damage\nPrice: 1 credit per ammunition"
 		    }
 		    break;
 			
 		case "x2":
 		    switch _info
 		    {
-		        case "cost_qty": return 2; 
+		        case "cost_qty": return 100; 
 		        case "cost_type": return "credit"; 
+				case "description": return"Name: X2 \nDescription: This ammunition deals x2 damage\nPrice: 10 credits per ammunition"
 		    }
 		    break;
 			
@@ -49,6 +51,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 1; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: X3 \nDescription: This ammunition deals x3 damage\nPrice: 1 uridium per ammunition"
 		    }
 		    break;
 			
@@ -57,22 +60,25 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 5; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: X4 \nDescription: This ammunition deals x4 damage\nPrice: 5 uridium per ammunition"
 		    }
 		    break;
 			
 		case "x5":
 		    switch _info
 		    {
-		        case "cost_qty": return 5; 
+		        case "cost_qty": return 2; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: X5 \nDescription: This ammunition deals x5 damage\nPrice: 2 uridium per ammunition"
 		    }
 		    break;
 			
 		case "x6":
 		    switch _info
 		    {
-		        case "cost_qty": return 2; 
+		        case "cost_qty": return 5; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: X6 \nDescription: This ammunition deals x6 damage\nPrice: 5 uridium per ammunition"
 		    }
 		    break;
 	
@@ -81,6 +87,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 500; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: Shield backup \nDescription: Allows to get back up to 50k shield\nPrice: 500 uridium per item"
 		    }
 		    break;
     
@@ -89,6 +96,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 500; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: Warrep \nDescription: Allows to get repair ship during battle\nPrice: 500 uridium per item"
 		    }
 		    break;
 			
@@ -98,6 +106,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 500; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: ISH \nDescription: Invicible to damage for few seconds\nPrice: 500 uridium per item"
 		    }
 		    break;
 			
@@ -106,6 +115,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 500; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: SMB \nDescription: Deals up to 50k damage to ennemy ships\nPrice: 500 uridium per item"
 		    }
 		    break;
 			
@@ -114,6 +124,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 500; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: EMP \nDescription: Ship is not targeted anymore\nPrice: 500 uridium per item"
 		    }
 		    break;
 		#endregion
@@ -125,7 +136,8 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "cost_qty": return 1000; 
-		        case "cost_type": return "uridium"; 
+		        case "cost_type": return "uridium";
+				case "description": return"Name: Booster damage 1 \nDescription: Increases damages by 10%\nPrice: 1000 uridium per 15mn"
 		    }
 		    break; 
 			
@@ -134,6 +146,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 2000; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: Booster damage 2 \nDescription: Increases damages by 20%\nPrice: 2000 uridium per 15mn"
 		    }
 		    break; 
 			
@@ -142,6 +155,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 1000; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: Booster HP 1 \nDescription: Increases HP by 10%\nPrice: 1000 uridium per 15mn"
 		    }
 		    break; 
 			
@@ -149,7 +163,8 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "cost_qty": return 2000; 
-		        case "cost_type": return "uridium"; 
+		        case "cost_type": return "uridium";
+				case "description": return"Name: Booster HP 2 \nDescription: Increases HP by 20%\nPrice: 2000 uridium per 15mn" 
 		    }
 		    break; 
 			
@@ -158,6 +173,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 1000; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: Booster Shield 1 \nDescription: Increases shield by 10%\nPrice: 1000 uridium per 15mn"
 		    }
 		    break; 
 			
@@ -166,6 +182,7 @@ function info(item,_info,lvl=1)
 		    {
 		        case "cost_qty": return 2000; 
 		        case "cost_type": return "uridium"; 
+				case "description": return"Name: Booster Shield 2 \nDescription: Increases shield by 20%\nPrice: 2000 uridium per 15mn"
 		    }
 		    break; 
 		
@@ -175,143 +192,163 @@ function info(item,_info,lvl=1)
 		#region
 
 		case "phoenix":
-			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 0;
 			if _info = "sprite" then return phoenix_spr;
 			if _info = "ship_type" then return "phoenix";
+			if _info = "description"then return"Name: Phoenix \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: Free"
 			break;
 			
 		case "nostromo":
-			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 195000;
 			if _info = "sprite" then return nostromo_spr;
 			if _info = "ship_type" then return "nostromo";
+			if _info = "description"then return"Name: Nostromo \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: 195,000 credits"
 			break;
 			
 		case "leonov":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 15000;
 			if _info = "sprite" then return leonov_spr;
 			if _info = "ship_type" then return "leonov";
+			if _info = "description"then return"Name: Leonov \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: 15,000 uridium"
 			break;
 			
 		case "bigboy":
-			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 285000;
 			if _info = "sprite" then return bigboy_spr;
 			if _info = "ship_type" then return "bigboy";
+			if _info = "description"then return"Name: Bigboy \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: 285,000 credits"
 			break;
 			
 		case "vengeance":
-			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 10000000;
 			if _info = "sprite" then return vengeance_spr;
 			if _info = "ship_type" then return "vengeance";
+			if _info = "description"then return"Name: Vengeance \nHP: "+string(info_shiptypes("vengeance","health"))+"\nGuns slots: "+string(info_shiptypes("vengeance","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("vengeance","engine_slots"))+"\nPrice: 10,000,000 credits"
 			break;
 			
-		case "adept":
+		case "adept": //xp10
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 50000;
 			if _info = "sprite" then return adept_spr;
 			if _info = "ship_type" then return "vengeance";
+			if _info = "description"then return"Name: Adept (Vengeance) \nHP: "+string(info_shiptypes("vengeance","health"))+"\nGuns slots: "+string(info_shiptypes("vengeance","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("vengeance","engine_slots"))+"\nPassive: +10% XP\nPrice: 50,000 uridium"
 			break;
 			
 		case "avenger":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 50000;
 			if _info = "sprite" then return avenger_spr;
 			if _info = "ship_type" then return "vengeance";
+			if _info = "description"then return"Name: Avenger (Vengeance) \nHP: "+string(info_shiptypes("vengeance","health"))+"\nGuns slots: "+string(info_shiptypes("vengeance","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("vengeance","engine_slots"))+"\nPassive: +10% shield\nPrice: 50,000 uridium"
 			break;
 			
 		case "lightning":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 80000;
 			if _info = "sprite" then return lightning_spr;
 			if _info = "ship_type" then return "vengeance";
+			if _info = "description"then return"Name: Lightning (Vengeance) \nHP: "+string(info_shiptypes("vengeance","health"))+"\nGuns slots: "+string(info_shiptypes("vengeance","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("vengeance","engine_slots"))+"\nPassive: +20% damage\nPrice: 80,000 uridium"
 			break;
 			
 		case "revenge":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 50000;
 			if _info = "sprite" then return revenge_spr;
 			if _info = "ship_type" then return "vengeance";
+			if _info = "description"then return"Name: Revenge (Vengeance) \nHP: "+string(info_shiptypes("vengeance","health"))+"\nGuns slots: "+string(info_shiptypes("vengeance","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("vengeance","engine_slots"))+"\nPassive: +10% damage\nPrice: 50,000 uridium"
 			break;
 			
-		case "corsair":
+		case "corsair": //honour
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 50000;
 			if _info = "sprite" then return corsair_spr;
 			if _info = "ship_type" then return "vengeance";
+			if _info = "description"then return"Name: Corsair (Vengeance) \nHP: "+string(info_shiptypes("vengeance","health"))+"\nGuns slots: "+string(info_shiptypes("vengeance","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("vengeance","engine_slots"))+"\nPassive: +10% honor\nPrice: 50,000 uridium"
 			break;
 			
 		case "goliath":
-			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_type" then return "credit";
+			if _info = "cost_qty" then return 50000000;
 			if _info = "sprite" then return goliath_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Goliath \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPrice: 50,000,000 uridium"
 			break;
 			
 		case "bastion":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 80000;
 			if _info = "sprite" then return bastion_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Bastion (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +10% shield\nPrice: 80,000 uridium"
 			break;
 			
 		case "enforcer":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 80000;
 			if _info = "sprite" then return enforcer_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Enforcer (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +10% damage\nPrice: 80,000 uridium"
 			break;
 			
-		case "centaur":
+		case "centaur": //HP10
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 100000;
 			if _info = "sprite" then return centaur_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Centaur (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +10% HP\nPrice: 100,000 uridium"
 			break;
 			
-		case "exalted":
+		case "exalted": //honor 10
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 100000;
 			if _info = "sprite" then return exalted_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Exalted (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +10% honor\nPrice: 100,000 uridium"
 			break;
 			
-		case "goal":
+		case "goal": //uridium 5%
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 80000;
 			if _info = "sprite" then return goal_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Goal (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +5% uridium\nPrice: 80,000 uridium"
 			break;
 			
-		case "kick":
+		case "kick": //mob dmg
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 100000;
 			if _info = "sprite" then return kick_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Kick (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +15% damage against mobs\nPrice: 100,000 uridium"
 			break;
 			
-		case "referee":
+		case "referee": //CD red
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 100000;
 			if _info = "sprite" then return referee_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Referee (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: -10% cooldown\nPrice: 100,000 uridium"
 			break;
 			
-		case "saturn":
+		case "saturn": //20HP
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 120000;
 			if _info = "sprite" then return saturn_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Saturn (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +20% HP\nPrice: 120,000 uridium"
 			break;
 			
-		case "veteran":
+		case "veteran": //xp
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 80000;
 			if _info = "sprite" then return veteran_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Veteran (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nPassive: +10% XP\nPrice: 80,000 uridium"
 			break;
 			
 		case "diminisher":
@@ -319,6 +356,7 @@ function info(item,_info,lvl=1)
 			if _info = "cost_qty" then return 256000;
 			if _info = "sprite" then return diminisher_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Diminisher (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nSkill: Reduces enemy shield efficiency by 50%\nPrice: 256,000 uridium"
 			break;
 			
 		case "sentinel":
@@ -326,6 +364,7 @@ function info(item,_info,lvl=1)
 			if _info = "cost_qty" then return 256000;
 			if _info = "sprite" then return sentinel_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Sentinel (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nSkill: Increases shield efficiency by 30%\nPrice: 256,000 uridium"
 			break;
 			
 		case "solace":
@@ -333,6 +372,7 @@ function info(item,_info,lvl=1)
 			if _info = "cost_qty" then return 256000;
 			if _info = "sprite" then return solace_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Solace (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nSkill: Restore 50% of HPs\nPrice: 256,000 uridium"
 			break;
 			
 		case "spectrum":
@@ -340,6 +380,7 @@ function info(item,_info,lvl=1)
 			if _info = "cost_qty" then return 256000;
 			if _info = "sprite" then return spectrum_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Spectrum (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nSkill: Reduces own's damages by 25%\n and enemy's damage by 50%\nPrice: 256,000 uridium"
 			break;
 			
 		case "venom":
@@ -347,27 +388,31 @@ function info(item,_info,lvl=1)
 			if _info = "cost_qty" then return 256000;
 			if _info = "sprite" then return venom_spr;
 			if _info = "ship_type" then return "goliath";
+			if _info = "description"then return"Name: Diminisher (Goliath) \nHP: "+string(info_shiptypes("goliath","health"))+"\nGuns slots: "+string(info_shiptypes("goliath","gun_slots"))+"\nEngines slots: "+string(info_shiptypes("goliath","engine_slots"))+"\nSkill: Deals direct damages to HP over time\nPrice: 256,000 uridium"
 			break;
 			
 		case "spearhead":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 45000;
 			if _info = "sprite" then return spearhead_spr;
 			if _info = "ship_type" then return "spearhead";
+			if _info = "description"then return"Name: Spearhead \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: 45,000 uridium"
 			break;
 			
 		case "aegis":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 80000;
 			if _info = "sprite" then return aegis_spr;
 			if _info = "ship_type" then return "aegis";
+			if _info = "description"then return"Name: Aegis \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: 80,000 uridium"
 			break;
 			
 		case "citadel":
 			if _info = "cost_type" then return "uridium";
-			if _info = "cost_qty" then return 256000;
+			if _info = "cost_qty" then return 100000;
 			if _info = "sprite" then return citadel_spr;
 			if _info = "ship_type" then return "citadel";
+			if _info = "description"then return"Name: Citadel \nHP: "+string(info_shiptypes(item,"health"))+"\nGuns slots: "+string(info_shiptypes(item,"gun_slots"))+"\nEngines slots: "+string(info_shiptypes(item,"engine_slots"))+"\nPrice: 80,000 uridium"
 			break;
 			
 		#endregion
@@ -380,6 +425,7 @@ function info(item,_info,lvl=1)
 		case "LF-4":
 			if _info = "type" then return "gun";
 			if _info = "damage" then return 200;
+			if _info = "description" then return"Name: LF-4 \nDescription: This laser deals 200 damage\nPrice: 1,000 uridium"
 			break;
 			
 			
@@ -388,6 +434,7 @@ function info(item,_info,lvl=1)
 			if _info = "damage" then return 175;
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 10000;
+			if _info = "description" then return"Name: LF-3 \nDescription: This laser deals 175 damage\nPrice: 10,000 uridium"
 			break;
 			
 			
@@ -396,6 +443,7 @@ function info(item,_info,lvl=1)
 			if _info = "damage" then return 125;
 			if _info = "cost_type" then return "credit";
 			if _info = "cost_qty" then return 150000;
+			if _info = "description" then return"Name: MP-1 \nDescription: This laser deals 125 damage\nPrice: 150,000 credits"
 			break;
 			
 		
@@ -405,6 +453,7 @@ function info(item,_info,lvl=1)
 			if _info = "absorb" then return 0.8;
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 10000;
+			if _info = "description" then return"Name: BO-2 \nDescription: This generator provides 10,000 shield\nPrice: 10,000 uridium"
 			break;
 		
 		
@@ -414,6 +463,7 @@ function info(item,_info,lvl=1)
 			if _info = "absorb" then return 0.7;
 			if _info = "cost_type" then return "credit";
 			if _info = "cost_qty" then return 256000;
+			if _info = "description" then return"Name: BO-1 \nDescription: This generator provides 8,000 shield\nPrice: 256,000 credits"
 			break;
 			
 			
@@ -423,6 +473,7 @@ function info(item,_info,lvl=1)
 			if _info = "absorb" then return 0.6;
 			if _info = "cost_type" then return "credit";
 			if _info = "cost_qty" then return 50000;
+			if _info = "description" then return"Name: BO-0 \nDescription: This generator provides 6,000 shield\nPrice: 50,000 credits"
 			break;
 			
 			
@@ -431,6 +482,7 @@ function info(item,_info,lvl=1)
 			if _info = "quantity" then return 10;
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 2000;
+			if _info = "description" then return"Name: SPD-3 \nDescription: This engine provides 10 speed\nPrice: 2,000 uridium"
 			break;
 		
 		
@@ -439,6 +491,7 @@ function info(item,_info,lvl=1)
 			if _info = "quantity" then return 7;
 			if _info = "cost_type" then return "uridium";
 			if _info = "cost_qty" then return 1000;
+			if _info = "description" then return"Name: SPD-2 \nDescription: This generator provides 7 speed\nPrice: 1,000 uridium"
 			break;
 			
 			
@@ -447,6 +500,7 @@ function info(item,_info,lvl=1)
 			if _info = "quantity" then return 5;
 			if _info = "cost_type" then return "credit";
 			if _info = "cost_qty" then return 25000;
+			if _info = "description" then return"Name: SPD-1 \nDescription: This generator provides 5 speed\nPrice: 25,000 credits"
 			break;
 		
 		#endregion
@@ -464,15 +518,16 @@ function info(item,_info,lvl=1)
 		        case "cost_qty":
 		            switch lvl
 		            {
-		            case 1: return 2000; break;
-		            case 2: return 4000 break;
-		            case 3: return 6000 break;
-		            case 4: return 10000 break;
-		            case 5: return 15000 break;
-		            case 6: return 22000 break;
-		            case 7: return 30000 break;
-		            case 8: return 40000 break;
+		            case 1: return 100000; break;
+		            case 2: return 200000 break;
+		            case 3: return 400000 break;
+		            case 4: return 800000 break;
+		            case 5: return 1600000 break;
+		            case 6: return 3200000 break;
+		            case 7: return 6400000 break;
+		            case 8: return 12800000 break;
 		            }
+				case "description": return"Name: Drone Flax \nDescription: This drone provides 1 slot\nPrice 1st: 100,000 credits\nPrice 2nd: 200,000 credits\nPrice 3rd: 400,000 credits\nPrice 4th: 800,000 credits\nPrice 5th: 1,600,000 credits\nPrice 6th: 3,200,000 credits\nPrice 7th: 6,400,000 credits\nPrice 8th: 12,800,000 credits";break;
 		        break;
 		        }
 		    break;
@@ -496,6 +551,7 @@ function info(item,_info,lvl=1)
 		            case 8: return 200000 break;
 		            }
 		        break;
+				case "description": return"Name: Drone Iris \nDescription: This drone provides 2 slots\nPrice 1st: 15,000 uridium\nPrice 2nd: 24,000 uridium\nPrice 3rd: 42,000 uridium\nPrice 4th: 60,000 uridium\nPrice 5th: 84,000 uridium\nPrice 6th: 96,000 uridium\nPrice 7th: 126,000 uridium\nPrice 8th: 200,000 uridium";break;
 		        }
 		    break;
 		    case "apis":
@@ -504,6 +560,7 @@ function info(item,_info,lvl=1)
 		        case "type": return "drone"; break;
 		        case "numb_slot": return 2; break;
 		        case "cost": return 1000000; break;
+				case "description": return"Name: Drone Apis \nDescription: This drone provides 2 slots\nPrice: 30 drone's parts";break;
 		        }
 		    break;
 		    case "zeus":
@@ -512,6 +569,7 @@ function info(item,_info,lvl=1)
 		        case "type": return "drone"; break;
 		        case "numb_slot": return 2; break;
 		        case "cost": return 2000000; break;
+				case "description": return"Name: Drone Zeus \nDescription: This drone provides 2 slots\nPrice: 50 drone's parts";break;
 		        }
 		    break; 
 	
@@ -737,7 +795,7 @@ function info(item,_info,lvl=1)
 		    switch _info
 		    {
 		        case "level_max": return 5; break;
-		        case "description": return "qzds"; break;
+		        case "description": return "Increase SMB damage\nLevel 1: +5,000\nLevel 2: +10,000\nLevel 3: +15,000\nLevel 4: 20,000\nLevel 5: +25,000"; break;
 		    }
 		    break;
 			

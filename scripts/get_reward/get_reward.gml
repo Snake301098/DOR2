@@ -112,6 +112,18 @@ function get_reward(reward_from){
 			if reward_from = "gold_chest" then reward_qty += choose(0,1,2);
 		}
 	}
+	
+	
+	//SHIP SKINS
+	var _xp_bonus = 1;
+	var _honor_bonus = 1;
+	var _uridium_bonus = 1;
+	if gamer.ship_name = "adept" then _xp_bonus = 1.1;
+	if gamer.ship_name = "veteran" then _xp_bonus = 1.1;
+	if gamer.ship_name = "corsair" then _honor_bonus = 1.1;
+	if gamer.ship_name = "exalted" then _honor_bonus = 1.1;
+	if gamer.ship_name = "goal" then _uridium_bonus = 1.05;
+	
 
 	//give rewards
 	var reward_string = "";
@@ -124,12 +136,12 @@ function get_reward(reward_from){
 	if reward = "emp" then {global.empcount += reward_qty; reward_string = "EMP"}
 	if reward = "x1" then {global.shieldbackupcount += reward_qty; reward_string = "shield backups"}
 	if reward = "warrep" then {global.warrepcount += reward_qty; reward_string = "warreps"}
-	if reward = "credit" then {global.credit += reward_qty; reward_string = "credit"}
-	if reward = "udirium" then {global.uridium += reward_qty; reward_string = "uridium"}
+	if reward = "credit" then {global.credit += reward_qty; reward_string = "credit"; update_stats("credit",reward_qty);}
+	if reward = "udirium" then {reward_qty = reward_qty  * (1 + gamer.luck_i * 0.02 + gamer.luck_ii * 0.03) * _uridium_bonus; global.uridium += reward_qty; update_stats("uridium",reward_qty); reward_string = "uridium"}
 	if reward = "drone_part" then {global.droid_parts += reward_qty; reward_string = "drone parts"}
 	if reward = "arena" then {global.tdm_tickets += reward_qty; reward_string = "arena ticket"}
 	if reward = "gg_click" then {global.ggenergy += reward_qty; reward_string = "gg energies"}
-	if reward = "logfiles" then {global.logfile += reward_qty; reward_string = "logfiles"}
+	if reward = "logfiles" then {global.logfile += reward_qty; update_stats("logfiles",reward_qty); reward_string = "logfiles"}
 	if reward = "greenchest" then {global.chest_green_key += reward_qty; reward_string = "green chest key"}
 	if reward = "goldchest" then {global.chest_gold_key += reward_qty; reward_string = "gold chest key"}
 	

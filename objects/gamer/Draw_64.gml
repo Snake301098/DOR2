@@ -23,11 +23,11 @@ draw_sprite_ext(ship_sprite,image_index,1920/2,1080/2,1,1,0,c_white,alpha)
 
 //HEALTH
 //if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-105,1920/2+55,1080/2-100,followHP/health_def*100,c_black,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
-if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-104,1920/2+55,1080/2-101,own_health/health_def*100,c_grey,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_health>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-45,1080/2-103,1920/2+45,1080/2-101,own_health/health_def*100,c_grey,c_lime,c_lime,0,1,1);draw_set_alpha(0.9);} //+41+25
 
 //SHIELD
 //if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-90,1920/2+55,1080/2-85,followShield/shield_def*100,c_black,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
-if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-55,1080/2-91,1920/2+55,1080/2-88,own_shield/shield_def*100,c_grey,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
+if own_shield>0 then{    draw_set_alpha(0.9);draw_healthbar(1920/2-45,1080/2-90,1920/2+45,1080/2-88,own_shield/shield_def*100,c_grey,c_aqua,c_aqua,0,1,1);draw_set_alpha(0.9);} //+41+25
 
 
 
@@ -109,7 +109,7 @@ draw_set_alpha(1);
 draw_set_font(nicktext);
 draw_set_color(global.HUD_color);
 
-global.rankpoints = round(global.experience / 100000 + global.honor / 100 + global.level * 100);
+global.rankpoints = round(global.experience * 2 / 100000 + global.honor * 3 / 100 + global.level * 500);
 
 var rpf=global.rpfactor;
 var rpbelow=0;

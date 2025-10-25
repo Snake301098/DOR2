@@ -2,6 +2,8 @@
 
 if instance_exists(HUD_user) then HUD_user.kamikaze_selected = false
 
+if owner = gamer.id then update_stats("kamikaze_used")
+
 instance_create_depth(x,y,-5,bigexpl1);
 var dist_1, dist_2, _damage, _owner, corp, dmg, _petx, _pety, _draw;
 _petx = x

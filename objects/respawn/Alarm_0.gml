@@ -19,7 +19,7 @@ else
 	if show_question("Your ship was destroyed.\nRepair on the map for 1000 uridium?") then
 	{
 		//REPAIR ON MAP
-		if global.uridium >= 500 then event_user(0) else  {show_message("Not enough uridium");event_user(1);};
+		if global.uridium >= 1000 then event_user(0) else  {show_message("Not enough uridium");event_user(1);};
 	} 
 	else
 	{

@@ -25,10 +25,6 @@ switch active_tab
 		var rows = 5;
 		var columns = 5;
 	
-		
-		var stats_list = ["CREDITS", "URIDIUM", "PVP KILLS","PVE KILLS","DEATHS","QUESTS","GG","TDM VICTORY","HIGHEST KILLSTREAK","GG ENERGIES","LOGFILES"];
-		var stats_names = ["credit","uridium","kills","mob_kills","deaths","quests","gg","TDM_win","none","gg_clicks","logfiles"];
-	
 		for (j=1; j<=rows; j+=1)
 		{
 			for (i=1; i<=columns; i+=1)
@@ -38,7 +34,7 @@ switch active_tab
 				if (position-1)<array_length(stats_list) then
 				{
 					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y,stats_list[position-1]);
-					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y+25,dotString(get_stats(stats_names[position-1],ship_selected)));
+					draw_text(cells_start_x+(i-1)*spacing_x,cells_start_y+(j-1)*spacing_y+25,profile_stats[position-1]);
 				}
 			}
 		}
@@ -75,8 +71,8 @@ switch active_tab
 		draw_text(_PVPx-110,_PVPy+150,"GOLIATHS");
 		draw_text(_PVPx-110,_PVPy+150+25,dotString(get_stats("gogo_kills",ship_selected)));
 			
-		draw_text(_PVPx-110,_PVPy+400,"venven_kills");
-		draw_text(_PVPx-110,_PVPy+400+25,dotString(get_stats("gogo_kills",ship_selected)));
+		draw_text(_PVPx-110,_PVPy+400,"VENGEANCES");
+		draw_text(_PVPx-110,_PVPy+400+25,dotString(get_stats("venven_kills",ship_selected)));
 			
 		draw_text(_PVPx-110,_PVPy+550,"BAD SHIPS");
 		draw_text(_PVPx-110,_PVPy+550+25,dotString(get_stats("badships_kills",ship_selected)));

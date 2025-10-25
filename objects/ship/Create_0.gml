@@ -1,6 +1,6 @@
 
 //test movement
-Ship="goliath"
+ship_name="goliath"
 targetx=0;
 targety=0;
 hadTarget=0; //for IA comparison, =1 if had a target before, =0 if no target before

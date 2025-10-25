@@ -350,43 +350,47 @@ else
 						}
 						else
 						{
+							if cost_type = "credit"
+							{
+								if global.credit < cost_qty*buy_qty
+								{
+									show_message("Not enough credits");
+									exit;
+								}
+								else
+								{
+									global.credit-=cost_qty*buy_qty
+								}
+							}
+					
+							if cost_type = "uridium" 
+							{
+								if global.uridium < cost_qty*buy_qty
+								{
+									show_message("Not enough uridium");
+									exit;
+								}
+								else
+								{
+									global.uridium-=cost_qty*buy_qty
+								}
+							}
+					
 							gamer.droid[_empty_slot,1] = _content
 							gamer.droidC1[_empty_slot,1] = _content
 							gamer.droidC2[_empty_slot,1] = _content
-					        gamer.droid[_empty_slot,0]=instance_create_depth(x,y,-1,droid_obj);
-					        gamer.droid[_empty_slot,0].pos:=i;
-					        gamer.droid[_empty_slot,0].owner=gamer.id;
-					        gamer.droid[_empty_slot,0].x=id.x;
-					        gamer.droid[i,0].y=id.y;
+							var _droid = instance_create_depth(x,y,-1,droid_obj);
+							_droid.pos = i
+							_droid.owner=gamer.id
+							_droid.x=gamer.x
+							_droid.y=gamer.y
+					        gamer.droid[_empty_slot,0]=_droid
+					        gamer.droidC1[_empty_slot,0]=_droid
+					        gamer.droidC2[_empty_slot,0]=_droid
 							guns_installation(gamer.id)
 						}
 					}
 	
-					if cost_type = "credit"
-					{
-						if global.credit < cost_qty*buy_qty
-						{
-							show_message("Not enough credits");
-							exit;
-						}
-						else
-						{
-							global.credit-=cost_qty*buy_qty
-						}
-					}
-					
-					if cost_type = "uridium" 
-					{
-						if global.uridium < cost_qty*buy_qty
-						{
-							show_message("Not enough uridium");
-							exit;
-						}
-						else
-						{
-							global.uridium-=cost_qty*buy_qty
-						}
-					}
 					show_message(_name + " was bought sucessfully!");
 					active_side_tab = "AMMOS";
 					event_user(1);

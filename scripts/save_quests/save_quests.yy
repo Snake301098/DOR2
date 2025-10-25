@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"save_quests",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_quests",
+  "parent":{
+    "name":"quests",
+    "path":"folders/Scripts/quests.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

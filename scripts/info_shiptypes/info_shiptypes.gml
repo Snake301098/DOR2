@@ -40,7 +40,7 @@ function info_shiptypes(_shiptype,_info,_level=0)
 	else if _shiptype = "vengeance"
 	{
 		if _info = "speed" then return 380;
-		else if _info = "health" then return 18000;
+		else if _info = "health" then return 180000;
 		else if _info = "gun_slots" then return 10;
 		else if _info = "engine_slots" then return 10;
 	}

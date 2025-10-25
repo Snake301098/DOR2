@@ -53,16 +53,25 @@ function check_quests(_id, _room)
 			 if progress >= total
 			 {
 				 show_protocol_message("Quest " + string(i) + " accomplished!")
-				if reward_type = "gg_energy"
+				if reward_type = "logfiles"
 				{
-					global.ggenergy += reward_qty
-					show_protocol_message("You received " + string(reward_qty) + " GG energies!")
+					global.logfile += reward_qty
+					show_protocol_message("You received " + string(reward_qty) + " logfiles!")
+					update_stats("logfiles",reward_qty);
 				}
 				
 				if reward_type = "chest_green_key"
 				{
 					global.chest_green_key += reward_qty
 					show_protocol_message("You received " + string(reward_qty) + " green chest keys!")
+					update_stats("green_chest",reward_qty);
+				}
+				
+				if reward_type = "chest_gold_key"
+				{
+					global.chest_gold_key += reward_qty
+					show_protocol_message("You received " + string(reward_qty) + " gold chest keys!")
+					update_stats("gold_chest",reward_qty);
 				}
 				
 				update_stats("quests");

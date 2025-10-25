@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"v1",
+  "$GMRoom":"",
   "%Name":"GGA",
   "creationCodeFile":"rooms/GGA/RoomCreationCode.gml",
   "inheritCode":false,
@@ -26,10 +26,10 @@
   "resourceType":"GMRoom",
   "resourceVersion":"2.0",
   "roomSettings":{
-    "Height":6000,
+    "Height":5000,
     "inheritRoomSettings":false,
     "persistent":true,
-    "Width":9600,
+    "Width":8000,
   },
   "sequenceId":null,
   "views":[

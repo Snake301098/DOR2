@@ -1,22 +1,27 @@
-if object_index=sab
+if initialized = true
 {
-	if instance_exists(target) then
+	if object_index=sab
 	{
-		if point_distance(x,y,owner.x,owner.y)<speed then speed:=point_distance(x,y,owner.x,owner.y);
-		direction=point_direction(x,y,owner.x,owner.y);
+		if instance_exists(target) then
+		{
+			if distance_to_object(owner) <= 15 then deal_prefunction(owner,target,_ammo,damage,damage_x,drawDamage,id)
+			if point_distance(x,y,owner.x,owner.y)<speed then speed:=point_distance(x,y,owner.x,owner.y);
+			direction=point_direction(x,y,owner.x,owner.y);
+		}
+		else instance_destroy();
+		image_alpha=1;
 	}
-	else instance_destroy();
-	image_alpha=1;
-}
-else
-{
-	if instance_exists(target) then
-	    {
-	    if point_distance(x,y,target.x,target.y)<speed then speed:=point_distance(x,y,target.x,target.y);
-	    direction=point_direction(x,y,target.x,target.y);
-	    }
-	else instance_destroy();
-	image_alpha=1;
+	else
+	{
+		if instance_exists(target) then
+		    {
+				if distance_to_object(target) <= 10 then deal_prefunction(owner,target,_ammo,damage,damage_x,drawDamage,id)
+		    if point_distance(x,y,target.x,target.y)<speed then speed:=point_distance(x,y,target.x,target.y);
+		    direction=point_direction(x,y,target.x,target.y);
+		    }
+		else instance_destroy();
+		image_alpha=1;
+	}
 }
 
 /*

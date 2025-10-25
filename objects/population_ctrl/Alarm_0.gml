@@ -9,7 +9,7 @@ numb_bonus_grubers:=0; numb_hunters_mob:=0;
 
 //Variables
 var smallAlien, largeAlien, uberMap, bonusbox_limit, bossNormal, bossPVP, uberPVP
-smallAlien = 30;
+smallAlien = 35;
 largeAlien = 20;
 bossNormal = 4;
 uberMap = 1;   
@@ -97,7 +97,7 @@ if (room=lv1_5 or room=lv2_5 or room=lv3_5)   then
 	
     if instance_number(sibelonit)<smallAlien/2 then
 	{
-		spawn_mob(sibelon,,,irandom_range(smallAlien/4,smallAlien/2));
+		spawn_mob(sibelonit,,,irandom_range(smallAlien/4,smallAlien/2));
 	}
 	
     if instance_number(lordakium)<largeAlien/2 then

@@ -5,6 +5,9 @@ healthRegen=15000;
 alarm[1]=5;
 image_speed=1/15;
 depth=-50;
+
+
+audio_sound_loop(repair_sound,true)
 /*
 bonus = global.ship_engineering_bonus;
 if bonus = 0.5 then

@@ -25,6 +25,7 @@ if global.ggenergy >= buy_qty
 	var clicks; 
 
 	clicks=buy_qty;
+	update_stats("gg_clicks",clicks)
 
 
 	//CALCULATING REWARDS

@@ -77,8 +77,22 @@ function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="n
 		if _shipType = "none" then _shipType = choose("goliath","goliath","goliath","vengeance","badships","newships");
 		
 		if _shipType = "newships" then _Ship = choose("aegis","aegis","aegis","citadel","citadel","spearhead");
-		if _shipType = "vengeance" then _Ship = choose("vengeance","revenge","avenger","adept","corsair","lightning")
-		if _shipType = "goliath" then _Ship = choose("goliath","enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
+		if _shipType = "vengeance" then
+		{
+			if _power = 1 then _Ship = choose("vengeance","vengeance","vengeance","vengeance","vengeance","vengeance","revenge","avenger","adept","corsair","lightning")
+			if _power = 2 then _Ship = choose("vengeance","vengeance","vengeance","vengeance","revenge","avenger","revenge","avenger","adept","corsair","lightning")
+			if _power = 3 then _Ship = choose("vengeance","revenge","avenger","adept","corsair","revenge","avenger","adept","corsair","lightning","lightning")
+			if _power = 4 then _Ship = choose("vengeance","revenge","avenger","adept","corsair","lightning")
+			if _power = 5 then _Ship = choose("revenge","avenger","lightning","lightning")
+		}
+		if _shipType = "goliath" then 
+		{
+			if _power = 1 then _Ship = choose("goliath","goliath","goliath","goliath","goliath","enforcer","bastion","exalted","veteran")
+			if _power = 2 then _Ship = choose("goliath","goliath","goliath","goliath","enforcer","bastion","exalted","veteran","goal","kick","referee")
+			if _power = 3 then _Ship = choose("goliath","enforcer","bastion","exalted","veteran","goal","kick","referee","enforcer","bastion","exalted","veteran","enforcer","bastion","exalted","veteran","goal","kick","referee","enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
+			if _power = 4 then _Ship = choose("enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
+			if _power = 5 then _Ship = choose("enforcer","bastion","enforcer","bastion","exalted","veteran","diminisher","venom","solace","sentinel","spectrum","saturn","diminisher","venom","solace","sentinel","spectrum","saturn","goal","kick","referee")
+		}
 		if _shipType="badships" then _Ship = choose("phoenix","nostromo","bigboy","leonov")
 
 		if group = false 
@@ -107,7 +121,7 @@ function spawn_ship(xx=-5,yy=-5,corp,_action="farming",_isInvader=0,_shipType="n
 		z.isInvader=_isInvader;
 		z.alarm[5]=irandom(500); 
 		z.Shiptype=_shipType;
-		z.Ship = _Ship
+		z.ship_name = _Ship
 		z.Power:=_power;
 		z.waiting_cp_spawn:=_waiting_cp_spawn;
 		with(z)

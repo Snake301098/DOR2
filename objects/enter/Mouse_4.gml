@@ -39,6 +39,8 @@ if (file_exists("newSave.sav")) then
     //Êîíåö ïðîâåðêè âåðñèè.
         //alarm[0]=1*room_speed;
         alarm[0]=10;
+		
+		clicked=true;
            //else show_message("Game save not found");
 		} else 
 		{

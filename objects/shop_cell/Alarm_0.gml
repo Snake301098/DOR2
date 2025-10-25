@@ -67,6 +67,7 @@ switch content
     //Added 31-5-2013
     case "emp": {image_index=68; break;}
     case "ish": {image_index=69; break;}   
+    case "smb": {image_index=88; break;}
     //Added 05-07-2013
     case "eleech": {image_index=70; break;}
     case "shieldbackup": {image_index=71; break;}

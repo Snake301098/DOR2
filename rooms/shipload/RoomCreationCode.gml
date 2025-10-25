@@ -61,3 +61,6 @@ global.active_page_stats_window = "PROFILE";
 global.active_tab_hangar_window = "EQUIPMENT";
 global.active_side_tab_hangar_window = "SHIP";
 
+//REWARD
+global.credit_reward_green_key_treshold = 10000000;
+global.uridium_reward_gold_key_treshold = 10000;

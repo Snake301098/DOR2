@@ -1,7 +1,7 @@
 var a;
 ini_open(global.language_file)
 a="Text Error";
-new_game                    =ini_read_string("Main Menu","new_game"                     ,a);
+//new_game                    =ini_read_string("Main Menu","new_game"                     ,a);
 continue_game               =ini_read_string("Main Menu","continue_game"                ,a);
 compile_butt                =ini_read_string("Main Menu","compile_button"               ,a);
 version_reason              =ini_read_string("Main Menu","version_reason"               ,a);

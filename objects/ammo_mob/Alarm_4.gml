@@ -1,5 +1,5 @@
 /// @description TARGETX/Y
-
+image_alpha=1;
 if instance_exists(owner)
 {
 	if owner.object_index = lordakia then sprite_index = lordakium_ammo_spr;

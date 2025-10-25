@@ -1,5 +1,5 @@
 {
-  "$GMScript":"v1",
+  "$GMScript":"",
   "%Name":"hangar_get_upgrades_text",
   "isCompatibility":false,
   "isDnD":false,

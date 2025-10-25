@@ -1,4 +1,4 @@
-deal_prefunction(owner,other.id,_ammo,damage,damage_x,drawDamage)
+//deal_prefunction(owner,other.id,_ammo,damage,damage_x,drawDamage,id)
 
 /*
 var a,b,c,healthAbsord,shieldAbsorb,shieldPen,healthAbsorb;

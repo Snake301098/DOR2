@@ -13,6 +13,8 @@ function save_game()
 	ini_write_real("Player","ggclick",global.ggenergy);
 	ini_write_real("Player","chest_green_key",global.chest_green_key);
 	ini_write_real("Player","chest_gold_key",global.chest_gold_key);
+	ini_write_real("Player","credit_reward_green_key",global.credit_reward_green_key);
+	ini_write_real("Player","uridium_reward_gold_key",global.uridium_reward_gold_key);
 	ini_write_real("Player","experience",global.experience);
 	ini_write_real("Player","level",global.level);
 	ini_write_real("Player","honor",global.honor);
@@ -58,7 +60,7 @@ function save_game()
 	ini_write_real("Ammo", "x1", global.x1);
 	ini_write_real("Ammo", "x2", global.x2);
 	ini_write_real("Ammo", "x3", global.x3);
-	//ini_write_real("Ammo", "x4", global.x4);
+	ini_write_real("Ammo", "x4", global.x4);
 	ini_write_real("Ammo", "x5", global.x5);
 	ini_write_real("Ammo", "x6", global.x6);
 	ini_write_real("Ammo", "emp", global.emp);
@@ -119,22 +121,22 @@ function save_game()
 	//Drones
 	for(i = 1; i<=10; i+=1){
 		//Config 1
-		if gamer.droidC1[i,1] != "" and gamer.droidC1[i,1] != "noone" then 
-		{
+		//if gamer.droidC1[i,1] != "" and gamer.droidC1[i,1] != "noone" then 
+		//{
 		    ini_write_string("Drones","drone"+string(i),gamer.droidC1[i,1]);
 		    ini_write_string("Drones","slot"+string(i)+"_1_C1",gamer.droidC1[i,2]);
 		    ini_write_string("Drones","slot"+string(i)+"_2_C1",gamer.droidC1[i,3]);
 		    ini_write_string("Drones","design_"+string(i)+"_C1",gamer.droidC1[i,4]);
-		}
+		//}
 		//Config 2
 
-		if gamer.droidC2[i,1] != "" and gamer.droidC2[i,1] != "noone" then 
-		{
+		//if gamer.droidC2[i,1] != "" and gamer.droidC2[i,1] != "noone" then 
+		//{
 			ini_write_string("Drones","drone"+string(i),gamer.droidC2[i,1]);
 		    ini_write_string("Drones","slot"+string(i)+"_1_C2",gamer.droidC2[i,2]);
 		    ini_write_string("Drones","slot"+string(i)+"_2_C2",gamer.droidC2[i,3]);
 		    ini_write_string("Drones","design_"+string(i)+"_C2",gamer.droidC2[i,4]);
-		}
+		//}
 	}
 
 
@@ -222,11 +224,7 @@ function save_game()
 	//guns_installation(gamer);
 	ini_close();
 	
-	
-	var date = string(current_year) +"_"+ string(current_month) +"_"+ string(current_day) +"_"+ string(current_hour) +"_"+ string(current_minute) +"_"+ string(current_second)
-	file_copy("newSave.sav","testfolder/Backup_newSave_" + date + ".sav");
-	
-	var file =  file_text_open_write("testfolder/Backup_Stats_" + date + ".csv")
+	var file =  file_text_open_write("stats.csv")
 	var _STATS = ds_grid_create(1,1)
 	ds_grid_copy(_STATS,global.stats)
 
@@ -253,6 +251,15 @@ function save_game()
 		file_text_writeln(file);
 	}
 	file_text_close(file);
+	
+	//QUESTS
+	save_quests();
+	
+	//BACKUP FILES
+	var date = string(current_year) +"_"+ string(current_month) +"_"+ string(current_day) +"_"+ string(current_hour) +"_"+ string(current_minute) +"_"+ string(current_second)
+	file_copy("newSave.sav","testfolder/Backup_newSave_" + date + ".sav");
+	file_copy("stats.csv","testfolder/Backup_Stats_" + date + ".csv")
+	file_copy("quests.txt","testfolder/Backup_Quests_" + date + ".csv")
 	
 	show_protocol_message("Game saved");
 }

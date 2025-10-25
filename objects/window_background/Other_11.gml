@@ -8,6 +8,8 @@ instance_destroy(button_left_right);
 instance_destroy(button_qty);
 instance_destroy(skilltree_cell);
 instance_destroy(button_switch);
+item_selected=""
+item_description=""
 
 //show_message(active_tab)
 switch active_tab
@@ -684,7 +686,7 @@ switch active_tab
 				//SHIPS TO BUY
 				var cells_start_x, cells_start_y, spacing_x, spacing_y, rows, columns, cell, position, ships_list;
 				
-				ships_list=["nostromo", "leonov", "bigboy", "vengeance", "adept","avenger","lightning","revenge", "corsair", "goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"];
+				ships_list=["phoenix","nostromo", "leonov", "bigboy", "vengeance", "adept","avenger","lightning","revenge", "corsair", "goliath","bastion","enforcer","centaur","exalted","goal","kick","referee","saturn","veteran","diminisher","sentinel","solace","spectrum","venom","spearhead","aegis","citadel"];
 	
 				cells_start_x = 640;
 				cells_start_y = 370;
@@ -1227,10 +1229,10 @@ switch active_tab
 		icons_list=["ship_hull_i", "ship_hull_ii", "shield_engineering", "engineering", "bounty_hunter_i","bounty_hunter_ii","alien_hunter","greed","luck_i","luck_ii","cruelty_i","cruelty_ii","evasive_i","evasive_ii","electro_optics","shield_mechanics","smb_upgrade","ish_upgrade","shieldbackup_upgrade","warrep_upgrade"];
 	
 		cells_start_x = 640;
-		cells_start_y = 390;
+		cells_start_y = 340;
 		spacing_x = 110;
 		spacing_y = 110;
-		rows = 4;
+		rows = 5;
 		columns = 4;
 	
 		for (j=1; j<=rows; j+=1)

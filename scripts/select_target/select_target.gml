@@ -20,6 +20,10 @@ function select_target(id)
 		}
 		if _ship.corporation != id.corporation and _ship.cloaked = 0 and _ship.is_using_emp = false then 
 		{
+			if _ship.cloaked = 1 then //might see cloaked ships sometimes
+			{
+				if choose(0,0,0,1) == 1 then array_push(potential_targets, _ship);
+			}
 			array_push(potential_targets, _ship);
 			if _ship.own_health / _ship.health_def < 0.5 then array_push(potential_targets, _ship); //focus more the ships with low health
 			if _ship.own_health / _ship.health_def < 0.25 then array_push(potential_targets, _ship); //focus more the ships with very low health

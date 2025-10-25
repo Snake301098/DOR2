@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"v1",
+  "$GMRoom":"",
   "%Name":"lv4_4",
   "creationCodeFile":"rooms/lv4_4/RoomCreationCode.gml",
   "inheritCode":false,
@@ -26,10 +26,10 @@
   "resourceType":"GMRoom",
   "resourceVersion":"2.0",
   "roomSettings":{
-    "Height":5000,
+    "Height":7500,
     "inheritRoomSettings":false,
     "persistent":true,
-    "Width":8000,
+    "Width":12000,
   },
   "sequenceId":null,
   "views":[

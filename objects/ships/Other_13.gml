@@ -11,18 +11,17 @@ var lf4_nbrC1=0;lf4_nbrC2=0;lf3_nbrC1=0;lf3_nbrC2=0;mp1_nbrC1=0;mp1_nbrC2=0;bo2_
 health_def = info_shiptypes(Shiptype, "health");
 var guns_list = [];
 var lasers_list = [];
-if Shiptype = "citadel" then guns_list = ["HST-2_1","HST-2_2","HST-2_3","HST-2_4","HST-2_5"] else guns_list = ["HST-1_1","HST-1_2","HST-1_3","HST-1_4","HST-1_5"];
-if Shiptype = "vengeance" then lasers_list = ["LF-4_1","LF-4_2","LF-4_3","LF-4_4","LF-4_5"] else lasers_list = ["LF-3_1","LF-3_2","LF-3_3","LF-3_4","LF-3_5"];
+//if Shiptype = "citadel" then guns_list = ["HST-2_1","HST-2_2","HST-2_3","HST-2_4","HST-2_5"] else guns_list = ["HST-1_1","HST-1_2","HST-1_3","HST-1_4","HST-1_5"];
+//if Shiptype = "vengeance" then lasers_list = ["LF-4_1","LF-4_2","LF-4_3","LF-4_4","LF-4_5"] else lasers_list = ["LF-3_1","LF-3_2","LF-3_3","LF-3_4","LF-3_5"];
 
-if Ship = "bigboy" then {gun_slots = 6; engine_slots=5}
-if Ship = "leonov" then {gun_slots = 8; engine_slots=7}
-if Ship = "nostromo" then {gun_slots = 5; engine_slots=4}
-if Shiptype = "vengeance" then {gun_slots = 10; engine_slots=12}
-if Shiptype = "goliath" then {gun_slots = 15; engine_slots=15}
-if Ship = "aegis" then {gun_slots = 8; engine_slots=12}
-if Ship = "citadel" then {gun_slots = 5; engine_slots=18}
-if Ship = "spearhead" then {gun_slots = 5; engine_slots=7}
-
+if ship_name = "bigboy" then {gun_slots = info_shiptypes(ship_name,"gun_slots"); engine_slots=info_shiptypes(ship_name,"engine_slots");}
+if ship_name = "leonov" then {gun_slots = info_shiptypes(ship_name,"gun_slots"); engine_slots=info_shiptypes(ship_name,"engine_slots");}
+if ship_name = "nostromo" then {gun_slots = info_shiptypes(ship_name,"gun_slots"); engine_slots=info_shiptypes(ship_name,"engine_slots");}
+if Shiptype = "vengeance" then {gun_slots = info_shiptypes(Shiptype,"gun_slots"); engine_slots=info_shiptypes(Shiptype,"engine_slots");}
+if Shiptype = "goliath" then {gun_slots = info_shiptypes(Shiptype,"gun_slots"); engine_slots=info_shiptypes(Shiptype,"engine_slots");}
+if ship_name = "aegis" then {gun_slots = info_shiptypes(ship_name,"gun_slots"); engine_slots=info_shiptypes(ship_name,"engine_slots");}
+if ship_name = "citadel" then {gun_slots = info_shiptypes(ship_name,"gun_slots"); engine_slots=info_shiptypes(ship_name,"engine_slots");}
+if ship_name = "spearhead" then {gun_slots = info_shiptypes(ship_name,"gun_slots"); engine_slots=info_shiptypes(ship_name,"engine_slots");}
 
 var lf4_nbr = 0;
 var lf3_nbr = 0;
@@ -89,28 +88,32 @@ if Power >= 5
 	
 	//SKILLTREE
 	ship_hull_i=2
-	if ship_hull_i=2 then ship_hull_ii = choose(1,1,2,2,2,3,3,3);
-	shield_engineering = choose(2,3,3,4,4,5,5);
-	engineering = choose(2,3,3,4,4,5,5);
+	if ship_hull_i=2 then ship_hull_ii = choose(1,2,2,3,3,3);
+	shield_engineering = choose(2,3,3,4,4,5,5,5);
+	engineering = choose(2,3,3,4,4,5,5,5);
 	bounty_hunter_i = 2
 	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(1,2,2,3,3,3);
-	alien_hunter = choose(2,3,3,4,4,5,5);
-	greed = choose(2,3,3,4,4,5,5);
+	alien_hunter = choose(2,3,3,4,4,5,5,5);
+	greed = choose(2,3,3,4,4,5,5,5);
 	luck_i = 2
-	if luck_i = 2 then luck_ii = choose(1,1,2,2,2,3,3,3);
+	if luck_i = 2 then luck_ii = choose(1,2,2,3,3,3);
 	cruelty_i = 2
-	if cruelty_i = 2 then cruelty_ii = choose(1,1,2,2,2,3,3,3);
+	if cruelty_i = 2 then cruelty_ii = choose(1,2,2,3,3,3);
 	evasive_i = 2
-	if evasive_i = 2 then evasive_ii = choose(1,1,2,2,2,3,3,3);
-	electro_optics = choose(2,3,3,4,4,5,5);
-	shield_mechanics = choose(2,3,3,4,4,5,5);
-	smb_upgrade = choose(2,3,3,4,4,5,5);
-	ish_upgrade = choose(2,3,3,4,4,5,5);
-	shieldbackup_upgrade = choose(2,3,3,4,4,5,5);
-	warrep_upgrade = choose(2,3,3,4,4,5,5);
+	if evasive_i = 2 then evasive_ii = choose(1,2,2,3,3,3);
+	electro_optics = choose(2,3,3,4,4,5,5,5);
+	shield_mechanics = choose(2,3,3,4,4,5,5,5);
+	smb_upgrade = choose(2,3,3,4,4,5,5,5);
+	ish_upgrade = choose(2,3,3,4,4,5,5,5);
+	shieldbackup_upgrade = choose(2,3,3,4,4,5,5,5);
+	warrep_upgrade = choose(2,3,3,4,4,5,5,5);
 	
 	//ABILITIES
-	ability_1 = "warrep"
+	can_use_warrep = choose(false,true,true,true,true);
+	can_use_shieldbackup=choose(false,true,true,true,true);
+	can_use_ish=choose(false,true,true,true,true);
+	can_use_smb=choose(false,true,true,true,true);
+	can_use_emp=choose(false,true,true,true,true);
 }
 
 
@@ -161,28 +164,32 @@ if Power = 4
 	
 	//SKILLTREE
 	ship_hull_i=2
-	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
-	shield_engineering = choose(1,2,2,3,3,4,4,5);
-	engineering = choose(1,2,2,3,3,4,4,5);
+	if ship_hull_i=2 then ship_hull_ii = choose(0,1,2,2,3,3);
+	shield_engineering = choose(1,2,3,3,4,4,5,5);
+	engineering = choose(1,2,3,3,4,4,5,5);
 	bounty_hunter_i = 2
-	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2,3,3);
-	alien_hunter = choose(1,2,2,3,3,4,4,5);
-	greed = choose(1,2,2,3,3,4,4,5);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,1,2,2,3,3);
+	alien_hunter = choose(1,2,3,3,4,4,5,5);
+	greed = choose(1,2,3,3,4,4,5,5);
 	luck_i = 2
-	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
+	if luck_i = 2 then luck_ii = choose(0,1,2,2,3,3);
 	cruelty_i = 2
-	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
+	if cruelty_i = 2 then cruelty_ii = choose(0,1,2,2,3,3);
 	evasive_i = 2
-	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
-	electro_optics = choose(1,2,2,3,3,4,4,5);
-	shield_mechanics = choose(1,2,2,3,3,4,4,5);
-	smb_upgrade = choose(1,2,2,3,3,4,4,5);
-	ish_upgrade = choose(1,2,2,3,3,4,4,5);
-	shieldbackup_upgrade = choose(1,2,2,3,3,4,4,5);
-	warrep_upgrade = choose(1,2,2,3,3,4,4,5);
+	if evasive_i = 2 then evasive_ii = choose(0,1,2,2,3,3);
+	electro_optics = choose(1,2,3,3,4,4,5,5);
+	shield_mechanics = choose(1,2,3,3,4,4,5,5);
+	smb_upgrade = choose(1,2,3,3,4,4,5,5);
+	ish_upgrade = choose(1,2,3,3,4,4,5,5);
+	shieldbackup_upgrade = choose(1,2,3,3,4,4,5,5);
+	warrep_upgrade = choose(1,2,3,3,4,4,5,5);
 	
 	//ABILITIES
-	if irandom(3) = 0 then	ability_1 = "warrep"
+	can_use_warrep = choose(false,false,true,true,true,true);
+	can_use_shieldbackup=choose(false,false,true,true,true,true);
+	can_use_ish=choose(false,false,true,true,true,true);
+	can_use_smb=choose(false,false,true,true,true,true);
+	can_use_emp=choose(false,false,true,true,true,true);
 }
 
 
@@ -240,26 +247,33 @@ if Power = 3
 	
 
 	//SKILLTREE
-	ship_hull_i=choose(0,1,1,2,2);
-	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
-	shield_engineering = choose(0,1,1,2,2,2,2,3,3,4,5);
-	engineering = choose(0,1,1,2,2,2,2,3,3,4,5);
-	bounty_hunter_i = choose(0,1,1,2,2);
-	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
-	alien_hunter = choose(0,1,1,2,2,2,2,3,3,4,5);
-	greed = choose(0,1,1,2,2,2,2,3,3,4,5);
-	luck_i = choose(0,1,1,2,2);
-	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
-	cruelty_i = choose(0,1,1,2,2);
-	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
-	evasive_i = choose(0,1,1,2,2);
-	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
-	electro_optics = choose(0,1,1,2,2,2,2,3,3,4,5);
-	shield_mechanics = choose(0,1,1,2,2,2,2,3,3,4,5);
-	smb_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
-	ish_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
-	shieldbackup_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
-	warrep_upgrade = choose(0,1,1,2,2,2,2,3,3,4,5);
+	ship_hull_i=choose(0,1,2,2);
+	if ship_hull_i=2 then ship_hull_ii = choose(0,0,1,1,1,2,2);
+	shield_engineering = choose(0,1,2,2,3,3,3,4,4,5);
+	engineering = choose(0,1,2,2,3,3,3,4,4,5);
+	bounty_hunter_i = choose(0,1,2,2);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,1,1,1,2,2);
+	alien_hunter = choose(0,1,2,2,3,3,3,4,4,5);
+	greed = choose(0,1,2,2,3,3,3,4,4,5);
+	luck_i = choose(0,1,2,2);
+	if luck_i = 2 then luck_ii = choose(0,0,1,1,1,2,2);
+	cruelty_i = choose(0,1,2,2);
+	if cruelty_i = 2 then cruelty_ii = choose(0,0,1,1,1,2,2);
+	evasive_i = choose(0,1,2,2);
+	if evasive_i = 2 then evasive_ii = choose(0,0,1,1,1,2,2);
+	electro_optics = choose(0,1,2,2,3,3,3,4,4,5);
+	shield_mechanics = choose(0,1,2,2,3,3,3,4,4,5);
+	smb_upgrade = choose(0,1,2,2,3,3,3,4,4,5);
+	ish_upgrade = choose(0,1,2,2,3,3,3,4,4,5);
+	shieldbackup_upgrade = choose(0,1,2,2,3,3,3,4,4,5);
+	warrep_upgrade = choose(0,1,2,2,3,3,3,4,4,5);
+	
+	//ABILITIES
+	can_use_warrep = choose(false,false,true,true,true);
+	can_use_shieldbackup=choose(false,false,true,true,true);
+	can_use_ish=choose(false,false,true,true,true);
+	can_use_smb=choose(false,false,true,true,true);
+	can_use_emp=choose(false,false,true,true,true);
 }
 
 
@@ -309,26 +323,33 @@ if Power = 2
 	var spd2_nbrC2 = generator_slotsC2 - spd1_nbrC2
 	
 	//SKILLTREE
-	ship_hull_i=choose(0,0,1,1,2);
-	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,1,2,2);
+	ship_hull_i=choose(0,0,1,1,1,2);
+	if ship_hull_i=2 then ship_hull_ii = choose(0,0,0,1,1,2);
 	shield_engineering = choose(0,0,1,1,1,2,2,2,3);
 	engineering = choose(0,0,1,1,1,2,2,2,3);
-	bounty_hunter_i = choose(0,0,1,1,2);
-	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,1,2,2);
+	bounty_hunter_i = choose(0,0,1,1,1,2);
+	if bounty_hunter_i = 2 then bounty_hunter_ii = choose(0,0,0,1,1,2);
 	alien_hunter = choose(0,0,1,1,1,2,2,2,3);
 	greed = choose(0,0,1,1,1,2,2,2,3);
-	luck_i = choose(0,0,1,1,2);
-	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,1,2,2);
-	cruelty_i = choose(0,0,1,1,2);
-	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,1,2,2);
-	evasive_i = choose(0,0,1,1,2);
-	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,1,2,2);
+	luck_i = choose(0,0,1,1,1,2);
+	if luck_i = 2 then luck_ii = choose(0,0,0,1,1,2);
+	cruelty_i = choose(0,0,1,1,1,2);
+	if cruelty_i = 2 then cruelty_ii = choose(0,0,0,1,1,2);
+	evasive_i = choose(0,0,1,1,1,2);
+	if evasive_i = 2 then evasive_ii = choose(0,0,0,1,1,2);
 	electro_optics = choose(0,0,1,1,1,2,2,2,3);
 	shield_mechanics = choose(0,0,1,1,1,2,2,2,3);
 	smb_upgrade = choose(0,0,1,1,1,2,2,2,3);
 	ish_upgrade = choose(0,0,1,1,1,2,2,2,3);
 	shieldbackup_upgrade = choose(0,0,1,1,1,2,2,2,3);
 	warrep_upgrade = choose(0,0,1,1,1,2,2,2,3);
+	
+	//ABILITIES
+	can_use_warrep = choose(false,false,false,true,true);
+	can_use_shieldbackup=choose(false,false,false,true,true);
+	can_use_ish=choose(false,false,false,true,true);
+	can_use_smb=choose(false,false,false,true,true);
+	can_use_emp=choose(false,false,false,true,true);
 }
 
 
@@ -402,6 +423,13 @@ if Power = 1
 	ish_upgrade = choose(0,0,0,1,1,1,2,2);
 	shieldbackup_upgrade = choose(0,0,0,1,1,1,2,2);
 	warrep_upgrade = choose(0,0,0,1,1,1,2,2);
+	
+	//ABILITIES
+	can_use_warrep = choose(false,false,false,true);
+	can_use_shieldbackup=choose(false,false,false,true);
+	can_use_ish=choose(false,false,false,true);
+	can_use_smb=choose(false,false,false,true);
+	can_use_emp=choose(false,false,false,true);
 }
 
 
@@ -436,7 +464,7 @@ array_push(EngineC2,mp1_nbrC2+lf3_nbrC2+lf4_nbrC2+mp1_nbrC2+lf3_nbrC2+lf4_nbrC2)
 for (i:=1; i<=mp1_nbrC1; i+=1;) {array_push(GunC1,"MP-1");}
 for (i:=1; i<=lf3_nbrC1; i+=1;) {array_push(GunC1,"LF-3");}
 for (i:=1; i<=lf4_nbrC1; i+=1;) {array_push(GunC1,"LF-4");}
-for (i:=array_length(GunC1); i<=gun_slots;i++) {array_push(GunC1,"");}
+//for (i:=array_length(GunC1); i<=gun_slots;i++) {array_push(GunC1,"");}
 
 for (i:=1; i<=bo0_nbrC1; i+=1;) {array_push(EngineC1,"B0-0");}
 for (i:=1; i<=bo1_nbrC1; i+=1;) {array_push(EngineC1,"B0-1");}
@@ -445,12 +473,12 @@ for (i:=1; i<=bo2_nbrC1; i+=1;) {array_push(EngineC1,"B0-2");}
 for (i:=1; i<=spd1_nbrC1; i+=1;) {array_push(EngineC1,"SPD-1");}
 for (i:=1; i<=spd2_nbrC1; i+=1;) {array_push(EngineC1,"SPD-2");}
 for (i:=1; i<=spd3_nbrC1; i+=1;) {array_push(EngineC1,"SPD-3");}
-for (i:=array_length(EngineC1); i<=engine_slots;i++) {array_push(EngineC1,"");}
+//for (i:=array_length(EngineC1); i<=engine_slots;i++) {array_push(EngineC1,"");}
 
 for (i:=1; i<=mp1_nbrC2; i+=1;) {array_push(GunC2,"MP-1");}
 for (i:=1; i<=lf3_nbrC2; i+=1;) {array_push(GunC2,"LF-3");}
 for (i:=1; i<=lf4_nbrC2; i+=1;) {array_push(GunC2,"LF-4");}
-for (i:=array_length(GunC2); i<=gun_slots;i++) {array_push(GunC2,"");}
+//for (i:=array_length(GunC2); i<=gun_slots;i++) {array_push(GunC2,"");}
 
 for (i:=1; i<=bo0_nbrC2; i+=1;) {array_push(EngineC2,"B0-0");}
 for (i:=1; i<=bo1_nbrC2; i+=1;) {array_push(EngineC2,"B0-1");}
@@ -459,7 +487,7 @@ for (i:=1; i<=bo2_nbrC2; i+=1;) {array_push(EngineC2,"B0-2");}
 for (i:=1; i<=spd1_nbrC2; i+=1;) {array_push(EngineC2,"SPD-1");}
 for (i:=1; i<=spd2_nbrC2; i+=1;) {array_push(EngineC2,"SPD-2");}
 for (i:=1; i<=spd3_nbrC2; i+=1;) {array_push(EngineC2,"SPD-3");}
-for (i:=array_length(EngineC2); i<=engine_slots;i++) {array_push(EngineC2,"");}
+//for (i:=array_length(EngineC2); i<=engine_slots;i++) {array_push(EngineC2,"");}
 
 for (i:=1; i<=flax_numb; i+=1;) 
 {
@@ -494,11 +522,11 @@ rounding[5]:=noone;
 
 
 //ABILITIES
-if Ship = "solace" then {can_use_solace = true; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = false;}
-if Ship = "spectrum" then {can_use_solace = false; can_use_spectrum = true; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = false;}
-if Ship = "diminisher" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = true; can_use_venom = false; can_use_sentinel = false;}
-if Ship = "venom" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = true; can_use_sentinel = false;}
-if Ship = "sentinel" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = true;}
+if ship_name = "solace" then {can_use_solace = true; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = false;}
+if ship_name = "spectrum" then {can_use_solace = false; can_use_spectrum = true; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = false;}
+if ship_name = "diminisher" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = true; can_use_venom = false; can_use_sentinel = false;}
+if ship_name = "venom" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = true; can_use_sentinel = false;}
+if ship_name = "sentinel" then {can_use_solace = false; can_use_spectrum = false; can_use_diminisher = false; can_use_venom = false; can_use_sentinel = true;}
 
 
 /*

@@ -29,6 +29,7 @@ else
         //speed = 12;
         //direction=point_direction(x,y,target.x,target.y);
         
+		if distance_to_object(target) <= 10 then deal_prefunction(owner,target,"x1",damage,damage_x,drawDamage,id)
         if speedrocket<17 then speedrocket=speedrocket*1.05 else speedrocket = 17;
         motion_set(point_direction(x,y,target.x,target.y),speedrocket) //speed
         direction=point_direction(x,y,target.x,target.y)+ammoangle;
